@@ -15,6 +15,13 @@ var _hit_targets: Dictionary = {}
 
 func configure(combo_profile: ComboAttackProfile) -> void:
 	profile = combo_profile
+	_current_step_index = -1
+	_elapsed_ticks = 0
+	_tick_accumulator = 0.0
+	_last_attack_press_time = -1.0
+	_queued_next_attack = false
+	_hit_fired = false
+	_hit_targets.clear()
 
 
 func request_attack() -> bool:

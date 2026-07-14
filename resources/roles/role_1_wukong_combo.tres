@@ -1,6 +1,23 @@
-[gd_resource type="Resource" script_class="ComboAttackProfile" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ComboAttackProfile" load_steps=19 format=3]
 
 [ext_resource type="Script" path="res://src/combat/combo_attack_profile.gd" id="1_profile"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_00.png" id="2_hit1_0"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_01.png" id="3_hit1_1"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_02.png" id="4_hit1_2"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_03.png" id="5_hit1_3"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_00.png" id="6_hit3_0"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_01.png" id="7_hit3_1"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_02.png" id="8_hit3_2"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_03.png" id="9_hit3_3"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_04.png" id="10_hit3_4"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_00.png" id="11_hit4_0"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_01.png" id="12_hit4_1"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_02.png" id="13_hit4_2"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_03.png" id="14_hit4_3"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_00.png" id="15_hit5_0"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_01.png" id="16_hit5_1"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_02.png" id="17_hit5_2"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_03.png" id="18_hit5_3"]
 
 [resource]
 script = ExtResource("1_profile")
@@ -11,6 +28,10 @@ steps = [{
 "action": &"hit1",
 "damage": 18,
 "duration_ticks": 9,
+"effect_fps": 24.0,
+"effect_frames": [ExtResource("2_hit1_0"), ExtResource("3_hit1_1"), ExtResource("4_hit1_2"), ExtResource("5_hit1_3")],
+"effect_offset": Vector2(64, -38),
+"effect_source_facing": -1,
 "hit_tick": 5,
 "hitbox_offset": Vector2(58, -34),
 "hitbox_size": Vector2(82, 54),
@@ -19,6 +40,10 @@ steps = [{
 "action": &"hit2",
 "damage": 18,
 "duration_ticks": 9,
+"effect_fps": 24.0,
+"effect_frames": [ExtResource("2_hit1_0"), ExtResource("3_hit1_1"), ExtResource("4_hit1_2"), ExtResource("5_hit1_3")],
+"effect_offset": Vector2(68, -38),
+"effect_source_facing": -1,
 "hit_tick": 5,
 "hitbox_offset": Vector2(62, -34),
 "hitbox_size": Vector2(88, 56),
@@ -27,6 +52,10 @@ steps = [{
 "action": &"hit3",
 "damage": 18,
 "duration_ticks": 9,
+"effect_fps": 24.0,
+"effect_frames": [ExtResource("6_hit3_0"), ExtResource("7_hit3_1"), ExtResource("8_hit3_2"), ExtResource("9_hit3_3"), ExtResource("10_hit3_4")],
+"effect_offset": Vector2(42, -62),
+"effect_source_facing": -1,
 "hit_tick": 1,
 "hitbox_offset": Vector2(34, -68),
 "hitbox_size": Vector2(90, 105),
@@ -35,6 +64,10 @@ steps = [{
 "action": &"hit4",
 "damage": 18,
 "duration_ticks": 16,
+"effect_fps": 24.0,
+"effect_frames": [ExtResource("11_hit4_0"), ExtResource("12_hit4_1"), ExtResource("13_hit4_2"), ExtResource("14_hit4_3")],
+"effect_offset": Vector2(76, -36),
+"effect_source_facing": -1,
 "hit_tick": 1,
 "hitbox_offset": Vector2(78, -38),
 "hitbox_size": Vector2(130, 62),
@@ -43,6 +76,10 @@ steps = [{
 "action": &"hit5",
 "damage": 18,
 "duration_ticks": 16,
+"effect_fps": 24.0,
+"effect_frames": [ExtResource("15_hit5_0"), ExtResource("16_hit5_1"), ExtResource("17_hit5_2"), ExtResource("18_hit5_3")],
+"effect_offset": Vector2(82, -42),
+"effect_source_facing": -1,
 "hit_tick": 5,
 "hitbox_offset": Vector2(82, -42),
 "hitbox_size": Vector2(140, 70),

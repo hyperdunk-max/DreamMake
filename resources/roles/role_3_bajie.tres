@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="RoleAnimationProfile" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/animation/role_animation_profile.gd" id="1_profile"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/bajie/body/showid_1/source_atlas.png" id="2_body"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/bajie/weapon/showid_0/source_atlas.png" id="3_weapon_0"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/bajie/weapon/showid_1/source_atlas.png" id="4_weapon_1"]
+
+[resource]
+script = ExtResource("1_profile")
+role_id = 3
+role_key = &"bajie"
+display_name = "八戒"
+logical_fps = 24.0
+frame_size = Vector2i(300, 200)
+source_facing = -1
+default_action = &"idle"
+default_body_showid = 1
+default_weapon_showid = 0
+body_atlases = {1: ExtResource("2_body")}
+body_names = {1: "普通行者服"}
+weapon_atlases = {0: ExtResource("3_weapon_0"), 1: ExtResource("4_weapon_1")}
+weapon_names = {0: "默认武器", 1: "普通钉耙"}
+actions = {
+&"hit1": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 6), "row": 6, "start_column": 0}]},
+&"hit2": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 6), "row": 7, "start_column": 0}]},
+&"hit3": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 10), "row": 8, "start_column": 0}]},
+&"hurt": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(8), "row": 4, "start_column": 2}]},
+&"idle": {"loop": true, "segments": [{"cycles": 6, "holds": PackedInt32Array(2, 2, 2, 3, 2, 4), "row": 0, "start_column": 0}, {"cycles": 1, "holds": PackedInt32Array(3, 3, 3, 9, 5, 9), "row": 1, "start_column": 0}]},
+&"jump_double": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2, 2), "row": 5, "start_column": 0}]},
+&"jump_fall": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 1}]},
+&"jump_up": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 0}]},
+&"run": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2), "row": 3, "start_column": 0}]},
+&"walk": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(4, 4, 4, 4), "row": 2, "start_column": 0}]}
+}

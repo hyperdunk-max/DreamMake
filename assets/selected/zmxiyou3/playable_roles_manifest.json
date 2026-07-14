@@ -1,0 +1,170 @@
+{
+  "purpose": "Playable role atlases and Wukong normal-attack effects",
+  "policy": "Byte-for-byte copies of extracted PNG files; no repainting or resampling",
+  "files": [
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/tangseng/body/1/ROLE2_1/images/1_ROLE2_1.png",
+      "destination": "assets/selected/zmxiyou3/tangseng/body/showid_1/source_atlas.png",
+      "bytes": 162930
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/0/ROLE2_EQUIP_0/images/1_ROLE2_EQUIP_0.png",
+      "destination": "assets/selected/zmxiyou3/tangseng/weapon/showid_0/source_atlas.png",
+      "bytes": 66668
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/1/ROLE2_EQUIP_1/images/1_ROLE2_EQUIP_1.png",
+      "destination": "assets/selected/zmxiyou3/tangseng/weapon/showid_1/source_atlas.png",
+      "bytes": 54834
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/bajie/body/1/ROLE3_1/images/1_ROLE3_1.png",
+      "destination": "assets/selected/zmxiyou3/bajie/body/showid_1/source_atlas.png",
+      "bytes": 901531
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/0/ROLE3_EQUIP_0/images/1_ROLE3_EQUIP_0.png",
+      "destination": "assets/selected/zmxiyou3/bajie/weapon/showid_0/source_atlas.png",
+      "bytes": 113002
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/1/ROLE3_EQUIP_1/images/1_ROLE3_EQUIP_1.png",
+      "destination": "assets/selected/zmxiyou3/bajie/weapon/showid_1/source_atlas.png",
+      "bytes": 109170
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/1/ROLE4_SHOVEL_1/images/1_ROLE4_SHOVEL_1.png",
+      "destination": "assets/selected/zmxiyou3/shaseng/body/showid_1/source_atlas.png",
+      "bytes": 791418
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/0/ROLE4_EQUIP_0/images/1_ROLE4_EQUIP_0.png",
+      "destination": "assets/selected/zmxiyou3/shaseng/weapon/showid_0/source_atlas.png",
+      "bytes": 89638
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/1/ROLE4_EQUIP_1/images/1_ROLE4_EQUIP_1.png",
+      "destination": "assets/selected/zmxiyou3/shaseng/weapon/showid_1/source_atlas.png",
+      "bytes": 88480
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_5_Role1Bullet1/1.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_00.png",
+      "bytes": 8469,
+      "action": "hit1",
+      "frame": 0
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_5_Role1Bullet1/2.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_01.png",
+      "bytes": 8469,
+      "action": "hit1",
+      "frame": 1
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_5_Role1Bullet1/3.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_02.png",
+      "bytes": 5935,
+      "action": "hit1",
+      "frame": 2
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_5_Role1Bullet1/4.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit1/frame_03.png",
+      "bytes": 5935,
+      "action": "hit1",
+      "frame": 3
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_22_Role1Bullet3/1.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_00.png",
+      "bytes": 4723,
+      "action": "hit3",
+      "frame": 0
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_22_Role1Bullet3/2.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_01.png",
+      "bytes": 9276,
+      "action": "hit3",
+      "frame": 1
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_22_Role1Bullet3/3.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_02.png",
+      "bytes": 9947,
+      "action": "hit3",
+      "frame": 2
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_22_Role1Bullet3/4.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_03.png",
+      "bytes": 7072,
+      "action": "hit3",
+      "frame": 3
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_22_Role1Bullet3/5.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit3/frame_04.png",
+      "bytes": 4131,
+      "action": "hit3",
+      "frame": 4
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_15_Role1Bullet4/1.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_00.png",
+      "bytes": 8691,
+      "action": "hit4",
+      "frame": 0
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_15_Role1Bullet4/2.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_01.png",
+      "bytes": 6568,
+      "action": "hit4",
+      "frame": 1
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_15_Role1Bullet4/3.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_02.png",
+      "bytes": 4832,
+      "action": "hit4",
+      "frame": 2
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_15_Role1Bullet4/4.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit4/frame_03.png",
+      "bytes": 5134,
+      "action": "hit4",
+      "frame": 3
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_9_Role1Bullet5/1.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_00.png",
+      "bytes": 25629,
+      "action": "hit5",
+      "frame": 0
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_9_Role1Bullet5/2.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_01.png",
+      "bytes": 25629,
+      "action": "hit5",
+      "frame": 1
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_9_Role1Bullet5/3.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_02.png",
+      "bytes": 18281,
+      "action": "hit5",
+      "frame": 2
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites/DefineSprite_9_Role1Bullet5/4.png",
+      "destination": "assets/selected/zmxiyou3/wukong/effects/normal_attack/hit5/frame_03.png",
+      "bytes": 18281,
+      "action": "hit5",
+      "frame": 3
+    }
+  ]
+}

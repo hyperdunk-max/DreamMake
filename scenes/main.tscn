@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_main"]
 [ext_resource type="Script" path="res://src/actors/player.gd" id="2_player"]
@@ -8,6 +8,10 @@
 [ext_resource type="Resource" path="res://resources/roles/role_1_wukong.tres" id="6_wukong_profile"]
 [ext_resource type="Script" path="res://src/states/character_state_machine.gd" id="7_state_machine"]
 [ext_resource type="Resource" path="res://resources/roles/role_1_wukong_combo.tres" id="8_wukong_combo"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong_definition.tres" id="9_role_1"]
+[ext_resource type="Resource" path="res://resources/roles/role_2_tangseng_definition.tres" id="10_role_2"]
+[ext_resource type="Resource" path="res://resources/roles/role_3_bajie_definition.tres" id="11_role_3"]
+[ext_resource type="Resource" path="res://resources/roles/role_4_shaseng_definition.tres" id="12_role_4"]
 
 [sub_resource type="RectangleShape2D" id="FloorShape"]
 size = Vector2(940, 70)
@@ -22,6 +26,7 @@ height = 62.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
+playable_roles = Array[Resource]([ExtResource("9_role_1"), ExtResource("10_role_2"), ExtResource("11_role_3"), ExtResource("12_role_4")])
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(470, 550)

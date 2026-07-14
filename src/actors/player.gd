@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_changed(current: int, maximum: int)
 signal weapon_changed(showid: int, weapon_name: String)
+signal role_changed(role_id: int, display_name: String)
 
 const MOVE_SPEED := 245.0
 const JUMP_SPEED := -500.0
@@ -28,21 +29,52 @@ var combo_attack_state: ComboAttackState
 
 
 func _ready() -> void:
+	_configure_runtime_role()
+	queue_redraw()
+
+
+func configure_role(definition: RoleDefinition) -> bool:
+	if definition == null:
+		return false
+	var errors := definition.validate()
+	if not errors.is_empty():
+		for validation_error in errors:
+			push_error(validation_error)
+		return false
+	action_state_machine.clear_state()
+	role_id = definition.role_id
+	animation_profile = definition.animation_profile
+	combo_attack_profile = definition.combo_attack_profile
+	body_showid = definition.default_body_showid
+	weapon_showid = definition.default_weapon_showid
+	if not _configure_runtime_role():
+		return false
+	velocity = Vector2.ZERO
+	hurt_time = 0.0
+	double_jump_animation_time = 0.0
+	jump_count = 0
+	role_changed.emit(role_id, definition.display_name)
+	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
+	return true
+
+
+func _configure_runtime_role() -> bool:
 	if not layered_animator.register_role(role_id, animation_profile, body_showid, weapon_showid):
 		push_error("Player failed to register role id %d." % role_id)
-		return
+		return false
 	body_showid = layered_animator.get_body_showid()
 	weapon_showid = layered_animator.get_weapon_showid()
 	var combo_errors := combo_attack_profile.validate_for_role(role_id) if combo_attack_profile != null else PackedStringArray(["Missing combo attack profile."])
 	if not combo_errors.is_empty():
 		for combo_error in combo_errors:
 			push_error(combo_error)
-		return
-	combo_attack_state = ComboAttackState.new()
+		return false
+	if combo_attack_state == null:
+		combo_attack_state = ComboAttackState.new()
+		combo_attack_state.setup(ComboAttackState.ID, self, layered_animator, action_state_machine)
+		action_state_machine.register_state(combo_attack_state)
 	combo_attack_state.configure(combo_attack_profile)
-	combo_attack_state.setup(ComboAttackState.ID, self, layered_animator, action_state_machine)
-	action_state_machine.register_state(combo_attack_state)
-	queue_redraw()
+	return true
 
 
 func _physics_process(delta: float) -> void:
@@ -111,6 +143,7 @@ func _update_pose() -> void:
 	layered_animator.set_facing(facing)
 
 func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
+	_spawn_attack_effect(step)
 	var space := get_world_2d().direct_space_state
 	var shape := RectangleShape2D.new()
 	shape.size = Vector2(step.get("hitbox_size", Vector2(72, 48)))
@@ -128,6 +161,22 @@ func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 			var knockback := Vector2(step.get("knockback", Vector2(220, -120)))
 			knockback.x *= facing
 			target.take_hit(int(step.get("damage", 18)), knockback)
+
+
+func _spawn_attack_effect(step: Dictionary) -> void:
+	var effect_frames: Array = step.get("effect_frames", [])
+	if effect_frames.is_empty():
+		return
+	var effect := OneShotSpriteEffect.new()
+	var effect_fps := float(step.get("effect_fps", combo_attack_profile.logical_fps))
+	var source_facing := int(step.get("effect_source_facing", animation_profile.source_facing))
+	if not effect.configure(effect_frames, effect_fps, source_facing, facing):
+		effect.queue_free()
+		return
+	var offset := Vector2(step.get("effect_offset", Vector2.ZERO))
+	offset.x *= facing
+	effect.global_position = global_position + offset
+	get_tree().current_scene.add_child(effect)
 
 
 func take_hit(damage: int, impulse: Vector2) -> void:

@@ -4,12 +4,22 @@ extends Node2D
 @onready var enemy: CharacterBody2D = $TrainingEnemy
 @onready var hud: CanvasLayer = $HUD
 
+@export var playable_roles: Array[Resource] = []
+
+var _roles_by_id: Dictionary = {}
+
 
 func _ready() -> void:
+	for role_resource in playable_roles:
+		var definition := role_resource as RoleDefinition
+		if definition != null:
+			_roles_by_id[definition.role_id] = definition
 	player.health_changed.connect(hud.set_player_health)
 	player.weapon_changed.connect(hud.set_weapon)
+	player.role_changed.connect(hud.set_role)
 	enemy.health_changed.connect(hud.set_enemy_health)
 	enemy.defeated.connect(_on_enemy_defeated)
+	enemy.set_attack_target(player)
 	player.health_changed.emit(player.health, player.max_health)
 	hud.set_weapon(player.weapon_showid, player.get_weapon_name())
 	enemy.health_changed.emit(enemy.health, enemy.max_health)
@@ -19,6 +29,22 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
+	elif event.is_action_pressed("test_enemy_attack"):
+		if not enemy.request_test_attack():
+			hud.show_message("请等待训练木妖完成当前攻击")
+	else:
+		for role_number in range(1, 5):
+			if event.is_action_pressed("role_%d" % role_number):
+				_switch_role(role_number)
+				break
+
+
+func _switch_role(role_id: int) -> void:
+	var definition: RoleDefinition = _roles_by_id.get(role_id)
+	if definition == null:
+		return
+	if player.configure_role(definition):
+		hud.show_message("已切换：%s" % definition.display_name)
 
 
 func _on_enemy_defeated() -> void:
