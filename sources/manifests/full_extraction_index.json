@@ -1,0 +1,4635 @@
+{
+  "generated_at": "2026-07-14T16:34:58+08:00",
+  "candidate_urls": 461,
+  "reachable_dynamic_packages": 237,
+  "unavailable_http_404": 224,
+  "exported_containers": 243,
+  "export_status": {
+    "export_cached": 238,
+    "exported": 5
+  },
+  "packages_by_game": {
+    "zmxiyou1": 9,
+    "zmxiyou2": 19,
+    "zmxiyou3": 215
+  },
+  "packages_by_category": {
+    "zmxiyou1/audio": 1,
+    "zmxiyou1/characters": 1,
+    "zmxiyou1/monsters": 3,
+    "zmxiyou1/shared": 4,
+    "zmxiyou2/audio": 1,
+    "zmxiyou2/characters": 1,
+    "zmxiyou2/shared": 6,
+    "zmxiyou2/stages": 11,
+    "zmxiyou3/audio": 13,
+    "zmxiyou3/characters": 81,
+    "zmxiyou3/environments": 2,
+    "zmxiyou3/magic_weapons": 1,
+    "zmxiyou3/monsters": 12,
+    "zmxiyou3/pets": 17,
+    "zmxiyou3/shared": 19,
+    "zmxiyou3/stages": 52,
+    "zmxiyou3/ui": 18
+  },
+  "files_by_game": {
+    "zmxiyou1": {
+      "files": 19593,
+      "bytes": 724718887
+    },
+    "zmxiyou2": {
+      "files": 35444,
+      "bytes": 1206197076
+    },
+    "zmxiyou3": {
+      "files": 64323,
+      "bytes": 2845493368
+    }
+  },
+  "files_by_type": {
+    "binaryData": {
+      "files": 11,
+      "bytes": 8591245
+    },
+    "buttons": {
+      "files": 2240,
+      "bytes": 24284347
+    },
+    "fonts": {
+      "files": 54,
+      "bytes": 13941200
+    },
+    "frames": {
+      "files": 246,
+      "bytes": 1569500
+    },
+    "images": {
+      "files": 9330,
+      "bytes": 667803784
+    },
+    "morphshapes": {
+      "files": 16,
+      "bytes": 28508
+    },
+    "scripts": {
+      "files": 16797,
+      "bytes": 98960230
+    },
+    "shapes": {
+      "files": 16442,
+      "bytes": 1342331161
+    },
+    "sounds": {
+      "files": 185,
+      "bytes": 8238025
+    },
+    "sprites": {
+      "files": 73208,
+      "bytes": 2610534094
+    },
+    "symbolClass": {
+      "files": 243,
+      "bytes": 122522
+    },
+    "texts": {
+      "files": 588,
+      "bytes": 4715
+    }
+  },
+  "files_by_extension": {
+    ".png": 84543,
+    ".as": 16797,
+    ".svg": 16458,
+    ".txt": 588,
+    ".jpg": 481,
+    ".csv": 243,
+    ".mp3": 168,
+    ".ttf": 54,
+    ".wav": 17,
+    ".bin": 11
+  },
+  "character_variants": [
+    {
+      "game": "zmxiyou1",
+      "role": "mixed_packages",
+      "kind": "package",
+      "count": 1,
+      "variants": [
+        "Role_v7"
+      ]
+    },
+    {
+      "game": "zmxiyou2",
+      "role": "mixed_packages",
+      "kind": "package",
+      "count": 1,
+      "variants": [
+        "Role_v6"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "bajie",
+      "kind": "body",
+      "count": 7,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "4",
+        "5",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "bajie",
+      "kind": "weapon",
+      "count": 10,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "mixed_packages",
+      "kind": "package",
+      "count": 5,
+      "variants": [
+        "Role1v690",
+        "Role2v3550",
+        "Role3v690",
+        "Role4v3550",
+        "RoleSkillInterfacev3550"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "shaseng",
+      "kind": "body_arrow",
+      "count": 8,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "shaseng",
+      "kind": "body_shovel",
+      "count": 8,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "shaseng",
+      "kind": "weapon",
+      "count": 10,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "tangseng",
+      "kind": "body",
+      "count": 8,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "tangseng",
+      "kind": "weapon",
+      "count": 8,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "5",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "wukong",
+      "kind": "body",
+      "count": 7,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "9",
+        "11"
+      ]
+    },
+    {
+      "game": "zmxiyou3",
+      "role": "wukong",
+      "kind": "weapon",
+      "count": 10,
+      "variants": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "game": "zmxiyou1",
+      "name": "Music.swf",
+      "category": "audio",
+      "origin": "Aloader.urls",
+      "source_sha256": "5cad2f1ef3ce592c2e9e44c631748e042d8cacae2c7571e57b1a0546998a7578",
+      "output": "assets/extracted/full/zmxiyou1/audio/Music",
+      "files": 57,
+      "bytes": 3071903,
+      "types": {
+        "frames": 1,
+        "scripts": 27,
+        "sounds": 28,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "Role_v7.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader.urls",
+      "source_sha256": "11cae2f4f4e63dbb1e7199b9d1a8ed432036138b72e2d04d1da974329133fbe7",
+      "output": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7",
+      "files": 3834,
+      "bytes": 57382340,
+      "types": {
+        "frames": 1,
+        "images": 175,
+        "scripts": 181,
+        "shapes": 775,
+        "sprites": 2701,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "Monster2_v4.swf",
+      "category": "monsters",
+      "origin": "Aloader.urls",
+      "source_sha256": "42a301a5ae4222aec54dfdc4c14efced48b9ad4f979902471011ff226d8cd09b",
+      "output": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4",
+      "files": 5606,
+      "bytes": 128751887,
+      "types": {
+        "frames": 1,
+        "images": 193,
+        "scripts": 209,
+        "shapes": 823,
+        "sprites": 4379,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "Monster3_v3.swf",
+      "category": "monsters",
+      "origin": "Aloader.urls",
+      "source_sha256": "5f6478c13cb57a46d46abac6fc70549f517358d727c3f2641aa75754c14f33c7",
+      "output": "assets/extracted/full/zmxiyou1/monsters/Monster3_v3",
+      "files": 1233,
+      "bytes": 51854423,
+      "types": {
+        "frames": 1,
+        "images": 9,
+        "scripts": 122,
+        "shapes": 79,
+        "sprites": 1021,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "Monster_v1.swf",
+      "category": "monsters",
+      "origin": "Aloader.urls",
+      "source_sha256": "5bd88da4211870f2ca2354b7cec8d1790747869641c11fe553910b10fe2a264a",
+      "output": "assets/extracted/full/zmxiyou1/monsters/Monster_v1",
+      "files": 2294,
+      "bytes": 117385977,
+      "types": {
+        "frames": 1,
+        "images": 137,
+        "scripts": 150,
+        "shapes": 346,
+        "sprites": 1659,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "OtherMat_v9.swf",
+      "category": "shared",
+      "origin": "Aloader.urls",
+      "source_sha256": "fa7681aad99fb06f50228530b7f70f6334a1d7052a7bb6ef2ce3c3d81867fd5e",
+      "output": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9",
+      "files": 3644,
+      "bytes": 82369620,
+      "types": {
+        "buttons": 172,
+        "fonts": 2,
+        "frames": 1,
+        "images": 270,
+        "morphshapes": 1,
+        "scripts": 305,
+        "shapes": 244,
+        "sprites": 2634,
+        "symbolClass": 1,
+        "texts": 14
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "backpack_v2.swf",
+      "category": "shared",
+      "origin": "Aloader.urls",
+      "source_sha256": "47215d42043801243e7beae00ca4601d6040b343be8bd8a29a9c4aa4e8df17ea",
+      "output": "assets/extracted/full/zmxiyou1/shared/backpack_v2",
+      "files": 767,
+      "bytes": 10096783,
+      "types": {
+        "buttons": 16,
+        "fonts": 1,
+        "frames": 1,
+        "images": 67,
+        "scripts": 124,
+        "shapes": 177,
+        "sprites": 368,
+        "symbolClass": 1,
+        "texts": 12
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "main_game.swf",
+      "category": "shared/main",
+      "origin": "embedded main SWF",
+      "source_sha256": "f8e3e1f5b545bc2423a02f5c6155f87215e01c14d21554d77681f32a7defb75b",
+      "output": "assets/extracted/full/zmxiyou1/shared/main/main_game",
+      "files": 2112,
+      "bytes": 271565988,
+      "types": {
+        "fonts": 4,
+        "frames": 1,
+        "images": 124,
+        "scripts": 129,
+        "shapes": 67,
+        "sprites": 1780,
+        "symbolClass": 1,
+        "texts": 6
+      }
+    },
+    {
+      "game": "zmxiyou1",
+      "name": "portal_loader.swf",
+      "category": "shared/portal_loader",
+      "origin": "embedded main SWF",
+      "source_sha256": "a5e9650ca4c3b779d62fb7987a0b7e7d5af5983b3197fa2f2e846a91b3f9ccce",
+      "output": "assets/extracted/full/zmxiyou1/shared/portal_loader/portal_loader",
+      "files": 46,
+      "bytes": 2239966,
+      "types": {
+        "binaryData": 3,
+        "frames": 2,
+        "scripts": 40,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "Music.swf",
+      "category": "audio",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "4dd4617d519924e9155fa13291d0aec6b0a12e44a52dc7e0421452fb2545a12f",
+      "output": "assets/extracted/full/zmxiyou2/audio/Music",
+      "files": 97,
+      "bytes": 1083026,
+      "types": {
+        "frames": 1,
+        "scripts": 47,
+        "sounds": 48,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "Role_v6.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "4b65ea793425ce865d297d3affc5e8c1ebbd172609cc2e6858e037aab0480a01",
+      "output": "assets/extracted/full/zmxiyou2/characters/mixed_packages/Role_v6",
+      "files": 4404,
+      "bytes": 70428025,
+      "types": {
+        "frames": 1,
+        "images": 179,
+        "scripts": 258,
+        "shapes": 865,
+        "sprites": 3100,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "Common_v7.swf",
+      "category": "shared",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "c656124db207635a4a83400830958c08400496d82f5ed4624e39f40a35c176ac",
+      "output": "assets/extracted/full/zmxiyou2/shared/Common_v7",
+      "files": 3749,
+      "bytes": 176807126,
+      "types": {
+        "buttons": 32,
+        "fonts": 1,
+        "frames": 1,
+        "images": 296,
+        "morphshapes": 2,
+        "scripts": 379,
+        "shapes": 288,
+        "sprites": 2734,
+        "symbolClass": 1,
+        "texts": 15
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "OtherMat_v10.swf",
+      "category": "shared",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "bfd34377e0a1e02eea835af2f05d5d177775739bbe6c4f7f7f3e40b37ec4bb8b",
+      "output": "assets/extracted/full/zmxiyou2/shared/OtherMat_v10",
+      "files": 3593,
+      "bytes": 81131840,
+      "types": {
+        "buttons": 212,
+        "fonts": 1,
+        "frames": 1,
+        "images": 284,
+        "scripts": 339,
+        "shapes": 279,
+        "sprites": 2454,
+        "symbolClass": 1,
+        "texts": 22
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "Pig9.swf",
+      "category": "shared",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "6b8abe41ac82a2181de7af337e9910e14e60bf0a40d6f53d5ef9e4f795d56a91",
+      "output": "assets/extracted/full/zmxiyou2/shared/Pig9",
+      "files": 1973,
+      "bytes": 28473740,
+      "types": {
+        "frames": 1,
+        "images": 28,
+        "morphshapes": 2,
+        "scripts": 212,
+        "shapes": 261,
+        "sprites": 1468,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "backpack_v5.swf",
+      "category": "shared",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "ec41f6ba3918fb10467fd79cebe11ed063441c591760bab7935937d66613eebc",
+      "output": "assets/extracted/full/zmxiyou2/shared/backpack_v5",
+      "files": 2308,
+      "bytes": 23630231,
+      "types": {
+        "buttons": 92,
+        "fonts": 1,
+        "frames": 1,
+        "images": 142,
+        "morphshapes": 2,
+        "scripts": 247,
+        "shapes": 537,
+        "sprites": 1253,
+        "symbolClass": 1,
+        "texts": 32
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "main_game.swf",
+      "category": "shared/main",
+      "origin": "embedded main SWF",
+      "source_sha256": "e148a14c167bb972f52b68d26dc04cc4489c6b2f522fcf6eee2978239e7bbf8f",
+      "output": "assets/extracted/full/zmxiyou2/shared/main/main_game",
+      "files": 1272,
+      "bytes": 125196232,
+      "types": {
+        "fonts": 4,
+        "frames": 1,
+        "images": 77,
+        "scripts": 237,
+        "shapes": 212,
+        "sprites": 735,
+        "symbolClass": 1,
+        "texts": 5
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "portal_loader.swf",
+      "category": "shared/portal_loader",
+      "origin": "embedded main SWF",
+      "source_sha256": "c5e3243d96a6b2602d1757570e6b3faffb5b4a4d1306f381d5e81eff74d7a256",
+      "output": "assets/extracted/full/zmxiyou2/shared/portal_loader/portal_loader",
+      "files": 46,
+      "bytes": 2476027,
+      "types": {
+        "binaryData": 3,
+        "frames": 2,
+        "scripts": 40,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "10.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "53cd4a9006c8b5ce92eb1c051034b8ca4a75152ff24ee8d4662ecd3e11e7915c",
+      "output": "assets/extracted/full/zmxiyou2/stages/10",
+      "files": 3789,
+      "bytes": 157754654,
+      "types": {
+        "frames": 1,
+        "images": 131,
+        "scripts": 261,
+        "shapes": 389,
+        "sprites": 3006,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "11.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "c90b4a368a64d8c26c0f030ec91ec1578803fd8c9d26af806ab10ba254a5bc5a",
+      "output": "assets/extracted/full/zmxiyou2/stages/11",
+      "files": 409,
+      "bytes": 6902878,
+      "types": {
+        "frames": 1,
+        "images": 4,
+        "scripts": 198,
+        "shapes": 14,
+        "sprites": 191,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "1_v6.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "bad334cd3c3c70574d827d446a3d60f661b56f7e2d13d52141e2023961e57b38",
+      "output": "assets/extracted/full/zmxiyou2/stages/1_v6",
+      "files": 1335,
+      "bytes": 88273605,
+      "types": {
+        "frames": 1,
+        "images": 86,
+        "scripts": 210,
+        "shapes": 164,
+        "sprites": 873,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "2.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "75b5fa727eb4b9a7801e65e3be73f844cd1db8cad3dd41c3172ea1242d42fc8f",
+      "output": "assets/extracted/full/zmxiyou2/stages/2",
+      "files": 2435,
+      "bytes": 114066596,
+      "types": {
+        "frames": 1,
+        "images": 213,
+        "morphshapes": 8,
+        "scripts": 218,
+        "shapes": 315,
+        "sprites": 1679,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "3.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "57f8934dfa33189e77a96eceba4938445e3589f70ee14b629a18e0afd91b6812",
+      "output": "assets/extracted/full/zmxiyou2/stages/3",
+      "files": 3578,
+      "bytes": 95659377,
+      "types": {
+        "frames": 1,
+        "images": 247,
+        "scripts": 226,
+        "shapes": 680,
+        "sprites": 2423,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "4.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "1feca1f4c363f915eac6d0dc2178651e45ad52eaecddc0d984af8671d22343f6",
+      "output": "assets/extracted/full/zmxiyou2/stages/4",
+      "files": 1624,
+      "bytes": 89611083,
+      "types": {
+        "frames": 1,
+        "images": 101,
+        "scripts": 216,
+        "shapes": 151,
+        "sprites": 1154,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "5_v7.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "9ff36ab92555e15ba8850fc4f7c2ad5d52fbecedfb7d378f913a03033976d8c0",
+      "output": "assets/extracted/full/zmxiyou2/stages/5_v7",
+      "files": 948,
+      "bytes": 15452558,
+      "types": {
+        "frames": 1,
+        "images": 32,
+        "scripts": 194,
+        "shapes": 86,
+        "sprites": 634,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "6.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "3501b471c25bbc4ab3a784c7549a802239a645884f69052a5b74582393dde5be",
+      "output": "assets/extracted/full/zmxiyou2/stages/6",
+      "files": 718,
+      "bytes": 16489096,
+      "types": {
+        "frames": 1,
+        "images": 41,
+        "scripts": 168,
+        "shapes": 114,
+        "sprites": 393,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "7.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "ed6794aa5d602aeca1d496669112f9445213c7474f4737f9cc593e2c231fb8e0",
+      "output": "assets/extracted/full/zmxiyou2/stages/7",
+      "files": 1341,
+      "bytes": 64984234,
+      "types": {
+        "frames": 1,
+        "images": 17,
+        "scripts": 209,
+        "shapes": 191,
+        "sprites": 922,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "8.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "ac3934359264544b3239890875c03784e5f8975645681f85ab57c03f801a7587",
+      "output": "assets/extracted/full/zmxiyou2/stages/8",
+      "files": 970,
+      "bytes": 22121020,
+      "types": {
+        "frames": 1,
+        "images": 11,
+        "scripts": 192,
+        "shapes": 114,
+        "sprites": 651,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou2",
+      "name": "9.swf",
+      "category": "stages",
+      "origin": "Aloader/MainGame",
+      "source_sha256": "4236358292a3978063a4d02cca03b5a8c49023e7dacdc8fbfcc77c2a0b6ae454",
+      "output": "assets/extracted/full/zmxiyou2/stages/9",
+      "files": 855,
+      "bytes": 25655728,
+      "types": {
+        "frames": 1,
+        "images": 8,
+        "scripts": 184,
+        "shapes": 82,
+        "sprites": 579,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Music_v700.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "c8d87646e68767421b1ce7e4155a0ed2bc05a5d445c72599a9405303a7a30f54",
+      "output": "assets/extracted/full/zmxiyou3/audio/Music_v700",
+      "files": 151,
+      "bytes": 692174,
+      "types": {
+        "frames": 1,
+        "scripts": 74,
+        "sounds": 75,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg0.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "2e8008ad4134c6a28b0d48777bdfd1137c5b82d50bb3d737c9ea97717834159e",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg0",
+      "files": 5,
+      "bytes": 249964,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg1.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "8c243043e949da33da838a4021516882209e373a0c3457abc06c13bbdee37d1b",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg1",
+      "files": 5,
+      "bytes": 123084,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg12.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "a6a0e1b18c772973498ded97075005c77d8650ce724f058013e0f5c0e1062092",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg12",
+      "files": 5,
+      "bytes": 124128,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg2.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "d6819f13fd1f32ac55ef12cda02fa5550094765daddd747d5e05f0bda33ba581",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg2",
+      "files": 5,
+      "bytes": 146068,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg21.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "a860816e474db0f3eb86ae8317a72c6687dc37c336ae4300c6b3c32b198131bf",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg21",
+      "files": 5,
+      "bytes": 1487752,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg22.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "33b2940435b5a1efe38963027ca97927042ee0b5f459310d4a2ca299d5ef9a1c",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg22",
+      "files": 5,
+      "bytes": 128080,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg3.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "bfdfa8599e4826983eb5c8afc2d277b5024d76c33ce6e31b358fd20b6733a5bb",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg3",
+      "files": 5,
+      "bytes": 133692,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg5.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "9d52f15d14073a59c73c3ad83a52ff2fafb1c72d29a29a36f68a9833c51807cc",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg5",
+      "files": 5,
+      "bytes": 129220,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg6.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "7224c9713287679e9f3be158db343713b54b67bd77e189e02f9e4268ff922fd7",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg6",
+      "files": 5,
+      "bytes": 130156,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "music_bg7.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "616c40db7c42d1b5102d8c1fe66ee00a00ec193f9cda51162338ceef8335f099",
+      "output": "assets/extracted/full/zmxiyou3/audio/music_bg7",
+      "files": 5,
+      "bytes": 122980,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "shengDanMusic.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "7ed84d867d6e2c957c7a1b1ea994a9e9c96e9f84c1700a2e7cb005c4e26ca018",
+      "output": "assets/extracted/full/zmxiyou3/audio/shengDanMusic",
+      "files": 5,
+      "bytes": 319452,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "xinnianMusic.swf",
+      "category": "audio",
+      "origin": "ActionScript literal",
+      "source_sha256": "bdb41a5284adeb5c9fcd15b01a1bf249d1c26954ec1ff6af115042c99867a38b",
+      "output": "assets/extracted/full/zmxiyou3/audio/xinnianMusic",
+      "files": 5,
+      "bytes": 346403,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "sounds": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_0.swf",
+      "category": "characters/bajie/body/0",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "2c63d7ec3ed5e1d40d116cc8deeea88fc0ccf209bbf716cfd889d58f614c799e",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/0/ROLE3_0",
+      "files": 4,
+      "bytes": 927962,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_1.swf",
+      "category": "characters/bajie/body/1",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "a2d331b712ae5f4dc344e3b16875c3ff3d8f76e87145ac4cf808ba9479cf690a",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/1/ROLE3_1",
+      "files": 4,
+      "bytes": 903672,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_11.swf",
+      "category": "characters/bajie/body/11",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "077e22dab1136382849d36731fe90eb9cc8d97cd026e97b9ff76dda6efc3809b",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/11/ROLE3_11",
+      "files": 282,
+      "bytes": 1969835,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "shapes": 98,
+        "sprites": 180,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_2.swf",
+      "category": "characters/bajie/body/2",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "7d035d5a9d678069ecaa18ba49747bb23ec6ddac41e13abfbd36f3a8787e4fdc",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/2/ROLE3_2",
+      "files": 4,
+      "bytes": 964920,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_4.swf",
+      "category": "characters/bajie/body/4",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "97a44c40721fd8d75388f82c7a89c18a16c9a87f7365c2914fc2d3695c488524",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/4/ROLE3_4",
+      "files": 4,
+      "bytes": 1078476,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_5.swf",
+      "category": "characters/bajie/body/5",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "c644f2211ade678f727ae75d001cd3ff41c67c65b15377ddeb7431ff4fc3dbeb",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/5/ROLE3_5",
+      "files": 4,
+      "bytes": 1223900,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_9.swf",
+      "category": "characters/bajie/body/9",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "90c7389b5ef0ef4a460b11d63a9e3d227af931f42dd8a91562f60fea6a25e3af",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/body/9/ROLE3_9",
+      "files": 4,
+      "bytes": 1478092,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_0.swf",
+      "category": "characters/bajie/weapon/0",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "520cc8cce86baf1a8e2c0ef21242dadbf3b22bfb51a8927c93218f4351c852ec",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/0/ROLE3_EQUIP_0",
+      "files": 4,
+      "bytes": 115167,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_1.swf",
+      "category": "characters/bajie/weapon/1",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "d6a8fe730368aaf61d1c54c168e344318a1ce90009cefb5fbe99a3e61f0526d3",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/1/ROLE3_EQUIP_1",
+      "files": 4,
+      "bytes": 111335,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_2.swf",
+      "category": "characters/bajie/weapon/2",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "dd4c9f474ef548b4f33af8e4c4fe9b1336e20b6d6247ddd7572e67556c3367fe",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/2/ROLE3_EQUIP_2",
+      "files": 4,
+      "bytes": 127939,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_3.swf",
+      "category": "characters/bajie/weapon/3",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "84b9a4080d456f9bdd272e2c555964c160519906e4b687ff5a69cb052cfdad06",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/3/ROLE3_EQUIP_3",
+      "files": 4,
+      "bytes": 150660,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_4.swf",
+      "category": "characters/bajie/weapon/4",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "5aeffb38b985453a4c4633c233cc4b4c8c56ad15a061e2ec0c7d7b87a7b9d323",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/4/ROLE3_EQUIP_4",
+      "files": 4,
+      "bytes": 536657,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_5.swf",
+      "category": "characters/bajie/weapon/5",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "6639c0f2ffa84d4080b57bfbf9dde437c5c818acad359b5de474d21a20308396",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/5/ROLE3_EQUIP_5",
+      "files": 4,
+      "bytes": 501614,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_6.swf",
+      "category": "characters/bajie/weapon/6",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "8af839d9e82d96146867ae790726bd6356b545061ffcc0f62489e51ef00e1557",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/6/ROLE3_EQUIP_6",
+      "files": 4,
+      "bytes": 154922,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_7.swf",
+      "category": "characters/bajie/weapon/7",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "e3319757b6a944e5fe2c3f739dfeaa847eb1a7fb935a4b14e5381b2c28933f39",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/7/ROLE3_EQUIP_7",
+      "files": 4,
+      "bytes": 154922,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_8.swf",
+      "category": "characters/bajie/weapon/8",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "12f4b6d6fa6597f6025891c0cb4392990306ef469059ec05e2e45ed754fdd6cb",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/8/ROLE3_EQUIP_8",
+      "files": 4,
+      "bytes": 175110,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE3_EQUIP_9.swf",
+      "category": "characters/bajie/weapon/9",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "537f239fd275bb61b3b7950367781a47937367fd9e26cf4fe5259a32bbfdf608",
+      "output": "assets/extracted/full/zmxiyou3/characters/bajie/weapon/9/ROLE3_EQUIP_9",
+      "files": 130,
+      "bytes": 516649,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "shapes": 43,
+        "sprites": 84,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Role1v690.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader/Config",
+      "source_sha256": "84131ccbcca372d523d328d51f3da4700cd98fa5265245a13d74802878d25eaf",
+      "output": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690",
+      "files": 634,
+      "bytes": 27189153,
+      "types": {
+        "frames": 1,
+        "images": 86,
+        "scripts": 20,
+        "shapes": 102,
+        "sprites": 424,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Role2v3550.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader/Config",
+      "source_sha256": "3ad8bd63b7aae690f661b8d2104f8c199d85a0a8ea91a1c6a7caaf7a8078e7d2",
+      "output": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role2v3550",
+      "files": 932,
+      "bytes": 37473923,
+      "types": {
+        "frames": 1,
+        "images": 104,
+        "scripts": 13,
+        "shapes": 115,
+        "sprites": 698,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Role3v690.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader/Config",
+      "source_sha256": "24fcaf4c6e414679dd9ea17138038196d043d70efd83bb4c3029a5aa43a0ec00",
+      "output": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role3v690",
+      "files": 678,
+      "bytes": 19226075,
+      "types": {
+        "frames": 1,
+        "images": 57,
+        "scripts": 16,
+        "shapes": 79,
+        "sprites": 524,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Role4v3550.swf",
+      "category": "characters/mixed_packages",
+      "origin": "Aloader/Config",
+      "source_sha256": "b3d217fc5297033bb5189c3da2e65c8e010d407ee8e02ca441afd5349e2a0e5c",
+      "output": "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role4v3550",
+      "files": 1355,
+      "bytes": 32874252,
+      "types": {
+        "frames": 1,
+        "images": 128,
+        "scripts": 29,
+        "shapes": 133,
+        "sprites": 1063,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "RoleSkillInterfacev3550.swf",
+      "category": "characters/mixed_packages",
+      "origin": "ActionScript literal",
+      "source_sha256": "8cffa823f7a3769d08c1cc8114715c25448465f3f576f70a408fe7d650d3a514",
+      "output": "assets/extracted/full/zmxiyou3/characters/mixed_packages/RoleSkillInterfacev3550",
+      "files": 829,
+      "bytes": 9375297,
+      "types": {
+        "buttons": 48,
+        "fonts": 1,
+        "frames": 1,
+        "images": 178,
+        "scripts": 126,
+        "shapes": 201,
+        "sprites": 259,
+        "symbolClass": 1,
+        "texts": 14
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_0.swf",
+      "category": "characters/shaseng/body_arrow/0",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "38d115aa5212500cab7e2641a0a8ea424c60a7b39c3f58c84a0cc2227ed5dc0a",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/0/ROLE4_ARROW_0",
+      "files": 4,
+      "bytes": 241316,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_1.swf",
+      "category": "characters/shaseng/body_arrow/1",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "773862186cac8c5d746c0e26b9af243001d98d372c22111589cb6dfb8b8f0bb5",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/1/ROLE4_ARROW_1",
+      "files": 4,
+      "bytes": 244840,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_11.swf",
+      "category": "characters/shaseng/body_arrow/11",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "4109c4c870a0da41300aad3f3aaa686f009287bfdda2f9bad86e09304065b4eb",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/11/ROLE4_ARROW_11",
+      "files": 475,
+      "bytes": 2512445,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "shapes": 168,
+        "sprites": 303,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_2.swf",
+      "category": "characters/shaseng/body_arrow/2",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "f4b2c3346c339e0d557c0ad6f8f47728e79264cd306b3fd4f4b443eeede425d0",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/2/ROLE4_ARROW_2",
+      "files": 4,
+      "bytes": 815588,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_3.swf",
+      "category": "characters/shaseng/body_arrow/3",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "53ae26bf0f68c618fc40ffa452798cbfe28c7ac932376bff7c483b7380e36082",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/3/ROLE4_ARROW_3",
+      "files": 4,
+      "bytes": 841706,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_4.swf",
+      "category": "characters/shaseng/body_arrow/4",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "10b01b56671389be30f81c4495b0326c4ade50b5e87922e562d0431dcf7316e4",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/4/ROLE4_ARROW_4",
+      "files": 4,
+      "bytes": 928406,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_5.swf",
+      "category": "characters/shaseng/body_arrow/5",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "3ee9af0ee535d30ba279bd7d9cd5c1ce0953f06fe4db23aeab198db1ee25601f",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/5/ROLE4_ARROW_5",
+      "files": 4,
+      "bytes": 986497,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_ARROW_9.swf",
+      "category": "characters/shaseng/body_arrow/9",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "f7821338cb8c4927bb003550c58a1fa04c652de73833c0afa0c1b3b00a7e2371",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_arrow/9/ROLE4_ARROW_9",
+      "files": 4,
+      "bytes": 1101671,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_0.swf",
+      "category": "characters/shaseng/body_shovel/0",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "c62b5fc8960c0421dba93d33420f7c7dbfa82643bbd527244f320e41e7da2dbb",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/0/ROLE4_SHOVEL_0",
+      "files": 4,
+      "bytes": 774134,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_1.swf",
+      "category": "characters/shaseng/body_shovel/1",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "540ed2841d673457965ce7703796b03f4facdceeaa30014232d9fa88cb97bb78",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/1/ROLE4_SHOVEL_1",
+      "files": 4,
+      "bytes": 793587,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_11.swf",
+      "category": "characters/shaseng/body_shovel/11",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "ba3a63072e25271aab689a60214034d2cd88fa280b5109a51b574f867b75b788",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/11/ROLE4_SHOVEL_11",
+      "files": 321,
+      "bytes": 1967736,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "shapes": 122,
+        "sprites": 195,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_2.swf",
+      "category": "characters/shaseng/body_shovel/2",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "b7662a3eda2e56037a41c80f5e600d564d620a3d302840acdf163cb1c270f3be",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/2/ROLE4_SHOVEL_2",
+      "files": 4,
+      "bytes": 791417,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_3.swf",
+      "category": "characters/shaseng/body_shovel/3",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "1100edc7173abdf2f8e4d1c04b5dacfc638d93f6686631b488af74ffe437f6f3",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/3/ROLE4_SHOVEL_3",
+      "files": 4,
+      "bytes": 807792,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_4.swf",
+      "category": "characters/shaseng/body_shovel/4",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "308d03c2385d9860b4cc25e0e64ce001f1ffbd95d6759fc0fa1291cb5d78cc05",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/4/ROLE4_SHOVEL_4",
+      "files": 4,
+      "bytes": 889243,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_5.swf",
+      "category": "characters/shaseng/body_shovel/5",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "64f89ca0f39fc6ab9405cc275e989dc4051ecadded03b4c489e88d7dfc161e82",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/5/ROLE4_SHOVEL_5",
+      "files": 4,
+      "bytes": 943270,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_SHOVEL_9.swf",
+      "category": "characters/shaseng/body_shovel/9",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "bb902ce5791ccecb0da9d38676f3117cb587422b1b7801855d546c9980ebb2ec",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/body_shovel/9/ROLE4_SHOVEL_9",
+      "files": 4,
+      "bytes": 1064626,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_0.swf",
+      "category": "characters/shaseng/weapon/0",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "d65ce3a0d1567994255a156c1cee02c09c755e24504cc1c917ff984aa63e6cc1",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/0/ROLE4_EQUIP_0",
+      "files": 4,
+      "bytes": 91803,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_1.swf",
+      "category": "characters/shaseng/weapon/1",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "1c10233dbb500c87e9bab53128c007bf538d5dcd9ab6857e80ede1398c4d4927",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/1/ROLE4_EQUIP_1",
+      "files": 4,
+      "bytes": 90645,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_10.swf",
+      "category": "characters/shaseng/weapon/10",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "a0416915463898e3f34154a58ffbadf2c9c0edca5aaabf6f7ba4be77ead03b7d",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/10/ROLE4_EQUIP_10",
+      "files": 117,
+      "bytes": 373586,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "shapes": 35,
+        "sprites": 79,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_2.swf",
+      "category": "characters/shaseng/weapon/2",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "42a09c065513c1dca225ba58bb6ec1328e1da3fb7ad23cc443ae74d1be6a08a9",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/2/ROLE4_EQUIP_2",
+      "files": 4,
+      "bytes": 98223,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_3.swf",
+      "category": "characters/shaseng/weapon/3",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "30a1e5f0cf879a111d1e913adeac3d7a019dd2bde36bf1ccf6f0f93a854b26ad",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/3/ROLE4_EQUIP_3",
+      "files": 4,
+      "bytes": 113528,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_4.swf",
+      "category": "characters/shaseng/weapon/4",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "64a1af55b265d646e4697384903d697fc628c7def48b29727b437b2b036ed0ac",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/4/ROLE4_EQUIP_4",
+      "files": 4,
+      "bytes": 130270,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_6.swf",
+      "category": "characters/shaseng/weapon/6",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "4499705a285c64fc9f61946d08daa641281cc817428adba9bc6ff26d4dc656ff",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/6/ROLE4_EQUIP_6",
+      "files": 4,
+      "bytes": 125096,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_7.swf",
+      "category": "characters/shaseng/weapon/7",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "9ee0371dc0ef2bde1ecc33b08c0489e5e627b4d61d5d7b6d0d317e44bb98f700",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/7/ROLE4_EQUIP_7",
+      "files": 4,
+      "bytes": 111483,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_8.swf",
+      "category": "characters/shaseng/weapon/8",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "e6407ed06676fae406bd55e3550905f3d83d5fd92e0c1a3f7ffbe6c333fe5069",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/8/ROLE4_EQUIP_8",
+      "files": 4,
+      "bytes": 111483,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE4_EQUIP_9.swf",
+      "category": "characters/shaseng/weapon/9",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "60a0481688d4dea6f5e776981a26aabc3af7af18a24e7b8cb55d92287b1c58f6",
+      "output": "assets/extracted/full/zmxiyou3/characters/shaseng/weapon/9/ROLE4_EQUIP_9",
+      "files": 4,
+      "bytes": 140385,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_0.swf",
+      "category": "characters/tangseng/body/0",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "3d95edb85cde52fe543d90b85d2c4013bd8f1b60b4e592e9f07ec7653c9bde26",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/0/ROLE2_0",
+      "files": 4,
+      "bytes": 148704,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_1.swf",
+      "category": "characters/tangseng/body/1",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "aef03c27a0b130fef87e3b4bf21c3e646cf3a1c8bbad93f80c08c0c0fd72f323",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/1/ROLE2_1",
+      "files": 4,
+      "bytes": 165071,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_11.swf",
+      "category": "characters/tangseng/body/11",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "2d46701a5d164fcef978bc97100910582aadcc7dc5f1c1bbf4ef4381b306e3f3",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/11/ROLE2_11",
+      "files": 252,
+      "bytes": 1612814,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "shapes": 92,
+        "sprites": 156,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_2.swf",
+      "category": "characters/tangseng/body/2",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "5e012aa25237535afdeb4ba6932a359bcb0aebb779251d8ee358a0d5e2beaba2",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/2/ROLE2_2",
+      "files": 4,
+      "bytes": 175163,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_3.swf",
+      "category": "characters/tangseng/body/3",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "ad88cf2467719b1f2fd5df95076ce990b11e80aa6111176d7d9fd280137bda69",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/3/ROLE2_3",
+      "files": 4,
+      "bytes": 750413,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_4.swf",
+      "category": "characters/tangseng/body/4",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "dc63c8995680d67f0d03d740e66220a328da997653505d6d771b859677cd7d71",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/4/ROLE2_4",
+      "files": 4,
+      "bytes": 789213,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_5.swf",
+      "category": "characters/tangseng/body/5",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "7d312237a97c2430ee0369f3cd18067ab5304806006d034092b618ea01a1b42d",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/5/ROLE2_5",
+      "files": 4,
+      "bytes": 918855,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_9.swf",
+      "category": "characters/tangseng/body/9",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "d7e6fb736b9f97911f2f963e238b7bc0e8c8008181f67e85b363c59cf6f0db91",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/body/9/ROLE2_9",
+      "files": 4,
+      "bytes": 1007541,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_0.swf",
+      "category": "characters/tangseng/weapon/0",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "db374984b98af9715737cf303b589f6e3ebed1e5535f1f028783cc9653ef122d",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/0/ROLE2_EQUIP_0",
+      "files": 4,
+      "bytes": 68833,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_1.swf",
+      "category": "characters/tangseng/weapon/1",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "287e2582ce5a079625c94c928a792973cfd3366ca751d6fe90c51730a57fdc53",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/1/ROLE2_EQUIP_1",
+      "files": 4,
+      "bytes": 56999,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_2.swf",
+      "category": "characters/tangseng/weapon/2",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "7db9d1ca2db09e91ea196a1c7b486f8ab6d6466abba215d25e27030b598262a2",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/2/ROLE2_EQUIP_2",
+      "files": 4,
+      "bytes": 60805,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_3.swf",
+      "category": "characters/tangseng/weapon/3",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "2205a7a9d3cac84dd487d920cd9d7a25649932216508a23d8cc0edc5c29e9f9f",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/3/ROLE2_EQUIP_3",
+      "files": 4,
+      "bytes": 91882,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_5.swf",
+      "category": "characters/tangseng/weapon/5",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "d2e2508199ef91e4e6c9c11d02800ea3e33b36074bcb7337c5050d529fc6dd99",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/5/ROLE2_EQUIP_5",
+      "files": 4,
+      "bytes": 81251,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_7.swf",
+      "category": "characters/tangseng/weapon/7",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "8ce216433f8e69b0b4ed8e5e4d61aed0f21193c04f56ef5e28d4c70b45232c35",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/7/ROLE2_EQUIP_7",
+      "files": 4,
+      "bytes": 88066,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_8.swf",
+      "category": "characters/tangseng/weapon/8",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "76ab8ec0abb2c0c3f21112c937b10df78f0b2a1626895a2e16eb4ae126bbeaec",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/8/ROLE2_EQUIP_8",
+      "files": 4,
+      "bytes": 112251,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE2_EQUIP_9.swf",
+      "category": "characters/tangseng/weapon/9",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "454645d6708d57b603b24a744ff55eb6ff4f5441fe26c706c2ea68020c2b494c",
+      "output": "assets/extracted/full/zmxiyou3/characters/tangseng/weapon/9/ROLE2_EQUIP_9",
+      "files": 126,
+      "bytes": 425425,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "shapes": 50,
+        "sprites": 73,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_0.swf",
+      "category": "characters/wukong/body/0",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "08e79d699e6db5ea09880f5400ceac62edb1cf7bf6d35e9534daf3a8a5e6758c",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/0/ROLE1_0",
+      "files": 4,
+      "bytes": 911261,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_1.swf",
+      "category": "characters/wukong/body/1",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "fe654c50bd5569617564884407ff828c42442f102a7ce89e426c3d4d1b64d3d2",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/1/ROLE1_1",
+      "files": 4,
+      "bytes": 955094,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_11.swf",
+      "category": "characters/wukong/body/11",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "deb249eeb42b7a5fe3782873cec86d49ad1a13ff98b1cf7d10f1d6850950e3c1",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/11/ROLE1_11",
+      "files": 280,
+      "bytes": 2282083,
+      "types": {
+        "frames": 1,
+        "images": 2,
+        "scripts": 1,
+        "shapes": 96,
+        "sprites": 179,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_2.swf",
+      "category": "characters/wukong/body/2",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "06f0dad1b1fc0ed23c0b2146afacf88d5c6072a9c465876fcb635db45802fd37",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/2/ROLE1_2",
+      "files": 4,
+      "bytes": 965738,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_3.swf",
+      "category": "characters/wukong/body/3",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "e909ab2fd9f8256c5e24c5b63c1042b70eff26875f1c6520295a98c1c2261bed",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/3/ROLE1_3",
+      "files": 4,
+      "bytes": 1017087,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_4.swf",
+      "category": "characters/wukong/body/4",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "72da9a1a19379409aaff841e2e7d66509615c509bb33b8d007dbc1327fb95b10",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/4/ROLE1_4",
+      "files": 4,
+      "bytes": 1132904,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_9.swf",
+      "category": "characters/wukong/body/9",
+      "origin": "AllEquipment body showid",
+      "source_sha256": "e17346a6390a1e18133073ce153bb28c9c987289c8dc92b2a3ba522d04d0bf58",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/body/9/ROLE1_9",
+      "files": 4,
+      "bytes": 1476247,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_0.swf",
+      "category": "characters/wukong/weapon/0",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "7961022cffc3c14168af99af9c030f23d8fe5c8abd9a9234513fb22ef79eccea",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/0/ROLE1_EQUIP_0",
+      "files": 4,
+      "bytes": 50654,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_1.swf",
+      "category": "characters/wukong/weapon/1",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "8709ac696adb8f577a94feaeea99b3188f981a7fd8884ba803de972e51c585bd",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/1/ROLE1_EQUIP_1",
+      "files": 4,
+      "bytes": 49699,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_2.swf",
+      "category": "characters/wukong/weapon/2",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "3cac8fa46699d59228dc9142ad3739a11de6a3913c7942bf5fb44354bc156877",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/2/ROLE1_EQUIP_2",
+      "files": 4,
+      "bytes": 74750,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_3.swf",
+      "category": "characters/wukong/weapon/3",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "a77569782a1dc2f29bd1bf094109156ad75b33fb78893aa01cc9830557f44ba7",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/3/ROLE1_EQUIP_3",
+      "files": 4,
+      "bytes": 87047,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_4.swf",
+      "category": "characters/wukong/weapon/4",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "db5381bb9615f1dca3c264f17bdf4e94f34c68f133aa920acfb689d148c361e9",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/4/ROLE1_EQUIP_4",
+      "files": 4,
+      "bytes": 226054,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_5.swf",
+      "category": "characters/wukong/weapon/5",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "bd91ba167b0f1d04762ad7c32ddadca723e51f427ae6e534356a72f811920139",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/5/ROLE1_EQUIP_5",
+      "files": 4,
+      "bytes": 108684,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_6.swf",
+      "category": "characters/wukong/weapon/6",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "c3eb2939cacd55e9cbc28d1ec62b8640ae0e995101794b4a58da73b89702d56a",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/6/ROLE1_EQUIP_6",
+      "files": 4,
+      "bytes": 106038,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_7.swf",
+      "category": "characters/wukong/weapon/7",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "49e23ac04d6dcb5c36e015b197f723d53229c144f37064590df80990a3ea693a",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/7/ROLE1_EQUIP_7",
+      "files": 4,
+      "bytes": 106038,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_8.swf",
+      "category": "characters/wukong/weapon/8",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "2a3bc35f53084de75b35d0472d7323372141bac18face259b4a8d22d50779da3",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/8/ROLE1_EQUIP_8",
+      "files": 4,
+      "bytes": 95384,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ROLE1_EQUIP_9.swf",
+      "category": "characters/wukong/weapon/9",
+      "origin": "AllEquipment weapon showid",
+      "source_sha256": "53a1d46ee260fdbe3627bb99f6b9915287fe1942bbf737747fd2726be16f81de",
+      "output": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/9/ROLE1_EQUIP_9",
+      "files": 155,
+      "bytes": 428849,
+      "types": {
+        "frames": 1,
+        "scripts": 1,
+        "shapes": 58,
+        "sprites": 94,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "GameBackGroundv3870.swf",
+      "category": "environments",
+      "origin": "Aloader/Config",
+      "source_sha256": "2094e58343a23bf11b17ce3c04bcdbd19f49794e0425b5961c10c842d9477a09",
+      "output": "assets/extracted/full/zmxiyou3/environments/GameBackGroundv3870",
+      "files": 4,
+      "bytes": 625282,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "GameMapv3870.swf",
+      "category": "environments",
+      "origin": "Aloader/Config",
+      "source_sha256": "7af6d074f0be925818a49398ec7ace04e64bbb3f924ade61382dddce6b964e79",
+      "output": "assets/extracted/full/zmxiyou3/environments/GameMapv3870",
+      "files": 1940,
+      "bytes": 49018603,
+      "types": {
+        "buttons": 168,
+        "fonts": 3,
+        "frames": 1,
+        "images": 179,
+        "scripts": 122,
+        "shapes": 222,
+        "sprites": 1235,
+        "symbolClass": 1,
+        "texts": 9
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "MagicWeaponv1240.swf",
+      "category": "magic_weapons",
+      "origin": "Aloader/Config",
+      "source_sha256": "c11cd8a32ece5f925aa7e081256e1f613136e44ff7d3b38bce185115bf625070",
+      "output": "assets/extracted/full/zmxiyou3/magic_weapons/MagicWeaponv1240",
+      "files": 4838,
+      "bytes": 198558039,
+      "types": {
+        "frames": 1,
+        "images": 292,
+        "scripts": 90,
+        "shapes": 414,
+        "sprites": 4040,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster148.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "80b346a6cf545084c335c365d9a0e470431130f1b40d37ce907290f3f746f1d4",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster148",
+      "files": 21,
+      "bytes": 236580,
+      "types": {
+        "frames": 1,
+        "scripts": 2,
+        "shapes": 7,
+        "sprites": 10,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster172.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "a50ce1afa17d24e0c840f1ce72441c8a42dca2ec6df5c955a936bc184373f1db",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster172",
+      "files": 132,
+      "bytes": 2088299,
+      "types": {
+        "frames": 1,
+        "images": 1,
+        "scripts": 4,
+        "shapes": 34,
+        "sprites": 91,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster179.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "d53c184a6505cee5a276e50655e8b3dadff732757d88f31001dbec040b93454d",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster179",
+      "files": 199,
+      "bytes": 6998793,
+      "types": {
+        "frames": 1,
+        "images": 33,
+        "scripts": 6,
+        "shapes": 49,
+        "sprites": 109,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster180.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "fc397fbd99fa2f4c900cb2bb59bda07b2e7a49896b8307f1a17cbd68029bf896",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster180",
+      "files": 272,
+      "bytes": 2957039,
+      "types": {
+        "frames": 1,
+        "images": 22,
+        "scripts": 4,
+        "shapes": 44,
+        "sprites": 200,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster191.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "1142646dc2135d1224881ce233994b39ddc35fdc70f43fdcb76ad53add4a554b",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster191",
+      "files": 214,
+      "bytes": 3619480,
+      "types": {
+        "frames": 1,
+        "images": 28,
+        "scripts": 4,
+        "shapes": 55,
+        "sprites": 125,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster204.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "a903812b28abe028be6e5fc8ca4b2fc90059b2f6de0c28e2662211d8b2ff607e",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster204",
+      "files": 256,
+      "bytes": 6407155,
+      "types": {
+        "frames": 1,
+        "images": 24,
+        "scripts": 3,
+        "shapes": 74,
+        "sprites": 153,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster215.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "5977e5ed54d1c810693f3ef125c0cdc1eb87a522cf48d2be3af6a910dcbec23e",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster215",
+      "files": 119,
+      "bytes": 1280228,
+      "types": {
+        "frames": 1,
+        "images": 7,
+        "scripts": 3,
+        "shapes": 32,
+        "sprites": 75,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster216.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "29845210e3a43f2a955d0adb746e7eb0a8cb9f0f9925c67979e77ff4dd0a37a3",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster216",
+      "files": 179,
+      "bytes": 4541590,
+      "types": {
+        "frames": 1,
+        "images": 12,
+        "scripts": 7,
+        "shapes": 41,
+        "sprites": 117,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster217.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "ccb71afc32dab60b38fb59e44744e6587d6eb1a9541717c7591d7b3ec2ecf3a7",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster217",
+      "files": 115,
+      "bytes": 4192118,
+      "types": {
+        "frames": 1,
+        "images": 8,
+        "scripts": 3,
+        "shapes": 25,
+        "sprites": 77,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster22.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "8bd3d8e3e89c664d85da6aeaa6c3a1c4e8c1cc513f26b0b7f9acc7f5b3b6cb74",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster22",
+      "files": 190,
+      "bytes": 15059321,
+      "types": {
+        "frames": 1,
+        "images": 24,
+        "scripts": 7,
+        "shapes": 26,
+        "sprites": 131,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster47.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "42322d94e2b1237c45ea23ddec5aa52e542ad7d4a6e8ec6ec1b2ae887e568b5b",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster47",
+      "files": 210,
+      "bytes": 8401453,
+      "types": {
+        "frames": 1,
+        "images": 13,
+        "scripts": 8,
+        "shapes": 14,
+        "sprites": 173,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Monster60.swf",
+      "category": "monsters",
+      "origin": "ActionScript monster reference",
+      "source_sha256": "4fdc5c12a9419fa3874d06a788e8c1d8dc4c2aec24835a35ba5d44979170fb3a",
+      "output": "assets/extracted/full/zmxiyou3/monsters/Monster60",
+      "files": 158,
+      "bytes": 7571512,
+      "types": {
+        "frames": 1,
+        "images": 15,
+        "scripts": 5,
+        "shapes": 16,
+        "sprites": 120,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "DragonMysteriousShopv890.swf",
+      "category": "pets",
+      "origin": "ActionScript literal",
+      "source_sha256": "0d3877ce3693b0739c34c5a2dcdad48b6118795bef2e99cfb55f5898d719690b",
+      "output": "assets/extracted/full/zmxiyou3/pets/DragonMysteriousShopv890",
+      "files": 51,
+      "bytes": 2144038,
+      "types": {
+        "buttons": 16,
+        "fonts": 1,
+        "frames": 1,
+        "images": 10,
+        "scripts": 3,
+        "shapes": 12,
+        "sprites": 3,
+        "symbolClass": 1,
+        "texts": 4
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "PetInterfacev1270.swf",
+      "category": "pets",
+      "origin": "ActionScript literal",
+      "source_sha256": "bb33cff58b63fd6f6615e8a7ce9f79c14aef8c82f8f58bf88b3da3044fcc68ad",
+      "output": "assets/extracted/full/zmxiyou3/pets/PetInterfacev1270",
+      "files": 593,
+      "bytes": 1943567,
+      "types": {
+        "buttons": 72,
+        "fonts": 1,
+        "frames": 1,
+        "images": 101,
+        "scripts": 28,
+        "shapes": 88,
+        "sprites": 268,
+        "symbolClass": 1,
+        "texts": 33
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "dragonv680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "4eefc8aabf4c43d2b8523a6a01eba7ade352037b1163b2578dae619d76beb279",
+      "output": "assets/extracted/full/zmxiyou3/pets/dragonv680",
+      "files": 256,
+      "bytes": 28719724,
+      "types": {
+        "frames": 1,
+        "images": 24,
+        "scripts": 10,
+        "shapes": 22,
+        "sprites": 198,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "horsev680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "7d21af0a6b0db19ec77be003d6a215b4c66017014a4313095c3cf15f7a4cc8da",
+      "output": "assets/extracted/full/zmxiyou3/pets/horsev680",
+      "files": 456,
+      "bytes": 14787689,
+      "types": {
+        "frames": 1,
+        "images": 59,
+        "scripts": 14,
+        "shapes": 57,
+        "sprites": 324,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "monkeyv690.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "8527067e429c4d1af509f19244d3f8abe5db94a179eae2ad99016c81abf59110",
+      "output": "assets/extracted/full/zmxiyou3/pets/monkeyv690",
+      "files": 221,
+      "bytes": 7576589,
+      "types": {
+        "frames": 1,
+        "images": 40,
+        "scripts": 12,
+        "shapes": 40,
+        "sprites": 127,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "mousev790.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "d04250918c2b95f95083e3d342f94b133a6cd5e12bbed3b89bae334d85a48005",
+      "output": "assets/extracted/full/zmxiyou3/pets/mousev790",
+      "files": 211,
+      "bytes": 2322834,
+      "types": {
+        "frames": 1,
+        "images": 12,
+        "scripts": 5,
+        "shapes": 59,
+        "sprites": 133,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "neat.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "3c05c9918c00edec14c7e3941412c4eeb362ef572da84173621aced0d4d97c9e",
+      "output": "assets/extracted/full/zmxiyou3/pets/neat",
+      "files": 172,
+      "bytes": 2255979,
+      "types": {
+        "frames": 1,
+        "images": 10,
+        "scripts": 5,
+        "shapes": 50,
+        "sprites": 105,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "nianv1040.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "69825a0d737d635420d73acd0d4175a223e1ef04fbfcd36c1846c58c5a7c6623",
+      "output": "assets/extracted/full/zmxiyou3/pets/nianv1040",
+      "files": 338,
+      "bytes": 8653556,
+      "types": {
+        "frames": 1,
+        "images": 16,
+        "scripts": 9,
+        "shapes": 88,
+        "sprites": 223,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "petEIconv1450.swf",
+      "category": "pets",
+      "origin": "Aloader/Config",
+      "source_sha256": "53e5042c560634b4555dfddd12b9b10c5aaf04665b4e047facd934bfa56e784d",
+      "output": "assets/extracted/full/zmxiyou3/pets/petEIconv1450",
+      "files": 304,
+      "bytes": 1161948,
+      "types": {
+        "frames": 1,
+        "images": 151,
+        "scripts": 151,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "petsUniversalv690.swf",
+      "category": "pets",
+      "origin": "Aloader/Config",
+      "source_sha256": "3a9faec3ef89bb8c4de5cef6da2bbadf41db46b5604dc5ef56878adb79112354",
+      "output": "assets/extracted/full/zmxiyou3/pets/petsUniversalv690",
+      "files": 525,
+      "bytes": 8222305,
+      "types": {
+        "frames": 1,
+        "images": 64,
+        "scripts": 13,
+        "shapes": 64,
+        "sprites": 382,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "phoenixv680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "8dc828f5052e7ce8b50fb3d75661d7cd1aecb5f1ae350996cdc85ec43d2d6a50",
+      "output": "assets/extracted/full/zmxiyou3/pets/phoenixv680",
+      "files": 380,
+      "bytes": 8344200,
+      "types": {
+        "frames": 1,
+        "images": 56,
+        "scripts": 12,
+        "shapes": 53,
+        "sprites": 257,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "rabbitv680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "15041d25d6573b0422cf2d7ca9d50305b81d4c0cacb52d09e9326e1383207ac1",
+      "output": "assets/extracted/full/zmxiyou3/pets/rabbitv680",
+      "files": 510,
+      "bytes": 11321367,
+      "types": {
+        "frames": 1,
+        "images": 28,
+        "scripts": 9,
+        "shapes": 129,
+        "sprites": 342,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "roomhorse.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "336c2873ebe429d3b7ece2d9d74940ca4babb92a2a01fa74376a31b30feebb49",
+      "output": "assets/extracted/full/zmxiyou3/pets/roomhorse",
+      "files": 335,
+      "bytes": 5921604,
+      "types": {
+        "frames": 1,
+        "images": 21,
+        "scripts": 5,
+        "shapes": 71,
+        "sprites": 236,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "tigressv680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "453f6e59f37ed23aa3037c1d7fcbdbe8aa76b6b95edfa5c2be3c4e771ae48e7b",
+      "output": "assets/extracted/full/zmxiyou3/pets/tigressv680",
+      "files": 270,
+      "bytes": 6008643,
+      "types": {
+        "frames": 1,
+        "images": 28,
+        "scripts": 11,
+        "shapes": 25,
+        "sprites": 204,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "turtlev680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "397050c844f19dc71a6fea5f1a73612d30446ded7002b1a8cb7271013a442e14",
+      "output": "assets/extracted/full/zmxiyou3/pets/turtlev680",
+      "files": 255,
+      "bytes": 10774329,
+      "types": {
+        "frames": 1,
+        "images": 30,
+        "scripts": 9,
+        "shapes": 27,
+        "sprites": 187,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ufov680.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "407752608244c67d0dfed0c3dbbb933504699d3d4518b37658fb9e07f40a1b4a",
+      "output": "assets/extracted/full/zmxiyou3/pets/ufov680",
+      "files": 136,
+      "bytes": 1697219,
+      "types": {
+        "frames": 1,
+        "images": 24,
+        "scripts": 6,
+        "shapes": 21,
+        "sprites": 83,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "yintiger.swf",
+      "category": "pets",
+      "origin": "Config.getPetSwfNameByPetName",
+      "source_sha256": "b575ea910d31e001a16ef5c9d56fe14490f0b6bed6887d18ab9857ebec46bdb0",
+      "output": "assets/extracted/full/zmxiyou3/pets/yintiger",
+      "files": 275,
+      "bytes": 6531846,
+      "types": {
+        "frames": 1,
+        "images": 16,
+        "scripts": 5,
+        "shapes": 70,
+        "sprites": 182,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "BackToThePast.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "a545125f23b68813e237b0da1d38304c87cc885911d9025ed2207619b5334e24",
+      "output": "assets/extracted/full/zmxiyou3/shared/BackToThePast",
+      "files": 54,
+      "bytes": 3497945,
+      "types": {
+        "buttons": 12,
+        "fonts": 1,
+        "frames": 1,
+        "images": 13,
+        "scripts": 4,
+        "shapes": 13,
+        "sprites": 7,
+        "symbolClass": 1,
+        "texts": 2
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Commonv3720.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "53722c6c8615d2542de2e3cc255a68c5d80712c6b8097aaecae6bc7be0a40ab2",
+      "output": "assets/extracted/full/zmxiyou3/shared/Commonv3720",
+      "files": 1008,
+      "bytes": 11474093,
+      "types": {
+        "buttons": 52,
+        "fonts": 2,
+        "frames": 1,
+        "images": 97,
+        "scripts": 118,
+        "shapes": 202,
+        "sounds": 8,
+        "sprites": 503,
+        "symbolClass": 1,
+        "texts": 24
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "EIconv3420.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "942cb9fb80ca0174234aff04064a5363cc6889c940dfdcb2d10d31f192742421",
+      "output": "assets/extracted/full/zmxiyou3/shared/EIconv3420",
+      "files": 1390,
+      "bytes": 8547196,
+      "types": {
+        "frames": 1,
+        "images": 674,
+        "scripts": 657,
+        "shapes": 19,
+        "sprites": 38,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "FuYun.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "8c0ce7dd2eb1cfc440f2d8bc1cd506539adb2f8490224007c83a26c4cfef84bd",
+      "output": "assets/extracted/full/zmxiyou3/shared/FuYun",
+      "files": 407,
+      "bytes": 2320643,
+      "types": {
+        "buttons": 24,
+        "frames": 1,
+        "images": 45,
+        "scripts": 48,
+        "shapes": 68,
+        "sprites": 220,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Fulushou.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "293c7a0dd323699378d1bf77bfe8dca358243d008c7c759614501236dec53159",
+      "output": "assets/extracted/full/zmxiyou3/shared/Fulushou",
+      "files": 63,
+      "bytes": 7042241,
+      "types": {
+        "buttons": 24,
+        "frames": 1,
+        "images": 15,
+        "scripts": 5,
+        "shapes": 15,
+        "sprites": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "HundunDoor.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "a9b876fc34b98374e93487770e182fbe17951989d298e84987b4dbbb37cae996",
+      "output": "assets/extracted/full/zmxiyou3/shared/HundunDoor",
+      "files": 64,
+      "bytes": 2940247,
+      "types": {
+        "buttons": 24,
+        "frames": 1,
+        "images": 17,
+        "scripts": 2,
+        "shapes": 16,
+        "sprites": 3,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "InvitationAssets.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "ca63821df37de385dfa3ebcacf2a45d3558a2e0ef917772e35985a2ae8c5aa54",
+      "output": "assets/extracted/full/zmxiyou3/shared/InvitationAssets",
+      "files": 30,
+      "bytes": 182156,
+      "types": {
+        "buttons": 12,
+        "frames": 1,
+        "images": 7,
+        "scripts": 1,
+        "shapes": 7,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "LiuShaHev1080.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "a13b648ce4f1010feaa59e6cea117ca50f1fa2c08fb91ce45fa43383f12e4628",
+      "output": "assets/extracted/full/zmxiyou3/shared/LiuShaHev1080",
+      "files": 73,
+      "bytes": 3149257,
+      "types": {
+        "buttons": 8,
+        "frames": 1,
+        "images": 18,
+        "scripts": 7,
+        "shapes": 18,
+        "sprites": 20,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "MysteriousShopv1900.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "4db3f437eef1b2895e0ca3f66289028f61f45d54622a866bef2b45256e696c6a",
+      "output": "assets/extracted/full/zmxiyou3/shared/MysteriousShopv1900",
+      "files": 63,
+      "bytes": 3188793,
+      "types": {
+        "buttons": 20,
+        "fonts": 1,
+        "frames": 1,
+        "images": 15,
+        "scripts": 3,
+        "shapes": 15,
+        "sprites": 3,
+        "symbolClass": 1,
+        "texts": 4
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "NewYear2014v2010.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "053b09ef74a64dbf87066f7ce563692f06635d0a36181114aecd42808b4818c0",
+      "output": "assets/extracted/full/zmxiyou3/shared/NewYear2014v2010",
+      "files": 110,
+      "bytes": 4480417,
+      "types": {
+        "buttons": 12,
+        "frames": 1,
+        "images": 31,
+        "scripts": 9,
+        "shapes": 31,
+        "sprites": 25,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "OtherMatv3570.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "c027a2b5e7541d2d7e1e4a9e8fd0fb48587b0eb65319abf83a0d5e20d4f2cafe",
+      "output": "assets/extracted/full/zmxiyou3/shared/OtherMatv3570",
+      "files": 2208,
+      "bytes": 22206643,
+      "types": {
+        "binaryData": 1,
+        "buttons": 76,
+        "fonts": 2,
+        "frames": 1,
+        "images": 93,
+        "scripts": 1120,
+        "shapes": 210,
+        "sprites": 692,
+        "symbolClass": 1,
+        "texts": 12
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "RankTopv3560.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "edd99414e4601076c5e369a7bd71ec78476afe4839c6f044babdddfea485c9f8",
+      "output": "assets/extracted/full/zmxiyou3/shared/RankTopv3560",
+      "files": 481,
+      "bytes": 13575963,
+      "types": {
+        "buttons": 40,
+        "fonts": 1,
+        "frames": 1,
+        "images": 96,
+        "scripts": 65,
+        "shapes": 112,
+        "sprites": 144,
+        "symbolClass": 1,
+        "texts": 21
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "RegistrationEveryDayv2210.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "8ff69b4774e3e7c0007fce5c46acbc7c4173b9d0631b46b480422342fd6600e2",
+      "output": "assets/extracted/full/zmxiyou3/shared/RegistrationEveryDayv2210",
+      "files": 88,
+      "bytes": 846862,
+      "types": {
+        "buttons": 20,
+        "fonts": 1,
+        "frames": 1,
+        "images": 19,
+        "scripts": 6,
+        "shapes": 19,
+        "sprites": 18,
+        "symbolClass": 1,
+        "texts": 3
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "SelectRolev1060.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "126812d9c60aef4e00a8d13faaa5b225af81cf9242304791f937e5604c69d24e",
+      "output": "assets/extracted/full/zmxiyou3/shared/SelectRolev1060",
+      "files": 75,
+      "bytes": 5966364,
+      "types": {
+        "buttons": 28,
+        "frames": 1,
+        "images": 3,
+        "scripts": 3,
+        "shapes": 22,
+        "sprites": 17,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "StrengthEquipmentv1090.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "ed2983f62f7c071e324564a0ad41f1554b2d32a988577ade2c75cdc30cfc2689",
+      "output": "assets/extracted/full/zmxiyou3/shared/StrengthEquipmentv1090",
+      "files": 191,
+      "bytes": 3530793,
+      "types": {
+        "buttons": 56,
+        "fonts": 1,
+        "frames": 1,
+        "images": 40,
+        "scripts": 6,
+        "shapes": 56,
+        "sprites": 16,
+        "symbolClass": 1,
+        "texts": 14
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ThreeBothers.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "e58775595ad8ed31e83d689190d034b3c8498d2f26c81fee051fe5914c3b9c39",
+      "output": "assets/extracted/full/zmxiyou3/shared/ThreeBothers",
+      "files": 37,
+      "bytes": 2728411,
+      "types": {
+        "buttons": 8,
+        "frames": 1,
+        "images": 9,
+        "scripts": 2,
+        "shapes": 10,
+        "sprites": 5,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "VipTransfrom.swf",
+      "category": "shared",
+      "origin": "ActionScript literal",
+      "source_sha256": "36ad210edab9d83abc8c0b5a0c79370b5396a6094422fba23b1d77d312294a68",
+      "output": "assets/extracted/full/zmxiyou3/shared/VipTransfrom",
+      "files": 48,
+      "bytes": 486661,
+      "types": {
+        "buttons": 16,
+        "fonts": 1,
+        "frames": 1,
+        "images": 11,
+        "scripts": 2,
+        "shapes": 11,
+        "sprites": 3,
+        "symbolClass": 1,
+        "texts": 2
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "main_game.swf",
+      "category": "shared/main",
+      "origin": "embedded main SWF",
+      "source_sha256": "a88d26b5b523406c95f5f103b737c123ea2a135aaef01c0df047a7b0a304e6c2",
+      "output": "assets/extracted/full/zmxiyou3/shared/main/main_game",
+      "files": 1518,
+      "bytes": 12291396,
+      "types": {
+        "binaryData": 1,
+        "fonts": 2,
+        "frames": 1,
+        "images": 2,
+        "scripts": 1104,
+        "shapes": 145,
+        "sprites": 260,
+        "symbolClass": 1,
+        "texts": 2
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "portal_loader.swf",
+      "category": "shared/portal_loader",
+      "origin": "embedded main SWF",
+      "source_sha256": "a8704316853d44f59e2e55e447f9396721dbc50d53f7dc7641f6c3358beacbc7",
+      "output": "assets/extracted/full/zmxiyou3/shared/portal_loader/portal_loader",
+      "files": 46,
+      "bytes": 3308657,
+      "types": {
+        "binaryData": 3,
+        "frames": 2,
+        "scripts": 40,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "28xx.swf",
+      "category": "stages",
+      "origin": "ActionScript literal",
+      "source_sha256": "c3ac5173b1950fb92980ff402dcdcf6af8c17a2f434cd7e3e723a40410d0dd18",
+      "output": "assets/extracted/full/zmxiyou3/stages/28xx",
+      "files": 230,
+      "bytes": 12381838,
+      "types": {
+        "buttons": 100,
+        "fonts": 1,
+        "frames": 1,
+        "images": 52,
+        "scripts": 7,
+        "shapes": 53,
+        "sprites": 7,
+        "symbolClass": 1,
+        "texts": 8
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "stageCommonv1270.swf",
+      "category": "stages",
+      "origin": "Aloader/Config",
+      "source_sha256": "90f452b362451d2fdbcadcc7542cc1c8fab2330ac072417965911eee3a63b28d",
+      "output": "assets/extracted/full/zmxiyou3/stages/stageCommonv1270",
+      "files": 1435,
+      "bytes": 30644056,
+      "types": {
+        "buttons": 12,
+        "frames": 1,
+        "images": 194,
+        "scripts": 112,
+        "shapes": 197,
+        "sprites": 914,
+        "symbolClass": 1,
+        "texts": 4
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "stageInfov1620.swf",
+      "category": "stages",
+      "origin": "Aloader/Config",
+      "source_sha256": "588b16f77a86ebe5d641fe56d64130949b111a7201e2b939824c961c3f1c07e0",
+      "output": "assets/extracted/full/zmxiyou3/stages/stageInfov1620",
+      "files": 2620,
+      "bytes": 165695583,
+      "types": {
+        "fonts": 1,
+        "frames": 1,
+        "images": 106,
+        "scripts": 1110,
+        "shapes": 131,
+        "sprites": 1269,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "0v1150.swf",
+      "category": "stages/0",
+      "origin": "MainGame stage id",
+      "source_sha256": "3bd94fc15f45b0c7fc8f5af69067c0958caeec0d01e06c5745932d0fd2579b4f",
+      "output": "assets/extracted/full/zmxiyou3/stages/0/0v1150",
+      "files": 1372,
+      "bytes": 23628897,
+      "types": {
+        "buttons": 48,
+        "frames": 1,
+        "images": 87,
+        "scripts": 942,
+        "shapes": 124,
+        "sprites": 158,
+        "symbolClass": 1,
+        "texts": 11
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "1.swf",
+      "category": "stages/1",
+      "origin": "MainGame stage id",
+      "source_sha256": "14470fa742917ebd902763ddee7971876c458478a7b2711f1eeb8beaea2b0d7e",
+      "output": "assets/extracted/full/zmxiyou3/stages/1/1",
+      "files": 395,
+      "bytes": 47733635,
+      "types": {
+        "frames": 1,
+        "images": 62,
+        "scripts": 29,
+        "shapes": 47,
+        "sprites": 255,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "10v960.swf",
+      "category": "stages/10",
+      "origin": "MainGame stage id",
+      "source_sha256": "1ef59d52069d3b450bb73b8a2cccc6b74d4ab104cbc0aaaa309a69da9e224dea",
+      "output": "assets/extracted/full/zmxiyou3/stages/10/10v960",
+      "files": 828,
+      "bytes": 84731308,
+      "types": {
+        "frames": 1,
+        "images": 33,
+        "scripts": 29,
+        "shapes": 43,
+        "sprites": 721,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "11_1.swf",
+      "category": "stages/11",
+      "origin": "MainGame stage id",
+      "source_sha256": "a7a387dabadf2bfc2d4a1e50f49af742737e6de13cf14007e529f9de57f7e65c",
+      "output": "assets/extracted/full/zmxiyou3/stages/11/11_1",
+      "files": 756,
+      "bytes": 30098439,
+      "types": {
+        "buttons": 8,
+        "fonts": 1,
+        "frames": 1,
+        "images": 61,
+        "scripts": 411,
+        "shapes": 64,
+        "sprites": 198,
+        "symbolClass": 1,
+        "texts": 11
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "12_2.swf",
+      "category": "stages/12",
+      "origin": "MainGame stage id",
+      "source_sha256": "1f6fcf2d5e2b59830773d4dd2fbc64fec2193fece27ba4a4b088f91b0577c27c",
+      "output": "assets/extracted/full/zmxiyou3/stages/12/12_2",
+      "files": 1334,
+      "bytes": 122431910,
+      "types": {
+        "frames": 1,
+        "images": 168,
+        "scripts": 52,
+        "shapes": 196,
+        "sprites": 916,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "13v760.swf",
+      "category": "stages/13",
+      "origin": "MainGame stage id",
+      "source_sha256": "f84d4fed80048b31fa0204e37fe18cc60f7ccb695869d4e2f06b96f840dac407",
+      "output": "assets/extracted/full/zmxiyou3/stages/13/13v760",
+      "files": 982,
+      "bytes": 20515048,
+      "types": {
+        "buttons": 12,
+        "fonts": 1,
+        "frames": 1,
+        "images": 57,
+        "scripts": 753,
+        "shapes": 69,
+        "sprites": 73,
+        "symbolClass": 1,
+        "texts": 15
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "14v960.swf",
+      "category": "stages/14",
+      "origin": "MainGame stage id",
+      "source_sha256": "ee0a494f8f21107ed23dd1141625beb18ecf2ceff24dd3980cffc01f712cb2bd",
+      "output": "assets/extracted/full/zmxiyou3/stages/14/14v960",
+      "files": 19,
+      "bytes": 5194066,
+      "types": {
+        "frames": 1,
+        "images": 4,
+        "scripts": 6,
+        "shapes": 3,
+        "sprites": 4,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "15v680.swf",
+      "category": "stages/15",
+      "origin": "MainGame stage id",
+      "source_sha256": "0fb97c289cc85518db32355de82ed9a9dc0ffc3594f4005b4c4a0cb6592c6200",
+      "output": "assets/extracted/full/zmxiyou3/stages/15/15v680",
+      "files": 881,
+      "bytes": 30889098,
+      "types": {
+        "fonts": 1,
+        "frames": 1,
+        "images": 42,
+        "scripts": 696,
+        "shapes": 52,
+        "sprites": 84,
+        "symbolClass": 1,
+        "texts": 4
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "16.swf",
+      "category": "stages/16",
+      "origin": "MainGame stage id",
+      "source_sha256": "4a12ebc54cca22498f9f4a42eeebdc23349ca110ecdb1a3436ad5fb92648004b",
+      "output": "assets/extracted/full/zmxiyou3/stages/16/16",
+      "files": 590,
+      "bytes": 68483045,
+      "types": {
+        "frames": 1,
+        "images": 74,
+        "scripts": 48,
+        "shapes": 92,
+        "sprites": 374,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "17_2.swf",
+      "category": "stages/17",
+      "origin": "MainGame stage id",
+      "source_sha256": "3f40f9faaeb1852def9a6757265487c2bbc3b4f96dd4f5d7170957b23243d70b",
+      "output": "assets/extracted/full/zmxiyou3/stages/17/17_2",
+      "files": 1051,
+      "bytes": 76631677,
+      "types": {
+        "frames": 1,
+        "images": 86,
+        "scripts": 68,
+        "shapes": 106,
+        "sprites": 789,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "2.swf",
+      "category": "stages/2",
+      "origin": "MainGame stage id",
+      "source_sha256": "284443fc95155fc1833f6b1e0991b7183fcef3f1c74670ce2b5ab2666f97d5f3",
+      "output": "assets/extracted/full/zmxiyou3/stages/2/2",
+      "files": 970,
+      "bytes": 76444502,
+      "types": {
+        "frames": 1,
+        "images": 113,
+        "scripts": 30,
+        "shapes": 122,
+        "sprites": 703,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "20.swf",
+      "category": "stages/20",
+      "origin": "MainGame stage id",
+      "source_sha256": "38af2e43c646160ee9ed9336edd167264261794f91465d577660be5dafef6680",
+      "output": "assets/extracted/full/zmxiyou3/stages/20/20",
+      "files": 369,
+      "bytes": 19138293,
+      "types": {
+        "frames": 1,
+        "images": 48,
+        "scripts": 50,
+        "shapes": 62,
+        "sprites": 207,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "21v680.swf",
+      "category": "stages/21",
+      "origin": "MainGame stage id",
+      "source_sha256": "66ef3315ac43f68225b8ba0aa5408d4363f471a8920a4b6ea373493c06168095",
+      "output": "assets/extracted/full/zmxiyou3/stages/21/21v680",
+      "files": 1041,
+      "bytes": 79800676,
+      "types": {
+        "frames": 1,
+        "images": 149,
+        "scripts": 73,
+        "shapes": 188,
+        "sprites": 629,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "22v680.swf",
+      "category": "stages/22",
+      "origin": "MainGame stage id",
+      "source_sha256": "77ff44cb04dca81b8e96d55b3c738c4985a8a272c1001176520d9d8b7de13276",
+      "output": "assets/extracted/full/zmxiyou3/stages/22/22v680",
+      "files": 1143,
+      "bytes": 47502910,
+      "types": {
+        "buttons": 4,
+        "frames": 1,
+        "images": 90,
+        "scripts": 52,
+        "shapes": 202,
+        "sprites": 793,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "23v1110.swf",
+      "category": "stages/23",
+      "origin": "MainGame stage id",
+      "source_sha256": "47205d1a93011a945dfb1bba1b881a21d868f1c542c690ae99b99055812ef805",
+      "output": "assets/extracted/full/zmxiyou3/stages/23/23v1110",
+      "files": 552,
+      "bytes": 46007330,
+      "types": {
+        "frames": 1,
+        "images": 68,
+        "scripts": 24,
+        "shapes": 157,
+        "sprites": 301,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "24v1180.swf",
+      "category": "stages/24",
+      "origin": "MainGame stage id",
+      "source_sha256": "47c110c3faf98dbda818fdb750d455832a187f6b450883ec1ebbffe90c795530",
+      "output": "assets/extracted/full/zmxiyou3/stages/24/24v1180",
+      "files": 511,
+      "bytes": 69300990,
+      "types": {
+        "frames": 1,
+        "images": 49,
+        "scripts": 20,
+        "shapes": 129,
+        "sprites": 311,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "25v1310.swf",
+      "category": "stages/25",
+      "origin": "MainGame stage id",
+      "source_sha256": "020fa3d4f9fc0fa86b2f5f44d159f05972ae0a6052a2a2907dc4aee1a2803a1b",
+      "output": "assets/extracted/full/zmxiyou3/stages/25/25v1310",
+      "files": 480,
+      "bytes": 75150158,
+      "types": {
+        "frames": 1,
+        "images": 42,
+        "scripts": 16,
+        "shapes": 79,
+        "sprites": 341,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "3v690.swf",
+      "category": "stages/3",
+      "origin": "MainGame stage id",
+      "source_sha256": "0afee65686775a6ff6f3a850ca5700dec68bcc01c3efe5042e0e1bbd117a11b3",
+      "output": "assets/extracted/full/zmxiyou3/stages/3/3v690",
+      "files": 821,
+      "bytes": 102047062,
+      "types": {
+        "frames": 1,
+        "images": 77,
+        "scripts": 32,
+        "shapes": 86,
+        "sprites": 624,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "4v1070.swf",
+      "category": "stages/4",
+      "origin": "MainGame stage id",
+      "source_sha256": "6521656b44b3ab303b964195735b88a028c597260a1a25c66b7e3e38c36c89ba",
+      "output": "assets/extracted/full/zmxiyou3/stages/4/4v1070",
+      "files": 31,
+      "bytes": 18017519,
+      "types": {
+        "frames": 1,
+        "images": 7,
+        "scripts": 12,
+        "shapes": 3,
+        "sprites": 7,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "40v680.swf",
+      "category": "stages/40",
+      "origin": "MainGame stage id",
+      "source_sha256": "7a88168466d21a4531c26d95ec9ccd7ab3d958b4e71f89e944b376122bd64ebe",
+      "output": "assets/extracted/full/zmxiyou3/stages/40/40v680",
+      "files": 1047,
+      "bytes": 38706173,
+      "types": {
+        "fonts": 1,
+        "frames": 1,
+        "images": 54,
+        "scripts": 700,
+        "shapes": 74,
+        "sprites": 215,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "41v3651.swf",
+      "category": "stages/41",
+      "origin": "MainGame stage id",
+      "source_sha256": "1a7b45207ab035bd6bdc66caa3a6c308ab31ec0e385660aa70dc8143a0c1e134",
+      "output": "assets/extracted/full/zmxiyou3/stages/41/41v3651",
+      "files": 1297,
+      "bytes": 39186644,
+      "types": {
+        "buttons": 152,
+        "fonts": 1,
+        "frames": 1,
+        "images": 122,
+        "scripts": 101,
+        "shapes": 191,
+        "sounds": 2,
+        "sprites": 715,
+        "symbolClass": 1,
+        "texts": 11
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "42v680.swf",
+      "category": "stages/42",
+      "origin": "MainGame stage id",
+      "source_sha256": "49902edc687f1ccc50cd07b21198196c394c8efa6511894ee2eb244872f0ae23",
+      "output": "assets/extracted/full/zmxiyou3/stages/42/42v680",
+      "files": 764,
+      "bytes": 10314000,
+      "types": {
+        "frames": 1,
+        "images": 6,
+        "scripts": 685,
+        "shapes": 31,
+        "sprites": 40,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "43.swf",
+      "category": "stages/43",
+      "origin": "MainGame stage id",
+      "source_sha256": "a26a984ff115523a369c2f3cbb0018081b1427628872da94af59653c055b31e7",
+      "output": "assets/extracted/full/zmxiyou3/stages/43/43",
+      "files": 199,
+      "bytes": 15149816,
+      "types": {
+        "frames": 1,
+        "images": 11,
+        "scripts": 10,
+        "shapes": 47,
+        "sprites": 129,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "44_2.swf",
+      "category": "stages/44",
+      "origin": "MainGame stage id",
+      "source_sha256": "f8e86787b8bbce9922f5e0a229bfc53e17e1cbae63676d75d076ff42ed202412",
+      "output": "assets/extracted/full/zmxiyou3/stages/44/44_2",
+      "files": 626,
+      "bytes": 40078609,
+      "types": {
+        "frames": 1,
+        "images": 36,
+        "scripts": 21,
+        "shapes": 131,
+        "sprites": 436,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "45.swf",
+      "category": "stages/45",
+      "origin": "MainGame stage id",
+      "source_sha256": "84139ccb599a224e5b621e6d33b2ebe22b5b3bc8b73535f139ad80a802fc1b02",
+      "output": "assets/extracted/full/zmxiyou3/stages/45/45",
+      "files": 314,
+      "bytes": 14574618,
+      "types": {
+        "frames": 1,
+        "images": 43,
+        "scripts": 13,
+        "shapes": 75,
+        "sprites": 181,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "46.swf",
+      "category": "stages/46",
+      "origin": "MainGame stage id",
+      "source_sha256": "366b6537b81aaf54947742bf20623a9053da6577e466022fb085a2041b25ab0e",
+      "output": "assets/extracted/full/zmxiyou3/stages/46/46",
+      "files": 165,
+      "bytes": 10733163,
+      "types": {
+        "frames": 1,
+        "images": 26,
+        "scripts": 8,
+        "shapes": 45,
+        "sprites": 84,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "47v680.swf",
+      "category": "stages/47",
+      "origin": "MainGame stage id",
+      "source_sha256": "c3ec932b76a784039bd578fb889dc703dd9c105e74e16ce21b7b149ebcd497c4",
+      "output": "assets/extracted/full/zmxiyou3/stages/47/47v680",
+      "files": 1653,
+      "bytes": 66861922,
+      "types": {
+        "frames": 1,
+        "images": 95,
+        "scripts": 59,
+        "shapes": 317,
+        "sprites": 1180,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "48v680.swf",
+      "category": "stages/48",
+      "origin": "MainGame stage id",
+      "source_sha256": "ede60a23b2361f0ae09dd565d53b95ad180343f4e11884c56f29a4051dea2549",
+      "output": "assets/extracted/full/zmxiyou3/stages/48/48v680",
+      "files": 777,
+      "bytes": 11289210,
+      "types": {
+        "fonts": 1,
+        "frames": 1,
+        "images": 8,
+        "scripts": 697,
+        "shapes": 28,
+        "sprites": 38,
+        "symbolClass": 1,
+        "texts": 3
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "49.swf",
+      "category": "stages/49",
+      "origin": "MainGame stage id",
+      "source_sha256": "07ca31db1d17d219cfa38d0b5160897943b089a1de49cd35216717b98f24f013",
+      "output": "assets/extracted/full/zmxiyou3/stages/49/49",
+      "files": 215,
+      "bytes": 14939394,
+      "types": {
+        "frames": 1,
+        "images": 32,
+        "scripts": 9,
+        "shapes": 34,
+        "sprites": 138,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "5.swf",
+      "category": "stages/5",
+      "origin": "MainGame stage id",
+      "source_sha256": "c361bd724b4436c67b8becbffcc343e4de7017c97557606d876b656088d8a484",
+      "output": "assets/extracted/full/zmxiyou3/stages/5/5",
+      "files": 186,
+      "bytes": 25781380,
+      "types": {
+        "frames": 1,
+        "images": 23,
+        "scripts": 11,
+        "shapes": 12,
+        "sprites": 138,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "50v8201.swf",
+      "category": "stages/50",
+      "origin": "MainGame stage id",
+      "source_sha256": "50c336963dfd49d3bab4e9293eecea3710cb650bfa866d6e4d171b46750428c9",
+      "output": "assets/extracted/full/zmxiyou3/stages/50/50v8201",
+      "files": 1569,
+      "bytes": 41045149,
+      "types": {
+        "buttons": 4,
+        "frames": 1,
+        "images": 90,
+        "scripts": 34,
+        "shapes": 295,
+        "sprites": 1144,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "51.swf",
+      "category": "stages/51",
+      "origin": "MainGame stage id",
+      "source_sha256": "c9b2831c634f1c9e4147c2a5831c5a4f40ae5b9bfec6efb5ef4476036a727a25",
+      "output": "assets/extracted/full/zmxiyou3/stages/51/51",
+      "files": 232,
+      "bytes": 7424989,
+      "types": {
+        "frames": 1,
+        "images": 26,
+        "scripts": 7,
+        "shapes": 61,
+        "sprites": 136,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "52.swf",
+      "category": "stages/52",
+      "origin": "MainGame stage id",
+      "source_sha256": "5531cfb06c50d89c4e5aee49d51312e6b9d43c5a2a800b2d4250b388857d6f7f",
+      "output": "assets/extracted/full/zmxiyou3/stages/52/52",
+      "files": 104,
+      "bytes": 4550903,
+      "types": {
+        "frames": 1,
+        "images": 3,
+        "scripts": 4,
+        "shapes": 32,
+        "sprites": 63,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "53v800.swf",
+      "category": "stages/53",
+      "origin": "MainGame stage id",
+      "source_sha256": "b3866914f80cb4f0a598480436c8ba72dbd8c489771ff47c9cc72e6abbc97e8e",
+      "output": "assets/extracted/full/zmxiyou3/stages/53/53v800",
+      "files": 158,
+      "bytes": 4075191,
+      "types": {
+        "buttons": 4,
+        "frames": 1,
+        "images": 8,
+        "scripts": 11,
+        "shapes": 37,
+        "sprites": 96,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "54v840.swf",
+      "category": "stages/54",
+      "origin": "MainGame stage id",
+      "source_sha256": "8de9c8ecdc75e3b791fc4f4c444bdbf9efabd6db5475f4ae59d09794c573e7cf",
+      "output": "assets/extracted/full/zmxiyou3/stages/54/54v840",
+      "files": 103,
+      "bytes": 4037415,
+      "types": {
+        "frames": 1,
+        "images": 4,
+        "scripts": 5,
+        "shapes": 27,
+        "sprites": 65,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "55v880.swf",
+      "category": "stages/55",
+      "origin": "MainGame stage id",
+      "source_sha256": "e8b79d3a32e4f117b261c86f42d18e47080323251b88ddc504c982c32c65c79b",
+      "output": "assets/extracted/full/zmxiyou3/stages/55/55v880",
+      "files": 465,
+      "bytes": 36291517,
+      "types": {
+        "frames": 1,
+        "images": 60,
+        "scripts": 13,
+        "shapes": 98,
+        "sprites": 292,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "56v960.swf",
+      "category": "stages/56",
+      "origin": "MainGame stage id",
+      "source_sha256": "fe763d1aea8b693f200a2b62d7c7af218a5b9f164bb63bc45ae5ed2fcbd552c2",
+      "output": "assets/extracted/full/zmxiyou3/stages/56/56v960",
+      "files": 759,
+      "bytes": 23460341,
+      "types": {
+        "frames": 1,
+        "images": 77,
+        "scripts": 21,
+        "shapes": 176,
+        "sprites": 483,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "57.swf",
+      "category": "stages/57",
+      "origin": "MainGame stage id",
+      "source_sha256": "b017e57e1d43c9f9fad32ad25a3717c63b9fdc67fd6d213e4f585487912df2c5",
+      "output": "assets/extracted/full/zmxiyou3/stages/57/57",
+      "files": 12,
+      "bytes": 5919929,
+      "types": {
+        "frames": 1,
+        "images": 3,
+        "scripts": 3,
+        "shapes": 2,
+        "sprites": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "58.swf",
+      "category": "stages/58",
+      "origin": "MainGame stage id",
+      "source_sha256": "8cbe8561294de3751c24d4091a905ba4eb2b287291f88adde758559304e7471c",
+      "output": "assets/extracted/full/zmxiyou3/stages/58/58",
+      "files": 8,
+      "bytes": 6827223,
+      "types": {
+        "frames": 1,
+        "images": 2,
+        "scripts": 2,
+        "shapes": 1,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "59.swf",
+      "category": "stages/59",
+      "origin": "MainGame stage id",
+      "source_sha256": "3dcf18df66fcfd920aedb0d8e467a1cc0605f32c4b03981109c0c927406f902d",
+      "output": "assets/extracted/full/zmxiyou3/stages/59/59",
+      "files": 8,
+      "bytes": 2297263,
+      "types": {
+        "frames": 1,
+        "images": 2,
+        "scripts": 2,
+        "shapes": 1,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "6.swf",
+      "category": "stages/6",
+      "origin": "MainGame stage id",
+      "source_sha256": "9e592c392b9a85931fab04b0912ec2badfcce9dcaee9d643aa49a5e0ef042ddb",
+      "output": "assets/extracted/full/zmxiyou3/stages/6/6",
+      "files": 221,
+      "bytes": 23129774,
+      "types": {
+        "frames": 1,
+        "images": 43,
+        "scripts": 11,
+        "shapes": 37,
+        "sprites": 128,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "60.swf",
+      "category": "stages/60",
+      "origin": "MainGame stage id",
+      "source_sha256": "ca8fe1f21c8380419a325e343e682a0e024105fd3d1c4cb91761824f76253a67",
+      "output": "assets/extracted/full/zmxiyou3/stages/60/60",
+      "files": 14,
+      "bytes": 3823352,
+      "types": {
+        "frames": 1,
+        "images": 5,
+        "scripts": 5,
+        "shapes": 1,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "61.swf",
+      "category": "stages/61",
+      "origin": "MainGame stage id",
+      "source_sha256": "e71c2d7388daf8638bd8752396292bb2461a62a3c16b9656e5b9bd185e4ed29e",
+      "output": "assets/extracted/full/zmxiyou3/stages/61/61",
+      "files": 27,
+      "bytes": 4259261,
+      "types": {
+        "frames": 1,
+        "images": 7,
+        "scripts": 6,
+        "shapes": 6,
+        "sprites": 5,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "63.swf",
+      "category": "stages/63",
+      "origin": "MainGame stage id",
+      "source_sha256": "a72bd7ba5bf54d55b63a80700b5dd60d63832c5021c32235f38144272543e9a4",
+      "output": "assets/extracted/full/zmxiyou3/stages/63/63",
+      "files": 29,
+      "bytes": 4552077,
+      "types": {
+        "frames": 1,
+        "images": 7,
+        "scripts": 4,
+        "shapes": 7,
+        "sprites": 7,
+        "symbolClass": 1,
+        "texts": 2
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "64.swf",
+      "category": "stages/64",
+      "origin": "MainGame stage id",
+      "source_sha256": "523c0d696e38a06885c60ccde07641a0ebd97a8593dd0ae42d29d8f3aedd3d23",
+      "output": "assets/extracted/full/zmxiyou3/stages/64/64",
+      "files": 8,
+      "bytes": 3954819,
+      "types": {
+        "frames": 1,
+        "images": 2,
+        "scripts": 2,
+        "shapes": 1,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "65.swf",
+      "category": "stages/65",
+      "origin": "MainGame stage id",
+      "source_sha256": "d363910bbc1347969f3959678b6d2debfbd1032cc6b5276298ae73a5543f79fa",
+      "output": "assets/extracted/full/zmxiyou3/stages/65/65",
+      "files": 8,
+      "bytes": 1810097,
+      "types": {
+        "frames": 1,
+        "images": 2,
+        "scripts": 2,
+        "shapes": 1,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "7.swf",
+      "category": "stages/7",
+      "origin": "MainGame stage id",
+      "source_sha256": "7ba93a8b12fb4620fa2e006a72d0347921a121b5e40cbfefb6953811d4be8403",
+      "output": "assets/extracted/full/zmxiyou3/stages/7/7",
+      "files": 331,
+      "bytes": 14315918,
+      "types": {
+        "frames": 1,
+        "images": 32,
+        "scripts": 15,
+        "shapes": 32,
+        "sprites": 250,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "8.swf",
+      "category": "stages/8",
+      "origin": "MainGame stage id",
+      "source_sha256": "d434da80fef7f157284a2f1b6a8941cc4f8508bc58c731748ed887b657c53bf4",
+      "output": "assets/extracted/full/zmxiyou3/stages/8/8",
+      "files": 1145,
+      "bytes": 40096213,
+      "types": {
+        "frames": 1,
+        "images": 94,
+        "scripts": 44,
+        "shapes": 113,
+        "sprites": 892,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "9v680.swf",
+      "category": "stages/9",
+      "origin": "MainGame stage id",
+      "source_sha256": "689fc021ec2c7c27710ac3fd9e22cec385cf57d5d3f2ffc9978bf8050904e891",
+      "output": "assets/extracted/full/zmxiyou3/stages/9/9v680",
+      "files": 364,
+      "bytes": 51035908,
+      "types": {
+        "frames": 1,
+        "images": 42,
+        "scripts": 21,
+        "shapes": 33,
+        "sprites": 266,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "AboutUs.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "1cac42003754aa4b6222b26f43fe8cd5921cdc08a7cf7f6a452eee806cbd4651",
+      "output": "assets/extracted/full/zmxiyou3/ui/AboutUs",
+      "files": 13,
+      "bytes": 3509588,
+      "types": {
+        "buttons": 4,
+        "frames": 1,
+        "images": 1,
+        "scripts": 1,
+        "shapes": 4,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ActivityInterfacev3870.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "f833f8f545dd96bae9ae04a5149e0f7a95de14fb7bf00939cf03ee123cea6462",
+      "output": "assets/extracted/full/zmxiyou3/ui/ActivityInterfacev3870",
+      "files": 881,
+      "bytes": 202644258,
+      "types": {
+        "buttons": 116,
+        "fonts": 3,
+        "frames": 1,
+        "images": 180,
+        "scripts": 133,
+        "shapes": 184,
+        "sprites": 133,
+        "symbolClass": 1,
+        "texts": 130
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "BackPackInterfacev1000.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "abb20d6246250821831393de673f2b22b10b9c641ab0ba62d1ccb976a2497ab0",
+      "output": "assets/extracted/full/zmxiyou3/ui/BackPackInterfacev1000",
+      "files": 209,
+      "bytes": 6683959,
+      "types": {
+        "buttons": 20,
+        "fonts": 1,
+        "frames": 1,
+        "images": 39,
+        "scripts": 3,
+        "shapes": 30,
+        "sprites": 100,
+        "symbolClass": 1,
+        "texts": 14
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Cartoon.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "d12e99076c76643f1a9b755e7b9f49a509d8aa401227e019fa03751fedf6a9a7",
+      "output": "assets/extracted/full/zmxiyou3/ui/Cartoon",
+      "files": 17,
+      "bytes": 8982756,
+      "types": {
+        "frames": 1,
+        "images": 5,
+        "scripts": 1,
+        "shapes": 5,
+        "sprites": 4,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ChildrenDayInterfacev3650.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "cff203fba6623538132c95b17f2064155729ddcdd32860ba31dd7de3ea1a82e0",
+      "output": "assets/extracted/full/zmxiyou3/ui/ChildrenDayInterfacev3650",
+      "files": 40,
+      "bytes": 1759052,
+      "types": {
+        "buttons": 16,
+        "fonts": 1,
+        "frames": 1,
+        "images": 9,
+        "scripts": 1,
+        "shapes": 9,
+        "sprites": 1,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "EightImmortalsInterfacev830.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "0e3fe3763ed81d9100c827792d2673a95af9fc0914df2dda1d7e2164829ea09d",
+      "output": "assets/extracted/full/zmxiyou3/ui/EightImmortalsInterfacev830",
+      "files": 114,
+      "bytes": 4729811,
+      "types": {
+        "buttons": 8,
+        "frames": 1,
+        "images": 32,
+        "scripts": 12,
+        "shapes": 32,
+        "sprites": 28,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "GameHelp.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "895b30574b6cbbefab7ff50ea0e5ce9fa1f6df701439f6048ac44cfcb0bb66c9",
+      "output": "assets/extracted/full/zmxiyou3/ui/GameHelp",
+      "files": 30,
+      "bytes": 4125920,
+      "types": {
+        "buttons": 12,
+        "frames": 1,
+        "images": 2,
+        "scripts": 1,
+        "shapes": 11,
+        "sprites": 2,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "GameVipInterfacev3530.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "3761fd2d8066894fe9fd499f6feab1096417518f0ac7c3d3be3e422908306d2f",
+      "output": "assets/extracted/full/zmxiyou3/ui/GameVipInterfacev3530",
+      "files": 327,
+      "bytes": 5493302,
+      "types": {
+        "buttons": 68,
+        "fonts": 1,
+        "frames": 1,
+        "images": 52,
+        "scripts": 23,
+        "shapes": 69,
+        "sprites": 94,
+        "symbolClass": 1,
+        "texts": 18
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "GardenInterfacev3500.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "c786ae0a194b4a22bb84b143c9da4d763c263d9ef7873191eaf47f77b5993db2",
+      "output": "assets/extracted/full/zmxiyou3/ui/GardenInterfacev3500",
+      "files": 709,
+      "bytes": 11857130,
+      "types": {
+        "buttons": 132,
+        "fonts": 1,
+        "frames": 1,
+        "images": 109,
+        "morphshapes": 1,
+        "scripts": 24,
+        "shapes": 145,
+        "sprites": 263,
+        "symbolClass": 1,
+        "texts": 32
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "MicropaymentInterfacev1420.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "bfb1e2226034e545c9e4686a070081239f5e2d4189f913fc1448144a29971b87",
+      "output": "assets/extracted/full/zmxiyou3/ui/MicropaymentInterfacev1420",
+      "files": 146,
+      "bytes": 3177824,
+      "types": {
+        "buttons": 56,
+        "fonts": 1,
+        "frames": 1,
+        "images": 38,
+        "scripts": 3,
+        "shapes": 38,
+        "sprites": 3,
+        "symbolClass": 1,
+        "texts": 5
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "MidAutumnInterface3630.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "641311b1fa2b2fc3a5c135c988293dd94e855c7915d464b081cace376e547751",
+      "output": "assets/extracted/full/zmxiyou3/ui/MidAutumnInterface3630",
+      "files": 43,
+      "bytes": 1769316,
+      "types": {
+        "buttons": 16,
+        "fonts": 1,
+        "frames": 1,
+        "images": 10,
+        "scripts": 1,
+        "shapes": 11,
+        "sprites": 1,
+        "symbolClass": 1,
+        "texts": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "SevenStarInterfacev940.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "17532b35fd6bba1d4d8ad0c9a58aa778469e6ee46a15d444c5886318d132e515",
+      "output": "assets/extracted/full/zmxiyou3/ui/SevenStarInterfacev940",
+      "files": 49,
+      "bytes": 16399988,
+      "types": {
+        "buttons": 8,
+        "frames": 1,
+        "images": 13,
+        "scripts": 2,
+        "shapes": 14,
+        "sprites": 10,
+        "symbolClass": 1
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Shaizi.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "569f7d0c1acb9d1b3f8f55c2d07bca1c4b8b988a19e86028d482fcf6d5790ee6",
+      "output": "assets/extracted/full/zmxiyou3/ui/Shaizi",
+      "files": 114,
+      "bytes": 3150749,
+      "types": {
+        "buttons": 20,
+        "fonts": 1,
+        "frames": 1,
+        "images": 19,
+        "scripts": 3,
+        "shapes": 27,
+        "sprites": 38,
+        "symbolClass": 1,
+        "texts": 4
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "SutraInterfacev1320.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "d4a53914b1deecdfc7aa53c7aef54eb216bc8007668b556b053ad28a3b20f8c3",
+      "output": "assets/extracted/full/zmxiyou3/ui/SutraInterfacev1320",
+      "files": 869,
+      "bytes": 5494147,
+      "types": {
+        "buttons": 20,
+        "fonts": 1,
+        "frames": 1,
+        "images": 51,
+        "scripts": 5,
+        "shapes": 72,
+        "sprites": 708,
+        "symbolClass": 1,
+        "texts": 10
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "TaskInterfacev1490.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "8364248c402938f824b347f2ce785bf3a91712797fdc2f07156f5dfc5a523fac",
+      "output": "assets/extracted/full/zmxiyou3/ui/TaskInterfacev1490",
+      "files": 80,
+      "bytes": 766574,
+      "types": {
+        "buttons": 12,
+        "fonts": 1,
+        "frames": 1,
+        "images": 25,
+        "scripts": 7,
+        "shapes": 18,
+        "sprites": 10,
+        "symbolClass": 1,
+        "texts": 5
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "Union.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "80bf2e01825a9c4af335fcec5d857f27b7800a8d3771f4c10372ae17065851eb",
+      "output": "assets/extracted/full/zmxiyou3/ui/Union",
+      "files": 240,
+      "bytes": 9940375,
+      "types": {
+        "buttons": 88,
+        "fonts": 1,
+        "frames": 1,
+        "images": 40,
+        "scripts": 11,
+        "shapes": 40,
+        "sprites": 15,
+        "symbolClass": 1,
+        "texts": 43
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ValentinesInterfacev820.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "588a2c4b1079626a8a44b80d8c78a243d691b78a5caa3198d1b56a89a8276816",
+      "output": "assets/extracted/full/zmxiyou3/ui/ValentinesInterfacev820",
+      "files": 57,
+      "bytes": 2900583,
+      "types": {
+        "buttons": 24,
+        "fonts": 1,
+        "frames": 1,
+        "images": 13,
+        "scripts": 1,
+        "shapes": 13,
+        "sprites": 1,
+        "symbolClass": 1,
+        "texts": 2
+      }
+    },
+    {
+      "game": "zmxiyou3",
+      "name": "ZLSaintsInterface.swf",
+      "category": "ui",
+      "origin": "ActionScript literal",
+      "source_sha256": "0df6184b594ed1cce79e8d84726aeced4b7f44d3b6cf7dd996594c33c1b76812",
+      "output": "assets/extracted/full/zmxiyou3/ui/ZLSaintsInterface",
+      "files": 32,
+      "bytes": 2328703,
+      "types": {
+        "buttons": 16,
+        "frames": 1,
+        "images": 6,
+        "scripts": 1,
+        "shapes": 6,
+        "sprites": 1,
+        "symbolClass": 1
+      }
+    }
+  ]
+}

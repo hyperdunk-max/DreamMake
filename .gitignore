@@ -1,0 +1,10 @@
+.godot/
+*.tmp
+*.log
+exports/
+.tools/
+
+# Raw Flash sources and extracted copyrighted assets stay local by default.
+sources/raw/
+sources/decoded/
+assets/extracted/

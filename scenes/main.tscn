@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://src/actors/player.gd" id="2_player"]
+[ext_resource type="Script" path="res://src/actors/training_enemy.gd" id="3_enemy"]
+[ext_resource type="Script" path="res://src/ui/hud.gd" id="4_hud"]
+[ext_resource type="Script" path="res://src/actors/layered_sprite_animator.gd" id="5_layered_animator"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong.tres" id="6_wukong_profile"]
+[ext_resource type="Script" path="res://src/states/character_state_machine.gd" id="7_state_machine"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong_combo.tres" id="8_wukong_combo"]
+
+[sub_resource type="RectangleShape2D" id="FloorShape"]
+size = Vector2(940, 70)
+
+[sub_resource type="CapsuleShape2D" id="PlayerShape"]
+radius = 18.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="EnemyShape"]
+radius = 20.0
+height = 62.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(470, 550)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(170, 515)
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("2_player")
+role_id = 1
+animation_profile = ExtResource("6_wukong_profile")
+combo_attack_profile = ExtResource("8_wukong_combo")
+body_showid = 1
+weapon_showid = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -29)
+shape = SubResource("PlayerShape")
+
+[node name="LayeredSpriteAnimator" type="Node2D" parent="Player"]
+position = Vector2(0, -72)
+script = ExtResource("5_layered_animator")
+
+[node name="Body" type="Sprite2D" parent="Player/LayeredSpriteAnimator"]
+
+[node name="Weapon" type="Sprite2D" parent="Player/LayeredSpriteAnimator"]
+
+[node name="ActionStateMachine" type="Node" parent="Player"]
+script = ExtResource("7_state_machine")
+
+[node name="TrainingEnemy" type="CharacterBody2D" parent="."]
+position = Vector2(700, 515)
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("3_enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrainingEnemy"]
+position = Vector2(0, -31)
+shape = SubResource("EnemyShape")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_hud")

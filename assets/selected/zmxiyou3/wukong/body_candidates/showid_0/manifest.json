@@ -1,0 +1,454 @@
+{
+  "showid": "0",
+  "name": "默认 / 无防具",
+  "format": "bitmap_atlas_6x14",
+  "frame_size": [
+    200,
+    200
+  ],
+  "source_atlas": "assets/extracted/full/zmxiyou3/characters/wukong/body/0/ROLE1_0/images/1_ROLE1_0.png",
+  "selected_atlas": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/source_atlas.png",
+  "frames": [
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_00.png"
+    },
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_01.png"
+    },
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_02.png"
+    },
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_03.png"
+    },
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_04.png"
+    },
+    {
+      "action": "wait",
+      "action_label": "待机",
+      "row": 0,
+      "column": 5,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait/frame_05.png"
+    },
+    {
+      "action": "wait2",
+      "action_label": "待机变化",
+      "row": 1,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait2/frame_00.png"
+    },
+    {
+      "action": "wait2",
+      "action_label": "待机变化",
+      "row": 1,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/wait2/frame_01.png"
+    },
+    {
+      "action": "walk",
+      "action_label": "行走",
+      "row": 2,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/walk/frame_00.png"
+    },
+    {
+      "action": "walk",
+      "action_label": "行走",
+      "row": 2,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/walk/frame_01.png"
+    },
+    {
+      "action": "walk",
+      "action_label": "行走",
+      "row": 2,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/walk/frame_02.png"
+    },
+    {
+      "action": "walk",
+      "action_label": "行走",
+      "row": 2,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/walk/frame_03.png"
+    },
+    {
+      "action": "run",
+      "action_label": "跑步",
+      "row": 3,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/run/frame_00.png"
+    },
+    {
+      "action": "run",
+      "action_label": "跑步",
+      "row": 3,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/run/frame_01.png"
+    },
+    {
+      "action": "run",
+      "action_label": "跑步",
+      "row": 3,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/run/frame_02.png"
+    },
+    {
+      "action": "run",
+      "action_label": "跑步",
+      "row": 3,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/run/frame_03.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_00.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_01.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_02.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_03.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_04.png"
+    },
+    {
+      "action": "jump_skill",
+      "action_label": "跳跃 / 技能",
+      "row": 4,
+      "column": 5,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_skill/frame_05.png"
+    },
+    {
+      "action": "jump_air",
+      "action_label": "空中",
+      "row": 5,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_air/frame_00.png"
+    },
+    {
+      "action": "jump_air",
+      "action_label": "空中",
+      "row": 5,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_air/frame_01.png"
+    },
+    {
+      "action": "jump_air",
+      "action_label": "空中",
+      "row": 5,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_air/frame_02.png"
+    },
+    {
+      "action": "jump_air",
+      "action_label": "空中",
+      "row": 5,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_air/frame_03.png"
+    },
+    {
+      "action": "jump_air",
+      "action_label": "空中",
+      "row": 5,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/jump_air/frame_04.png"
+    },
+    {
+      "action": "hit1_2",
+      "action_label": "普攻 1 / 2",
+      "row": 6,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit1_2/frame_00.png"
+    },
+    {
+      "action": "hit1_2",
+      "action_label": "普攻 1 / 2",
+      "row": 6,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit1_2/frame_01.png"
+    },
+    {
+      "action": "hit1_2",
+      "action_label": "普攻 1 / 2",
+      "row": 6,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit1_2/frame_02.png"
+    },
+    {
+      "action": "hit1_2",
+      "action_label": "普攻 1 / 2",
+      "row": 6,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit1_2/frame_03.png"
+    },
+    {
+      "action": "hit1_2",
+      "action_label": "普攻 1 / 2",
+      "row": 6,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit1_2/frame_04.png"
+    },
+    {
+      "action": "hit3",
+      "action_label": "普攻 3",
+      "row": 7,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit3/frame_00.png"
+    },
+    {
+      "action": "hit3",
+      "action_label": "普攻 3",
+      "row": 7,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit3/frame_01.png"
+    },
+    {
+      "action": "hit3",
+      "action_label": "普攻 3",
+      "row": 7,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit3/frame_02.png"
+    },
+    {
+      "action": "hit3",
+      "action_label": "普攻 3",
+      "row": 7,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit3/frame_03.png"
+    },
+    {
+      "action": "hit3",
+      "action_label": "普攻 3",
+      "row": 7,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit3/frame_04.png"
+    },
+    {
+      "action": "hit4",
+      "action_label": "普攻 4",
+      "row": 8,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit4/frame_00.png"
+    },
+    {
+      "action": "hit4",
+      "action_label": "普攻 4",
+      "row": 8,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit4/frame_01.png"
+    },
+    {
+      "action": "hit4",
+      "action_label": "普攻 4",
+      "row": 8,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit4/frame_02.png"
+    },
+    {
+      "action": "hit4",
+      "action_label": "普攻 4",
+      "row": 8,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit4/frame_03.png"
+    },
+    {
+      "action": "hit4",
+      "action_label": "普攻 4",
+      "row": 8,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit4/frame_04.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_00.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_01.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_02.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_03.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 4,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_04.png"
+    },
+    {
+      "action": "hit5",
+      "action_label": "普攻 5",
+      "row": 9,
+      "column": 5,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit5/frame_05.png"
+    },
+    {
+      "action": "hit6",
+      "action_label": "普攻 6",
+      "row": 10,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit6/frame_00.png"
+    },
+    {
+      "action": "hit6",
+      "action_label": "普攻 6",
+      "row": 10,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit6/frame_01.png"
+    },
+    {
+      "action": "hit6",
+      "action_label": "普攻 6",
+      "row": 10,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit6/frame_02.png"
+    },
+    {
+      "action": "hit6",
+      "action_label": "普攻 6",
+      "row": 10,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit6/frame_03.png"
+    },
+    {
+      "action": "hit8",
+      "action_label": "技能 8",
+      "row": 11,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit8/frame_00.png"
+    },
+    {
+      "action": "hit8",
+      "action_label": "技能 8",
+      "row": 11,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit8/frame_01.png"
+    },
+    {
+      "action": "hit8",
+      "action_label": "技能 8",
+      "row": 11,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit8/frame_02.png"
+    },
+    {
+      "action": "hit8",
+      "action_label": "技能 8",
+      "row": 11,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit8/frame_03.png"
+    },
+    {
+      "action": "skill_hurt",
+      "action_label": "技能 / 受击",
+      "row": 12,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/skill_hurt/frame_00.png"
+    },
+    {
+      "action": "skill_hurt",
+      "action_label": "技能 / 受击",
+      "row": 12,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/skill_hurt/frame_01.png"
+    },
+    {
+      "action": "skill_hurt",
+      "action_label": "技能 / 受击",
+      "row": 12,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/skill_hurt/frame_02.png"
+    },
+    {
+      "action": "skill_hurt",
+      "action_label": "技能 / 受击",
+      "row": 12,
+      "column": 3,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/skill_hurt/frame_03.png"
+    },
+    {
+      "action": "hit14",
+      "action_label": "技能 14",
+      "row": 13,
+      "column": 0,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit14/frame_00.png"
+    },
+    {
+      "action": "hit14",
+      "action_label": "技能 14",
+      "row": 13,
+      "column": 1,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit14/frame_01.png"
+    },
+    {
+      "action": "hit14",
+      "action_label": "技能 14",
+      "row": 13,
+      "column": 2,
+      "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/frames/hit14/frame_02.png"
+    }
+  ]
+}

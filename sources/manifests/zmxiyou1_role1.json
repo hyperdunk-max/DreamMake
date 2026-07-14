@@ -1,0 +1,23 @@
+{
+  "source_package": "zmxiyou1/Role_v7.swf",
+  "root_symbol": {
+    "character_id": 575,
+    "class": "export.hero.Role1"
+  },
+  "default_pose_selectors": {
+    "attack1": 211,
+    "walk": 440,
+    "run": 452,
+    "idle": 529,
+    "jump_up": 533,
+    "jump_mid": 539,
+    "jump_fall": 543,
+    "hurt": 553
+  },
+  "selection_rule": "Export frame 1 from each selector for the default cloth and weapon set.",
+  "normalization": {
+    "frame_size": 160,
+    "scale": "shared across all eight poses",
+    "anchor": "bottom-center"
+  }
+}

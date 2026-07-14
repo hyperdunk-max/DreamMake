@@ -1,0 +1,349 @@
+{
+  "showid": "11",
+  "name": "斗战",
+  "format": "movieclip_sprite_groups",
+  "outer_action_group": "DefineSprite_130_ROLE1_11",
+  "source": "assets/extracted/full/zmxiyou3/characters/wukong/body/11/ROLE1_11/sprites",
+  "sprite_groups": [
+    {
+      "group": "DefineSprite_102",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_102/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_103",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_103/6.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_104",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_104/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_104/2.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_105",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_105/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_105/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_105/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_105/4.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_106",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_106/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_106/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_106/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_106/4.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_107",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_107/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_112",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_112/6.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_113",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_113/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_114",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_114/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_114/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_114/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_114/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_114/5.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_115",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_115/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_115/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_115/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_115/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_115/5.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_117",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_117/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_118",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_118/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_118/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_118/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_118/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_118/5.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_122",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_122/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_122/2.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_123",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_123/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_123/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_123/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_123/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_123/5.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_124",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_124/6.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_125",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_125/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_125/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_125/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_125/4.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_126",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_126/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_126/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_126/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_126/4.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_128",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_128/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_128/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_128/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_128/4.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_129",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_129/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_129/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_129/3.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_13",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_13/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_130_ROLE1_11",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/12.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/13.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_130_ROLE1_11/14.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_2",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_2/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_21",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_21/7.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_35",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_35/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_46",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_46/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_59",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_59/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_71",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_71/12.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_82",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/1.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/2.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/3.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/4.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/5.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/6.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/7.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/8.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/9.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/10.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/11.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/12.png",
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_82/13.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_85",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_85/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_88",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_88/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_91",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_91/1.png"
+      ]
+    },
+    {
+      "group": "DefineSprite_97",
+      "files": [
+        "assets/selected/zmxiyou3/wukong/body_candidates/showid_11/source_sprites/DefineSprite_97/1.png"
+      ]
+    }
+  ],
+  "png_count": 179
+}

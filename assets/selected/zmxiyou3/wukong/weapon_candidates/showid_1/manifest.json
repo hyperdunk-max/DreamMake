@@ -1,0 +1,11 @@
+{
+  "showid": "1",
+  "name": "普通的行者棍",
+  "format": "bitmap_atlas_6x14",
+  "frame_size": [
+    200,
+    200
+  ],
+  "source_atlas": "assets/extracted/full/zmxiyou3/characters/wukong/weapon/1/ROLE1_EQUIP_1/images/1_ROLE1_EQUIP_1.png",
+  "selected_atlas": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_1/source_atlas.png"
+}
