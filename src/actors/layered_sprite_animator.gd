@@ -62,7 +62,7 @@ func register_role(
 	var initial_weapon := profile.default_weapon_showid if weapon_showid < 0 else weapon_showid
 	_body_showid = initial_body
 	_weapon_showid = initial_weapon
-	position = profile.visual_offset
+	position = profile.get_runtime_visual_offset()
 	if not _refresh_equipment_and_animations():
 		unregister_role()
 		return false

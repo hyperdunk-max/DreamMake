@@ -14,6 +14,7 @@ logical_fps = 24.0
 frame_size = Vector2i(200, 200)
 source_facing = -1
 visual_offset = Vector2(0, -68)
+visual_nudge = Vector2(0, 5)
 default_action = &"idle"
 default_body_showid = 1
 default_weapon_showid = 0
@@ -42,8 +43,8 @@ actions = {
 actions_by_mode = {
 &"arrow": {
 &"hit1": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 1, 1, 12), "row": 6, "start_column": 0}]},
-&"hit2": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2, 2, 10), "row": 7, "start_column": 0}]},
-&"hit3": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 4, 1, 1, 10), "row": 8, "start_column": 0}]},
+&"hit2": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 1, 1, 12), "row": 6, "start_column": 0}]},
+&"hit3": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2, 2, 10), "row": 7, "start_column": 0}]},
 &"hurt": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(8), "row": 4, "start_column": 2}]},
 &"idle": {"loop": true, "segments": [{"cycles": 6, "holds": PackedInt32Array(2, 2, 2, 3, 2, 4), "row": 0, "start_column": 0}, {"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 13, 2, 24), "row": 1, "start_column": 0}]},
 &"jump_double": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2, 2), "row": 5, "start_column": 0}]},

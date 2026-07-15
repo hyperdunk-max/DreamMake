@@ -20,7 +20,7 @@ func _run() -> void:
 		[5, 5, 1, 1, 5],
 		[Vector2(120, -45), Vector2(120, -45), Vector2(30, -160), Vector2(160, -60), Vector2(165, -70)]
 	)
-	_verify_profile(TANGSENG, [18], [18], [Vector2(50, -40)])
+	_verify_profile(TANGSENG, [18], [7], [Vector2(50, -40)])
 	_verify_profile(
 		BAJIE,
 		[13, 13, 13],
@@ -35,10 +35,15 @@ func _run() -> void:
 	)
 	_verify_profile(
 		SHASENG_ARROW,
-		[13, 13, 13],
-		[5, 5, 4],
+		[18, 18, 20],
+		[5, 5, 3],
 		[Vector2(90, -50), Vector2(90, -50), Vector2(115, -70)]
 	)
+	_assert(StringName(TANGSENG.steps[0]["delivery"]) == &"projectile", "Tangseng hit1 should use its source projectile delivery.")
+	_assert(TANGSENG.steps[0]["projectile_frame_hitboxes"].size() == 24, "Tangseng projectile should track all 24 source frames.")
+	_assert(StringName(SHASENG_ARROW.steps[2]["delivery"]) == &"projectile", "Shaseng bow finisher should use Role4BulletArrow2 delivery.")
+	_assert(SHASENG_ARROW.steps[2]["projectile_frame_hitboxes"][4].size() == 3, "Shaseng bow finisher should expose three separate arrow hitboxes.")
+	_assert(int(SHASENG_ARROW.steps[2]["projectile_rehit_interval_frames"]) == 5, "Shaseng Role4BulletArrow2 should preserve its 5-frame attack interval.")
 	_assert(float(SHASENG.steps[2]["move_speed"]) == 192.0, "Shaseng shovel finisher should preserve source 8px/tick lunge.")
 	_assert(Vector2(WUKONG.steps[0]["knockback"]) == Vector2(48, -72), "Wukong hit1 knockback should map source 2,-3 px/tick to 24Hz velocity.")
 	_assert(Vector2(WUKONG.steps[4]["knockback"]) == Vector2(360, -48), "Wukong hit5 knockback should map source 15,-2 px/tick to 24Hz velocity.")

@@ -8,6 +8,7 @@ extends Resource
 @export var frame_size := Vector2i(200, 200)
 @export_enum("Left:-1", "Right:1") var source_facing := -1
 @export var visual_offset := Vector2.ZERO
+@export var visual_nudge := Vector2.ZERO
 @export var default_action: StringName = &"idle"
 @export var default_body_showid := 0
 @export var default_weapon_showid := 0
@@ -23,6 +24,10 @@ extends Resource
 @export var actions_by_mode: Dictionary = {}
 
 var _texture_cache: Dictionary = {}
+
+
+func get_runtime_visual_offset() -> Vector2:
+	return visual_offset + visual_nudge
 
 
 func validate_for_role(expected_role_id: int) -> PackedStringArray:

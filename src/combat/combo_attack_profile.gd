@@ -23,6 +23,14 @@ func validate_for_role(expected_role_id: int) -> PackedStringArray:
 			errors.append("Combo step %d has no animation action." % index)
 		if int(step.get("duration_ticks", 0)) <= 0:
 			errors.append("Combo step %d has an invalid duration." % index)
+		if StringName(step.get("delivery", &"melee")) == &"projectile":
+			var frame_hitboxes: Array = Array(step.get("projectile_frame_hitboxes", []))
+			var effect_frame_count := int(step.get("effect_frame_count", 0))
+			if frame_hitboxes.size() != effect_frame_count:
+				errors.append(
+					"Projectile combo step %d has %d hitbox frames for %d effect frames."
+					% [index, frame_hitboxes.size(), effect_frame_count]
+				)
 	return errors
 
 

@@ -31,6 +31,10 @@ func configure(
 
 
 func _process(delta: float) -> void:
+	_advance_animation(delta)
+
+
+func _advance_animation(delta: float) -> bool:
 	_frame_accumulator += delta * _fps
 	var pending_frames := mini(int(_frame_accumulator), MAX_CATCH_UP_FRAMES)
 	_frame_accumulator -= pending_frames
@@ -38,5 +42,10 @@ func _process(delta: float) -> void:
 		_frame_index += 1
 		if _frame_index >= _frames.size():
 			queue_free()
-			return
+			return false
 		texture = _frames[_frame_index] as Texture2D
+	return true
+
+
+func get_frame_index() -> int:
+	return _frame_index

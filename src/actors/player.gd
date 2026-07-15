@@ -10,6 +10,7 @@ const JUMP_SPEED := -500.0
 const GRAVITY := 1450.0
 const HURT_TIME := 8.0 / 24.0
 const DOUBLE_JUMP_ANIMATION_TIME := 10.0 / 24.0
+const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_effect.gd")
 
 @export var max_health := 100
 @export var role_definition: RoleDefinition
@@ -157,10 +158,13 @@ func _update_pose() -> void:
 
 func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 	_spawn_attack_effect(step)
+	if StringName(step.get("delivery", &"melee")) == &"projectile":
+		return
 	var space := get_world_2d().direct_space_state
 	var shape := RectangleShape2D.new()
 	shape.size = Vector2(step.get("hitbox_size", Vector2(72, 48)))
 	var hitbox_offset := Vector2(step.get("hitbox_offset", Vector2(48, -31)))
+	hitbox_offset += animation_profile.visual_nudge
 	hitbox_offset.x *= facing
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.shape = shape
@@ -176,7 +180,7 @@ func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 			target.take_hit(int(step.get("damage", 18)), knockback)
 
 
-func _spawn_attack_effect(step: Dictionary) -> void:
+func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 	var effect_frames: Array = step.get("effect_frames", [])
 	if effect_frames.is_empty():
 		var effect_paths: Array = Array(step.get("effect_frame_paths", PackedStringArray()))
@@ -192,18 +196,28 @@ func _spawn_attack_effect(step: Dictionary) -> void:
 			if texture != null:
 				effect_frames.append(texture)
 	if effect_frames.is_empty():
-		return
-	var effect := OneShotSpriteEffect.new()
+		return null
+	var is_projectile := StringName(step.get("delivery", &"melee")) == &"projectile"
+	var effect: OneShotSpriteEffect = PROJECTILE_EFFECT_SCRIPT.new() if is_projectile else OneShotSpriteEffect.new()
 	var effect_fps := float(step.get("effect_fps", combo_attack_profile.logical_fps))
 	var source_facing := int(step.get("effect_source_facing", animation_profile.source_facing))
 	var sprite_offset := Vector2(step.get("effect_sprite_offset", Vector2.ZERO))
-	if not effect.configure(effect_frames, effect_fps, source_facing, facing, sprite_offset):
+	var configured := false
+	if is_projectile:
+		configured = effect.configure_projectile(
+			effect_frames, effect_fps, source_facing, facing, sprite_offset, self, step
+		)
+	else:
+		configured = effect.configure(effect_frames, effect_fps, source_facing, facing, sprite_offset)
+	if not configured:
 		effect.queue_free()
-		return
+		return null
 	var offset := Vector2(step.get("effect_offset", Vector2.ZERO))
+	offset += animation_profile.visual_nudge
 	offset.x *= facing
 	get_tree().current_scene.add_child(effect)
 	effect.global_position = global_position + offset
+	return effect
 
 
 func take_hit(damage: int, impulse: Vector2) -> void:

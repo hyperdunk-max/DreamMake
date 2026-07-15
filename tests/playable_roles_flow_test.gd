@@ -1,6 +1,7 @@
 extends SceneTree
 
 var _failed := false
+const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_effect.gd")
 
 
 func _init() -> void:
@@ -27,6 +28,10 @@ func _run() -> void:
 		Vector2(0, -72), Vector2(0, -56),
 		Vector2(0, -56), Vector2(0, -68),
 	]
+	var expected_runtime_visual_offsets := [
+		Vector2(0, -67), Vector2(0, -51),
+		Vector2(0, -51), Vector2(0, -63),
+	]
 	var expected_body_counts := [6, 7, 6, 7]
 	var expected_weapon_counts := [9, 7, 9, 9]
 	var required_shared_actions := [
@@ -40,6 +45,7 @@ func _run() -> void:
 		_assert(definition.validate().is_empty(), "Role %d definition should validate." % definition.role_id)
 		_assert(profile.frame_size == expected_frame_sizes[index], "Role %d should use its source cell size." % definition.role_id)
 		_assert(profile.visual_offset == expected_visual_offsets[index], "Role %d should use its measured shared foot anchor." % definition.role_id)
+		_assert(profile.visual_nudge == Vector2(0, 5), "Role %d should apply the requested 5px downward tuning nudge." % definition.role_id)
 		_assert(profile.get_body_showids().size() == expected_body_counts[index], "Role %d should expose every selected body atlas." % definition.role_id)
 		_assert(profile.get_weapon_showids().size() == expected_weapon_counts[index], "Role %d should expose every selected weapon atlas." % definition.role_id)
 		for action in required_shared_actions:
@@ -49,7 +55,7 @@ func _run() -> void:
 
 		_assert(player.configure_role(definition), "Role %d should configure on Player." % definition.role_id)
 		_assert(animator.get_registered_role_id() == definition.role_id, "Animator should register role %d." % definition.role_id)
-		_assert(animator.position == profile.visual_offset, "Animator should apply role %d visual anchor." % definition.role_id)
+		_assert(animator.position == expected_runtime_visual_offsets[index], "Animator should apply role %d source anchor plus tuning nudge." % definition.role_id)
 		for body_showid in profile.get_body_showids():
 			_assert(player.select_body(int(body_showid)), "Role %d body %d should be selectable." % [definition.role_id, body_showid])
 			_assert(animator.get_node("Body").texture != null, "Selected body texture should load.")
@@ -73,6 +79,11 @@ func _run() -> void:
 	_assert(shaseng.animation_profile.get_weapon_mode(4) == &"arrow", "Shaseng weapon 4 should select arrow mode.")
 	_assert(animator.get_node("Body").texture.resource_path.contains("/body_candidates/arrow/"), "Bow equipment should switch Shaseng to the arrow body atlas.")
 	_assert(player.combo_attack_profile == shaseng.combo_attack_profiles_by_mode[&"arrow"], "Bow equipment should switch Shaseng to the arrow combo profile.")
+	var arrow_actions: Dictionary = shaseng.animation_profile.actions_by_mode[&"arrow"]
+	_assert(arrow_actions[&"hit1"]["segments"][0]["row"] == 6, "Shaseng bow hit1 should use source row 6.")
+	_assert(arrow_actions[&"hit2"]["segments"][0]["row"] == 6, "Shaseng bow hit2 should reuse source row 6.")
+	_assert(arrow_actions[&"hit3"]["segments"][0]["row"] == 7, "Shaseng bow hit3 should use source row 7.")
+	_assert(arrow_actions[&"hit3"]["segments"][0]["holds"] == PackedInt32Array([2, 2, 2, 2, 2, 10]), "Shaseng bow hit3 should preserve its 20 source ticks.")
 	_assert(player.select_weapon(0), "Shaseng shovel showid 0 should be selectable again.")
 	_assert(animator.get_node("Body").texture.resource_path.contains("/body_candidates/shovel/"), "Shovel equipment should restore the shovel body atlas.")
 
@@ -103,6 +114,83 @@ func _run() -> void:
 		var effect_count_before := _count_effects()
 		player.perform_combo_hit(step, {})
 		_assert(_count_effects() == effect_count_before + 1, "Shaseng arrow combo should spawn its source effect.")
+
+	# Tangseng creates Role2Bullet1 on source tick 7.  Damage must follow the
+	# visible projectile instead of applying across the whole trajectory at spawn.
+	_clear_effects()
+	await process_frame
+	var tangseng: RoleDefinition = definitions[1]
+	_assert(player.configure_role(tangseng), "Tangseng projectile timing should configure.")
+	player.global_position = Vector2(170, 515)
+	enemy.global_position = Vector2(430, 515)
+	enemy.health = enemy.max_health
+	enemy.velocity = Vector2.ZERO
+	await physics_frame
+	var tangseng_health_before: int = enemy.health
+	_assert(player.combo_attack_state.request_attack(), "Tangseng source projectile attack should start.")
+	for _tick in range(6):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(_count_projectiles() == 0, "Tangseng projectile must not appear before source tick 7.")
+	_assert(enemy.health == tangseng_health_before, "Tangseng must not damage before its projectile exists.")
+	player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(_count_projectiles() == 1, "Tangseng projectile should leave the staff on source tick 7.")
+	_assert(enemy.health == tangseng_health_before, "Tangseng projectile spawn must not instantly damage its full path.")
+	var tangseng_hit_frame := {"value": -1}
+	var tangseng_projectile := _last_projectile()
+	if tangseng_projectile != null:
+		tangseng_projectile.target_hit.connect(func(_target: Object, frame_index: int) -> void: tangseng_hit_frame["value"] = frame_index)
+	for _frame in range(40):
+		await physics_frame
+		if enemy.health < tangseng_health_before:
+			break
+	_assert(enemy.health < tangseng_health_before, "Tangseng visible projectile should damage when it reaches the enemy.")
+	_assert(int(tangseng_hit_frame["value"]) > 0, "Tangseng damage should be reported from a travelled projectile frame.")
+	_clear_effects()
+	await process_frame
+	player.facing = -1.0
+	player.global_position = Vector2(770, 515)
+	enemy.global_position = Vector2(510, 515)
+	enemy.health = enemy.max_health
+	enemy.velocity = Vector2.ZERO
+	await physics_frame
+	var left_health_before: int = enemy.health
+	player.perform_combo_hit(player.combo_attack_profile.steps[0], {})
+	await physics_frame
+	_assert(enemy.health == left_health_before, "Left-facing Tangseng projectile must also travel before damage.")
+	for _frame in range(40):
+		await physics_frame
+		if enemy.health < left_health_before:
+			break
+	_assert(enemy.health < left_health_before, "Tangseng projectile hitboxes should mirror and hit to the left.")
+	_assert(enemy.velocity.x < 0.0, "Left-facing projectile knockback should point left.")
+	player.facing = 1.0
+
+	# Role4BulletArrow2 is a three-arrow fan.  Its three alpha components use
+	# independent per-frame boxes and must travel to the target before damage.
+	_clear_effects()
+	await process_frame
+	_assert(player.configure_role(shaseng), "Shaseng bow finisher timing should configure.")
+	_assert(player.select_weapon(4), "Shaseng bow finisher timing should select a bow.")
+	player.global_position = Vector2(170, 515)
+	enemy.global_position = Vector2(520, 515)
+	enemy.health = enemy.max_health
+	enemy.velocity = Vector2.ZERO
+	await physics_frame
+	var arrow_health_before: int = enemy.health
+	player.perform_combo_hit(player.combo_attack_profile.steps[2], {})
+	_assert(_count_projectiles() == 1, "Shaseng bow finisher should create one Role4BulletArrow2 projectile.")
+	await physics_frame
+	_assert(enemy.health == arrow_health_before, "Shaseng bow finisher must not use the old full-path instant hitbox.")
+	var arrow_hit_frame := {"value": -1}
+	var arrow_projectile := _last_projectile()
+	if arrow_projectile != null:
+		arrow_projectile.target_hit.connect(func(_target: Object, frame_index: int) -> void: arrow_hit_frame["value"] = frame_index)
+	for _frame in range(50):
+		await physics_frame
+		if enemy.health < arrow_health_before:
+			break
+	_assert(enemy.health < arrow_health_before, "Shaseng bow finisher should damage when one visible arrow reaches the enemy.")
+	_assert(int(arrow_hit_frame["value"]) > 0, "Shaseng bow finisher damage should come from a travelled arrow frame.")
 
 	# Wukong's reduced early knockback and wide finishers must keep all five
 	# source-timed hits connected against one nearby target.
@@ -161,6 +249,28 @@ func _count_effects() -> int:
 		if child is OneShotSpriteEffect:
 			result += 1
 	return result
+
+
+func _count_projectiles() -> int:
+	var result := 0
+	for child in current_scene.get_children():
+		if child.get_script() == PROJECTILE_EFFECT_SCRIPT and not child.is_queued_for_deletion():
+			result += 1
+	return result
+
+
+func _last_projectile() -> Node:
+	for index in range(current_scene.get_child_count() - 1, -1, -1):
+		var child := current_scene.get_child(index)
+		if child.get_script() == PROJECTILE_EFFECT_SCRIPT and not child.is_queued_for_deletion():
+			return child
+	return null
+
+
+func _clear_effects() -> void:
+	for child in current_scene.get_children():
+		if child is OneShotSpriteEffect:
+			child.queue_free()
 
 
 func _assert(condition: bool, message: String) -> void:
