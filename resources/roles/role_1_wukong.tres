@@ -13,22 +13,54 @@ display_name = "悟空"
 logical_fps = 24.0
 frame_size = Vector2i(200, 200)
 source_facing = -1
+visual_offset = Vector2(0, -72)
 default_action = &"idle"
 default_body_showid = 1
 default_weapon_showid = 0
 body_atlases = {
 1: ExtResource("2_body_1")
 }
+body_atlas_paths = {
+0: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_0/source_atlas.png",
+1: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_1/source_atlas.png",
+2: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_2/source_atlas.png",
+3: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_3/source_atlas.png",
+4: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_4/source_atlas.png",
+9: "res://assets/selected/zmxiyou3/wukong/body_candidates/showid_9/source_atlas.png"
+}
 body_names = {
-1: "普通的行者服"
+0: "默认行者服",
+1: "普通行者服",
+2: "衣服 2",
+3: "衣服 3",
+4: "衣服 4",
+9: "衣服 9"
 }
 weapon_atlases = {
 0: ExtResource("3_weapon_0"),
 1: ExtResource("4_weapon_1")
 }
+weapon_atlas_paths = {
+0: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_0/source_atlas.png",
+1: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_1/source_atlas.png",
+2: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_2/source_atlas.png",
+3: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_3/source_atlas.png",
+4: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_4/source_atlas.png",
+5: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_5/source_atlas.png",
+6: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_6/source_atlas.png",
+7: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_7/source_atlas.png",
+8: "res://assets/selected/zmxiyou3/wukong/weapon_candidates/showid_8/source_atlas.png"
+}
 weapon_names = {
 0: "默认武器",
-1: "普通的行者棍"
+1: "普通行者棍",
+2: "武器 2",
+3: "武器 3",
+4: "武器 4",
+5: "武器 5",
+6: "武器 6",
+7: "武器 7",
+8: "武器 8"
 }
 actions = {
 &"hit1": {

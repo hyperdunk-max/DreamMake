@@ -68,6 +68,13 @@ func get_current_step_number() -> int:
 	return _current_step_index + 1
 
 
+func get_attack_velocity(facing: float) -> float:
+	if profile == null or _current_step_index < 0:
+		return 0.0
+	var step := profile.get_step(_current_step_index)
+	return float(step.get("move_speed", 0.0)) * signf(facing)
+
+
 func _start_current_step() -> void:
 	var step := profile.get_step(_current_step_index)
 	_elapsed_ticks = 0

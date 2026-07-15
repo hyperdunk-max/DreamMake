@@ -1,0 +1,21 @@
+{
+  "policy": "Preview only; production atlases remain byte-identical to extracted PNG files",
+  "generated": {
+    "wukong": [
+      "assets/selected/zmxiyou3/wukong/review/equipment_body_variants.png",
+      "assets/selected/zmxiyou3/wukong/review/equipment_weapon_variants.png"
+    ],
+    "tangseng": [
+      "assets/selected/zmxiyou3/tangseng/review/equipment_body_variants.png",
+      "assets/selected/zmxiyou3/tangseng/review/equipment_weapon_variants.png"
+    ],
+    "bajie": [
+      "assets/selected/zmxiyou3/bajie/review/equipment_body_variants.png",
+      "assets/selected/zmxiyou3/bajie/review/equipment_weapon_variants.png"
+    ],
+    "shaseng": [
+      "assets/selected/zmxiyou3/shaseng/review/equipment_body_variants.png",
+      "assets/selected/zmxiyou3/shaseng/review/equipment_weapon_variants.png"
+    ]
+  }
+}

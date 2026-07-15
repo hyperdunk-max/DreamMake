@@ -52,7 +52,7 @@ func register_role(
 
 	_profile = profile
 	_registered_role_id = role_id
-	_animations = profile.compile_animations()
+	_animations.clear()
 	_current_action = &""
 	_frame_index = 0
 	_ticks_remaining = 1
@@ -60,7 +60,10 @@ func register_role(
 
 	var initial_body := profile.default_body_showid if body_showid < 0 else body_showid
 	var initial_weapon := profile.default_weapon_showid if weapon_showid < 0 else weapon_showid
-	if not set_body(initial_body) or not set_weapon(initial_weapon):
+	_body_showid = initial_body
+	_weapon_showid = initial_weapon
+	position = profile.visual_offset
+	if not _refresh_equipment_and_animations():
 		unregister_role()
 		return false
 	play_action(profile.default_action, true)
@@ -104,7 +107,7 @@ func play_action(action: StringName, restart := false) -> bool:
 func set_body(showid: int) -> bool:
 	if _profile == null:
 		return false
-	var atlas := _profile.get_body_atlas(showid)
+	var atlas := _profile.get_body_atlas(showid, _weapon_showid)
 	if atlas == null:
 		push_warning("Role %d has no body showid %d." % [_registered_role_id, showid])
 		return false
@@ -123,7 +126,10 @@ func set_weapon(showid: int) -> bool:
 		return false
 	_weapon_showid = showid
 	weapon.texture = atlas
-	_show_current_frame()
+	if not _refresh_body_for_weapon():
+		return false
+	_animations = _profile.compile_animations(_weapon_showid)
+	play_action(_current_action, true)
 	return true
 
 
@@ -133,6 +139,14 @@ func cycle_weapon(step := 1) -> int:
 	var next_showid := _profile.get_next_weapon_showid(_weapon_showid, step)
 	set_weapon(next_showid)
 	return _weapon_showid
+
+
+func cycle_body(step := 1) -> int:
+	if _profile == null:
+		return _body_showid
+	var next_showid := _profile.get_next_body_showid(_body_showid, step)
+	set_body(next_showid)
+	return _body_showid
 
 
 func get_body_showid() -> int:
@@ -185,3 +199,30 @@ func _show_current_frame() -> void:
 	body.region_rect = region
 	weapon.region_rect = region
 	_ticks_remaining = frame.z
+
+
+func _refresh_equipment_and_animations() -> bool:
+	var weapon_atlas := _profile.get_weapon_atlas(_weapon_showid)
+	var body_atlas := _profile.get_body_atlas(_body_showid, _weapon_showid)
+	if weapon_atlas == null or body_atlas == null:
+		push_warning(
+			"Role %d cannot resolve body %d with weapon %d."
+			% [_registered_role_id, _body_showid, _weapon_showid]
+		)
+		return false
+	weapon.texture = weapon_atlas
+	body.texture = body_atlas
+	_animations = _profile.compile_animations(_weapon_showid)
+	return not _animations.is_empty()
+
+
+func _refresh_body_for_weapon() -> bool:
+	var body_atlas := _profile.get_body_atlas(_body_showid, _weapon_showid)
+	if body_atlas == null:
+		push_warning(
+			"Role %d has no body %d for weapon %d."
+			% [_registered_role_id, _body_showid, _weapon_showid]
+		)
+		return false
+	body.texture = body_atlas
+	return true

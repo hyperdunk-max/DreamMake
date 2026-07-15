@@ -1,0 +1,69 @@
+{
+  "role": "wukong",
+  "categories": {
+    "body": [
+      {
+        "showid": 0,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_0/source_atlas.png"
+      },
+      {
+        "showid": 1,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_1/source_atlas.png"
+      },
+      {
+        "showid": 2,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_2/source_atlas.png"
+      },
+      {
+        "showid": 3,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_3/source_atlas.png"
+      },
+      {
+        "showid": 4,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_4/source_atlas.png"
+      },
+      {
+        "showid": 9,
+        "file": "assets/selected/zmxiyou3/wukong/body_candidates/showid_9/source_atlas.png"
+      }
+    ],
+    "weapon": [
+      {
+        "showid": 0,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_0/source_atlas.png"
+      },
+      {
+        "showid": 1,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_1/source_atlas.png"
+      },
+      {
+        "showid": 2,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_2/source_atlas.png"
+      },
+      {
+        "showid": 3,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_3/source_atlas.png"
+      },
+      {
+        "showid": 4,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_4/source_atlas.png"
+      },
+      {
+        "showid": 5,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_5/source_atlas.png"
+      },
+      {
+        "showid": 6,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_6/source_atlas.png"
+      },
+      {
+        "showid": 7,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_7/source_atlas.png"
+      },
+      {
+        "showid": 8,
+        "file": "assets/selected/zmxiyou3/wukong/weapon_candidates/showid_8/source_atlas.png"
+      }
+    ]
+  }
+}

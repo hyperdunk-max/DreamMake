@@ -9,13 +9,20 @@ var _frame_index := 0
 var _frame_accumulator := 0.0
 
 
-func configure(frames: Array, fps: float, source_facing: int, gameplay_facing: float) -> bool:
+func configure(
+	frames: Array,
+	fps: float,
+	source_facing: int,
+	gameplay_facing: float,
+	sprite_offset := Vector2.ZERO
+) -> bool:
 	if frames.is_empty() or fps <= 0.0:
 		return false
 	_frames = frames
 	_fps = fps
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	centered = true
+	offset = sprite_offset
 	z_index = 4
 	var facing_sign := 1 if gameplay_facing >= 0.0 else -1
 	scale.x = -1.0 if facing_sign != source_facing else 1.0

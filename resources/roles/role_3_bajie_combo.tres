@@ -7,4 +7,46 @@ script = ExtResource("1_profile")
 role_id = 3
 logical_fps = 24.0
 combo_window_seconds = 1.5
-steps = [{"action": &"hit2", "damage": 22, "duration_ticks": 10, "hit_tick": 5, "hitbox_offset": Vector2(68, -36), "hitbox_size": Vector2(104, 62), "knockback": Vector2(245, -135)}, {"action": &"hit1", "damage": 22, "duration_ticks": 10, "hit_tick": 5, "hitbox_offset": Vector2(72, -38), "hitbox_size": Vector2(110, 66), "knockback": Vector2(265, -145)}, {"action": &"hit3", "damage": 26, "duration_ticks": 16, "hit_tick": 6, "hitbox_offset": Vector2(80, -42), "hitbox_size": Vector2(130, 74), "knockback": Vector2(340, -190)}]
+steps = [{
+"action": &"hit2",
+"damage": 22,
+"duration_ticks": 13,
+"effect_fps": 24.0,
+"effect_frame_count": 4,
+"effect_offset": Vector2(140, -80),
+"effect_path_pattern": "res://assets/selected/zmxiyou3/bajie/effects/normal_attack/hit2/frame_%02d.png",
+"effect_source_facing": -1,
+"effect_sprite_offset": Vector2(60.5, 39.5),
+"hit_tick": 4,
+"hitbox_offset": Vector2(79.5, -40.5),
+"hitbox_size": Vector2(121, 79),
+"knockback": Vector2(12, -72)
+}, {
+"action": &"hit1",
+"damage": 22,
+"duration_ticks": 13,
+"effect_fps": 24.0,
+"effect_frame_count": 4,
+"effect_offset": Vector2(130, -122),
+"effect_path_pattern": "res://assets/selected/zmxiyou3/bajie/effects/normal_attack/hit1/frame_%02d.png",
+"effect_source_facing": -1,
+"effect_sprite_offset": Vector2(64.5, 60.5),
+"hit_tick": 4,
+"hitbox_offset": Vector2(65.5, -61.5),
+"hitbox_size": Vector2(129, 121),
+"knockback": Vector2(120, -72)
+}, {
+"action": &"hit3",
+"damage": 26,
+"duration_ticks": 13,
+"effect_fps": 24.0,
+"effect_frame_count": 4,
+"effect_offset": Vector2(180, -190),
+"effect_path_pattern": "res://assets/selected/zmxiyou3/bajie/effects/normal_attack/hit3/frame_%02d.png",
+"effect_source_facing": -1,
+"effect_sprite_offset": Vector2(73.725, 130.075),
+"hit_tick": 6,
+"hitbox_offset": Vector2(106, -60),
+"hitbox_size": Vector2(261, 260),
+"knockback": Vector2(12, -72)
+}]

@@ -7,14 +7,22 @@ extends Resource
 @export var logical_fps := 24.0
 @export var frame_size := Vector2i(200, 200)
 @export_enum("Left:-1", "Right:1") var source_facing := -1
+@export var visual_offset := Vector2.ZERO
 @export var default_action: StringName = &"idle"
 @export var default_body_showid := 0
 @export var default_weapon_showid := 0
 @export var body_atlases: Dictionary = {}
+@export var body_atlas_paths: Dictionary = {}
 @export var body_names: Dictionary = {}
 @export var weapon_atlases: Dictionary = {}
+@export var weapon_atlas_paths: Dictionary = {}
 @export var weapon_names: Dictionary = {}
 @export var actions: Dictionary = {}
+@export var weapon_modes: Dictionary = {}
+@export var body_atlas_paths_by_mode: Dictionary = {}
+@export var actions_by_mode: Dictionary = {}
+
+var _texture_cache: Dictionary = {}
 
 
 func validate_for_role(expected_role_id: int) -> PackedStringArray:
@@ -27,7 +35,7 @@ func validate_for_role(expected_role_id: int) -> PackedStringArray:
 		errors.append("logical_fps must be greater than zero.")
 	if frame_size.x <= 0 or frame_size.y <= 0:
 		errors.append("frame_size must be positive.")
-	if get_body_atlas(default_body_showid) == null:
+	if get_body_atlas(default_body_showid, default_weapon_showid) == null:
 		errors.append("Default body showid %d is missing." % default_body_showid)
 	if get_weapon_atlas(default_weapon_showid) == null:
 		errors.append("Default weapon showid %d is missing." % default_weapon_showid)
@@ -36,11 +44,15 @@ func validate_for_role(expected_role_id: int) -> PackedStringArray:
 	return errors
 
 
-func compile_animations() -> Dictionary:
+func compile_animations(weapon_showid := -1) -> Dictionary:
 	var compiled := {}
-	for raw_action_id: Variant in actions:
+	var selected_actions := actions
+	var mode := get_weapon_mode(default_weapon_showid if weapon_showid < 0 else weapon_showid)
+	if actions_by_mode.has(mode):
+		selected_actions = actions_by_mode[mode]
+	for raw_action_id: Variant in selected_actions:
 		var action_id := StringName(raw_action_id)
-		var config: Dictionary = actions[raw_action_id]
+		var config: Dictionary = selected_actions[raw_action_id]
 		var frames: Array[Vector3i] = []
 		for raw_segment: Variant in config.get("segments", []):
 			var segment: Dictionary = raw_segment
@@ -65,12 +77,25 @@ func compile_animations() -> Dictionary:
 	return compiled
 
 
-func get_body_atlas(showid: int) -> Texture2D:
-	return body_atlases.get(showid) as Texture2D
+func get_body_atlas(showid: int, weapon_showid := -1) -> Texture2D:
+	var selected_weapon := default_weapon_showid if weapon_showid < 0 else weapon_showid
+	var mode := get_weapon_mode(selected_weapon)
+	if body_atlas_paths_by_mode.has(mode):
+		var mode_paths: Dictionary = body_atlas_paths_by_mode[mode]
+		var mode_texture := _load_texture(mode_paths.get(showid))
+		if mode_texture != null:
+			return mode_texture
+	var atlas := body_atlases.get(showid) as Texture2D
+	if atlas != null:
+		return atlas
+	return _load_texture(body_atlas_paths.get(showid))
 
 
 func get_weapon_atlas(showid: int) -> Texture2D:
-	return weapon_atlases.get(showid) as Texture2D
+	var atlas := weapon_atlases.get(showid) as Texture2D
+	if atlas != null:
+		return atlas
+	return _load_texture(weapon_atlas_paths.get(showid))
 
 
 func get_body_name(showid: int) -> String:
@@ -82,7 +107,7 @@ func get_weapon_name(showid: int) -> String:
 
 
 func get_next_weapon_showid(current_showid: int, step := 1) -> int:
-	var ids: Array = weapon_atlases.keys()
+	var ids: Array = get_weapon_showids()
 	ids.sort()
 	if ids.is_empty():
 		return current_showid
@@ -90,3 +115,46 @@ func get_next_weapon_showid(current_showid: int, step := 1) -> int:
 	if current_index < 0:
 		return int(ids[0])
 	return int(ids[posmod(current_index + step, ids.size())])
+
+
+func get_next_body_showid(current_showid: int, step := 1) -> int:
+	var ids: Array = get_body_showids()
+	ids.sort()
+	if ids.is_empty():
+		return current_showid
+	var current_index := ids.find(current_showid)
+	if current_index < 0:
+		return int(ids[0])
+	return int(ids[posmod(current_index + step, ids.size())])
+
+
+func get_body_showids() -> Array:
+	var ids: Array = body_atlases.keys()
+	for showid in body_atlas_paths:
+		if not ids.has(showid):
+			ids.append(showid)
+	return ids
+
+
+func get_weapon_showids() -> Array:
+	var ids: Array = weapon_atlases.keys()
+	for showid in weapon_atlas_paths:
+		if not ids.has(showid):
+			ids.append(showid)
+	return ids
+
+
+func get_weapon_mode(showid: int) -> StringName:
+	return StringName(weapon_modes.get(showid, &"default"))
+
+
+func _load_texture(raw_path: Variant) -> Texture2D:
+	var path := str(raw_path)
+	if path.is_empty():
+		return null
+	if _texture_cache.has(path):
+		return _texture_cache[path] as Texture2D
+	var texture := load(path) as Texture2D
+	if texture != null:
+		_texture_cache[path] = texture
+	return texture

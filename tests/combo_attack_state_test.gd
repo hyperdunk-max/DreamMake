@@ -1,5 +1,7 @@
 extends SceneTree
 
+var _failed := false
+
 const ANIMATION_PROFILE: RoleAnimationProfile = preload("res://resources/roles/role_1_wukong.tres")
 const COMBO_PROFILE: ComboAttackProfile = preload("res://resources/roles/role_1_wukong_combo.tres")
 
@@ -43,8 +45,11 @@ func _run() -> void:
 	_advance(machine, ceili((COMBO_PROFILE.combo_window_seconds + 0.05) * COMBO_PROFILE.logical_fps))
 	combo.request_attack()
 	_assert(animator.get_current_action() == &"hit1", "Expired combo window did not reset to hit1.")
-	print("PASS: five-step combo state buffers input and resets after its time window.")
-	quit(0)
+	if _failed:
+		quit(1)
+	else:
+		print("PASS: five-step combo state buffers input and resets after its time window.")
+		quit(0)
 
 
 func _advance(machine: CharacterStateMachine, ticks: int) -> void:
@@ -67,5 +72,5 @@ func _make_animator() -> LayeredSpriteAnimator:
 func _assert(condition: bool, message: String) -> void:
 	if condition:
 		return
+	_failed = true
 	push_error(message)
-	quit(1)

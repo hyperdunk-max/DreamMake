@@ -1,5 +1,7 @@
 extends SceneTree
 
+var _failed := false
+
 const PROFILE: RoleAnimationProfile = preload("res://resources/roles/role_1_wukong.tres")
 
 
@@ -27,8 +29,11 @@ func _run() -> void:
 	first.unregister_role()
 	_assert(not first.is_role_registered(), "First role failed to unregister.")
 	_assert(second.is_role_registered(), "Unregistering first role affected second role.")
-	print("PASS: role animator instances keep independent registration and playback state.")
-	quit(0)
+	if _failed:
+		quit(1)
+	else:
+		print("PASS: role animator instances keep independent registration and playback state.")
+		quit(0)
 
 
 func _make_animator(node_name: String) -> LayeredSpriteAnimator:
@@ -46,5 +51,5 @@ func _make_animator(node_name: String) -> LayeredSpriteAnimator:
 func _assert(condition: bool, message: String) -> void:
 	if condition:
 		return
+	_failed = true
 	push_error(message)
-	quit(1)

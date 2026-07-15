@@ -1,0 +1,103 @@
+{
+  "role": "shaseng",
+  "categories": {
+    "body/shovel": [
+      {
+        "showid": 0,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_0/source_atlas.png"
+      },
+      {
+        "showid": 1,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_1/source_atlas.png"
+      },
+      {
+        "showid": 2,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_2/source_atlas.png"
+      },
+      {
+        "showid": 3,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_3/source_atlas.png"
+      },
+      {
+        "showid": 4,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_4/source_atlas.png"
+      },
+      {
+        "showid": 5,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_5/source_atlas.png"
+      },
+      {
+        "showid": 9,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/shovel/showid_9/source_atlas.png"
+      }
+    ],
+    "body/arrow": [
+      {
+        "showid": 0,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_0/source_atlas.png"
+      },
+      {
+        "showid": 1,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_1/source_atlas.png"
+      },
+      {
+        "showid": 2,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_2/source_atlas.png"
+      },
+      {
+        "showid": 3,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_3/source_atlas.png"
+      },
+      {
+        "showid": 4,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_4/source_atlas.png"
+      },
+      {
+        "showid": 5,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_5/source_atlas.png"
+      },
+      {
+        "showid": 9,
+        "file": "assets/selected/zmxiyou3/shaseng/body_candidates/arrow/showid_9/source_atlas.png"
+      }
+    ],
+    "weapon": [
+      {
+        "showid": 0,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_0/source_atlas.png"
+      },
+      {
+        "showid": 1,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_1/source_atlas.png"
+      },
+      {
+        "showid": 2,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_2/source_atlas.png"
+      },
+      {
+        "showid": 3,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_3/source_atlas.png"
+      },
+      {
+        "showid": 4,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_4/source_atlas.png"
+      },
+      {
+        "showid": 6,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_6/source_atlas.png"
+      },
+      {
+        "showid": 7,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_7/source_atlas.png"
+      },
+      {
+        "showid": 8,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_8/source_atlas.png"
+      },
+      {
+        "showid": 9,
+        "file": "assets/selected/zmxiyou3/shaseng/weapon_candidates/showid_9/source_atlas.png"
+      }
+    ]
+  }
+}

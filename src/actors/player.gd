@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_changed(current: int, maximum: int)
 signal weapon_changed(showid: int, weapon_name: String)
+signal body_changed(showid: int, body_name: String)
 signal role_changed(role_id: int, display_name: String)
 
 const MOVE_SPEED := 245.0
@@ -11,6 +12,7 @@ const HURT_TIME := 8.0 / 24.0
 const DOUBLE_JUMP_ANIMATION_TIME := 10.0 / 24.0
 
 @export var max_health := 100
+@export var role_definition: RoleDefinition
 @export var role_id := 1
 @export var animation_profile: RoleAnimationProfile
 @export var combo_attack_profile: ComboAttackProfile
@@ -26,9 +28,12 @@ var double_jump_animation_time := 0.0
 @onready var action_state_machine: CharacterStateMachine = $ActionStateMachine
 
 var combo_attack_state: ComboAttackState
+var _effect_texture_cache: Dictionary = {}
 
 
 func _ready() -> void:
+	if role_definition != null:
+		_apply_role_definition(role_definition)
 	_configure_runtime_role()
 	queue_redraw()
 
@@ -42,11 +47,8 @@ func configure_role(definition: RoleDefinition) -> bool:
 			push_error(validation_error)
 		return false
 	action_state_machine.clear_state()
-	role_id = definition.role_id
-	animation_profile = definition.animation_profile
-	combo_attack_profile = definition.combo_attack_profile
-	body_showid = definition.default_body_showid
-	weapon_showid = definition.default_weapon_showid
+	role_definition = definition
+	_apply_role_definition(definition)
 	if not _configure_runtime_role():
 		return false
 	velocity = Vector2.ZERO
@@ -54,8 +56,17 @@ func configure_role(definition: RoleDefinition) -> bool:
 	double_jump_animation_time = 0.0
 	jump_count = 0
 	role_changed.emit(role_id, definition.display_name)
+	body_changed.emit(body_showid, layered_animator.get_body_name())
 	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
 	return true
+
+
+func _apply_role_definition(definition: RoleDefinition) -> void:
+	role_id = definition.role_id
+	animation_profile = definition.animation_profile
+	body_showid = definition.default_body_showid
+	weapon_showid = definition.default_weapon_showid
+	combo_attack_profile = definition.get_combo_profile_for_weapon(weapon_showid)
 
 
 func _configure_runtime_role() -> bool:
@@ -90,9 +101,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 
-	if Input.is_action_just_pressed("switch_weapon"):
-		weapon_showid = layered_animator.cycle_weapon()
-		weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
+	if Input.is_action_just_pressed("switch_weapon") and not action_state_machine.has_active_state():
+		select_weapon(animation_profile.get_next_weapon_showid(weapon_showid))
+
+	if Input.is_action_just_pressed("switch_body") and not action_state_machine.has_active_state():
+		select_body(animation_profile.get_next_body_showid(body_showid))
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction != 0.0:
@@ -102,7 +115,7 @@ func _physics_process(delta: float) -> void:
 		combo_attack_state.request_attack()
 
 	if action_state_machine.blocks_horizontal_movement():
-		velocity.x = 0.0
+		velocity.x = combo_attack_state.get_attack_velocity(facing) if combo_attack_state != null else 0.0
 	else:
 		velocity.x = direction * MOVE_SPEED
 
@@ -166,17 +179,31 @@ func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 func _spawn_attack_effect(step: Dictionary) -> void:
 	var effect_frames: Array = step.get("effect_frames", [])
 	if effect_frames.is_empty():
+		var effect_paths: Array = Array(step.get("effect_frame_paths", PackedStringArray()))
+		var path_pattern := str(step.get("effect_path_pattern", ""))
+		if not path_pattern.is_empty():
+			for frame_index in range(int(step.get("effect_frame_count", 0))):
+				effect_paths.append(path_pattern % frame_index)
+		for raw_path in effect_paths:
+			var path := str(raw_path)
+			if not _effect_texture_cache.has(path):
+				_effect_texture_cache[path] = load(path) as Texture2D
+			var texture := _effect_texture_cache[path] as Texture2D
+			if texture != null:
+				effect_frames.append(texture)
+	if effect_frames.is_empty():
 		return
 	var effect := OneShotSpriteEffect.new()
 	var effect_fps := float(step.get("effect_fps", combo_attack_profile.logical_fps))
 	var source_facing := int(step.get("effect_source_facing", animation_profile.source_facing))
-	if not effect.configure(effect_frames, effect_fps, source_facing, facing):
+	var sprite_offset := Vector2(step.get("effect_sprite_offset", Vector2.ZERO))
+	if not effect.configure(effect_frames, effect_fps, source_facing, facing, sprite_offset):
 		effect.queue_free()
 		return
 	var offset := Vector2(step.get("effect_offset", Vector2.ZERO))
 	offset.x *= facing
-	effect.global_position = global_position + offset
 	get_tree().current_scene.add_child(effect)
+	effect.global_position = global_position + offset
 
 
 func take_hit(damage: int, impulse: Vector2) -> void:
@@ -190,6 +217,37 @@ func take_hit(damage: int, impulse: Vector2) -> void:
 
 func get_weapon_name() -> String:
 	return layered_animator.get_weapon_name()
+
+
+func get_body_name() -> String:
+	return layered_animator.get_body_name()
+
+
+func select_weapon(showid: int) -> bool:
+	if not layered_animator.set_weapon(showid):
+		return false
+	weapon_showid = showid
+	_refresh_combo_profile_for_weapon()
+	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
+	return true
+
+
+func select_body(showid: int) -> bool:
+	if not layered_animator.set_body(showid):
+		return false
+	body_showid = showid
+	body_changed.emit(body_showid, layered_animator.get_body_name())
+	return true
+
+
+func _refresh_combo_profile_for_weapon() -> void:
+	if role_definition == null:
+		return
+	var next_profile := role_definition.get_combo_profile_for_weapon(weapon_showid)
+	if next_profile == null or next_profile == combo_attack_profile:
+		return
+	combo_attack_profile = next_profile
+	combo_attack_state.configure(combo_attack_profile)
 
 
 func _draw() -> void:

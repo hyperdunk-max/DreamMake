@@ -16,12 +16,14 @@ func _ready() -> void:
 			_roles_by_id[definition.role_id] = definition
 	player.health_changed.connect(hud.set_player_health)
 	player.weapon_changed.connect(hud.set_weapon)
+	player.body_changed.connect(hud.set_body)
 	player.role_changed.connect(hud.set_role)
 	enemy.health_changed.connect(hud.set_enemy_health)
 	enemy.defeated.connect(_on_enemy_defeated)
 	enemy.set_attack_target(player)
 	player.health_changed.emit(player.health, player.max_health)
 	hud.set_weapon(player.weapon_showid, player.get_weapon_name())
+	hud.set_body(player.body_showid, player.get_body_name())
 	enemy.health_changed.emit(enemy.health, enemy.max_health)
 	queue_redraw()
 
