@@ -5,7 +5,9 @@ signal weapon_changed(showid: int, weapon_name: String)
 signal body_changed(showid: int, body_name: String)
 signal role_changed(role_id: int, display_name: String)
 
-const MOVE_SPEED := 245.0
+const WALK_SPEED := 144.0
+const RUN_SPEED := 240.0
+const RUN_DOUBLE_TAP_SECONDS := 0.5
 const JUMP_SPEED := -500.0
 const GRAVITY := 1450.0
 const HURT_TIME := 8.0 / 24.0
@@ -24,6 +26,10 @@ var facing := 1.0
 var hurt_time := 0.0
 var jump_count := 0
 var double_jump_animation_time := 0.0
+var is_running := false
+var _running_direction := 0
+var _last_direction_press := 0
+var _last_direction_press_time := -1.0
 
 @onready var layered_animator: LayeredSpriteAnimator = $LayeredSpriteAnimator
 @onready var action_state_machine: CharacterStateMachine = $ActionStateMachine
@@ -57,6 +63,7 @@ func configure_role(definition: RoleDefinition) -> bool:
 	hurt_time = 0.0
 	double_jump_animation_time = 0.0
 	jump_count = 0
+	_reset_locomotion_input()
 	role_changed.emit(role_id, definition.display_name)
 	body_changed.emit(body_showid, layered_animator.get_body_name())
 	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
@@ -114,6 +121,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch_body") and not action_state_machine.has_active_state():
 		select_body(animation_profile.get_next_body_showid(body_showid))
 
+	_process_direction_input()
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction != 0.0 and not action_state_machine.has_active_state():
 		facing = sign(direction)
@@ -124,7 +132,7 @@ func _physics_process(delta: float) -> void:
 	if action_state_machine.blocks_horizontal_movement():
 		velocity.x = combo_attack_state.get_attack_velocity(facing) if combo_attack_state != null else 0.0
 	else:
-		velocity.x = direction * MOVE_SPEED
+		velocity.x = direction * get_horizontal_move_speed(direction)
 
 	if Input.is_action_just_pressed("jump"):
 		request_jump()
@@ -143,7 +151,74 @@ func request_normal_attack() -> bool:
 			return false
 		combo_attack_state.reset_progress()
 		return air_attack_state.request_attack()
+	if is_running and not action_state_machine.is_in_state(ComboAttackState.ID):
+		# The source uses a dedicated running attack path which always starts at hit1.
+		combo_attack_state.reset_progress()
 	return combo_attack_state.request_attack()
+
+
+func register_direction_press(direction: int, pressed_at_seconds := -1.0) -> bool:
+	if direction == 0:
+		return false
+	var normalized_direction := -1 if direction < 0 else 1
+	var now := pressed_at_seconds
+	if now < 0.0:
+		now = Time.get_ticks_msec() / 1000.0
+	var is_double_tap := (
+		_last_direction_press == normalized_direction
+		and _last_direction_press_time >= 0.0
+		and now - _last_direction_press_time <= RUN_DOUBLE_TAP_SECONDS
+	)
+	_last_direction_press = normalized_direction
+	_last_direction_press_time = now
+	if not is_double_tap:
+		is_running = false
+		_running_direction = 0
+		return false
+	var entered_run := not is_running or _running_direction != normalized_direction
+	is_running = true
+	_running_direction = normalized_direction
+	if entered_run and combo_attack_state != null:
+		combo_attack_state.reset_progress()
+	return true
+
+
+func register_direction_release(direction: int) -> void:
+	var normalized_direction := -1 if direction < 0 else 1
+	if is_running and _running_direction == normalized_direction:
+		is_running = false
+		_running_direction = 0
+
+
+func get_horizontal_move_speed(direction: float) -> float:
+	if is_running and signf(direction) == float(_running_direction):
+		return RUN_SPEED
+	return WALK_SPEED
+
+
+func _process_direction_input() -> void:
+	# Locomotion cannot enter a new walk/run state while an action owns the actor.
+	if not action_state_machine.has_active_state():
+		if Input.is_action_just_pressed("move_left"):
+			register_direction_press(-1)
+		if Input.is_action_just_pressed("move_right"):
+			register_direction_press(1)
+	if Input.is_action_just_released("move_left"):
+		register_direction_release(-1)
+	if Input.is_action_just_released("move_right"):
+		register_direction_release(1)
+	if is_running:
+		var run_action := "move_left" if _running_direction < 0 else "move_right"
+		if not Input.is_action_pressed(run_action):
+			is_running = false
+			_running_direction = 0
+
+
+func _reset_locomotion_input() -> void:
+	is_running = false
+	_running_direction = 0
+	_last_direction_press = 0
+	_last_direction_press_time = -1.0
 
 
 func request_jump() -> bool:
@@ -182,7 +257,7 @@ func _update_pose() -> void:
 		else:
 			next_pose = &"jump_fall"
 	elif absf(velocity.x) > 25.0:
-		next_pose = &"run"
+		next_pose = &"run" if is_running and signf(velocity.x) == float(_running_direction) else &"walk"
 	layered_animator.play_action(next_pose)
 	layered_animator.set_facing(facing)
 
@@ -257,6 +332,7 @@ func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 
 func take_hit(damage: int, impulse: Vector2) -> void:
 	action_state_machine.clear_state()
+	_reset_locomotion_input()
 	health = maxi(0, health - damage)
 	velocity = impulse
 	hurt_time = HURT_TIME

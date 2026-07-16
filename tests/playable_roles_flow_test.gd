@@ -35,7 +35,7 @@ func _run() -> void:
 	var expected_body_counts := [6, 7, 6, 7]
 	var expected_weapon_counts := [9, 7, 9, 9]
 	var required_shared_actions := [
-		&"idle", &"run", &"jump_up", &"jump_double", &"jump_fall", &"hurt",
+		&"idle", &"walk", &"run", &"jump_up", &"jump_double", &"jump_fall", &"hurt",
 	]
 
 	_assert(definitions.size() == 4, "Four playable roles should be registered.")
@@ -68,6 +68,48 @@ func _run() -> void:
 		_assert(player.combo_attack_state.request_attack(), "Role %d should enter its combo." % definition.role_id)
 		_assert(player.combo_attack_state.get_current_step_number() == 1, "A switched role should begin at combo step one.")
 		player.action_state_machine.clear_state()
+
+	# Source locomotion walks on the first press and runs when the same direction
+	# is pressed again within 500ms. Entering run clears stored combo progress.
+	_assert(player.configure_role(definitions[0]), "Wukong should configure for locomotion verification.")
+	player.global_position = Vector2(390, 515)
+	await physics_frame
+	_assert(not player.register_direction_press(1, 10.0), "The first direction press should enter walk, not run.")
+	_assert(is_equal_approx(player.get_horizontal_move_speed(1.0), player.WALK_SPEED), "Walk should use the source 144px/s speed.")
+	player.velocity.x = player.WALK_SPEED
+	player._update_pose()
+	_assert(animator.get_current_action() == &"walk", "A first direction press should play walk.")
+	_assert(player.register_direction_press(1, 10.49), "A same-direction second press within 500ms should enter run.")
+	_assert(is_equal_approx(player.get_horizontal_move_speed(1.0), player.RUN_SPEED), "Run should use the source 240px/s speed.")
+	player.velocity.x = player.RUN_SPEED
+	player._update_pose()
+	_assert(animator.get_current_action() == &"run", "A successful double tap should play run.")
+	player.register_direction_release(1)
+	_assert(not player.is_running, "Releasing the running direction should leave run.")
+	player._reset_locomotion_input()
+	_assert(not player.register_direction_press(1, 20.0), "A fresh first tap should walk.")
+	_assert(not player.register_direction_press(1, 20.501), "A second press after 500ms should remain walk.")
+	player._reset_locomotion_input()
+	_assert(not player.register_direction_press(-1, 30.0), "A left first tap should walk.")
+	_assert(not player.register_direction_press(1, 30.2), "Changing direction must not count as a double tap.")
+
+	player.action_state_machine.clear_state()
+	player.combo_attack_state.reset_progress()
+	_assert(player.combo_attack_state.request_attack(), "Locomotion combo setup should start hit1.")
+	_assert(player.combo_attack_state.request_attack(), "Locomotion combo setup should buffer hit2.")
+	var first_step: Dictionary = player.combo_attack_profile.steps[0]
+	for _tick in range(int(first_step["duration_ticks"])):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(player.combo_attack_state.get_current_step_number() == 2, "Locomotion combo setup should reach hit2.")
+	player.action_state_machine.clear_state()
+	player._reset_locomotion_input()
+	_assert(not player.register_direction_press(1, 40.0), "The first post-combo tap should walk.")
+	_assert(player.combo_attack_state.get_current_step_number() == 2, "Walking should preserve combo progress.")
+	_assert(player.register_direction_press(1, 40.49), "The second post-combo tap should run.")
+	_assert(player.combo_attack_state.get_current_step_number() == 0, "Entering run should clear combo progress.")
+	_assert(player.request_normal_attack(), "A running attack should start.")
+	_assert(player.combo_attack_state.get_current_step_number() == 1, "A running attack should always begin at hit1.")
+	player.action_state_machine.clear_state()
 
 	var bajie: RoleDefinition = definitions[2]
 	_assert(StringName(bajie.combo_attack_profile.steps[0]["action"]) == &"hit2", "Bajie combo should begin with source action hit2.")
