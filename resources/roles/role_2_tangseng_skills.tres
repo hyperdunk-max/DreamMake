@@ -19,7 +19,8 @@ charged_attack_skill = {
 "id": &"binglong_bo",
 "knockback": Vector2(240, -24),
 "mana_cost": 20,
-"release_action": &"skill_binglong_release"
+"release_action": &"skill_binglong_release",
+"source_action": &"hit1"
 }
 active_skills = [{
 "action": &"skill_shengguang_qiu",
@@ -111,7 +112,7 @@ active_skills = [{
 "allow_air": true,
 "display_name": "水幻影",
 "duration_ticks": 1,
-"effects": {&"shadow": {"effect_fps": 6.0, "effect_frame_count": 4, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/shadow/walk/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, -5), "lifetime_seconds": 8.0, "loop": true}},
+"effects": {&"shadow": {"derived_actor_visual": true, "effect_fps": 6.0, "effect_frame_count": 4, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/shadow/walk/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, -5), "lifetime_seconds": 8.0, "loop": true}},
 "id": &"shuihuanying",
 "mana_cost": 40,
 "play_action": false,

@@ -17,7 +17,7 @@ active_skills = [{
 "damage": 4,
 "display_name": "七十二斩",
 "duration_ticks": 20,
-"effects": {&"impact": {"effect_fps": 24.0, "effect_frame_count": 30, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/qishier_zhan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-26, 5.5)}},
+"effects": {&"impact": {"effect_fps": 24.0, "effect_frame_count": 30, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/qishier_zhan/frame_%02d.png", "effect_registration_point": Vector2(855, 925.35), "effect_source_canvas": Vector2(1728, 1852), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-17, 6.15)}},
 "id": &"qishier_zhan",
 "mana_cost": 40,
 "move_speed": 720.0,
@@ -30,8 +30,8 @@ active_skills = [{
 "display_name": "重斩",
 "duration_ticks": 30,
 "effects": {
-&"charge": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_charge/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0.5, 0.5)},
-&"slash": {"effect_fps": 24.0, "effect_frame_count": 5, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_slash/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -1)}
+&"charge": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_charge/frame_%02d.png", "effect_registration_point": Vector2(674.15, 374.15), "effect_source_canvas": Vector2(1350, 750), "effect_source_facing": -1, "effect_sprite_offset": Vector2(1.35, 1.35)},
+&"slash": {"effect_fps": 24.0, "effect_frame_count": 5, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_slash/frame_%02d.png", "effect_registration_point": Vector2(0.475, 0.05), "effect_source_canvas": Vector2(195, 125), "effect_source_facing": -1, "effect_sprite_offset": Vector2(96.525, 61.45)}
 },
 "freeze_vertical": true,
 "hit_tick": 15,
@@ -47,7 +47,7 @@ active_skills = [{
 "damage": 100,
 "display_name": "烈焰闪",
 "duration_ticks": 10,
-"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_shan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0)}},
+"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_shan/frame_%02d.png", "effect_registration_point": Vector2(0, -12.65), "effect_source_canvas": Vector2(225, 98), "effect_source_facing": -1, "effect_sprite_offset": Vector2(112.5, 61.65)}},
 "hitbox_offset": Vector2(55, -38),
 "hitbox_size": Vector2(180, 76),
 "id": &"lieyan_shan",
@@ -63,9 +63,9 @@ active_skills = [{
 "display_name": "火眼金睛",
 "duration_ticks": 17,
 "effects": {
-&"cast_eye": {"effect_fps": 24.0, "effect_frame_count": 14, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_eye/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-1.5, -1)},
-&"cast_flare": {"effect_fps": 24.0, "effect_frame_count": 17, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_flare/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-8, 0)},
-&"explosion": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_explosion/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0)}
+&"cast_eye": {"effect_fps": 24.0, "effect_frame_count": 14, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_eye/frame_%02d.png", "effect_registration_point": Vector2(16.375, 14.6), "effect_source_canvas": Vector2(39, 40), "effect_source_facing": -1, "effect_sprite_offset": Vector2(1.625, 4.4)},
+&"cast_flare": {"effect_fps": 24.0, "effect_frame_count": 17, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_flare/frame_%02d.png", "effect_registration_point": Vector2(596.9, 233.6), "effect_source_canvas": Vector2(1343, 545), "effect_source_facing": -1, "effect_sprite_offset": Vector2(66.6, 38.9)},
+&"explosion": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_explosion/frame_%02d.png", "effect_registration_point": Vector2(864, 480), "effect_source_canvas": Vector2(1728, 960), "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0)}
 },
 "id": &"huoyan_jinjing",
 "knockback": Vector2(0, 0),
@@ -81,7 +81,7 @@ active_skills = [{
 "display_name": "升龙斩",
 "duration_ticks": 11,
 "effect_tick": 3,
-"effects": {&"strike": {"effect_fps": 24.0, "effect_frame_count": 6, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/shenglong_zhan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)}},
+"effects": {&"strike": {"effect_fps": 24.0, "effect_frame_count": 6, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/shenglong_zhan/frame_%02d.png", "effect_registration_point": Vector2(64.9, 180), "effect_source_canvas": Vector2(143, 194), "effect_source_facing": -1, "effect_sprite_offset": Vector2(6.1, -83.5)}},
 "hitbox_offset": Vector2(30, -5),
 "hitbox_size": Vector2(142, 193),
 "id": &"shenglong_zhan",
@@ -94,9 +94,9 @@ active_skills = [{
 "display_name": "火魔斩",
 "duration_ticks": 120,
 "effects": {
-&"hover": {"effect_fps": 24.0, "effect_frame_count": 44, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_hover/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)},
-&"fall": {"effect_fps": 24.0, "effect_frame_count": 2, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_fall/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-26.5, 6.5)},
-&"land": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_land/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-8.5, -0.5)}
+&"hover": {"effect_fps": 24.0, "effect_frame_count": 44, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_hover/frame_%02d.png", "effect_registration_point": Vector2(220.775, 121.825), "effect_source_canvas": Vector2(369, 232), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-36.775, -6.325)},
+&"fall": {"effect_fps": 24.0, "effect_frame_count": 2, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_fall/frame_%02d.png", "effect_registration_point": Vector2(183.75, 4.475), "effect_source_canvas": Vector2(247, 254), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-86.75, 129.025)},
+&"land": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_land/frame_%02d.png", "effect_registration_point": Vector2(108.525, 139.725), "effect_source_canvas": Vector2(214, 179), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-10.025, -50.725)}
 },
 "hover_damage": 18,
 "hover_ticks": 46,
@@ -110,7 +110,7 @@ active_skills = [{
 "damage": 9,
 "display_name": "火眼突击",
 "duration_ticks": 15,
-"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_tuji/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)}},
+"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_tuji/frame_%02d.png", "effect_registration_point": Vector2(1.675, -8.85), "effect_source_canvas": Vector2(290, 90), "effect_source_facing": -1, "effect_sprite_offset": Vector2(142.825, 53.35)}},
 "hit_interval_ticks": 4,
 "hitbox_offset": Vector2(120, -75),
 "hitbox_size": Vector2(289, 89),
@@ -125,7 +125,7 @@ active_skills = [{
 "damage": 21,
 "display_name": "烈焰风暴",
 "duration_ticks": 10,
-"effects": {&"storm": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_fengbao/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, -0.5)}},
+"effects": {&"storm": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_fengbao/frame_%02d.png", "effect_registration_point": Vector2(177.65, 106.15), "effect_source_canvas": Vector2(369, 159), "effect_source_facing": -1, "effect_sprite_offset": Vector2(6.85, -27.15)}},
 "hit_interval_ticks": 3,
 "hitbox_offset": Vector2(20, -20),
 "hitbox_size": Vector2(369, 158),
@@ -140,8 +140,8 @@ active_skills = [{
 "display_name": "筋斗云",
 "duration_ticks": 35,
 "effects": {
-&"horizontal": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_horizontal/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0.5, -14)},
-&"vertical": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_vertical/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0.5)}
+&"horizontal": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_horizontal/frame_%02d.png", "effect_registration_point": Vector2(49.4, -23.775), "effect_source_canvas": Vector2(237, 183), "effect_source_facing": -1, "effect_sprite_offset": Vector2(69.6, 101.275)},
+&"vertical": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_vertical/frame_%02d.png", "effect_registration_point": Vector2(122.825, 53), "effect_source_canvas": Vector2(210, 224), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-17.825, 59.5)}
 },
 "hit_interval_ticks": 5,
 "hitbox_offset": Vector2(50, -50),

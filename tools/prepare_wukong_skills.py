@@ -42,6 +42,27 @@ EFFECTS = {
     "zhongzhan_slash": "DefineSprite_210_Role1Bullet14_2",
 }
 
+# MovieClip registration points in FFDec's shared raster canvases.  These are
+# derived from every exported SVG frame bound plus symmetric raster filter
+# padding.  They intentionally are not inferred from the PNG canvas centre.
+SOURCE_REGISTRATIONS = {
+    "shenglong_zhan": (64.9, 180.0),
+    "huoyan_tuji": (1.675, -8.85),
+    "lieyan_fengbao": (177.65, 106.15),
+    "lieyan_shan": (0.0, -12.65),
+    "huomo_hover": (220.775, 121.825),
+    "huomo_fall": (183.75, 4.475),
+    "huomo_land": (108.525, 139.725),
+    "jindou_horizontal": (49.4, -23.775),
+    "jindou_vertical": (122.825, 53.0),
+    "huoyan_cast_eye": (16.375, 14.6),
+    "huoyan_cast_flare": (596.9, 233.6),
+    "huoyan_explosion": (864.0, 480.0),
+    "qishier_zhan": (855.0, 925.35),
+    "zhongzhan_charge": (674.15, 374.15),
+    "zhongzhan_slash": (0.475, 0.05),
+}
+
 SOURCE_CALIBRATION = {
     "shenglong_zhan": {
         "source_action": "hit6", "gameplay_tick": 3,
@@ -119,9 +140,10 @@ def prepare_effect(effect_id: str, symbol: str) -> dict[str, object]:
     if any(image.size != canvas_size for image in images):
         raise ValueError(f"Effect frames do not share a canvas: {symbol}")
     crop = union_alpha_bounds(images)
+    registration = SOURCE_REGISTRATIONS[effect_id]
     sprite_offset = (
-        (crop[0] + crop[2] - canvas_size[0]) / 2.0,
-        (crop[1] + crop[3] - canvas_size[1]) / 2.0,
+        (crop[0] + crop[2]) / 2.0 - registration[0],
+        (crop[1] + crop[3]) / 2.0 - registration[1],
     )
     output_directory = DESTINATION / effect_id
     output_directory.mkdir(parents=True, exist_ok=True)
@@ -132,10 +154,11 @@ def prepare_effect(effect_id: str, symbol: str) -> dict[str, object]:
         "source_symbol": symbol,
         "frame_count": len(images),
         "source_canvas": list(canvas_size),
+        "source_registration": list(registration),
         "union_crop": list(crop),
         "output_size": [crop[2] - crop[0], crop[3] - crop[1]],
         "sprite_offset": list(sprite_offset),
-        "policy": "shared union crop; no resize or repaint",
+        "policy": "shared union crop; restore SWF registration; no resize or repaint",
     }
 
 

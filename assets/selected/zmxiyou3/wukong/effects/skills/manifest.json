@@ -140,6 +140,10 @@
         143,
         194
       ],
+      "source_registration": [
+        64.9,
+        180.0
+      ],
       "union_crop": [
         0,
         0,
@@ -151,10 +155,10 @@
         193
       ],
       "sprite_offset": [
-        -0.5,
-        -0.5
+        6.099999999999994,
+        -83.5
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huoyan_tuji",
@@ -164,6 +168,10 @@
         290,
         90
       ],
+      "source_registration": [
+        1.675,
+        -8.85
+      ],
       "union_crop": [
         0,
         0,
@@ -175,10 +183,10 @@
         89
       ],
       "sprite_offset": [
-        -0.5,
-        -0.5
+        142.825,
+        53.35
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "lieyan_fengbao",
@@ -188,6 +196,10 @@
         369,
         159
       ],
+      "source_registration": [
+        177.65,
+        106.15
+      ],
       "union_crop": [
         0,
         0,
@@ -199,10 +211,10 @@
         158
       ],
       "sprite_offset": [
-        0.0,
-        -0.5
+        6.849999999999994,
+        -27.150000000000006
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "lieyan_shan",
@@ -212,6 +224,10 @@
         225,
         98
       ],
+      "source_registration": [
+        0.0,
+        -12.65
+      ],
       "union_crop": [
         0,
         0,
@@ -223,10 +239,10 @@
         98
       ],
       "sprite_offset": [
-        0.0,
-        0.0
+        112.5,
+        61.65
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huomo_hover",
@@ -236,6 +252,10 @@
         369,
         232
       ],
+      "source_registration": [
+        220.775,
+        121.825
+      ],
       "union_crop": [
         0,
         0,
@@ -247,10 +267,10 @@
         231
       ],
       "sprite_offset": [
-        -0.5,
-        -0.5
+        -36.775000000000006,
+        -6.325000000000003
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huomo_fall",
@@ -259,6 +279,10 @@
       "source_canvas": [
         247,
         254
+      ],
+      "source_registration": [
+        183.75,
+        4.475
       ],
       "union_crop": [
         15,
@@ -271,10 +295,10 @@
         237
       ],
       "sprite_offset": [
-        -26.5,
-        6.5
+        -86.75,
+        129.025
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huomo_land",
@@ -283,6 +307,10 @@
       "source_canvas": [
         214,
         179
+      ],
+      "source_registration": [
+        108.525,
+        139.725
       ],
       "union_crop": [
         0,
@@ -295,10 +323,10 @@
         178
       ],
       "sprite_offset": [
-        -8.5,
-        -0.5
+        -10.025000000000006,
+        -50.724999999999994
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "jindou_horizontal",
@@ -307,6 +335,10 @@
       "source_canvas": [
         237,
         183
+      ],
+      "source_registration": [
+        49.4,
+        -23.775
       ],
       "union_crop": [
         2,
@@ -319,10 +351,10 @@
         155
       ],
       "sprite_offset": [
-        0.5,
-        -14.0
+        69.6,
+        101.275
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "jindou_vertical",
@@ -331,6 +363,10 @@
       "source_canvas": [
         210,
         224
+      ],
+      "source_registration": [
+        122.825,
+        53.0
       ],
       "union_crop": [
         0,
@@ -343,10 +379,10 @@
         221
       ],
       "sprite_offset": [
-        0.0,
-        0.5
+        -17.825000000000003,
+        59.5
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huoyan_cast_eye",
@@ -355,6 +391,10 @@
       "source_canvas": [
         39,
         40
+      ],
+      "source_registration": [
+        16.375,
+        14.6
       ],
       "union_crop": [
         0,
@@ -367,10 +407,10 @@
         38
       ],
       "sprite_offset": [
-        -1.5,
-        -1.0
+        1.625,
+        4.4
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huoyan_cast_flare",
@@ -379,6 +419,10 @@
       "source_canvas": [
         1343,
         545
+      ],
+      "source_registration": [
+        596.9,
+        233.6
       ],
       "union_crop": [
         597,
@@ -391,10 +435,10 @@
         79
       ],
       "sprite_offset": [
-        -8.0,
-        0.0
+        66.60000000000002,
+        38.900000000000006
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "huoyan_explosion",
@@ -403,6 +447,10 @@
       "source_canvas": [
         1728,
         960
+      ],
+      "source_registration": [
+        864.0,
+        480.0
       ],
       "union_crop": [
         769,
@@ -418,7 +466,7 @@
         0.0,
         0.0
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "qishier_zhan",
@@ -427,6 +475,10 @@
       "source_canvas": [
         1728,
         1852
+      ],
+      "source_registration": [
+        855.0,
+        925.35
       ],
       "union_crop": [
         704,
@@ -439,10 +491,10 @@
         273
       ],
       "sprite_offset": [
-        -26.0,
-        5.5
+        -17.0,
+        6.149999999999977
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "zhongzhan_charge",
@@ -451,6 +503,10 @@
       "source_canvas": [
         1350,
         750
+      ],
+      "source_registration": [
+        674.15,
+        374.15
       ],
       "union_crop": [
         600,
@@ -463,10 +519,10 @@
         151
       ],
       "sprite_offset": [
-        0.5,
-        0.5
+        1.3500000000000227,
+        1.3500000000000227
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     },
     {
       "effect_id": "zhongzhan_slash",
@@ -475,6 +531,10 @@
       "source_canvas": [
         195,
         125
+      ],
+      "source_registration": [
+        0.475,
+        0.05
       ],
       "union_crop": [
         0,
@@ -487,10 +547,10 @@
         123
       ],
       "sprite_offset": [
-        -0.5,
-        -1.0
+        96.525,
+        61.45
       ],
-      "policy": "shared union crop; no resize or repaint"
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
     }
   ]
 }
