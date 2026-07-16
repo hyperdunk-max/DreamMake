@@ -1,0 +1,492 @@
+{
+  "purpose": "Bajie complete skill effects and Flash coordinate calibration",
+  "source": "zmxiyou3 Role3v690",
+  "flash_actor_origin_y": -50,
+  "source_calibration": {
+    "dunji": {
+      "source_action": "hit4",
+      "gameplay_tick": 1,
+      "source_delta": [
+        35,
+        -55
+      ]
+    },
+    "shengdun": {
+      "source_action": "hit5",
+      "gameplay_tick": 1,
+      "source_delta": [
+        70,
+        -110
+      ],
+      "buff_local_delta": [
+        -20,
+        -80
+      ],
+      "buff_seconds": 10
+    },
+    "renjia": {
+      "passive_defense": 30,
+      "heal_chance": 0.1,
+      "heal_amount": "attack"
+    },
+    "zhanzheng_nuhou": {
+      "source_action": "hit6",
+      "gameplay_tick": 1,
+      "source_delta": [
+        120,
+        -115
+      ],
+      "pull_destination": [
+        0,
+        -100
+      ],
+      "next_attack_multiplier": 1.3
+    },
+    "shengyu_zhiqiang": {
+      "source_action": "hit7",
+      "phases": [
+        {
+          "id": "charge",
+          "gameplay_tick": 5,
+          "source_delta": [
+            140,
+            -160
+          ]
+        },
+        {
+          "id": "wall",
+          "gameplay_tick": 17,
+          "source_delta": [
+            135,
+            -145
+          ]
+        }
+      ]
+    },
+    "suishi_po": {
+      "source_action": "hit8",
+      "gameplay_tick": 7,
+      "phases": [
+        {
+          "id": "impact",
+          "source_delta": [
+            95,
+            0
+          ]
+        },
+        {
+          "id": "spikes",
+          "source_delta": [
+            -20,
+            -20
+          ]
+        }
+      ]
+    },
+    "jushi_po": {
+      "source_action": "hit9",
+      "gameplay_tick": 7,
+      "source_delta": [
+        195,
+        -160
+      ]
+    },
+    "digun_qiu": {
+      "source_action": "hit10",
+      "gameplay_tick": 8,
+      "source_delta": [
+        55,
+        -25
+      ],
+      "movement_ticks": 25,
+      "movement_per_tick": 15
+    },
+    "xuangun_qiu": {
+      "source_action": "hit11/hit11Frame2",
+      "gameplay_tick": 3,
+      "source_delta": [
+        135,
+        -90
+      ]
+    },
+    "tumo_ci": {
+      "source_action": "hit12",
+      "guard_tick": 1,
+      "guard_source_delta": [
+        0,
+        0
+      ],
+      "hide_tick": 11,
+      "reactivate_from_tick": 31,
+      "reactivate_cost": 30,
+      "stab_count": 10,
+      "stab_radius": 100
+    }
+  },
+  "effects": [
+    {
+      "effect_id": "dunji",
+      "source_symbol": "DefineSprite_156_Role3Bullet4",
+      "frame_count": 30,
+      "source_canvas": [
+        190,
+        73
+      ],
+      "source_registration": [
+        90.85,
+        -12.8
+      ],
+      "union_crop": [
+        0,
+        0,
+        190,
+        73
+      ],
+      "output_size": [
+        190,
+        73
+      ],
+      "sprite_offset": [
+        4.150000000000006,
+        49.3
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shengdun_cast",
+      "source_symbol": "DefineSprite_149_Role3Bullet5",
+      "frame_count": 12,
+      "source_canvas": [
+        309,
+        206
+      ],
+      "source_registration": [
+        77.1,
+        11.35
+      ],
+      "union_crop": [
+        0,
+        0,
+        306,
+        203
+      ],
+      "output_size": [
+        306,
+        203
+      ],
+      "sprite_offset": [
+        75.9,
+        90.15
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shengdun_buff",
+      "source_symbol": "DefineSprite_124_Role3Bullet5Buff",
+      "frame_count": 19,
+      "source_canvas": [
+        42,
+        38
+      ],
+      "source_registration": [
+        0.0,
+        0.0
+      ],
+      "union_crop": [
+        0,
+        0,
+        38,
+        34
+      ],
+      "output_size": [
+        38,
+        34
+      ],
+      "sprite_offset": [
+        19.0,
+        17.0
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "zhanzheng_nuhou",
+      "source_symbol": "DefineSprite_169_Role3Bullet6",
+      "frame_count": 6,
+      "source_canvas": [
+        1728,
+        576
+      ],
+      "source_registration": [
+        768.0,
+        192.0
+      ],
+      "union_crop": [
+        780,
+        204,
+        948,
+        372
+      ],
+      "output_size": [
+        168,
+        168
+      ],
+      "sprite_offset": [
+        96.0,
+        96.0
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shengyu_charge",
+      "source_symbol": "DefineSprite_85_Role3Bullet7_1",
+      "frame_count": 10,
+      "source_canvas": [
+        144,
+        190
+      ],
+      "source_registration": [
+        0.0,
+        -14.8
+      ],
+      "union_crop": [
+        0,
+        0,
+        144,
+        190
+      ],
+      "output_size": [
+        144,
+        190
+      ],
+      "sprite_offset": [
+        72.0,
+        109.8
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shengyu_wall",
+      "source_symbol": "DefineSprite_66_Role3Bullet7_2",
+      "frame_count": 79,
+      "source_canvas": [
+        469,
+        185
+      ],
+      "source_registration": [
+        350.0,
+        0.0
+      ],
+      "union_crop": [
+        0,
+        0,
+        469,
+        185
+      ],
+      "output_size": [
+        469,
+        185
+      ],
+      "sprite_offset": [
+        -115.5,
+        92.5
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "suishi_impact",
+      "source_symbol": "DefineSprite_62_Role3Bullet8_1",
+      "frame_count": 4,
+      "source_canvas": [
+        76,
+        54
+      ],
+      "source_registration": [
+        7.4,
+        0.075
+      ],
+      "union_crop": [
+        0,
+        0,
+        76,
+        53
+      ],
+      "output_size": [
+        76,
+        53
+      ],
+      "sprite_offset": [
+        30.6,
+        26.425
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "suishi_spikes",
+      "source_symbol": "DefineSprite_52_Role3Bullet8_2",
+      "frame_count": 30,
+      "source_canvas": [
+        880,
+        162
+      ],
+      "source_registration": [
+        619.15,
+        16.575
+      ],
+      "union_crop": [
+        305,
+        1,
+        574,
+        93
+      ],
+      "output_size": [
+        269,
+        92
+      ],
+      "sprite_offset": [
+        -179.64999999999998,
+        30.425
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "jushi",
+      "source_symbol": "DefineSprite_120_Role3Bullet9",
+      "frame_count": 17,
+      "source_canvas": [
+        398,
+        275
+      ],
+      "source_registration": [
+        49.7,
+        38.875
+      ],
+      "union_crop": [
+        0,
+        0,
+        398,
+        274
+      ],
+      "output_size": [
+        398,
+        274
+      ],
+      "sprite_offset": [
+        149.3,
+        98.125
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "digun",
+      "source_symbol": "DefineSprite_165_Role3Bullet10",
+      "frame_count": 25,
+      "source_canvas": [
+        200,
+        200
+      ],
+      "source_registration": [
+        54.55,
+        53.8
+      ],
+      "union_crop": [
+        25,
+        34,
+        175,
+        149
+      ],
+      "output_size": [
+        150,
+        115
+      ],
+      "sprite_offset": [
+        45.45,
+        37.7
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "xuangun",
+      "source_symbol": "DefineSprite_20_Role3Bullet11",
+      "frame_count": 27,
+      "source_canvas": [
+        333,
+        294
+      ],
+      "source_registration": [
+        75.05,
+        169.025
+      ],
+      "union_crop": [
+        54,
+        41,
+        298,
+        272
+      ],
+      "output_size": [
+        244,
+        231
+      ],
+      "sprite_offset": [
+        100.95,
+        -12.525000000000006
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "tumo_guard",
+      "source_symbol": "DefineSprite_33_Role3Bullet12_1",
+      "frame_count": 160,
+      "source_canvas": [
+        154,
+        145
+      ],
+      "source_registration": [
+        83.15,
+        87.725
+      ],
+      "union_crop": [
+        0,
+        0,
+        154,
+        145
+      ],
+      "output_size": [
+        154,
+        145
+      ],
+      "sprite_offset": [
+        -6.150000000000006,
+        -15.224999999999994
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "tumo_stab",
+      "source_symbol": "DefineSprite_43_Role3Bullet12_2",
+      "frame_count": 1,
+      "source_canvas": [
+        38,
+        28
+      ],
+      "source_registration": [
+        16.9,
+        11.825
+      ],
+      "union_crop": [
+        7,
+        0,
+        28,
+        22
+      ],
+      "output_size": [
+        21,
+        22
+      ],
+      "sprite_offset": [
+        0.6000000000000014,
+        -0.8249999999999993
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    }
+  ]
+}

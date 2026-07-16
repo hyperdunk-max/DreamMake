@@ -56,7 +56,7 @@ func _fire_test_attack() -> void:
 	if absf(delta_to_player.x) > ATTACK_RANGE or absf(delta_to_player.y) > 85.0:
 		return
 	var attack_direction := 1.0 if delta_to_player.x >= 0.0 else -1.0
-	attack_target.take_hit(12, Vector2(260.0 * attack_direction, -180.0))
+	attack_target.take_hit(12, Vector2(260.0 * attack_direction, -180.0), &"physical", self)
 
 
 func take_hit(damage: int, impulse: Vector2) -> void:

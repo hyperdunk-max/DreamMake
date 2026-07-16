@@ -115,5 +115,7 @@ func set_role(role_id: int, display_name: String) -> void:
 			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  R 重开"
 		2:
 			controls_label.text = "A/D 移动  K 二段跳  J 普攻/长按冰龙波  U 圣光球  I 沐浴回春  O 紧箍咒  L 天降甘露"
+		3:
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 盾击  I 圣盾  O 战争怒吼  L 圣域之墙"
 		_:
 			controls_label.text = "A/D 移动  K 二段跳  J 普攻  Q/E 切换装备  1-4 切换角色  R 重开"

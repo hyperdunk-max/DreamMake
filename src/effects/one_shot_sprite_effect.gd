@@ -73,6 +73,14 @@ func get_duration_seconds() -> float:
 	return float(_frames.size()) / _fps if _fps > 0.0 else 0.0
 
 
+func seek_frame(frame_index: int) -> void:
+	if _frames.is_empty():
+		return
+	_frame_index = clampi(frame_index, 0, _frames.size() - 1)
+	_frame_accumulator = 0.0
+	texture = _frames[_frame_index] as Texture2D
+
+
 func set_follow_target(target: Node2D, follow_offset: Vector2) -> void:
 	_follow_target = target
 	_follow_offset = follow_offset

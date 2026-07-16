@@ -129,6 +129,8 @@ func _configure_runtime_role() -> bool:
 func _physics_process(delta: float) -> void:
 	hurt_time = maxf(0.0, hurt_time - delta)
 	double_jump_animation_time = maxf(0.0, double_jump_animation_time - delta)
+	if role_skill_state != null:
+		role_skill_state.process_persistent(delta)
 	if Input.is_action_just_released("attack") and combo_attack_state != null:
 		combo_attack_state.release_attack()
 		if role_skill_state != null:
@@ -384,21 +386,43 @@ func find_role_skill_targets_at(size: Vector2, origin: Vector2) -> Array:
 
 func schedule_role_skill_box_hits(
 	origin: Vector2, size: Vector2, damage: int, knockback: Vector2,
-	repeat_count: int, interval_seconds: float
+	repeat_count: int, interval_seconds: float, initial_delay_seconds := 0.0
 ) -> void:
 	_run_scheduled_role_skill_box_hits(
-		origin, size, damage, knockback, repeat_count, interval_seconds
+		origin, size, damage, knockback, repeat_count, interval_seconds, initial_delay_seconds
 	)
 
 
 func _run_scheduled_role_skill_box_hits(
 	origin: Vector2, size: Vector2, damage: int, knockback: Vector2,
+	repeat_count: int, interval_seconds: float, initial_delay_seconds: float
+) -> void:
+	if initial_delay_seconds > 0.0:
+		await get_tree().create_timer(initial_delay_seconds).timeout
+	for repeat_index in range(repeat_count):
+		if repeat_index > 0:
+			await get_tree().create_timer(interval_seconds).timeout
+		for target in find_role_skill_targets_at(size, origin):
+			apply_role_skill_hit(target, damage, knockback)
+
+
+func schedule_following_role_skill_box_hits(
+	follow_offset: Vector2, size: Vector2, damage: int, knockback: Vector2,
+	repeat_count: int, interval_seconds: float
+) -> void:
+	_run_following_role_skill_box_hits(
+		follow_offset, size, damage, knockback, repeat_count, interval_seconds
+	)
+
+
+func _run_following_role_skill_box_hits(
+	follow_offset: Vector2, size: Vector2, damage: int, knockback: Vector2,
 	repeat_count: int, interval_seconds: float
 ) -> void:
 	for repeat_index in range(repeat_count):
 		if repeat_index > 0:
 			await get_tree().create_timer(interval_seconds).timeout
-		for target in find_role_skill_targets_at(size, origin):
+		for target in find_role_skill_targets_at(size, global_position + follow_offset):
 			apply_role_skill_hit(target, damage, knockback)
 
 
@@ -471,11 +495,15 @@ func spawn_role_skill_effect(spec: Dictionary, origin: Vector2, follow_actor := 
 	if frames.is_empty():
 		return null
 	var effect := OneShotSpriteEffect.new()
+	var source_facing := int(spec.get("effect_source_facing", 1))
+	var effect_gameplay_facing := facing
+	if bool(spec.get("ignore_facing", false)):
+		effect_gameplay_facing = float(source_facing)
 	if not effect.configure(
 		frames,
 		float(spec.get("effect_fps", 24.0)),
-		int(spec.get("effect_source_facing", 1)),
-		facing,
+		source_facing,
+		effect_gameplay_facing,
 		Vector2(spec.get("effect_sprite_offset", Vector2.ZERO))
 	):
 		effect.queue_free()
@@ -640,16 +668,28 @@ func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 	return effect
 
 
-func take_hit(damage: int, impulse: Vector2) -> void:
-	if action_state_machine.is_invulnerable():
+func take_hit(
+	damage: int, impulse: Vector2, damage_kind := &"physical", source: Object = null
+) -> void:
+	var persistent_invulnerability := (
+		role_skill_state != null and role_skill_state.is_persistently_invulnerable()
+	)
+	if action_state_machine.is_invulnerable() or persistent_invulnerability:
+		if role_skill_state != null:
+			role_skill_state.on_incoming_hit_blocked(source, damage)
 		return
+	var resolved_damage := damage
+	if role_skill_state != null:
+		resolved_damage = role_skill_state.modify_incoming_damage(damage, StringName(damage_kind))
 	action_state_machine.clear_state()
 	_reset_locomotion_input()
-	health = maxi(0, health - damage)
+	health = maxi(0, health - resolved_damage)
 	velocity = impulse
 	hurt_time = HURT_TIME
 	layered_animator.play_action(&"hurt", true)
 	health_changed.emit(health, max_health)
+	if role_skill_state != null:
+		role_skill_state.on_damage_received(resolved_damage)
 
 
 func get_weapon_name() -> String:

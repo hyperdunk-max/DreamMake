@@ -34,5 +34,15 @@ actions = {
 &"jump_fall": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 1}]},
 &"jump_up": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 0}]},
 &"run": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2), "row": 3, "start_column": 0}]},
+&"skill_digun_qiu": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(4, 3, 25), "row": 13, "start_column": 0}]},
+&"skill_dunji": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(24, 2, 8), "row": 9, "start_column": 0}]},
+&"skill_jushi_po": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 20), "row": 12, "start_column": 0}]},
+&"skill_shengdun": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(4), "row": 4, "start_column": 5}]},
+&"skill_shengyu_zhiqiang": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 20), "row": 10, "start_column": 0}]},
+&"skill_suishi_po": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 20), "row": 11, "start_column": 0}]},
+&"skill_tumo_ci": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(160), "row": 4, "start_column": 5}]},
+&"skill_tumo_ci_finish": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(20), "row": 4, "start_column": 5}]},
+&"skill_xuangun_qiu": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2), "row": 4, "start_column": 4}, {"cycles": 1, "holds": PackedInt32Array(28), "row": 4, "start_column": 5}]},
+&"skill_zhanzheng_nuhou": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(6), "row": 4, "start_column": 3}]},
 &"walk": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(4, 4, 4, 4), "row": 2, "start_column": 0}]}
 }

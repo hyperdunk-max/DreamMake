@@ -62,6 +62,26 @@ func modify_outgoing_damage(damage: int) -> int:
 	return damage
 
 
+func modify_incoming_damage(damage: int, _damage_kind: StringName) -> int:
+	return damage
+
+
+func on_damage_received(_damage: int) -> void:
+	pass
+
+
+func on_incoming_hit_blocked(_source: Object, _damage: int) -> void:
+	pass
+
+
+func process_persistent(_delta: float) -> void:
+	pass
+
+
+func is_persistently_invulnerable() -> bool:
+	return false
+
+
 func dispose() -> void:
 	pass
 

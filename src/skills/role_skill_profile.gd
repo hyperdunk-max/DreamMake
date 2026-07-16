@@ -5,6 +5,9 @@ extends Resource
 @export var logical_fps := 24.0
 @export var passive_lifesteal_ratio := 0.0
 @export var passive_damage_multiplier := 1.0
+@export var passive_physical_defense := 0
+@export var passive_damage_heal_chance := 0.0
+@export var passive_damage_heal_amount := 0
 @export var charged_attack_skill: Dictionary = {}
 @export var active_skills: Array[Dictionary] = []
 
@@ -31,6 +34,12 @@ func validate_for_role(expected_role_id: int, animation_profile: RoleAnimationPr
 			errors.append("Role %d skill '%s' has an invalid duration." % [role_id, skill_id])
 	if passive_damage_multiplier <= 0.0:
 		errors.append("Role %d passive damage multiplier must be positive." % role_id)
+	if passive_physical_defense < 0:
+		errors.append("Role %d passive physical defense cannot be negative." % role_id)
+	if passive_damage_heal_chance < 0.0 or passive_damage_heal_chance > 1.0:
+		errors.append("Role %d passive heal chance must be between zero and one." % role_id)
+	if passive_damage_heal_amount < 0:
+		errors.append("Role %d passive heal amount cannot be negative." % role_id)
 	if not charged_attack_skill.is_empty():
 		var charged_id := StringName(charged_attack_skill.get("id", &""))
 		var charged_action := StringName(charged_attack_skill.get("action", &""))
