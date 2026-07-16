@@ -1,0 +1,187 @@
+[gd_resource type="Resource" script_class="RoleSkillProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/skills/role_skill_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+role_id = 4
+logical_fps = 24.0
+active_skills = [{
+"action": &"hit4",
+"allow_air": true,
+"arrow_damage": 24,
+"arrow_duration_ticks": 18,
+"arrow_effect_tick": 7,
+"display_name": "瘴气",
+"duration_ticks": 21,
+"effects": {
+&"arrow": {"effect_fps": 24.0, "effect_frame_count": 13, "effect_output_size": Vector2(571, 60), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/zq_arrow/frame_%03d.png", "effect_registration_point": Vector2(543.8, 31.075), "effect_source_canvas": Vector2(588, 66), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-242.3, -0.075)},
+&"shovel": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(216, 153), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/zq_shovel/frame_%03d.png", "effect_registration_point": Vector2(-12.975, -10.875), "effect_source_canvas": Vector2(240, 160), "effect_source_facing": -1, "effect_sprite_offset": Vector2(120.975, 88.375)}
+},
+"id": &"zhang_qi",
+"mana_cost": 20,
+"poison_damage": 10,
+"shovel_damage": 6,
+"shovel_duration_ticks": 21,
+"shovel_effect_tick": 3,
+"shovel_repeat_count": 2,
+"source_action": &"hit4"
+}, {
+"action": &"hit6",
+"allow_air": true,
+"arrow_duration_ticks": 10,
+"display_name": "麻痹药剂",
+"duration_ticks": 10,
+"effect_tick": 1,
+"effects": {&"orb": {"effect_fps": 24.0, "effect_frame_count": 1, "effect_output_size": Vector2(42, 41), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mbyj/frame_%03d.png", "effect_registration_point": Vector2(0, 0), "effect_source_canvas": Vector2(54, 54), "effect_source_facing": -1, "effect_sprite_offset": Vector2(21, 20.5), "lifetime_seconds": 15.0, "loop": true}},
+"id": &"mabi_yaoji",
+"mana_cost": 30,
+"max_jumps": 8,
+"chain_range": 500.0,
+"poison_stack_seconds": 7.0,
+"shovel_duration_ticks": 10,
+"stun_seconds": 0.5,
+"travel_speed": 416.666667,
+"source_action": &"hit6"
+}, {
+"action": &"hit5",
+"allow_air": true,
+"arrow_bind_tick": 7,
+"arrow_cast_tick": 1,
+"arrow_duration_ticks": 20,
+"display_name": "巫毒娃娃",
+"duration_ticks": 21,
+"doll_seconds": 10.0,
+"effects": {
+&"cast": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_output_size": Vector2(198, 219), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/wdww_cast/frame_%03d.png", "effect_registration_point": Vector2(648.725, 874.975), "effect_source_canvas": Vector2(1600, 1977), "effect_source_facing": -1, "effect_sprite_offset": Vector2(93.275, 101.525)},
+&"doll": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_output_size": Vector2(79, 112), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/wdww_doll/frame_%03d.png", "effect_registration_point": Vector2(58, 60), "effect_source_canvas": Vector2(116, 120), "effect_source_facing": -1, "effect_sprite_offset": Vector2(0.5, -2), "lifetime_seconds": 10.0, "loop": true}
+},
+"id": &"wudu_wawa",
+"mana_cost": 40,
+"shovel_bind_tick": 8,
+"shovel_cast_tick": 3,
+"shovel_duration_ticks": 21,
+"source_action": &"hit5"
+}, {
+"action": &"hit7",
+"allow_air": false,
+"array_tick": 15,
+"arrow_duration_ticks": 34,
+"burst_tick": 27,
+"damage": 10,
+"display_name": "剧毒阵",
+"duration_ticks": 34,
+"effects": {
+&"array": {"effect_fps": 24.0, "effect_frame_count": 238, "effect_output_size": Vector2(234, 52), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/jdz_array/frame_%03d.png", "effect_registration_point": Vector2(41.825, -71.25), "effect_source_canvas": Vector2(287, 56), "effect_source_facing": -1, "effect_sprite_offset": Vector2(100.175, 99.25)},
+&"burst": {"effect_fps": 24.0, "effect_frame_count": 230, "effect_output_size": Vector2(87, 134), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/jdz_burst/frame_%03d.png", "effect_registration_point": Vector2(768, 384), "effect_source_canvas": Vector2(1728, 960), "effect_source_facing": -1, "effect_sprite_offset": Vector2(94.5, 78)}
+},
+"id": &"judu_zhen",
+"mana_cost": 50,
+"poison_damage": 10,
+"shovel_duration_ticks": 34,
+"source_action": &"hit7"
+}, {
+"action": &"hit4",
+"allow_air": true,
+"arrow_duration_ticks": 1,
+"damage_per_stack_squared": 5.0,
+"display_name": "猛毒素",
+"duration_ticks": 1,
+"effects": {&"blast": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(80, 151), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mds/frame_%03d.png", "effect_registration_point": Vector2(519.05, 503.1), "effect_source_canvas": Vector2(1487, 1485), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-2.05, -3.6)}},
+"id": &"mengdu_su",
+"mana_cost": 60,
+"play_action": false,
+"shovel_duration_ticks": 1,
+"stack_cap": 6,
+"source_action": &"instant"
+}, {
+"action": &"hit8",
+"allow_air": false,
+"arrow_duration_ticks": 18,
+"arrow_effect_tick": 1,
+"damage": 40,
+"display_name": "强力击",
+"duration_ticks": 21,
+"effects": {
+&"arrow_charge": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_output_size": Vector2(75, 84), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/qlj_arrow_charge/frame_%03d.png", "effect_registration_point": Vector2(0.4, 0.45), "effect_source_canvas": Vector2(125, 129), "effect_source_facing": -1, "effect_sprite_offset": Vector2(59.1, 64.55)},
+&"arrow_impact": {"effect_fps": 24.0, "effect_frame_count": 17, "effect_output_size": Vector2(142, 122), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/qlj_arrow_impact/frame_%03d.png", "effect_registration_point": Vector2(91.55, 22.4), "effect_source_canvas": Vector2(151, 125), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-20.55, 38.6), "hitbox_size": Vector2(142, 122)},
+&"shovel": {"effect_fps": 24.0, "effect_frame_count": 5, "effect_output_size": Vector2(201, 93), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/qlj_shovel/frame_%03d.png", "effect_registration_point": Vector2(69.075, 8.825), "effect_source_canvas": Vector2(205, 97), "effect_source_facing": -1, "effect_sprite_offset": Vector2(31.425, 37.675), "hitbox_size": Vector2(201, 93)}
+},
+"id": &"qiangli_ji",
+"mana_cost": 20,
+"shovel_duration_ticks": 21,
+"shovel_effect_tick": 5,
+"source_action": &"hit8"
+}, {
+"action": &"hit9",
+"allow_air": true,
+"arrow_damage": 20,
+"arrow_duration_ticks": 30,
+"arrow_hit_tick": 3,
+"display_name": "腾空击",
+"duration_ticks": 30,
+"effects": {
+&"arrow_charge": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(149, 157), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/tkj_arrow_charge/frame_%03d.png", "effect_registration_point": Vector2(1.7, 2.15), "effect_source_canvas": Vector2(151, 160), "effect_source_facing": -1, "effect_sprite_offset": Vector2(72.8, 78.35)},
+&"arrow_impact": {"effect_fps": 24.0, "effect_frame_count": 18, "effect_output_size": Vector2(125, 368), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/tkj_arrow_impact/frame_%03d.png", "effect_registration_point": Vector2(4.975, 29.85), "effect_source_canvas": Vector2(128, 427), "effect_source_facing": -1, "effect_sprite_offset": Vector2(57.525, 181.15), "hitbox_size": Vector2(125, 368)},
+&"shovel_charge": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_output_size": Vector2(116, 78), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/tkj_shovel_charge/frame_%03d.png", "effect_registration_point": Vector2(52.675, 22.975), "effect_source_canvas": Vector2(120, 81), "effect_source_facing": -1, "effect_sprite_offset": Vector2(5.325, 16.025)},
+&"shovel_impact": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_output_size": Vector2(107, 269), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/tkj_shovel_impact/frame_%03d.png", "effect_registration_point": Vector2(48.325, 143.3), "effect_source_canvas": Vector2(110, 271), "effect_source_facing": -1, "effect_sprite_offset": Vector2(5.175, -8.8), "hitbox_size": Vector2(107, 269)}
+},
+"id": &"tengkong_ji",
+"mana_cost": 35,
+"shovel_damage": 80,
+"shovel_duration_ticks": 20,
+"shovel_hit_tick": 8,
+"source_action": &"hit9"
+}, {
+"action": &"hit10",
+"allow_air": true,
+"arrow_damage": 80,
+"arrow_duration_ticks": 36,
+"arrow_effect_tick": 13,
+"display_name": "多重击",
+"duration_ticks": 36,
+"effects": {
+&"arrow_charge": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(98, 148), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/dzj_arrow_charge/frame_%03d.png", "effect_registration_point": Vector2(145.4, 73), "effect_source_canvas": Vector2(175, 152), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-23.4, 1)},
+&"arrow_impact": {"effect_fps": 24.0, "effect_frame_count": 25, "effect_output_size": Vector2(273, 110), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/dzj_arrow_impact/frame_%03d.png", "effect_registration_point": Vector2(84.9, -15.35), "effect_source_canvas": Vector2(276, 113), "effect_source_facing": -1, "effect_sprite_offset": Vector2(51.6, 70.35), "hitbox_size": Vector2(273, 110)},
+&"shovel": {"effect_fps": 24.0, "effect_frame_count": 37, "effect_output_size": Vector2(342, 166), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/dzj_shovel/frame_%03d.png", "effect_registration_point": Vector2(131.075, 35.45), "effect_source_canvas": Vector2(354, 175), "effect_source_facing": -1, "effect_sprite_offset": Vector2(48.925, 52.55)}
+},
+"id": &"duozhong_ji",
+"mana_cost": 50,
+"shovel_damage": 24,
+"shovel_duration_ticks": 34,
+"shovel_effect_tick": 1,
+"shovel_repeat_count": 5,
+"source_action": &"hit10"
+}, {
+"action": &"hit11",
+"allow_air": true,
+"arrow_duration_ticks": 4,
+"display_name": "绿叶标记",
+"duration_ticks": 4,
+"effects": {&"mark": {"effect_fps": 1.0, "effect_frame_count": 1, "effect_output_size": Vector2(90, 39), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/lvbj/frame_%03d.png", "effect_registration_point": Vector2(48.225, 22.2), "effect_source_canvas": Vector2(98, 45), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-1.225, -1.7), "lifetime_seconds": 10.0, "loop": true}},
+"id": &"lvye_biaoji",
+"mana_cost": 30,
+"mark_tick": 1,
+"shovel_duration_ticks": 4,
+"source_action": &"hit11"
+}, {
+"action": &"hit12",
+"allow_air": false,
+"arrow_damage": 40,
+"arrow_duration_ticks": 50,
+"display_name": "木魔舞",
+"duration_ticks": 50,
+"effects": {
+&"arrow_aura": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(149, 157), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mmw_arrow_aura/frame_%03d.png", "effect_registration_point": Vector2(0.25, -10.825), "effect_source_canvas": Vector2(153, 160), "effect_source_facing": -1, "effect_sprite_offset": Vector2(74.25, 89.325)},
+&"arrow_body": {"effect_fps": 24.0, "effect_frame_count": 20, "effect_output_size": Vector2(108, 104), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mmw_arrow_body/frame_%03d.png", "effect_registration_point": Vector2(87.2, 65.225), "effect_source_canvas": Vector2(151, 147), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-14.2, 7.775), "hitbox_size": Vector2(108, 104)},
+&"arrow_leaf": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_output_size": Vector2(431, 256), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mmw_arrow_leaf/frame_%03d.png", "effect_registration_point": Vector2(347.35, 0.325), "effect_source_canvas": Vector2(444, 274), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-126.85, 134.675), "hitbox_size": Vector2(431, 256)},
+&"shovel": {"effect_fps": 24.0, "effect_frame_count": 91, "effect_output_size": Vector2(798, 63), "effect_path_pattern": "res://assets/selected/zmxiyou3/shaseng/effects/skills/mmw_shovel/frame_%03d.png", "effect_registration_point": Vector2(475.3, 31.675), "effect_source_canvas": Vector2(814, 66), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-76.3, -0.175), "lifetime_seconds": 10.0, "loop": true}
+},
+"id": &"mumo_wu",
+"mana_cost": 60,
+"shovel_damage": 60,
+"shovel_duration_ticks": 18,
+"shovel_effect_tick": 5,
+"shovel_repeat_count": 12,
+"source_action": &"hit12"
+}]

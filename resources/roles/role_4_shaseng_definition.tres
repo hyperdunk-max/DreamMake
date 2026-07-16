@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="RoleDefinition" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="RoleDefinition" load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://src/roles/role_definition.gd" id="1_definition"]
 [ext_resource type="Resource" path="res://resources/roles/role_4_shaseng.tres" id="2_animation"]
 [ext_resource type="Resource" path="res://resources/roles/role_4_shaseng_combo.tres" id="3_combo"]
 [ext_resource type="Resource" path="res://resources/roles/role_4_shaseng_arrow_combo.tres" id="4_arrow_combo"]
+[ext_resource type="Resource" path="res://resources/roles/role_4_shaseng_skills.tres" id="5_skills"]
+[ext_resource type="Script" path="res://src/states/shaseng_skill_state.gd" id="6_skill_state"]
 
 [resource]
 script = ExtResource("1_definition")
@@ -12,5 +14,7 @@ display_name = "沙僧"
 animation_profile = ExtResource("2_animation")
 combo_attack_profile = ExtResource("3_combo")
 combo_attack_profiles_by_mode = {&"arrow": ExtResource("4_arrow_combo")}
+skill_profile = ExtResource("5_skills")
+skill_state_script = ExtResource("6_skill_state")
 default_body_showid = 1
 default_weapon_showid = 0

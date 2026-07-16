@@ -16,9 +16,18 @@ var defeated_once := false
 var attack_target: CharacterBody2D
 var attack_time := 0.0
 var attack_has_fired := false
+var stun_time := 0.0
 
 
 func _physics_process(delta: float) -> void:
+	stun_time = maxf(0.0, stun_time - delta)
+	if stun_time > 0.0:
+		attack_time = 0.0
+		velocity.x = move_toward(velocity.x, 0.0, 900.0 * delta)
+		if not is_on_floor():
+			velocity.y += GRAVITY * delta
+		move_and_slide()
+		return
 	if attack_time > 0.0:
 		attack_time = maxf(0.0, attack_time - delta)
 		if not attack_has_fired and attack_time <= ATTACK_RECOVERY:
@@ -70,6 +79,11 @@ func take_hit(damage: int, impulse: Vector2) -> void:
 	if health == 0 and not defeated_once:
 		defeated_once = true
 		defeated.emit()
+
+
+func apply_stun(seconds: float) -> void:
+	stun_time = maxf(stun_time, seconds)
+	velocity = Vector2.ZERO
 
 
 func _draw() -> void:
