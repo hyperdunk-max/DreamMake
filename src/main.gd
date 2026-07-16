@@ -26,6 +26,7 @@ func _ready() -> void:
 	player.mana_changed.emit(player.mana, player.max_mana)
 	hud.set_weapon(player.weapon_showid, player.get_weapon_name())
 	hud.set_body(player.body_showid, player.get_body_name())
+	hud.set_role(player.role_id, player.role_definition.display_name)
 	enemy.health_changed.emit(enemy.health, enemy.max_health)
 	queue_redraw()
 

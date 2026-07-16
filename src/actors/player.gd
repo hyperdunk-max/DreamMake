@@ -47,6 +47,7 @@ var _lifesteal_accumulator := 0.0
 
 
 func _ready() -> void:
+	add_to_group(&"players")
 	if role_definition != null:
 		_apply_role_definition(role_definition)
 	_configure_runtime_role()
@@ -110,6 +111,7 @@ func _configure_runtime_role() -> bool:
 		action_state_machine.register_state(air_attack_state)
 	air_attack_state.configure(role_definition.get_air_attack_step(), combo_attack_profile.logical_fps)
 	if role_skill_state != null:
+		role_skill_state.dispose()
 		action_state_machine.unregister_state(RoleSkillState.ID)
 		role_skill_state = null
 	if role_definition.skill_profile != null and role_definition.skill_state_script != null:
@@ -129,6 +131,8 @@ func _physics_process(delta: float) -> void:
 	double_jump_animation_time = maxf(0.0, double_jump_animation_time - delta)
 	if Input.is_action_just_released("attack") and combo_attack_state != null:
 		combo_attack_state.release_attack()
+		if role_skill_state != null:
+			role_skill_state.release_normal_attack()
 	action_state_machine.physics_process(delta)
 	if is_on_floor():
 		jump_count = 0
@@ -181,6 +185,9 @@ func request_normal_attack() -> bool:
 			return false
 		combo_attack_state.reset_progress()
 		return air_attack_state.request_attack()
+	if role_skill_state != null and role_skill_state.request_charged_normal_attack():
+		combo_attack_state.reset_progress()
+		return true
 	if is_running and not action_state_machine.is_in_state(ComboAttackState.ID):
 		# In the source, a learned 火眼突击 replaces Wukong's running hit1.
 		if role_skill_state != null and role_skill_state.request_skill_by_id(&"huoyan_tuji"):
@@ -354,13 +361,17 @@ func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 
 
 func find_role_skill_targets(size: Vector2, offset: Vector2) -> Array:
-	var shape := RectangleShape2D.new()
-	shape.size = size
 	var mirrored_offset := offset
 	mirrored_offset.x *= facing
+	return find_role_skill_targets_at(size, global_position + mirrored_offset)
+
+
+func find_role_skill_targets_at(size: Vector2, origin: Vector2) -> Array:
+	var shape := RectangleShape2D.new()
+	shape.size = size
 	var query := PhysicsShapeQueryParameters2D.new()
 	query.shape = shape
-	query.transform = Transform2D(0.0, global_position + mirrored_offset)
+	query.transform = Transform2D(0.0, origin)
 	query.collision_mask = 4
 	query.exclude = [get_rid()]
 	var targets: Array = []
@@ -369,6 +380,35 @@ func find_role_skill_targets(size: Vector2, offset: Vector2) -> Array:
 		if target.has_method("take_hit") and not targets.has(target):
 			targets.append(target)
 	return targets
+
+
+func schedule_role_skill_box_hits(
+	origin: Vector2, size: Vector2, damage: int, knockback: Vector2,
+	repeat_count: int, interval_seconds: float
+) -> void:
+	_run_scheduled_role_skill_box_hits(
+		origin, size, damage, knockback, repeat_count, interval_seconds
+	)
+
+
+func _run_scheduled_role_skill_box_hits(
+	origin: Vector2, size: Vector2, damage: int, knockback: Vector2,
+	repeat_count: int, interval_seconds: float
+) -> void:
+	for repeat_index in range(repeat_count):
+		if repeat_index > 0:
+			await get_tree().create_timer(interval_seconds).timeout
+		for target in find_role_skill_targets_at(size, origin):
+			apply_role_skill_hit(target, damage, knockback)
+
+
+func move_role_skill_target(target: Node2D, destination: Vector2, duration_seconds: float) -> void:
+	if target == null or not is_instance_valid(target):
+		return
+	if target is CharacterBody2D:
+		target.velocity = Vector2.ZERO
+	var tween := get_tree().create_tween()
+	tween.tween_property(target, "global_position", destination, duration_seconds)
 
 
 func find_nearest_role_skill_target() -> Object:
@@ -389,10 +429,13 @@ func find_nearest_role_skill_target() -> Object:
 func apply_role_skill_hit(target: Object, damage: int, knockback: Vector2) -> void:
 	if target == null or not is_instance_valid(target) or not target.has_method("take_hit"):
 		return
+	var resolved_damage := damage
+	if role_skill_state != null:
+		resolved_damage = role_skill_state.modify_outgoing_damage(damage)
 	var health_before := int(target.get("health"))
 	var directed_knockback := knockback
 	directed_knockback.x *= facing
-	target.take_hit(damage, directed_knockback)
+	target.take_hit(resolved_damage, directed_knockback)
 	var actual_damage := maxi(0, health_before - int(target.get("health")))
 	_apply_lifesteal(actual_damage)
 
@@ -441,7 +484,68 @@ func spawn_role_skill_effect(spec: Dictionary, origin: Vector2, follow_actor := 
 	effect.global_position = origin
 	if follow_actor:
 		effect.set_follow_target(self, origin - global_position)
+	if bool(spec.get("loop", false)):
+		effect.set_looping(true)
+	if spec.has("linear_velocity"):
+		var effect_velocity := Vector2(spec.get("linear_velocity", Vector2.ZERO))
+		effect_velocity.x *= facing
+		effect.set_linear_velocity(effect_velocity)
+	if float(spec.get("lifetime_seconds", 0.0)) > 0.0:
+		effect.set_lifetime(float(spec["lifetime_seconds"]))
+	if spec.has("blend_mode"):
+		effect.set_blend_mode(int(spec["blend_mode"]))
 	return effect
+
+
+func role_skill_effect_bounds_center(spec: Dictionary, registration_origin: Vector2) -> Vector2:
+	var canvas := Vector2(spec.get("effect_source_canvas", Vector2.ZERO))
+	var registration := Vector2(spec.get("effect_registration_point", canvas * 0.5))
+	var local_center := canvas * 0.5 - registration
+	var source_facing := int(spec.get("effect_source_facing", 1))
+	var gameplay_facing := 1 if facing >= 0.0 else -1
+	if gameplay_facing != source_facing:
+		local_center.x *= -1.0
+	return registration_origin + local_center
+
+
+func heal(amount: int) -> int:
+	if amount <= 0 or health <= 0:
+		return 0
+	var previous := health
+	health = mini(max_health, health + amount)
+	if health != previous:
+		health_changed.emit(health, max_health)
+	return health - previous
+
+
+func heal_role_skill_allies(origin: Vector2, radius: float, amount: int) -> int:
+	var total_healed := 0
+	for candidate in get_tree().get_nodes_in_group(&"players"):
+		if candidate is Node2D and candidate.has_method("heal"):
+			if (candidate.global_position - origin).length() <= radius:
+				total_healed += int(candidate.heal(amount))
+	return total_healed
+
+
+func schedule_role_skill_healing(
+	origin: Vector2, radius: float, amount: int, repeat_count: int,
+	interval_seconds: float, initial_delay_seconds := 0.0
+) -> void:
+	_run_scheduled_role_skill_healing(
+		origin, radius, amount, repeat_count, interval_seconds, initial_delay_seconds
+	)
+
+
+func _run_scheduled_role_skill_healing(
+	origin: Vector2, radius: float, amount: int, repeat_count: int,
+	interval_seconds: float, initial_delay_seconds: float
+) -> void:
+	if initial_delay_seconds > 0.0:
+		await get_tree().create_timer(initial_delay_seconds).timeout
+	for repeat_index in range(repeat_count):
+		if repeat_index > 0:
+			await get_tree().create_timer(interval_seconds).timeout
+		heal_role_skill_allies(origin, radius, amount)
 
 
 func schedule_role_skill_hits(

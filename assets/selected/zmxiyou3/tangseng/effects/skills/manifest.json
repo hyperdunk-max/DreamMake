@@ -1,0 +1,399 @@
+{
+  "purpose": "Tangseng complete skill effects and Flash coordinate calibration",
+  "source": "zmxiyou3 Role2v3550",
+  "flash_actor_origin_y": -50,
+  "shadow_source_atlas": "res://assets/selected/zmxiyou3/tangseng/shadow/source_atlas.png",
+  "source_calibration": {
+    "shengguang_qiu": {
+      "source_action": "hit5",
+      "gameplay_tick": 51,
+      "source_delta": [
+        175,
+        -110
+      ],
+      "placement": "actor_mirrored"
+    },
+    "muyu_huichun": {
+      "source_action": "hit6",
+      "gameplay_tick": 5,
+      "source_delta": [
+        0,
+        -25
+      ],
+      "placement": "actor_mirrored"
+    },
+    "jingu_zhou": {
+      "source_action": "hit7",
+      "gameplay_tick": 5,
+      "source_delta": [
+        210,
+        30
+      ],
+      "placement": "actor_mirrored"
+    },
+    "tianjiang_ganlu": {
+      "source_action": "hit8",
+      "gameplay_tick": 1,
+      "source_delta": [
+        -5,
+        -60
+      ],
+      "placement": "actor_mirrored"
+    },
+    "jiuhuan_shengjing": {
+      "source_action": "hit9",
+      "phases": [
+        {
+          "id": "aura",
+          "gameplay_tick": 1,
+          "source_delta": [
+            20,
+            -20
+          ],
+          "placement": "actor_mirrored"
+        },
+        {
+          "id": "strike",
+          "gameplay_tick": 11,
+          "source_delta": [
+            150,
+            -150
+          ],
+          "placement": "actor_mirrored"
+        }
+      ]
+    },
+    "binglong_bo": {
+      "source_action": "charged hit1",
+      "charge_ticks": 48,
+      "source_delta": [
+        50,
+        10
+      ],
+      "placement": "actor_mirrored"
+    },
+    "xuanbing_zhen": {
+      "source_action": "hit3",
+      "gameplay_tick": 13,
+      "source_delta": [
+        0,
+        10
+      ],
+      "placement": "actor_mirrored"
+    },
+    "shuihuanying": {
+      "source_action": "hit10",
+      "placement": "actor_origin_then_shadow_origin"
+    },
+    "shuimo_bao": {
+      "source_action": "hit4_1/hit4_2",
+      "phases": [
+        {
+          "id": "marker",
+          "gameplay_tick": 2,
+          "source_delta": [
+            130,
+            10
+          ],
+          "placement": "actor_mirrored"
+        },
+        {
+          "id": "blast",
+          "gameplay_tick": 5,
+          "source_delta": [
+            30,
+            -320
+          ],
+          "placement": "moving_marker_mirrored"
+        }
+      ]
+    }
+  },
+  "effects": [
+    {
+      "effect_id": "binglong_bo",
+      "source_symbol": "DefineSprite_107_Role2Bullet2",
+      "frame_count": 48,
+      "source_canvas": [
+        1032,
+        60
+      ],
+      "source_registration": [
+        965.975,
+        30.0
+      ],
+      "union_crop": [
+        0,
+        0,
+        1032,
+        59
+      ],
+      "output_size": [
+        1032,
+        59
+      ],
+      "sprite_offset": [
+        -449.975,
+        -0.5
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "xuanbing_zhen",
+      "source_symbol": "DefineSprite_243_Role2Bullet3",
+      "frame_count": 46,
+      "source_canvas": [
+        477,
+        192
+      ],
+      "source_registration": [
+        243.0,
+        94.15
+      ],
+      "union_crop": [
+        34,
+        25,
+        438,
+        150
+      ],
+      "output_size": [
+        404,
+        125
+      ],
+      "sprite_offset": [
+        -7.0,
+        -6.650000000000006
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shuimo_bao_marker",
+      "source_symbol": "DefineSprite_100_Role2Bullet4_1",
+      "frame_count": 48,
+      "source_canvas": [
+        196,
+        83
+      ],
+      "source_registration": [
+        16.15,
+        16.375
+      ],
+      "union_crop": [
+        11,
+        15,
+        185,
+        74
+      ],
+      "output_size": [
+        174,
+        59
+      ],
+      "sprite_offset": [
+        81.85,
+        28.125
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shuimo_bao_blast",
+      "source_symbol": "DefineSprite_93_Role2Bullet4_2",
+      "frame_count": 22,
+      "source_canvas": [
+        267,
+        432
+      ],
+      "source_registration": [
+        102.375,
+        36.4
+      ],
+      "union_crop": [
+        0,
+        0,
+        266,
+        431
+      ],
+      "output_size": [
+        266,
+        431
+      ],
+      "sprite_offset": [
+        30.625,
+        179.1
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "shengguang_qiu",
+      "source_symbol": "DefineSprite_219_Role2Bullet5",
+      "frame_count": 180,
+      "source_canvas": [
+        200,
+        200
+      ],
+      "source_registration": [
+        0.0,
+        0.0
+      ],
+      "union_crop": [
+        25,
+        38,
+        166,
+        181
+      ],
+      "output_size": [
+        141,
+        143
+      ],
+      "sprite_offset": [
+        95.5,
+        109.5
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "muyu_huichun",
+      "source_symbol": "DefineSprite_197_Role2Bullet6",
+      "frame_count": 26,
+      "source_canvas": [
+        213,
+        245
+      ],
+      "source_registration": [
+        106.525,
+        168.875
+      ],
+      "union_crop": [
+        0,
+        0,
+        212,
+        244
+      ],
+      "output_size": [
+        212,
+        244
+      ],
+      "sprite_offset": [
+        -0.5250000000000057,
+        -46.875
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "jingu_zhou",
+      "source_symbol": "DefineSprite_170_Role2Bullet7",
+      "frame_count": 32,
+      "source_canvas": [
+        502,
+        138
+      ],
+      "source_registration": [
+        247.925,
+        58.525
+      ],
+      "union_crop": [
+        17,
+        17,
+        485,
+        122
+      ],
+      "output_size": [
+        468,
+        105
+      ],
+      "sprite_offset": [
+        3.0749999999999886,
+        10.975000000000001
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "tianjiang_ganlu",
+      "source_symbol": "DefineSprite_47_Role2Bullet8",
+      "frame_count": 34,
+      "source_canvas": [
+        482,
+        277
+      ],
+      "source_registration": [
+        245.5,
+        163.0
+      ],
+      "union_crop": [
+        0,
+        0,
+        482,
+        277
+      ],
+      "output_size": [
+        482,
+        277
+      ],
+      "sprite_offset": [
+        -4.5,
+        -24.5
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint",
+      "source_blend_mode": {
+        "flash_value": 8,
+        "flash_mode": "subtract",
+        "godot_value": 2
+      }
+    },
+    {
+      "effect_id": "jiuhuan_aura",
+      "source_symbol": "DefineSprite_126_Role2Bullet9_1",
+      "frame_count": 57,
+      "source_canvas": [
+        113,
+        110
+      ],
+      "source_registration": [
+        62.7,
+        43.05
+      ],
+      "union_crop": [
+        11,
+        10,
+        102,
+        101
+      ],
+      "output_size": [
+        91,
+        91
+      ],
+      "sprite_offset": [
+        -6.200000000000003,
+        12.450000000000003
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    },
+    {
+      "effect_id": "jiuhuan_strike",
+      "source_symbol": "DefineSprite_167_Role2Bullet9_2",
+      "frame_count": 45,
+      "source_canvas": [
+        300,
+        300
+      ],
+      "source_registration": [
+        0.0,
+        0.0
+      ],
+      "union_crop": [
+        0,
+        1,
+        300,
+        300
+      ],
+      "output_size": [
+        300,
+        299
+      ],
+      "sprite_offset": [
+        150.0,
+        150.5
+      ],
+      "policy": "shared union crop; restore SWF registration; no resize or repaint"
+    }
+  ]
+}

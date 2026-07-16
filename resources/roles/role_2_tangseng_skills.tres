@@ -1,0 +1,136 @@
+[gd_resource type="Resource" script_class="RoleSkillProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/skills/role_skill_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+role_id = 2
+logical_fps = 24.0
+passive_damage_multiplier = 1.3
+charged_attack_skill = {
+"action": &"skill_binglong_charge",
+"charge_ticks": 48,
+"damage": 5,
+"display_name": "冰龙波",
+"effects": {&"beam": {"effect_fps": 24.0, "effect_frame_count": 48, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/binglong_bo/frame_%03d.png", "effect_registration_point": Vector2(965.975, 30), "effect_source_canvas": Vector2(1032, 60), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-449.975, -0.5)}},
+"hit_interval_ticks": 4,
+"hitbox_offset": Vector2(500, -35),
+"hitbox_size": Vector2(1032, 59),
+"id": &"binglong_bo",
+"knockback": Vector2(240, -24),
+"mana_cost": 20,
+"release_action": &"skill_binglong_release"
+}
+active_skills = [{
+"action": &"skill_shengguang_qiu",
+"allow_air": true,
+"damage": 40,
+"display_name": "圣光球",
+"duration_ticks": 65,
+"effect_tick": 51,
+"effects": {&"orb": {"effect_fps": 24.0, "effect_frame_count": 180, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/shengguang_qiu/frame_%03d.png", "effect_registration_point": Vector2(0, 0), "effect_source_canvas": Vector2(200, 200), "effect_source_facing": -1, "effect_sprite_offset": Vector2(95.5, 109.5)}},
+"hit_interval_seconds": 2.0,
+"hitbox_size": Vector2(200, 200),
+"id": &"shengguang_qiu",
+"knockback": Vector2(360, -48),
+"mana_cost": 20,
+"repeat_count": 4,
+"source_action": &"hit5"
+}, {
+"action": &"skill_muyu_huichun",
+"allow_air": true,
+"display_name": "沐浴回春",
+"duration_ticks": 24,
+"effect_tick": 5,
+"effects": {&"spring": {"effect_fps": 24.0, "effect_frame_count": 26, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/muyu_huichun/frame_%03d.png", "effect_registration_point": Vector2(106.525, 168.875), "effect_source_canvas": Vector2(213, 245), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.525, -46.875)}},
+"heal_initial_delay": 0.9,
+"heal_interval": 1.0,
+"heal_per_tick": 5,
+"heal_radius": 100.0,
+"heal_repeat_count": 10,
+"id": &"muyu_huichun",
+"mana_cost": 50,
+"source_action": &"hit6"
+}, {
+"action": &"skill_jingu_zhou",
+"allow_air": true,
+"display_name": "紧箍咒",
+"duration_ticks": 14,
+"effect_tick": 5,
+"effects": {&"ring": {"effect_fps": 24.0, "effect_frame_count": 32, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/jingu_zhou/frame_%03d.png", "effect_registration_point": Vector2(247.925, 58.525), "effect_source_canvas": Vector2(502, 138), "effect_source_facing": -1, "effect_sprite_offset": Vector2(3.075, 10.975)}},
+"id": &"jingu_zhou",
+"mana_cost": 50,
+"next_attack_multiplier": 1.3,
+"pull_radius": 240.0,
+"source_action": &"hit7"
+}, {
+"action": &"skill_tianjiang_ganlu",
+"allow_air": true,
+"display_name": "天降甘露",
+"duration_ticks": 30,
+"effect_tick": 1,
+"effects": {&"rain": {"blend_mode": 2, "effect_fps": 24.0, "effect_frame_count": 34, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/tianjiang_ganlu/frame_%03d.png", "effect_registration_point": Vector2(245.5, 163), "effect_source_canvas": Vector2(482, 277), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-4.5, -24.5)}},
+"heal_delay": 1.2,
+"heal_ratio": 0.3,
+"heal_radius": 150.0,
+"id": &"tianjiang_ganlu",
+"mana_cost": 80,
+"source_action": &"hit8"
+}, {
+"action": &"skill_jiuhuan_shengjing",
+"allow_air": true,
+"damage": 20,
+"display_name": "九环圣经",
+"duration_ticks": 55,
+"effects": {
+&"aura": {"effect_fps": 24.0, "effect_frame_count": 57, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/jiuhuan_aura/frame_%03d.png", "effect_registration_point": Vector2(62.7, 43.05), "effect_source_canvas": Vector2(113, 110), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-6.2, 12.45)},
+&"strike": {"effect_fps": 24.0, "effect_frame_count": 45, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/jiuhuan_strike/frame_%03d.png", "effect_registration_point": Vector2(0, 0), "effect_source_canvas": Vector2(300, 300), "effect_source_facing": -1, "effect_sprite_offset": Vector2(150, 150.5)}
+},
+"id": &"jiuhuan_shengjing",
+"mana_cost": 100,
+"source_action": &"hit9",
+"strike_hit_interval_ticks": 5,
+"strike_tick": 11
+}, {
+"action": &"skill_xuanbing_zhen",
+"allow_air": true,
+"damage": 20,
+"display_name": "玄冰阵",
+"duration_ticks": 54,
+"effect_tick": 13,
+"effects": {&"ice": {"effect_fps": 24.0, "effect_frame_count": 46, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/xuanbing_zhen/frame_%03d.png", "effect_registration_point": Vector2(243, 94.15), "effect_source_canvas": Vector2(477, 192), "effect_source_facing": -1, "effect_sprite_offset": Vector2(-7, -6.65)}},
+"freeze_vertical": true,
+"hitbox_offset": Vector2(0, -35),
+"hitbox_size": Vector2(404, 125),
+"id": &"xuanbing_zhen",
+"knockback": Vector2(168, -96),
+"mana_cost": 20,
+"source_action": &"hit3"
+}, {
+"action": &"",
+"allow_air": true,
+"display_name": "水幻影",
+"duration_ticks": 1,
+"effects": {&"shadow": {"effect_fps": 6.0, "effect_frame_count": 4, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/shadow/walk/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, -5), "lifetime_seconds": 8.0, "loop": true}},
+"id": &"shuihuanying",
+"mana_cost": 40,
+"play_action": false,
+"source_action": &"hit10"
+}, {
+"action": &"skill_shuimo_bao_marker",
+"allow_air": true,
+"damage": 208,
+"display_name": "水魔爆",
+"duration_ticks": 4,
+"effects": {
+&"marker": {"effect_fps": 24.0, "effect_frame_count": 48, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/shuimo_bao_marker/frame_%03d.png", "effect_registration_point": Vector2(16.15, 16.375), "effect_source_canvas": Vector2(196, 83), "effect_source_facing": -1, "effect_sprite_offset": Vector2(81.85, 28.125), "lifetime_seconds": 10.0, "linear_velocity": Vector2(240, 0), "loop": true},
+&"blast": {"effect_fps": 24.0, "effect_frame_count": 22, "effect_path_pattern": "res://assets/selected/zmxiyou3/tangseng/effects/skills/shuimo_bao_blast/frame_%03d.png", "effect_registration_point": Vector2(102.375, 36.4), "effect_source_canvas": Vector2(267, 432), "effect_source_facing": -1, "effect_sprite_offset": Vector2(30.625, 179.1)}
+},
+"id": &"shuimo_bao",
+"mana_cost": 100,
+"marker_tick": 2,
+"reactivate_action": &"skill_shuimo_bao_blast",
+"reactivate_duration_ticks": 10,
+"reactivate_hit_tick": 5,
+"source_action": &"hit4_1/hit4_2"
+}]

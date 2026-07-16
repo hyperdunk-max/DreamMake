@@ -205,9 +205,11 @@ func _run() -> void:
 	_advance(player, 34)
 	_assert(not player.action_state_machine.has_active_state(), "筋斗云 should preserve the shared 35-tick source lifetime.")
 
+	var wukong_state: RoleSkillState = player.role_skill_state
 	_assert(player.configure_role(tangseng), "Role switching should remove Wukong's skill state.")
-	_assert(player.role_skill_state == null, "A role without a configured skill profile must not share Wukong's skill instance.")
-	_assert(not player.request_role_skill(0), "Tangseng must not invoke Wukong's skills.")
+	_assert(player.role_skill_state is TangsengSkillState, "Tangseng should receive its own role-specific skill state.")
+	_assert(player.role_skill_state != wukong_state, "Tangseng must not share Wukong's skill instance.")
+	_assert(player.role_skill_state.get_current_skill_id() != &"qishier_zhan", "Tangseng must not retain Wukong skill state.")
 
 	if _failed:
 		quit(1)

@@ -50,6 +50,22 @@ func reactivate_current_skill() -> bool:
 	return false
 
 
+func release_normal_attack() -> bool:
+	return false
+
+
+func request_charged_normal_attack() -> bool:
+	return false
+
+
+func modify_outgoing_damage(damage: int) -> int:
+	return damage
+
+
+func dispose() -> void:
+	pass
+
+
 func enter(payload: Dictionary = {}) -> void:
 	current_skill = profile.get_skill(int(payload.get("slot", -1)))
 	_elapsed_ticks = 0
@@ -57,7 +73,8 @@ func enter(payload: Dictionary = {}) -> void:
 	actor.spend_mana(int(current_skill.get("mana_cost", 0)))
 	if actor.has_method("on_role_skill_started"):
 		actor.on_role_skill_started(current_skill)
-	animator.play_action(StringName(current_skill["action"]), true)
+	if bool(current_skill.get("play_action", true)):
+		animator.play_action(StringName(current_skill["action"]), true)
 
 
 func exit() -> void:

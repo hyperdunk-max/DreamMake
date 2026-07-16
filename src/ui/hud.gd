@@ -7,6 +7,7 @@ var message_label: Label
 var weapon_label: Label
 var body_label: Label
 var player_name_label: Label
+var controls_label: Label
 
 
 func _ready() -> void:
@@ -32,12 +33,12 @@ func _ready() -> void:
 	enemy_name.add_theme_font_size_override("font_size", 18)
 	add_child(enemy_name)
 
-	var controls := Label.new()
-	controls.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  R 重开"
-	controls.position = Vector2(48, 550)
-	controls.add_theme_font_size_override("font_size", 15)
-	controls.add_theme_color_override("font_color", Color("f5dfac"))
-	add_child(controls)
+	controls_label = Label.new()
+	controls_label.position = Vector2(48, 550)
+	controls_label.add_theme_font_size_override("font_size", 15)
+	controls_label.add_theme_color_override("font_color", Color("f5dfac"))
+	add_child(controls_label)
+	set_role(1, "悟空")
 
 	weapon_label = _make_equipment_label(Vector2(32, 84))
 	body_label = _make_equipment_label(Vector2(32, 105))
@@ -107,5 +108,12 @@ func set_body(showid: int, body_name: String) -> void:
 	body_label.text = "衣服 showid %d · %s" % [showid, body_name]
 
 
-func set_role(_role_id: int, display_name: String) -> void:
+func set_role(role_id: int, display_name: String) -> void:
 	player_name_label.text = display_name
+	match role_id:
+		1:
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  R 重开"
+		2:
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻/长按冰龙波  U 圣光球  I 沐浴回春  O 紧箍咒  L 天降甘露"
+		_:
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  Q/E 切换装备  1-4 切换角色  R 重开"
