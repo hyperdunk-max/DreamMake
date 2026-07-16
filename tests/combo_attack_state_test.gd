@@ -34,13 +34,21 @@ func _run() -> void:
 
 	_assert(combo.request_attack(), "First combo request failed.")
 	_assert(animator.get_current_action() == &"hit1", "Combo did not start at hit1.")
-	combo.request_attack()
+	_assert(combo.request_attack(), "An attack press during hit1 should be observed.")
+	combo.release_attack()
 	_advance(machine, 9)
-	_assert(machine.is_in_state(ComboAttackState.ID), "Buffered attack did not continue the combo.")
-	_assert(animator.get_current_action() == &"hit2", "Buffered attack did not advance to hit2.")
+	_assert(not machine.has_active_state(), "A released early tap must not queue the next combo step.")
+	_assert(actor.hit_count == 1, "An ignored early tap must not create another hit.")
+
+	_assert(combo.request_attack(), "A press after hit1 should continue within the combo window.")
+	_assert(animator.get_current_action() == &"hit2", "A valid follow-up press did not advance to hit2.")
+	_assert(combo.request_attack(), "A new press held during hit2 should be observed.")
 	_advance(machine, 9)
-	_assert(not machine.has_active_state(), "Combo did not finish after hit2.")
-	_assert(actor.hit_count == 2, "Expected one hit event for each combo step.")
+	_assert(machine.is_in_state(ComboAttackState.ID), "A press held through the action end should continue the combo.")
+	_assert(animator.get_current_action() == &"hit3", "A held retry did not advance to hit3.")
+	_advance(machine, 15)
+	_assert(not machine.has_active_state(), "Combo did not finish after hit3.")
+	_assert(actor.hit_count == 3, "Expected one hit event for each accepted combo step.")
 
 	_advance(machine, ceili((COMBO_PROFILE.combo_window_seconds + 0.05) * COMBO_PROFILE.logical_fps))
 	combo.request_attack()
@@ -53,7 +61,7 @@ func _run() -> void:
 	if _failed:
 		quit(1)
 	else:
-		print("PASS: five-step combo state buffers input and resets after its time window.")
+		print("PASS: combo input ignores released early taps, accepts held retries, and resets after its time window.")
 		quit(0)
 
 

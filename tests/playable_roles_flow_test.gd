@@ -96,7 +96,7 @@ func _run() -> void:
 	player.action_state_machine.clear_state()
 	player.combo_attack_state.reset_progress()
 	_assert(player.combo_attack_state.request_attack(), "Locomotion combo setup should start hit1.")
-	_assert(player.combo_attack_state.request_attack(), "Locomotion combo setup should buffer hit2.")
+	_assert(player.combo_attack_state.request_attack(), "Locomotion combo setup should hold a retry for hit2.")
 	var first_step: Dictionary = player.combo_attack_profile.steps[0]
 	for _tick in range(int(first_step["duration_ticks"])):
 		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
@@ -260,10 +260,10 @@ func _run() -> void:
 	await process_frame
 	player.global_position = Vector2(390, 515)
 	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel combo should start.")
-	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit2 should buffer.")
+	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit2 should be held through hit1.")
 	for _tick in range(13):
 		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
-	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit3 should buffer.")
+	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit3 should be held through hit2.")
 	for _tick in range(13):
 		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
 	_assert(player.combo_attack_state.get_current_step_number() == 3, "Shaseng shovel combo should enter hit3.")
@@ -283,7 +283,7 @@ func _run() -> void:
 	_assert(int(air_step.get("duration_ticks", 0)) == 15, "Wukong air normal attack should preserve the source 15-tick lock.")
 	_assert(player.configure_role(wukong), "Wukong air attack should configure.")
 	_assert(player.combo_attack_state.request_attack(), "Wukong combo progress setup should start hit1.")
-	_assert(player.combo_attack_state.request_attack(), "Wukong combo progress setup should buffer hit2.")
+	_assert(player.combo_attack_state.request_attack(), "Wukong combo progress setup should hold a retry for hit2.")
 	for _tick in range(9):
 		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
 	for _tick in range(9):
@@ -340,7 +340,7 @@ func _run() -> void:
 	for step_index in range(player.combo_attack_profile.steps.size()):
 		var step: Dictionary = player.combo_attack_profile.steps[step_index]
 		if step_index + 1 < player.combo_attack_profile.steps.size():
-			_assert(player.combo_attack_state.request_attack(), "Wukong next attack should buffer.")
+			_assert(player.combo_attack_state.request_attack(), "Wukong next attack should remain held through the current step.")
 		for _tick in range(int(step["duration_ticks"])):
 			player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
 	_assert(enemy.health == enemy.max_health - 90, "All five Wukong normal attacks should connect without pushing the target out early.")

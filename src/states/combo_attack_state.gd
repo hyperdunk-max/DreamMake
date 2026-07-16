@@ -8,7 +8,7 @@ var _current_step_index := -1
 var _elapsed_ticks := 0
 var _tick_accumulator := 0.0
 var _last_attack_press_time := -1.0
-var _queued_next_attack := false
+var _attack_retry_held := false
 var _hit_fired := false
 var _hit_targets: Dictionary = {}
 
@@ -19,7 +19,7 @@ func configure(combo_profile: ComboAttackProfile) -> void:
 	_elapsed_ticks = 0
 	_tick_accumulator = 0.0
 	_last_attack_press_time = -1.0
-	_queued_next_attack = false
+	_attack_retry_held = false
 	_hit_fired = false
 	_hit_targets.clear()
 
@@ -29,8 +29,9 @@ func request_attack() -> bool:
 		return false
 	var now := state_machine.get_elapsed_time_seconds()
 	if state_machine.is_in_state(ID):
-		_queued_next_attack = true
-		_last_attack_press_time = now
+		# Source input does not queue a tap during an attack. It only retries if
+		# this new press is still held when the current action becomes available.
+		_attack_retry_held = true
 		return true
 	return state_machine.transition_to(ID, {"pressed_at": now})
 
@@ -42,12 +43,17 @@ func enter(payload: Dictionary = {}) -> void:
 	else:
 		_current_step_index = (_current_step_index + 1) % profile.get_step_count()
 	_last_attack_press_time = pressed_at
-	_queued_next_attack = false
+	_attack_retry_held = false
 	_start_current_step()
 
 
 func exit() -> void:
 	_tick_accumulator = 0.0
+	_attack_retry_held = false
+
+
+func release_attack() -> void:
+	_attack_retry_held = false
 
 
 func physics_process(delta: float) -> void:
@@ -71,7 +77,7 @@ func get_current_step_number() -> int:
 func reset_progress() -> void:
 	_current_step_index = -1
 	_last_attack_press_time = -1.0
-	_queued_next_attack = false
+	_attack_retry_held = false
 	_hit_fired = false
 	_hit_targets.clear()
 
@@ -101,8 +107,9 @@ func _step_tick() -> void:
 			actor.perform_combo_hit(step, _hit_targets)
 	if _elapsed_ticks < int(step["duration_ticks"]):
 		return
-	if _queued_next_attack:
-		_queued_next_attack = false
+	if _attack_retry_held:
+		_attack_retry_held = false
+		_last_attack_press_time = state_machine.get_elapsed_time_seconds()
 		_current_step_index = (_current_step_index + 1) % profile.get_step_count()
 		_start_current_step()
 	else:

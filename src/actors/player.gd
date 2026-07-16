@@ -105,6 +105,8 @@ func _configure_runtime_role() -> bool:
 func _physics_process(delta: float) -> void:
 	hurt_time = maxf(0.0, hurt_time - delta)
 	double_jump_animation_time = maxf(0.0, double_jump_animation_time - delta)
+	if Input.is_action_just_released("attack") and combo_attack_state != null:
+		combo_attack_state.release_attack()
 	action_state_machine.physics_process(delta)
 	if is_on_floor():
 		jump_count = 0
