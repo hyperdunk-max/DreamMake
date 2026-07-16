@@ -202,6 +202,21 @@ func _run() -> void:
 	player.global_position = Vector2(390, 515)
 	enemy.global_position = Vector2(900, 515)
 	await physics_frame
+	var lunge_step: Dictionary = player.combo_attack_profile.steps[2]
+	player.perform_combo_hit(lunge_step, {})
+	var lunge_effect := current_scene.get_child(current_scene.get_child_count() - 1) as OneShotSpriteEffect
+	_assert(lunge_effect != null, "Shaseng hit3 should spawn its follow effect.")
+	if lunge_effect != null:
+		_assert(lunge_effect.is_following(player), "Shaseng hit3 effect should follow the moving actor.")
+		_assert(is_equal_approx(lunge_effect.get_duration_seconds(), 15.0 / 24.0), "Shaseng hit3 effect should span all 15 movement ticks.")
+		var effect_start_x: float = lunge_effect.global_position.x
+		player.global_position.x += 24.0
+		await process_frame
+		await process_frame
+		_assert(is_equal_approx(lunge_effect.global_position.x - effect_start_x, 24.0), "Shaseng hit3 effect should preserve its actor-relative offset while moving.")
+	_clear_effects()
+	await process_frame
+	player.global_position = Vector2(390, 515)
 	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel combo should start.")
 	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit2 should buffer.")
 	for _tick in range(13):
@@ -235,7 +250,10 @@ func _run() -> void:
 	player.global_position = Vector2(390, 400)
 	player.velocity = Vector2.ZERO
 	await physics_frame
+	await physics_frame
 	_assert(not player.is_on_floor(), "Wukong air attack verification should be airborne.")
+	_assert(player.jump_count == 1, "Walking into the air should preserve one available double jump.")
+	player.velocity.y = -250.0
 	_assert(player.request_normal_attack(), "Wukong airborne normal attack should start independently.")
 	_assert(player.action_state_machine.is_in_state(AirAttackState.ID), "Wukong airborne normal attack should use AirAttackState.")
 	_assert(animator.get_current_action() == &"hit3", "Wukong airborne normal attack should play hit3.")
@@ -245,6 +263,22 @@ func _run() -> void:
 	_assert(player.action_state_machine.is_in_state(AirAttackState.ID), "Wukong air attack should remain active through tick 14.")
 	player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
 	_assert(not player.action_state_machine.has_active_state(), "Wukong air attack should finish on source tick 15.")
+	player._update_pose()
+	_assert(animator.get_current_action() == &"jump_up", "An air attack ending with upward velocity should return to jump_up.")
+	player.velocity.y = 120.0
+	_assert(player.request_normal_attack(), "Wukong should be able to air attack while falling.")
+	for _tick in range(15):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	player._update_pose()
+	_assert(animator.get_current_action() == &"jump_fall", "An air attack ending with downward velocity should return to jump_fall.")
+	player.velocity.y = -120.0
+	_assert(player.request_normal_attack(), "Wukong should start an air attack before double-jump interruption.")
+	_assert(player.request_jump(), "Wukong should retain and activate the second jump during an air attack.")
+	_assert(not player.action_state_machine.has_active_state(), "Double jump should exit AirAttackState immediately.")
+	_assert(player.jump_count == 2, "Air attack must not consume the second jump before it is pressed.")
+	_assert(is_equal_approx(player.velocity.y, player.JUMP_SPEED), "Double jump should restore the configured upward speed.")
+	_assert(animator.get_current_action() == &"jump_double", "Air attack to double jump should play jump_double.")
+	_assert(not player.request_jump(), "A completed double jump must still prevent a third jump.")
 	player.global_position = Vector2(390, 515)
 	player.velocity = Vector2.ZERO
 	await physics_frame

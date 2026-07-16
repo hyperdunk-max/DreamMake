@@ -126,16 +126,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = direction * MOVE_SPEED
 
-	if Input.is_action_just_pressed("jump") and not action_state_machine.has_active_state():
-		if is_on_floor():
-			jump_count = 1
-			velocity.y = JUMP_SPEED
-			layered_animator.play_action(&"jump_up", true)
-		elif jump_count < 2:
-			jump_count = 2
-			velocity.y = JUMP_SPEED
-			double_jump_animation_time = DOUBLE_JUMP_ANIMATION_TIME
-			layered_animator.play_action(&"jump_double", true)
+	if Input.is_action_just_pressed("jump"):
+		request_jump()
 
 	move_and_slide()
 	global_position.x = clampf(global_position.x, 24.0, 916.0)
@@ -152,6 +144,27 @@ func request_normal_attack() -> bool:
 		combo_attack_state.reset_progress()
 		return air_attack_state.request_attack()
 	return combo_attack_state.request_attack()
+
+
+func request_jump() -> bool:
+	if is_on_floor():
+		if action_state_machine.has_active_state():
+			return false
+		jump_count = 1
+		velocity.y = JUMP_SPEED
+		layered_animator.play_action(&"jump_up", true)
+		return true
+	if jump_count >= 2:
+		return false
+	if action_state_machine.has_active_state():
+		if not action_state_machine.is_in_state(AirAttackState.ID):
+			return false
+		action_state_machine.clear_state(air_attack_state)
+	jump_count = 2
+	velocity.y = JUMP_SPEED
+	double_jump_animation_time = DOUBLE_JUMP_ANIMATION_TIME
+	layered_animator.play_action(&"jump_double", true)
+	return true
 
 
 func _update_pose() -> void:
@@ -217,6 +230,9 @@ func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 	var is_projectile := StringName(step.get("delivery", &"melee")) == &"projectile"
 	var effect: OneShotSpriteEffect = PROJECTILE_EFFECT_SCRIPT.new() if is_projectile else OneShotSpriteEffect.new()
 	var effect_fps := float(step.get("effect_fps", combo_attack_profile.logical_fps))
+	var effect_duration_ticks := int(step.get("effect_duration_ticks", 0))
+	if effect_duration_ticks > 0:
+		effect_fps = effect_frames.size() * combo_attack_profile.logical_fps / effect_duration_ticks
 	var source_facing := int(step.get("effect_source_facing", animation_profile.source_facing))
 	var sprite_offset := Vector2(step.get("effect_sprite_offset", Vector2.ZERO))
 	var configured := false
@@ -234,6 +250,8 @@ func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 	offset.x *= facing
 	get_tree().current_scene.add_child(effect)
 	effect.global_position = global_position + offset
+	if bool(step.get("effect_follow_actor", false)):
+		effect.set_follow_target(self, offset)
 	return effect
 
 

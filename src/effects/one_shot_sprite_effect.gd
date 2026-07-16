@@ -7,6 +7,8 @@ var _frames: Array = []
 var _fps := 24.0
 var _frame_index := 0
 var _frame_accumulator := 0.0
+var _follow_target: Node2D
+var _follow_offset := Vector2.ZERO
 
 
 func configure(
@@ -31,6 +33,8 @@ func configure(
 
 
 func _process(delta: float) -> void:
+	if not _update_follow_position():
+		return
 	_advance_animation(delta)
 
 
@@ -49,3 +53,27 @@ func _advance_animation(delta: float) -> bool:
 
 func get_frame_index() -> int:
 	return _frame_index
+
+
+func get_duration_seconds() -> float:
+	return float(_frames.size()) / _fps if _fps > 0.0 else 0.0
+
+
+func set_follow_target(target: Node2D, follow_offset: Vector2) -> void:
+	_follow_target = target
+	_follow_offset = follow_offset
+	_update_follow_position()
+
+
+func is_following(target: Node2D) -> bool:
+	return _follow_target == target
+
+
+func _update_follow_position() -> bool:
+	if _follow_target == null:
+		return true
+	if not is_instance_valid(_follow_target):
+		queue_free()
+		return false
+	global_position = _follow_target.global_position + _follow_offset
+	return true
