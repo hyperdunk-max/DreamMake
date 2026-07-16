@@ -38,7 +38,7 @@ steps = [{
 }, {
 "action": &"hit3",
 "damage": 24,
-"duration_ticks": 13,
+"duration_ticks": 15,
 "effect_fps": 24.0,
 "effect_frame_count": 4,
 "effect_offset": Vector2(0, -50),

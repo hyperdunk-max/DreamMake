@@ -68,6 +68,14 @@ func get_current_step_number() -> int:
 	return _current_step_index + 1
 
 
+func reset_progress() -> void:
+	_current_step_index = -1
+	_last_attack_press_time = -1.0
+	_queued_next_attack = false
+	_hit_fired = false
+	_hit_targets.clear()
+
+
 func get_attack_velocity(facing: float) -> float:
 	if profile == null or _current_step_index < 0:
 		return 0.0

@@ -29,6 +29,7 @@ var double_jump_animation_time := 0.0
 @onready var action_state_machine: CharacterStateMachine = $ActionStateMachine
 
 var combo_attack_state: ComboAttackState
+var air_attack_state: AirAttackState
 var _effect_texture_cache: Dictionary = {}
 
 
@@ -86,6 +87,11 @@ func _configure_runtime_role() -> bool:
 		combo_attack_state.setup(ComboAttackState.ID, self, layered_animator, action_state_machine)
 		action_state_machine.register_state(combo_attack_state)
 	combo_attack_state.configure(combo_attack_profile)
+	if air_attack_state == null:
+		air_attack_state = AirAttackState.new()
+		air_attack_state.setup(AirAttackState.ID, self, layered_animator, action_state_machine)
+		action_state_machine.register_state(air_attack_state)
+	air_attack_state.configure(role_definition.get_air_attack_step(), combo_attack_profile.logical_fps)
 	return true
 
 
@@ -109,11 +115,11 @@ func _physics_process(delta: float) -> void:
 		select_body(animation_profile.get_next_body_showid(body_showid))
 
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction != 0.0:
+	if direction != 0.0 and not action_state_machine.has_active_state():
 		facing = sign(direction)
 
-	if Input.is_action_just_pressed("attack") and combo_attack_state != null:
-		combo_attack_state.request_attack()
+	if Input.is_action_just_pressed("attack"):
+		request_normal_attack()
 
 	if action_state_machine.blocks_horizontal_movement():
 		velocity.x = combo_attack_state.get_attack_velocity(facing) if combo_attack_state != null else 0.0
@@ -135,6 +141,17 @@ func _physics_process(delta: float) -> void:
 	global_position.x = clampf(global_position.x, 24.0, 916.0)
 	_update_pose()
 	queue_redraw()
+
+
+func request_normal_attack() -> bool:
+	if combo_attack_state == null:
+		return false
+	if not is_on_floor() and air_attack_state != null and air_attack_state.is_configured():
+		if action_state_machine.has_active_state():
+			return false
+		combo_attack_state.reset_progress()
+		return air_attack_state.request_attack()
+	return combo_attack_state.request_attack()
 
 
 func _update_pose() -> void:

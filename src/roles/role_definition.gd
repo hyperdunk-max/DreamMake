@@ -6,6 +6,8 @@ extends Resource
 @export var animation_profile: RoleAnimationProfile
 @export var combo_attack_profile: ComboAttackProfile
 @export var combo_attack_profiles_by_mode: Dictionary = {}
+@export var air_attack_step_index := -1
+@export var air_attack_overrides: Dictionary = {}
 @export var default_body_showid := -1
 @export var default_weapon_showid := -1
 
@@ -28,6 +30,13 @@ func validate() -> PackedStringArray:
 			errors.append("Role %d mode '%s' has no combo profile." % [role_id, mode])
 		else:
 			errors.append_array(mode_profile.validate_for_role(role_id))
+	if air_attack_step_index >= 0:
+		if combo_attack_profile == null or air_attack_step_index >= combo_attack_profile.get_step_count():
+			errors.append("Role %d has an invalid air attack source step %d." % [role_id, air_attack_step_index])
+		else:
+			var air_step := get_air_attack_step()
+			if int(air_step.get("duration_ticks", 0)) <= 0:
+				errors.append("Role %d air attack has an invalid duration." % role_id)
 	return errors
 
 
@@ -36,3 +45,11 @@ func get_combo_profile_for_weapon(weapon_showid: int) -> ComboAttackProfile:
 		return combo_attack_profile
 	var mode := animation_profile.get_weapon_mode(weapon_showid)
 	return combo_attack_profiles_by_mode.get(mode, combo_attack_profile) as ComboAttackProfile
+
+
+func get_air_attack_step() -> Dictionary:
+	if combo_attack_profile == null or air_attack_step_index < 0 or air_attack_step_index >= combo_attack_profile.get_step_count():
+		return {}
+	var step := combo_attack_profile.get_step(air_attack_step_index).duplicate(true)
+	step.merge(air_attack_overrides, true)
+	return step

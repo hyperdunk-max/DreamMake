@@ -29,7 +29,7 @@ func _run() -> void:
 	)
 	_verify_profile(
 		SHASENG,
-		[13, 13, 13],
+		[13, 13, 15],
 		[4, 4, 1],
 		[Vector2(20, -20), Vector2(15, -50), Vector2(0, -50)]
 	)
@@ -45,6 +45,7 @@ func _run() -> void:
 	_assert(SHASENG_ARROW.steps[2]["projectile_frame_hitboxes"][4].size() == 3, "Shaseng bow finisher should expose three separate arrow hitboxes.")
 	_assert(int(SHASENG_ARROW.steps[2]["projectile_rehit_interval_frames"]) == 5, "Shaseng Role4BulletArrow2 should preserve its 5-frame attack interval.")
 	_assert(float(SHASENG.steps[2]["move_speed"]) == 192.0, "Shaseng shovel finisher should preserve source 8px/tick lunge.")
+	_assert(int(SHASENG.steps[2]["duration_ticks"]) == 15, "Shaseng shovel finisher should move until its source animation clears velocity on tick 15.")
 	_assert(Vector2(WUKONG.steps[0]["knockback"]) == Vector2(48, -72), "Wukong hit1 knockback should map source 2,-3 px/tick to 24Hz velocity.")
 	_assert(Vector2(WUKONG.steps[4]["knockback"]) == Vector2(360, -48), "Wukong hit5 knockback should map source 15,-2 px/tick to 24Hz velocity.")
 	if _failed:

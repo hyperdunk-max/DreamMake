@@ -192,9 +192,68 @@ func _run() -> void:
 	_assert(enemy.health < arrow_health_before, "Shaseng bow finisher should damage when one visible arrow reaches the enemy.")
 	_assert(int(arrow_hit_frame["value"]) > 0, "Shaseng bow finisher damage should come from a travelled arrow frame.")
 
+	# Source Role4 applies 8px horizontal speed on every active hit3 frame and
+	# clears it when the 15th animation tick completes: 14 * 8px = 112px.
+	_clear_effects()
+	await process_frame
+	_assert(player.configure_role(shaseng), "Shaseng shovel lunge should configure.")
+	_assert(player.select_weapon(0), "Shaseng shovel lunge should select a melee weapon.")
+	player.facing = 1.0
+	player.global_position = Vector2(390, 515)
+	enemy.global_position = Vector2(900, 515)
+	await physics_frame
+	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel combo should start.")
+	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit2 should buffer.")
+	for _tick in range(13):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(player.combo_attack_state.request_attack(), "Shaseng shovel hit3 should buffer.")
+	for _tick in range(13):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(player.combo_attack_state.get_current_step_number() == 3, "Shaseng shovel combo should enter hit3.")
+	var lunge_start_x: float = player.global_position.x
+	for _frame in range(60):
+		await physics_frame
+		if not player.action_state_machine.has_active_state():
+			break
+	var lunge_distance: float = player.global_position.x - lunge_start_x
+	_assert(lunge_distance >= 108.0 and lunge_distance <= 116.0, "Shaseng hit3 should reproduce the source 112px lunge, got %.2fpx." % lunge_distance)
+
+	# Role1 uses hit3 as a dedicated 15-tick aerial normal attack, sets hitNum
+	# to zero, and therefore restarts the next grounded combo from hit1.
+	var wukong: RoleDefinition = definitions[0]
+	var air_step := wukong.get_air_attack_step()
+	_assert(StringName(air_step.get("action", &"")) == &"hit3", "Wukong air normal attack should use source hit3 animation.")
+	_assert(int(air_step.get("duration_ticks", 0)) == 15, "Wukong air normal attack should preserve the source 15-tick lock.")
+	_assert(player.configure_role(wukong), "Wukong air attack should configure.")
+	_assert(player.combo_attack_state.request_attack(), "Wukong combo progress setup should start hit1.")
+	_assert(player.combo_attack_state.request_attack(), "Wukong combo progress setup should buffer hit2.")
+	for _tick in range(9):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	for _tick in range(9):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(player.combo_attack_state.get_current_step_number() == 2, "Wukong setup should retain ground combo step two.")
+	player.global_position = Vector2(390, 400)
+	player.velocity = Vector2.ZERO
+	await physics_frame
+	_assert(not player.is_on_floor(), "Wukong air attack verification should be airborne.")
+	_assert(player.request_normal_attack(), "Wukong airborne normal attack should start independently.")
+	_assert(player.action_state_machine.is_in_state(AirAttackState.ID), "Wukong airborne normal attack should use AirAttackState.")
+	_assert(animator.get_current_action() == &"hit3", "Wukong airborne normal attack should play hit3.")
+	_assert(player.combo_attack_state.get_current_step_number() == 0, "Wukong air attack should reset stored ground combo progress.")
+	for _tick in range(14):
+		player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(player.action_state_machine.is_in_state(AirAttackState.ID), "Wukong air attack should remain active through tick 14.")
+	player.action_state_machine.physics_process(1.01 / player.combo_attack_profile.logical_fps)
+	_assert(not player.action_state_machine.has_active_state(), "Wukong air attack should finish on source tick 15.")
+	player.global_position = Vector2(390, 515)
+	player.velocity = Vector2.ZERO
+	await physics_frame
+	_assert(player.request_normal_attack(), "Wukong should attack after landing.")
+	_assert(player.combo_attack_state.get_current_step_number() == 1, "The first grounded attack after an air attack must restart at hit1.")
+	player.action_state_machine.clear_state()
+
 	# Wukong's reduced early knockback and wide finishers must keep all five
 	# source-timed hits connected against one nearby target.
-	var wukong: RoleDefinition = definitions[0]
 	_assert(player.configure_role(wukong), "Wukong should configure for full combo verification.")
 	player.global_position = Vector2(390, 515)
 	enemy.global_position = Vector2(465, 515)

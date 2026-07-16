@@ -45,6 +45,11 @@ func _run() -> void:
 	_advance(machine, ceili((COMBO_PROFILE.combo_window_seconds + 0.05) * COMBO_PROFILE.logical_fps))
 	combo.request_attack()
 	_assert(animator.get_current_action() == &"hit1", "Expired combo window did not reset to hit1.")
+	machine.clear_state()
+	combo.reset_progress()
+	_assert(combo.get_current_step_number() == 0, "Explicit combo reset should clear the stored step.")
+	combo.request_attack()
+	_assert(animator.get_current_action() == &"hit1", "An air-style combo reset should restart at hit1.")
 	if _failed:
 		quit(1)
 	else:

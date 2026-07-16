@@ -10,5 +10,7 @@ role_id = 1
 display_name = "悟空"
 animation_profile = ExtResource("2_animation")
 combo_attack_profile = ExtResource("3_combo")
+air_attack_step_index = 2
+air_attack_overrides = {"duration_ticks": 15}
 default_body_showid = 1
 default_weapon_showid = 0
