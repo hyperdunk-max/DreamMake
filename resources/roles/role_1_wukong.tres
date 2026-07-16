@@ -168,6 +168,42 @@ actions = {
 "start_column": 0
 }]
 },
+&"skill_huoyan_jinjing": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(17),
+"row": 12,
+"start_column": 0
+}]
+},
+&"skill_lieyan_shan": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(10),
+"row": 4,
+"start_column": 2
+}]
+},
+&"skill_qishier_zhan": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(10),
+"row": 12,
+"start_column": 3
+}]
+},
+&"skill_zhongzhan": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 12, 16),
+"row": 13,
+"start_column": 0
+}]
+},
 &"walk": {
 "loop": true,
 "segments": [{

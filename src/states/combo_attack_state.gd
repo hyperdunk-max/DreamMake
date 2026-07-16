@@ -28,11 +28,13 @@ func request_attack() -> bool:
 	if profile == null:
 		return false
 	var now := state_machine.get_elapsed_time_seconds()
-	if state_machine.is_in_state(ID):
-		# Source input does not queue a tap during an attack. It only retries if
-		# this new press is still held when the current action becomes available.
-		_attack_retry_held = true
-		return true
+	if state_machine.has_active_state():
+		if state_machine.is_in_state(ID):
+			# Source input does not queue a tap during an attack. It only retries if
+			# this new press is still held when the current action becomes available.
+			_attack_retry_held = true
+			return true
+		return false
 	return state_machine.transition_to(ID, {"pressed_at": now})
 
 
@@ -87,6 +89,10 @@ func get_attack_velocity(facing: float) -> float:
 		return 0.0
 	var step := profile.get_step(_current_step_index)
 	return float(step.get("move_speed", 0.0)) * signf(facing)
+
+
+func get_horizontal_velocity(facing: float) -> float:
+	return get_attack_velocity(facing)
 
 
 func _start_current_step() -> void:

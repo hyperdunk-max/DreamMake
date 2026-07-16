@@ -15,6 +15,7 @@ func _ready() -> void:
 		if definition != null:
 			_roles_by_id[definition.role_id] = definition
 	player.health_changed.connect(hud.set_player_health)
+	player.mana_changed.connect(hud.set_player_mana)
 	player.weapon_changed.connect(hud.set_weapon)
 	player.body_changed.connect(hud.set_body)
 	player.role_changed.connect(hud.set_role)
@@ -22,6 +23,7 @@ func _ready() -> void:
 	enemy.defeated.connect(_on_enemy_defeated)
 	enemy.set_attack_target(player)
 	player.health_changed.emit(player.health, player.max_health)
+	player.mana_changed.emit(player.mana, player.max_mana)
 	hud.set_weapon(player.weapon_showid, player.get_weapon_name())
 	hud.set_body(player.body_showid, player.get_body_name())
 	enemy.health_changed.emit(enemy.health, enemy.max_health)

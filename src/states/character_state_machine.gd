@@ -18,6 +18,12 @@ func register_state(state: CharacterActionState) -> bool:
 	return true
 
 
+func unregister_state(state_id: StringName) -> void:
+	if is_in_state(state_id):
+		clear_state()
+	_states.erase(state_id)
+
+
 func transition_to(state_id: StringName, payload: Dictionary = {}) -> bool:
 	var next_state: CharacterActionState = _states.get(state_id)
 	if next_state == null:
@@ -67,3 +73,15 @@ func get_elapsed_time_seconds() -> float:
 
 func blocks_horizontal_movement() -> bool:
 	return _current_state != null and _current_state.blocks_horizontal_movement()
+
+
+func get_horizontal_velocity(facing: float) -> float:
+	return _current_state.get_horizontal_velocity(facing) if _current_state != null else 0.0
+
+
+func blocks_gravity() -> bool:
+	return _current_state != null and _current_state.blocks_gravity()
+
+
+func is_invulnerable() -> bool:
+	return _current_state != null and _current_state.is_invulnerable()

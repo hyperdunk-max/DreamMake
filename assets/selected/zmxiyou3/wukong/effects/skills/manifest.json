@@ -1,0 +1,174 @@
+{
+  "purpose": "Wukong classic skill effects",
+  "source": "zmxiyou3 Role1v690",
+  "effects": [
+    {
+      "effect_id": "lieyan_shan",
+      "source_symbol": "DefineSprite_78_Role1Bullet9",
+      "frame_count": 10,
+      "source_canvas": [
+        225,
+        98
+      ],
+      "union_crop": [
+        0,
+        0,
+        225,
+        98
+      ],
+      "output_size": [
+        225,
+        98
+      ],
+      "sprite_offset": [
+        0.0,
+        0.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huoyan_cast_eye",
+      "source_symbol": "DefineSprite_136_Role1Bullet12_1_1",
+      "frame_count": 14,
+      "source_canvas": [
+        39,
+        40
+      ],
+      "union_crop": [
+        0,
+        0,
+        36,
+        38
+      ],
+      "output_size": [
+        36,
+        38
+      ],
+      "sprite_offset": [
+        -1.5,
+        -1.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huoyan_cast_flare",
+      "source_symbol": "DefineSprite_106_Role1Bullet12_1_2",
+      "frame_count": 17,
+      "source_canvas": [
+        1343,
+        545
+      ],
+      "union_crop": [
+        597,
+        233,
+        730,
+        312
+      ],
+      "output_size": [
+        133,
+        79
+      ],
+      "sprite_offset": [
+        -8.0,
+        0.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huoyan_explosion",
+      "source_symbol": "DefineSprite_140_Role1Bullet12",
+      "frame_count": 15,
+      "source_canvas": [
+        1728,
+        960
+      ],
+      "union_crop": [
+        769,
+        385,
+        959,
+        575
+      ],
+      "output_size": [
+        190,
+        190
+      ],
+      "sprite_offset": [
+        0.0,
+        0.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "qishier_zhan",
+      "source_symbol": "DefineSprite_218_Role1Bullet13",
+      "frame_count": 30,
+      "source_canvas": [
+        1728,
+        1852
+      ],
+      "union_crop": [
+        704,
+        795,
+        972,
+        1068
+      ],
+      "output_size": [
+        268,
+        273
+      ],
+      "sprite_offset": [
+        -26.0,
+        5.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "zhongzhan_charge",
+      "source_symbol": "DefineSprite_206_Role1Bullet14_1",
+      "frame_count": 15,
+      "source_canvas": [
+        1350,
+        750
+      ],
+      "union_crop": [
+        600,
+        300,
+        751,
+        451
+      ],
+      "output_size": [
+        151,
+        151
+      ],
+      "sprite_offset": [
+        0.5,
+        0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "zhongzhan_slash",
+      "source_symbol": "DefineSprite_210_Role1Bullet14_2",
+      "frame_count": 5,
+      "source_canvas": [
+        195,
+        125
+      ],
+      "union_crop": [
+        0,
+        0,
+        194,
+        123
+      ],
+      "output_size": [
+        194,
+        123
+      ],
+      "sprite_offset": [
+        -0.5,
+        -1.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    }
+  ]
+}

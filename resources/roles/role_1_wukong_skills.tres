@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="RoleSkillProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/skills/role_skill_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+role_id = 1
+logical_fps = 24.0
+passive_lifesteal_ratio = 0.05
+active_skills = [{
+"action": &"skill_qishier_zhan",
+"allow_air": true,
+"contact_hit_ticks": [3, 6, 8, 12, 14],
+"contact_offset": Vector2(38, -34),
+"contact_recovery_ticks": 30,
+"contact_size": Vector2(76, 68),
+"damage": 4,
+"display_name": "七十二斩",
+"duration_ticks": 20,
+"effects": {&"impact": {"effect_fps": 24.0, "effect_frame_count": 30, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/qishier_zhan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-26, 5.5)}},
+"id": &"qishier_zhan",
+"mana_cost": 40,
+"move_speed": 720.0,
+"source_action": &"hit13"
+}, {
+"action": &"skill_zhongzhan",
+"allow_air": true,
+"charge_tick": 2,
+"damage": 90,
+"display_name": "重斩",
+"duration_ticks": 30,
+"effects": {
+&"charge": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_charge/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0.5, 0.5)},
+&"slash": {"effect_fps": 24.0, "effect_frame_count": 5, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_slash/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -1)}
+},
+"freeze_vertical": true,
+"hit_tick": 16,
+"hitbox_offset": Vector2(100, -60),
+"hitbox_size": Vector2(194, 123),
+"id": &"zhongzhan",
+"knockback": Vector2(480, 0),
+"mana_cost": 20,
+"source_action": &"hit14"
+}, {
+"action": &"skill_lieyan_shan",
+"allow_air": true,
+"damage": 100,
+"display_name": "烈焰闪",
+"duration_ticks": 10,
+"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_shan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0)}},
+"hitbox_offset": Vector2(55, -38),
+"hitbox_size": Vector2(180, 76),
+"id": &"lieyan_shan",
+"invulnerable": true,
+"knockback": Vector2(0, -48),
+"mana_cost": 20,
+"move_speed": 960.0,
+"source_action": &"hit9"
+}, {
+"action": &"skill_huoyan_jinjing",
+"allow_air": false,
+"damage": 27,
+"display_name": "火眼金睛",
+"duration_ticks": 17,
+"effects": {
+&"cast_eye": {"effect_fps": 24.0, "effect_frame_count": 14, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_eye/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-1.5, -1)},
+&"cast_flare": {"effect_fps": 24.0, "effect_frame_count": 17, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_cast_flare/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-8, 0)},
+&"explosion": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_explosion/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0)}
+},
+"id": &"huoyan_jinjing",
+"knockback": Vector2(0, 0),
+"mana_cost": 40,
+"repeat_count": 3,
+"repeat_interval": 2.0,
+"source_action": &"hit12",
+"target_tick": 17
+}]

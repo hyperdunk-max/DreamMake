@@ -9,7 +9,7 @@ const ATTACK_WINDUP := 0.32
 const ATTACK_RECOVERY := 0.28
 const ATTACK_RANGE := 145.0
 
-@export var max_health := 120
+@export var max_health := 600
 var health := max_health
 var hit_flash := 0.0
 var defeated_once := false

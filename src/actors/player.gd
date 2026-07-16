@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal health_changed(current: int, maximum: int)
+signal mana_changed(current: int, maximum: int)
 signal weapon_changed(showid: int, weapon_name: String)
 signal body_changed(showid: int, body_name: String)
 signal role_changed(role_id: int, display_name: String)
@@ -13,8 +14,10 @@ const GRAVITY := 1450.0
 const HURT_TIME := 8.0 / 24.0
 const DOUBLE_JUMP_ANIMATION_TIME := 10.0 / 24.0
 const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_effect.gd")
+const SKILL_INPUTS: Array[StringName] = [&"skill", &"skill_2", &"skill_3", &"skill_4"]
 
 @export var max_health := 100
+@export var max_mana := 200
 @export var role_definition: RoleDefinition
 @export var role_id := 1
 @export var animation_profile: RoleAnimationProfile
@@ -22,6 +25,7 @@ const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_e
 @export var body_showid := -1
 @export var weapon_showid := -1
 var health := max_health
+var mana := max_mana
 var facing := 1.0
 var hurt_time := 0.0
 var jump_count := 0
@@ -36,7 +40,9 @@ var _last_direction_press_time := -1.0
 
 var combo_attack_state: ComboAttackState
 var air_attack_state: AirAttackState
+var role_skill_state: RoleSkillState
 var _effect_texture_cache: Dictionary = {}
+var _lifesteal_accumulator := 0.0
 
 
 func _ready() -> void:
@@ -64,6 +70,9 @@ func configure_role(definition: RoleDefinition) -> bool:
 	double_jump_animation_time = 0.0
 	jump_count = 0
 	_reset_locomotion_input()
+	mana = max_mana
+	_lifesteal_accumulator = 0.0
+	mana_changed.emit(mana, max_mana)
 	role_changed.emit(role_id, definition.display_name)
 	body_changed.emit(body_showid, layered_animator.get_body_name())
 	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
@@ -99,6 +108,18 @@ func _configure_runtime_role() -> bool:
 		air_attack_state.setup(AirAttackState.ID, self, layered_animator, action_state_machine)
 		action_state_machine.register_state(air_attack_state)
 	air_attack_state.configure(role_definition.get_air_attack_step(), combo_attack_profile.logical_fps)
+	if role_skill_state != null:
+		action_state_machine.unregister_state(RoleSkillState.ID)
+		role_skill_state = null
+	if role_definition.skill_profile != null and role_definition.skill_state_script != null:
+		role_skill_state = role_definition.skill_state_script.new() as RoleSkillState
+		if role_skill_state == null:
+			push_error("Role %d skill state script must extend RoleSkillState." % role_id)
+			return false
+		role_skill_state.setup(RoleSkillState.ID, self, layered_animator, action_state_machine)
+		role_skill_state.configure(role_definition.skill_profile)
+		if not action_state_machine.register_state(role_skill_state):
+			return false
 	return true
 
 
@@ -114,7 +135,9 @@ func _physics_process(delta: float) -> void:
 	elif jump_count == 0:
 		# Walking off a ledge consumes the first jump but still allows one air jump.
 		jump_count = 1
-	if not is_on_floor():
+	if action_state_machine.blocks_gravity():
+		velocity.y = 0.0
+	elif not is_on_floor():
 		velocity.y += GRAVITY * delta
 
 	if Input.is_action_just_pressed("switch_weapon") and not action_state_machine.has_active_state():
@@ -122,6 +145,10 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("switch_body") and not action_state_machine.has_active_state():
 		select_body(animation_profile.get_next_body_showid(body_showid))
+
+	for skill_slot in range(SKILL_INPUTS.size()):
+		if Input.is_action_just_pressed(SKILL_INPUTS[skill_slot]):
+			request_role_skill(skill_slot)
 
 	_process_direction_input()
 	var direction := Input.get_axis("move_left", "move_right")
@@ -132,7 +159,7 @@ func _physics_process(delta: float) -> void:
 		request_normal_attack()
 
 	if action_state_machine.blocks_horizontal_movement():
-		velocity.x = combo_attack_state.get_attack_velocity(facing) if combo_attack_state != null else 0.0
+		velocity.x = action_state_machine.get_horizontal_velocity(facing)
 	else:
 		velocity.x = direction * get_horizontal_move_speed(direction)
 
@@ -157,6 +184,42 @@ func request_normal_attack() -> bool:
 		# The source uses a dedicated running attack path which always starts at hit1.
 		combo_attack_state.reset_progress()
 	return combo_attack_state.request_attack()
+
+
+func request_role_skill(slot: int) -> bool:
+	if role_skill_state == null:
+		return false
+	return role_skill_state.request_skill(slot)
+
+
+func can_spend_mana(amount: int) -> bool:
+	return amount >= 0 and mana >= amount
+
+
+func spend_mana(amount: int) -> bool:
+	if not can_spend_mana(amount):
+		return false
+	mana -= amount
+	mana_changed.emit(mana, max_mana)
+	return true
+
+
+func restore_mana(amount: int) -> void:
+	if amount <= 0:
+		return
+	var previous := mana
+	mana = mini(max_mana, mana + amount)
+	if mana != previous:
+		mana_changed.emit(mana, max_mana)
+
+
+func on_role_skill_started(_skill: Dictionary) -> void:
+	combo_attack_state.reset_progress()
+	_reset_locomotion_input()
+
+
+func set_role_skill_visual_hidden(hidden: bool) -> void:
+	layered_animator.visible = not hidden
 
 
 func register_direction_press(direction: int, pressed_at_seconds := -1.0) -> bool:
@@ -283,8 +346,129 @@ func perform_combo_hit(step: Dictionary, hit_targets: Dictionary) -> void:
 		if target.has_method("take_hit") and not hit_targets.has(target):
 			hit_targets[target] = true
 			var knockback := Vector2(step.get("knockback", Vector2(220, -120)))
-			knockback.x *= facing
-			target.take_hit(int(step.get("damage", 18)), knockback)
+			apply_role_skill_hit(target, int(step.get("damage", 18)), knockback)
+
+
+func find_role_skill_targets(size: Vector2, offset: Vector2) -> Array:
+	var shape := RectangleShape2D.new()
+	shape.size = size
+	var mirrored_offset := offset
+	mirrored_offset.x *= facing
+	var query := PhysicsShapeQueryParameters2D.new()
+	query.shape = shape
+	query.transform = Transform2D(0.0, global_position + mirrored_offset)
+	query.collision_mask = 4
+	query.exclude = [get_rid()]
+	var targets: Array = []
+	for result in get_world_2d().direct_space_state.intersect_shape(query, 16):
+		var target: Object = result.collider
+		if target.has_method("take_hit") and not targets.has(target):
+			targets.append(target)
+	return targets
+
+
+func find_nearest_role_skill_target() -> Object:
+	var candidates := find_role_skill_targets(Vector2(1880, 900), Vector2(0, -200))
+	var nearest: Object
+	var nearest_distance := INF
+	for target in candidates:
+		var delta_to_target: Vector2 = target.global_position - global_position
+		if delta_to_target.x * facing < 0.0:
+			continue
+		var distance := delta_to_target.length_squared()
+		if distance < nearest_distance:
+			nearest = target
+			nearest_distance = distance
+	return nearest
+
+
+func apply_role_skill_hit(target: Object, damage: int, knockback: Vector2) -> void:
+	if target == null or not is_instance_valid(target) or not target.has_method("take_hit"):
+		return
+	var health_before := int(target.get("health"))
+	var directed_knockback := knockback
+	directed_knockback.x *= facing
+	target.take_hit(damage, directed_knockback)
+	var actual_damage := maxi(0, health_before - int(target.get("health")))
+	_apply_lifesteal(actual_damage)
+
+
+func spawn_role_skill_effect(spec: Dictionary, origin: Vector2, follow_actor := false) -> OneShotSpriteEffect:
+	if spec.is_empty():
+		return null
+	var frames: Array = []
+	var path_pattern := str(spec.get("effect_path_pattern", ""))
+	for frame_index in range(int(spec.get("effect_frame_count", 0))):
+		var path := path_pattern % frame_index
+		if not _effect_texture_cache.has(path):
+			_effect_texture_cache[path] = load(path) as Texture2D
+		var texture := _effect_texture_cache[path] as Texture2D
+		if texture != null:
+			frames.append(texture)
+	if frames.is_empty():
+		return null
+	var effect := OneShotSpriteEffect.new()
+	if not effect.configure(
+		frames,
+		float(spec.get("effect_fps", 24.0)),
+		int(spec.get("effect_source_facing", 1)),
+		facing,
+		Vector2(spec.get("effect_sprite_offset", Vector2.ZERO))
+	):
+		effect.queue_free()
+		return null
+	get_tree().current_scene.add_child(effect)
+	effect.global_position = origin
+	if follow_actor:
+		effect.set_follow_target(self, origin - global_position)
+	return effect
+
+
+func schedule_role_skill_hits(
+	target: Object,
+	effect_spec: Dictionary,
+	damage: int,
+	knockback: Vector2,
+	repeat_count: int,
+	interval_seconds: float
+) -> void:
+	_run_scheduled_role_skill_hits(
+		target, effect_spec, damage, knockback, repeat_count, interval_seconds
+	)
+
+
+func _run_scheduled_role_skill_hits(
+	target: Object,
+	effect_spec: Dictionary,
+	damage: int,
+	knockback: Vector2,
+	repeat_count: int,
+	interval_seconds: float
+) -> void:
+	for repeat_index in range(repeat_count):
+		if repeat_index > 0:
+			await get_tree().create_timer(interval_seconds).timeout
+		if target == null or not is_instance_valid(target):
+			return
+		spawn_role_skill_effect(effect_spec, target.global_position)
+		apply_role_skill_hit(target, damage, knockback)
+
+
+func _apply_lifesteal(actual_damage: int) -> void:
+	if actual_damage <= 0 or role_definition == null or role_definition.skill_profile == null:
+		return
+	var ratio := role_definition.skill_profile.passive_lifesteal_ratio
+	if ratio <= 0.0:
+		return
+	_lifesteal_accumulator += actual_damage * ratio
+	var healing := int(floor(_lifesteal_accumulator))
+	if healing <= 0:
+		return
+	_lifesteal_accumulator -= healing
+	var previous := health
+	health = mini(max_health, health + healing)
+	if health != previous:
+		health_changed.emit(health, max_health)
 
 
 func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
@@ -333,6 +517,8 @@ func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
 
 
 func take_hit(damage: int, impulse: Vector2) -> void:
+	if action_state_machine.is_invulnerable():
+		return
 	action_state_machine.clear_state()
 	_reset_locomotion_input()
 	health = maxi(0, health - damage)

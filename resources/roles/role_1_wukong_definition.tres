@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="RoleDefinition" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="RoleDefinition" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://src/roles/role_definition.gd" id="1_definition"]
 [ext_resource type="Resource" path="res://resources/roles/role_1_wukong.tres" id="2_animation"]
 [ext_resource type="Resource" path="res://resources/roles/role_1_wukong_combo.tres" id="3_combo"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong_skills.tres" id="4_skills"]
+[ext_resource type="Script" path="res://src/states/wukong_skill_state.gd" id="5_skill_state"]
 
 [resource]
 script = ExtResource("1_definition")
@@ -12,5 +14,7 @@ animation_profile = ExtResource("2_animation")
 combo_attack_profile = ExtResource("3_combo")
 air_attack_step_index = 2
 air_attack_overrides = {"duration_ticks": 15}
+skill_profile = ExtResource("4_skills")
+skill_state_script = ExtResource("5_skill_state")
 default_body_showid = 1
 default_weapon_showid = 0

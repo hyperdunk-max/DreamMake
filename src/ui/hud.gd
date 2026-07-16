@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var player_bar: ProgressBar
+var mana_bar: ProgressBar
 var enemy_bar: ProgressBar
 var message_label: Label
 var weapon_label: Label
@@ -10,6 +11,7 @@ var player_name_label: Label
 
 func _ready() -> void:
 	player_bar = _make_bar(Vector2(32, 35), Vector2(285, 22), Color("d84a38"))
+	mana_bar = _make_bar(Vector2(32, 60), Vector2(285, 16), Color("3f78d6"))
 	enemy_bar = _make_bar(Vector2(623, 35), Vector2(285, 22), Color("9e3131"))
 
 	var title := Label.new()
@@ -31,14 +33,14 @@ func _ready() -> void:
 	add_child(enemy_name)
 
 	var controls := Label.new()
-	controls.text = "A/D 移动  K 二段跳  J 普攻  Q 换武器  E 换衣服  H 敌人攻击  1-4 换角色  R 重开"
+	controls.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  R 重开"
 	controls.position = Vector2(48, 550)
 	controls.add_theme_font_size_override("font_size", 15)
 	controls.add_theme_color_override("font_color", Color("f5dfac"))
 	add_child(controls)
 
-	weapon_label = _make_equipment_label(Vector2(32, 62))
-	body_label = _make_equipment_label(Vector2(32, 83))
+	weapon_label = _make_equipment_label(Vector2(32, 84))
+	body_label = _make_equipment_label(Vector2(32, 105))
 
 	message_label = Label.new()
 	message_label.position = Vector2(250, 245)
@@ -81,6 +83,11 @@ func _make_bar(position: Vector2, size: Vector2, fill: Color) -> ProgressBar:
 func set_player_health(current: int, maximum: int) -> void:
 	player_bar.max_value = maximum
 	player_bar.value = current
+
+
+func set_player_mana(current: int, maximum: int) -> void:
+	mana_bar.max_value = maximum
+	mana_bar.value = current
 
 
 func set_enemy_health(current: int, maximum: int) -> void:

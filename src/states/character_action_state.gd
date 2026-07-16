@@ -33,3 +33,15 @@ func physics_process(_delta: float) -> void:
 
 func blocks_horizontal_movement() -> bool:
 	return false
+
+
+func get_horizontal_velocity(_facing: float) -> float:
+	return 0.0
+
+
+func blocks_gravity() -> bool:
+	return false
+
+
+func is_invulnerable() -> bool:
+	return false

@@ -8,6 +8,8 @@ extends Resource
 @export var combo_attack_profiles_by_mode: Dictionary = {}
 @export var air_attack_step_index := -1
 @export var air_attack_overrides: Dictionary = {}
+@export var skill_profile: RoleSkillProfile
+@export var skill_state_script: Script
 @export var default_body_showid := -1
 @export var default_weapon_showid := -1
 
@@ -37,6 +39,10 @@ func validate() -> PackedStringArray:
 			var air_step := get_air_attack_step()
 			if int(air_step.get("duration_ticks", 0)) <= 0:
 				errors.append("Role %d air attack has an invalid duration." % role_id)
+	if skill_profile != null:
+		errors.append_array(skill_profile.validate_for_role(role_id, animation_profile))
+		if skill_state_script == null:
+			errors.append("Role %d has a skill profile but no skill state script." % role_id)
 	return errors
 
 
