@@ -1,7 +1,209 @@
 {
-  "purpose": "Wukong classic skill effects",
+  "purpose": "Wukong complete skill effects and Flash coordinate calibration",
   "source": "zmxiyou3 Role1v690",
+  "flash_actor_origin_y": -50,
+  "source_calibration": {
+    "shenglong_zhan": {
+      "source_action": "hit6",
+      "gameplay_tick": 3,
+      "source_delta": [
+        30,
+        40
+      ],
+      "placement": "actor_mirrored"
+    },
+    "huoyan_tuji": {
+      "source_action": "hit7",
+      "gameplay_tick": 1,
+      "source_delta": [
+        175,
+        -30
+      ],
+      "placement": "actor_mirrored"
+    },
+    "lieyan_fengbao": {
+      "source_action": "hit8",
+      "gameplay_tick": 1,
+      "source_delta": [
+        20,
+        30
+      ],
+      "placement": "actor_mirrored"
+    },
+    "lieyan_shan": {
+      "source_action": "hit9",
+      "gameplay_tick": 1,
+      "source_delta": [
+        120,
+        -50
+      ],
+      "placement": "actor_mirrored"
+    },
+    "huomo_zhan": {
+      "source_action": "hit10",
+      "gameplay_tick": 1,
+      "phases": [
+        {
+          "id": "hover",
+          "gameplay_tick": 6,
+          "source_delta": [
+            -10,
+            0
+          ],
+          "placement": "actor_absolute_x"
+        },
+        {
+          "id": "fall",
+          "source_delta": [
+            0,
+            -40
+          ],
+          "placement": "actor_mirrored"
+        },
+        {
+          "id": "land",
+          "source_delta": [
+            0,
+            40
+          ],
+          "placement": "actor_mirrored"
+        }
+      ]
+    },
+    "jindou_yun": {
+      "source_action": "hit11_1/hit11_2",
+      "gameplay_tick": 1,
+      "phases": [
+        {
+          "id": "horizontal",
+          "source_delta": [
+            50,
+            -50
+          ],
+          "placement": "actor_mirrored"
+        },
+        {
+          "id": "vertical",
+          "source_delta": [
+            0,
+            -50
+          ],
+          "placement": "actor_mirrored"
+        }
+      ]
+    },
+    "huoyan_jinjing": {
+      "source_action": "hit12",
+      "gameplay_tick": 1,
+      "target_tick": 17,
+      "placement": "asymmetric_actor_cast_then_target_origin"
+    },
+    "qishier_zhan": {
+      "source_action": "hit13",
+      "gameplay_tick": 1,
+      "source_delta": [
+        0,
+        0
+      ],
+      "placement": "contact_target_origin"
+    },
+    "zhongzhan": {
+      "source_action": "hit14",
+      "phases": [
+        {
+          "id": "charge",
+          "gameplay_tick": 1,
+          "source_delta": [
+            -15,
+            -85
+          ],
+          "placement": "actor_mirrored"
+        },
+        {
+          "id": "slash",
+          "gameplay_tick": 15,
+          "source_delta": [
+            145,
+            -60
+          ],
+          "placement": "actor_mirrored"
+        }
+      ]
+    }
+  },
   "effects": [
+    {
+      "effect_id": "shenglong_zhan",
+      "source_symbol": "DefineSprite_56_Role1Bullet6",
+      "frame_count": 6,
+      "source_canvas": [
+        143,
+        194
+      ],
+      "union_crop": [
+        0,
+        0,
+        142,
+        193
+      ],
+      "output_size": [
+        142,
+        193
+      ],
+      "sprite_offset": [
+        -0.5,
+        -0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huoyan_tuji",
+      "source_symbol": "DefineSprite_67_Role1Bullet7",
+      "frame_count": 15,
+      "source_canvas": [
+        290,
+        90
+      ],
+      "union_crop": [
+        0,
+        0,
+        289,
+        89
+      ],
+      "output_size": [
+        289,
+        89
+      ],
+      "sprite_offset": [
+        -0.5,
+        -0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "lieyan_fengbao",
+      "source_symbol": "DefineSprite_43_Role1Bullet8",
+      "frame_count": 10,
+      "source_canvas": [
+        369,
+        159
+      ],
+      "union_crop": [
+        0,
+        0,
+        369,
+        158
+      ],
+      "output_size": [
+        369,
+        158
+      ],
+      "sprite_offset": [
+        0.0,
+        -0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
     {
       "effect_id": "lieyan_shan",
       "source_symbol": "DefineSprite_78_Role1Bullet9",
@@ -23,6 +225,126 @@
       "sprite_offset": [
         0.0,
         0.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huomo_hover",
+      "source_symbol": "DefineSprite_201_Role1Bullet10_2",
+      "frame_count": 44,
+      "source_canvas": [
+        369,
+        232
+      ],
+      "union_crop": [
+        0,
+        0,
+        368,
+        231
+      ],
+      "output_size": [
+        368,
+        231
+      ],
+      "sprite_offset": [
+        -0.5,
+        -0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huomo_fall",
+      "source_symbol": "DefineSprite_156_Role1Bullet10_3",
+      "frame_count": 2,
+      "source_canvas": [
+        247,
+        254
+      ],
+      "union_crop": [
+        15,
+        15,
+        179,
+        252
+      ],
+      "output_size": [
+        164,
+        237
+      ],
+      "sprite_offset": [
+        -26.5,
+        6.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "huomo_land",
+      "source_symbol": "DefineSprite_151_Role1Bullet10_4",
+      "frame_count": 10,
+      "source_canvas": [
+        214,
+        179
+      ],
+      "union_crop": [
+        0,
+        0,
+        197,
+        178
+      ],
+      "output_size": [
+        197,
+        178
+      ],
+      "sprite_offset": [
+        -8.5,
+        -0.5
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "jindou_horizontal",
+      "source_symbol": "DefineSprite_100_Role1Bullet11_1",
+      "frame_count": 35,
+      "source_canvas": [
+        237,
+        183
+      ],
+      "union_crop": [
+        2,
+        0,
+        236,
+        155
+      ],
+      "output_size": [
+        234,
+        155
+      ],
+      "sprite_offset": [
+        0.5,
+        -14.0
+      ],
+      "policy": "shared union crop; no resize or repaint"
+    },
+    {
+      "effect_id": "jindou_vertical",
+      "source_symbol": "DefineSprite_101_Role1Bullet11_2",
+      "frame_count": 35,
+      "source_canvas": [
+        210,
+        224
+      ],
+      "union_crop": [
+        0,
+        2,
+        210,
+        223
+      ],
+      "output_size": [
+        210,
+        221
+      ],
+      "sprite_offset": [
+        0.0,
+        0.5
       ],
       "policy": "shared union crop; no resize or repaint"
     },

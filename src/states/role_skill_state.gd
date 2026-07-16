@@ -21,10 +21,16 @@ func is_configured() -> bool:
 
 
 func request_skill(slot: int) -> bool:
-	if not is_configured() or state_machine.has_active_state():
+	if not is_configured():
 		return false
 	var skill := profile.get_skill(slot)
 	if skill.is_empty():
+		return false
+	if state_machine.is_in_state(ID):
+		if StringName(skill.get("id", &"")) != get_current_skill_id():
+			return false
+		return reactivate_current_skill()
+	if state_machine.has_active_state():
 		return false
 	if not bool(skill.get("allow_air", true)) and not actor.is_on_floor():
 		return false
@@ -32,6 +38,16 @@ func request_skill(slot: int) -> bool:
 	if not actor.has_method("can_spend_mana") or not actor.can_spend_mana(mana_cost):
 		return false
 	return state_machine.transition_to(ID, {"slot": slot})
+
+
+func request_skill_by_id(skill_id: StringName) -> bool:
+	if profile == null:
+		return false
+	return request_skill(profile.find_skill_index(skill_id))
+
+
+func reactivate_current_skill() -> bool:
+	return false
 
 
 func enter(payload: Dictionary = {}) -> void:
@@ -80,6 +96,10 @@ func get_horizontal_velocity(facing: float) -> float:
 
 func blocks_gravity() -> bool:
 	return bool(current_skill.get("freeze_vertical", false))
+
+
+func get_vertical_velocity() -> float:
+	return float(current_skill.get("vertical_speed", 0.0))
 
 
 func is_invulnerable() -> bool:

@@ -168,12 +168,57 @@ actions = {
 "start_column": 0
 }]
 },
+&"skill_huomo_zhan": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(100),
+"row": 4,
+"start_column": 3
+}]
+},
+&"skill_huoyan_tuji": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(15),
+"row": 12,
+"start_column": 1
+}]
+},
 &"skill_huoyan_jinjing": {
 "loop": false,
 "segments": [{
 "cycles": 1,
 "holds": PackedInt32Array(17),
 "row": 12,
+"start_column": 0
+}]
+},
+&"skill_jindou_yun": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(35),
+"row": 4,
+"start_column": 4
+}]
+},
+&"skill_jindou_yun_vertical": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(35),
+"row": 4,
+"start_column": 5
+}]
+},
+&"skill_lieyan_fengbao": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 3, 2, 3),
+"row": 11,
 "start_column": 0
 }]
 },
@@ -193,6 +238,15 @@ actions = {
 "holds": PackedInt32Array(10),
 "row": 12,
 "start_column": 3
+}]
+},
+&"skill_shenglong_zhan": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 1, 6),
+"row": 10,
+"start_column": 0
 }]
 },
 &"skill_zhongzhan": {

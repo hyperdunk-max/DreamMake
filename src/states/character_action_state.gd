@@ -43,5 +43,9 @@ func blocks_gravity() -> bool:
 	return false
 
 
+func get_vertical_velocity() -> float:
+	return 0.0
+
+
 func is_invulnerable() -> bool:
 	return false

@@ -83,5 +83,9 @@ func blocks_gravity() -> bool:
 	return _current_state != null and _current_state.blocks_gravity()
 
 
+func get_vertical_velocity() -> float:
+	return _current_state.get_vertical_velocity() if _current_state != null else 0.0
+
+
 func is_invulnerable() -> bool:
 	return _current_state != null and _current_state.is_invulnerable()

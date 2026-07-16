@@ -25,7 +25,7 @@ active_skills = [{
 }, {
 "action": &"skill_zhongzhan",
 "allow_air": true,
-"charge_tick": 2,
+"charge_tick": 1,
 "damage": 90,
 "display_name": "重斩",
 "duration_ticks": 30,
@@ -34,7 +34,7 @@ active_skills = [{
 &"slash": {"effect_fps": 24.0, "effect_frame_count": 5, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/zhongzhan_slash/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -1)}
 },
 "freeze_vertical": true,
-"hit_tick": 16,
+"hit_tick": 15,
 "hitbox_offset": Vector2(100, -60),
 "hitbox_size": Vector2(194, 123),
 "id": &"zhongzhan",
@@ -69,9 +69,88 @@ active_skills = [{
 },
 "id": &"huoyan_jinjing",
 "knockback": Vector2(0, 0),
-"mana_cost": 40,
+"mana_cost": 50,
 "repeat_count": 3,
 "repeat_interval": 2.0,
 "source_action": &"hit12",
 "target_tick": 17
+}, {
+"action": &"skill_shenglong_zhan",
+"allow_air": true,
+"damage": 36,
+"display_name": "升龙斩",
+"duration_ticks": 11,
+"effect_tick": 3,
+"effects": {&"strike": {"effect_fps": 24.0, "effect_frame_count": 6, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/shenglong_zhan/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)}},
+"hitbox_offset": Vector2(30, -5),
+"hitbox_size": Vector2(142, 193),
+"id": &"shenglong_zhan",
+"knockback": Vector2(336, -600),
+"mana_cost": 10,
+"source_action": &"hit6"
+}, {
+"action": &"skill_huomo_zhan",
+"allow_air": true,
+"display_name": "火魔斩",
+"duration_ticks": 120,
+"effects": {
+&"hover": {"effect_fps": 24.0, "effect_frame_count": 44, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_hover/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)},
+&"fall": {"effect_fps": 24.0, "effect_frame_count": 2, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_fall/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-26.5, 6.5)},
+&"land": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huomo_land/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-8.5, -0.5)}
+},
+"hover_damage": 18,
+"hover_ticks": 46,
+"id": &"huomo_zhan",
+"land_damage": 90,
+"mana_cost": 50,
+"source_action": &"hit10"
+}, {
+"action": &"skill_huoyan_tuji",
+"allow_air": true,
+"damage": 9,
+"display_name": "火眼突击",
+"duration_ticks": 15,
+"effects": {&"dash": {"effect_fps": 24.0, "effect_frame_count": 15, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/huoyan_tuji/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(-0.5, -0.5)}},
+"hit_interval_ticks": 4,
+"hitbox_offset": Vector2(120, -75),
+"hitbox_size": Vector2(289, 89),
+"id": &"huoyan_tuji",
+"knockback": Vector2(360, 0),
+"mana_cost": 20,
+"max_move_speed": 600.0,
+"source_action": &"hit7"
+}, {
+"action": &"skill_lieyan_fengbao",
+"allow_air": true,
+"damage": 21,
+"display_name": "烈焰风暴",
+"duration_ticks": 10,
+"effects": {&"storm": {"effect_fps": 24.0, "effect_frame_count": 10, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/lieyan_fengbao/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, -0.5)}},
+"hit_interval_ticks": 3,
+"hitbox_offset": Vector2(20, -20),
+"hitbox_size": Vector2(369, 158),
+"id": &"lieyan_fengbao",
+"knockback": Vector2(192, -48),
+"mana_cost": 40,
+"source_action": &"hit8"
+}, {
+"action": &"skill_jindou_yun",
+"allow_air": true,
+"damage": 5,
+"display_name": "筋斗云",
+"duration_ticks": 35,
+"effects": {
+&"horizontal": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_horizontal/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0.5, -14)},
+&"vertical": {"effect_fps": 24.0, "effect_frame_count": 35, "effect_path_pattern": "res://assets/selected/zmxiyou3/wukong/effects/skills/jindou_vertical/frame_%02d.png", "effect_source_facing": -1, "effect_sprite_offset": Vector2(0, 0.5)}
+},
+"hit_interval_ticks": 5,
+"hitbox_offset": Vector2(50, -50),
+"hitbox_size": Vector2(234, 155),
+"horizontal_speed": 600.0,
+"id": &"jindou_yun",
+"knockback": Vector2(480, 0),
+"mana_cost": 40,
+"source_action": &"hit11_1",
+"vertical_knockback": Vector2(0, -600),
+"vertical_speed": -600.0
 }]

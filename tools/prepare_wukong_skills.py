@@ -25,13 +25,70 @@ SOURCE = (
 DESTINATION = ROOT / "assets/selected/zmxiyou3/wukong/effects/skills"
 
 EFFECTS = {
+    "shenglong_zhan": "DefineSprite_56_Role1Bullet6",
+    "huoyan_tuji": "DefineSprite_67_Role1Bullet7",
+    "lieyan_fengbao": "DefineSprite_43_Role1Bullet8",
     "lieyan_shan": "DefineSprite_78_Role1Bullet9",
+    "huomo_hover": "DefineSprite_201_Role1Bullet10_2",
+    "huomo_fall": "DefineSprite_156_Role1Bullet10_3",
+    "huomo_land": "DefineSprite_151_Role1Bullet10_4",
+    "jindou_horizontal": "DefineSprite_100_Role1Bullet11_1",
+    "jindou_vertical": "DefineSprite_101_Role1Bullet11_2",
     "huoyan_cast_eye": "DefineSprite_136_Role1Bullet12_1_1",
     "huoyan_cast_flare": "DefineSprite_106_Role1Bullet12_1_2",
     "huoyan_explosion": "DefineSprite_140_Role1Bullet12",
     "qishier_zhan": "DefineSprite_218_Role1Bullet13",
     "zhongzhan_charge": "DefineSprite_206_Role1Bullet14_1",
     "zhongzhan_slash": "DefineSprite_210_Role1Bullet14_2",
+}
+
+SOURCE_CALIBRATION = {
+    "shenglong_zhan": {
+        "source_action": "hit6", "gameplay_tick": 3,
+        "source_delta": [30, 40], "placement": "actor_mirrored",
+    },
+    "huoyan_tuji": {
+        "source_action": "hit7", "gameplay_tick": 1,
+        "source_delta": [175, -30], "placement": "actor_mirrored",
+    },
+    "lieyan_fengbao": {
+        "source_action": "hit8", "gameplay_tick": 1,
+        "source_delta": [20, 30], "placement": "actor_mirrored",
+    },
+    "lieyan_shan": {
+        "source_action": "hit9", "gameplay_tick": 1,
+        "source_delta": [120, -50], "placement": "actor_mirrored",
+    },
+    "huomo_zhan": {
+        "source_action": "hit10", "gameplay_tick": 1,
+        "phases": [
+            {"id": "hover", "gameplay_tick": 6, "source_delta": [-10, 0], "placement": "actor_absolute_x"},
+            {"id": "fall", "source_delta": [0, -40], "placement": "actor_mirrored"},
+            {"id": "land", "source_delta": [0, 40], "placement": "actor_mirrored"},
+        ],
+    },
+    "jindou_yun": {
+        "source_action": "hit11_1/hit11_2", "gameplay_tick": 1,
+        "phases": [
+            {"id": "horizontal", "source_delta": [50, -50], "placement": "actor_mirrored"},
+            {"id": "vertical", "source_delta": [0, -50], "placement": "actor_mirrored"},
+        ],
+    },
+    "huoyan_jinjing": {
+        "source_action": "hit12", "gameplay_tick": 1, "target_tick": 17,
+        "placement": "asymmetric_actor_cast_then_target_origin",
+    },
+    "qishier_zhan": {
+        "source_action": "hit13", "gameplay_tick": 1,
+        "source_delta": [0, 0], "placement": "contact_target_origin",
+    },
+    "zhongzhan": {
+        "source_action": "hit14",
+        "phases": [
+            {"id": "charge", "gameplay_tick": 1, "source_delta": [-15, -85], "placement": "actor_mirrored"},
+            {"id": "slash", "gameplay_tick": 15, "source_delta": [145, -60], "placement": "actor_mirrored"},
+        ],
+    },
 }
 
 
@@ -85,8 +142,10 @@ def prepare_effect(effect_id: str, symbol: str) -> dict[str, object]:
 def main() -> None:
     records = [prepare_effect(effect_id, symbol) for effect_id, symbol in EFFECTS.items()]
     manifest = {
-        "purpose": "Wukong classic skill effects",
+        "purpose": "Wukong complete skill effects and Flash coordinate calibration",
         "source": "zmxiyou3 Role1v690",
+        "flash_actor_origin_y": -50,
+        "source_calibration": SOURCE_CALIBRATION,
         "effects": records,
     }
     manifest_path = DESTINATION / "manifest.json"

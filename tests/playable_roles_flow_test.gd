@@ -108,7 +108,11 @@ func _run() -> void:
 	_assert(player.register_direction_press(1, 40.49), "The second post-combo tap should run.")
 	_assert(player.combo_attack_state.get_current_step_number() == 0, "Entering run should clear combo progress.")
 	_assert(player.request_normal_attack(), "A running attack should start.")
-	_assert(player.combo_attack_state.get_current_step_number() == 1, "A running attack should always begin at hit1.")
+	_assert(
+		player.role_skill_state.get_current_skill_id() == &"huoyan_tuji",
+		"A Wukong who learned 火眼突击 should replace running hit1 with the source skill."
+	)
+	_assert(player.combo_attack_state.get_current_step_number() == 0, "火眼突击 should keep normal combo progress reset.")
 	player.action_state_machine.clear_state()
 
 	var bajie: RoleDefinition = definitions[2]

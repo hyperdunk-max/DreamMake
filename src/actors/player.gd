@@ -13,6 +13,7 @@ const JUMP_SPEED := -500.0
 const GRAVITY := 1450.0
 const HURT_TIME := 8.0 / 24.0
 const DOUBLE_JUMP_ANIMATION_TIME := 10.0 / 24.0
+const FLASH_ACTOR_ORIGIN_Y := -50.0
 const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_effect.gd")
 const SKILL_INPUTS: Array[StringName] = [&"skill", &"skill_2", &"skill_3", &"skill_4"]
 
@@ -136,7 +137,7 @@ func _physics_process(delta: float) -> void:
 		# Walking off a ledge consumes the first jump but still allows one air jump.
 		jump_count = 1
 	if action_state_machine.blocks_gravity():
-		velocity.y = 0.0
+		velocity.y = action_state_machine.get_vertical_velocity()
 	elif not is_on_floor():
 		velocity.y += GRAVITY * delta
 
@@ -181,7 +182,10 @@ func request_normal_attack() -> bool:
 		combo_attack_state.reset_progress()
 		return air_attack_state.request_attack()
 	if is_running and not action_state_machine.is_in_state(ComboAttackState.ID):
-		# The source uses a dedicated running attack path which always starts at hit1.
+		# In the source, a learned 火眼突击 replaces Wukong's running hit1.
+		if role_skill_state != null and role_skill_state.request_skill_by_id(&"huoyan_tuji"):
+			combo_attack_state.reset_progress()
+			return true
 		combo_attack_state.reset_progress()
 	return combo_attack_state.request_attack()
 
@@ -393,6 +397,22 @@ func apply_role_skill_hit(target: Object, damage: int, knockback: Vector2) -> vo
 	_apply_lifesteal(actual_damage)
 
 
+func flash_actor_point(source_delta := Vector2.ZERO, mirror_x := true) -> Vector2:
+	var mirrored_delta := source_delta
+	if mirror_x:
+		mirrored_delta.x *= facing
+	mirrored_delta.y += FLASH_ACTOR_ORIGIN_Y
+	if animation_profile != null:
+		mirrored_delta += animation_profile.visual_nudge
+	return global_position + mirrored_delta
+
+
+func flash_target_point(target: Node2D, source_delta := Vector2.ZERO) -> Vector2:
+	if target == null or not is_instance_valid(target):
+		return Vector2.ZERO
+	return target.global_position + source_delta + Vector2(0, FLASH_ACTOR_ORIGIN_Y)
+
+
 func spawn_role_skill_effect(spec: Dictionary, origin: Vector2, follow_actor := false) -> OneShotSpriteEffect:
 	if spec.is_empty():
 		return null
@@ -450,7 +470,7 @@ func _run_scheduled_role_skill_hits(
 			await get_tree().create_timer(interval_seconds).timeout
 		if target == null or not is_instance_valid(target):
 			return
-		spawn_role_skill_effect(effect_spec, target.global_position)
+		spawn_role_skill_effect(effect_spec, flash_target_point(target as Node2D))
 		apply_role_skill_hit(target, damage, knockback)
 
 

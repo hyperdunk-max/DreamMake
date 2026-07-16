@@ -38,3 +38,10 @@ func get_skill(slot: int) -> Dictionary:
 
 func get_skill_count() -> int:
 	return active_skills.size()
+
+
+func find_skill_index(skill_id: StringName) -> int:
+	for index in range(active_skills.size()):
+		if StringName(active_skills[index].get("id", &"")) == skill_id:
+			return index
+	return -1
