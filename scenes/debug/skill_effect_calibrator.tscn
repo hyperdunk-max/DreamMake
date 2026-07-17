@@ -21,8 +21,10 @@ script = ExtResource("2_animator")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="PanelContainer" parent="UI"]
-offset_right = 310.0
-offset_bottom = 590.0
+anchors_preset = 6
+anchor_bottom = 1.0
+offset_right = 330.0
+grow_vertical = 2
 
 [node name="Margin" type="ScrollContainer" parent="UI/Panel"]
 layout_mode = 2
@@ -40,7 +42,7 @@ text = "技能特效校准器"
 
 [node name="Help" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
-text = "拖动右侧特效，或用方向键微调\nShift + 方向键：每次移动 10 像素"
+text = "拖动右侧特效，或用方向键微调\nShift + 方向键：每次移动 10 像素\n确认后点击“一键保存”直接应用到游戏"
 
 [node name="RoleLabel" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
@@ -136,10 +138,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "恢复当前值"
 
-[node name="CopyButton" type="Button" parent="UI/Panel/Margin/VBox/EditButtons"]
+[node name="SaveButton" type="Button" parent="UI/Panel/Margin/VBox/EditButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "复制 Vector2"
+text = "一键保存"
 
 [node name="PositionLabel" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
@@ -160,9 +162,9 @@ autowrap_mode = 2
 text = "准备中"
 
 [node name="Legend" type="Label" parent="UI"]
-offset_left = 325.0
+offset_left = 345.0
 offset_top = 12.0
-offset_right = 920.0
+offset_right = 1260.0
 offset_bottom = 65.0
 text = "白色十字：角色物理原点　黄色点：Flash 角色基准点　蓝色点：特效注册点\n坐标含义：X 正数=角色前方，Y 负数=角色上方"
 horizontal_alignment = 1

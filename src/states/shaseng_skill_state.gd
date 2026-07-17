@@ -160,7 +160,11 @@ func _tick_wudu_wawa() -> void:
 	var cast_tick := int(current_skill.get("arrow_cast_tick", 1) if _arrow_mode else current_skill.get("shovel_cast_tick", 3))
 	var bind_tick := int(current_skill.get("arrow_bind_tick", 7) if _arrow_mode else current_skill.get("shovel_bind_tick", 8))
 	if _elapsed_ticks == cast_tick:
-		actor.spawn_role_skill_effect(get_effect(&"cast"), actor.flash_actor_point(Vector2(115, -110)), true)
+		actor.spawn_role_skill_effect(
+			get_effect(&"cast"),
+			actor.flash_actor_point(get_effect_display_offset(&"cast", Vector2(115, -110))),
+			true
+		)
 	if _elapsed_ticks == bind_tick:
 		_create_voodoo_doll()
 	_finish_at_mode_duration()
@@ -176,11 +180,17 @@ func _tick_mabi_yaoji() -> void:
 # 显示调节（剧毒阵）：array=(155, -50)；burst 三处=(150, -70)/(190, -90)/(110, -80)，均为世界坐标。
 func _tick_judu_zhen() -> void:
 	if _elapsed_ticks == int(current_skill.get("array_tick", 15)):
-		actor.spawn_role_skill_effect(get_effect(&"array"), actor.flash_actor_point(Vector2(155, -50)))
+		actor.spawn_role_skill_effect(
+			get_effect(&"array"),
+			actor.flash_actor_point(get_effect_display_offset(&"array", Vector2(155, -50)))
+		)
 	if _elapsed_ticks == int(current_skill.get("burst_tick", 27)):
 		var burst_spec: Dictionary = get_effect(&"burst")
+		var burst_adjustment := (
+			get_effect_display_offset(&"burst", Vector2(150, -70)) - Vector2(150, -70)
+		)
 		for local_delta in [Vector2(150, -70), Vector2(190, -90), Vector2(110, -80)]:
-			var origin: Vector2 = actor.flash_actor_point(Vector2(local_delta))
+			var origin: Vector2 = actor.flash_actor_point(Vector2(local_delta) + burst_adjustment)
 			actor.spawn_role_skill_effect(burst_spec, origin)
 			var center: Vector2 = actor.role_skill_effect_bounds_center(burst_spec, origin)
 			for target in actor.find_role_skill_targets_at(Vector2(87, 134), center):
@@ -198,7 +208,9 @@ func _tick_mengdu_su() -> void:
 			if stacks <= 0:
 				continue
 			var damage := int(floor(stacks * stacks * float(current_skill.get("damage_per_stack_squared", 5.0))))
-			var blast_origin: Vector2 = actor.flash_target_point(target as Node2D)
+			var blast_origin: Vector2 = actor.flash_target_point(
+				target as Node2D, get_effect_display_offset(&"blast", Vector2.ZERO)
+			)
 			var blast_effect: OneShotSpriteEffect = actor.spawn_role_skill_effect(get_effect(&"blast"), blast_origin)
 			if blast_effect != null:
 				blast_effect.set_follow_target(target as Node2D, blast_origin - (target as Node2D).global_position)
@@ -212,7 +224,13 @@ func _tick_qiangli_ji() -> void:
 	var effect_tick := int(current_skill.get("arrow_effect_tick", 1) if _arrow_mode else current_skill.get("shovel_effect_tick", 5))
 	if _elapsed_ticks == effect_tick:
 		if _arrow_mode:
-			actor.spawn_role_skill_effect(get_effect(&"arrow_charge"), actor.flash_actor_point(Vector2(75, -60)), true)
+			actor.spawn_role_skill_effect(
+				get_effect(&"arrow_charge"),
+				actor.flash_actor_point(
+					get_effect_display_offset(&"arrow_charge", Vector2(75, -60))
+				),
+				true
+			)
 			_spawn_plain_area(&"arrow_impact", Vector2(65, -10), int(current_skill.get("damage", 40)), Vector2(720, -48))
 		else:
 			_spawn_plain_area(&"shovel", Vector2(125, -30), int(current_skill.get("damage", 40)), Vector2(720, -48), 1, 0.0, true)
@@ -223,12 +241,22 @@ func _tick_qiangli_ji() -> void:
 func _tick_tengkong_ji() -> void:
 	if not _arrow_mode:
 		if _elapsed_ticks == 1:
-			actor.spawn_role_skill_effect(get_effect(&"shovel_charge"), actor.flash_actor_point(Vector2.ZERO), true)
+			actor.spawn_role_skill_effect(
+				get_effect(&"shovel_charge"),
+				actor.flash_actor_point(get_effect_display_offset(&"shovel_charge", Vector2.ZERO)),
+				true
+			)
 		if _elapsed_ticks == int(current_skill.get("shovel_hit_tick", 8)):
 			_spawn_plain_area(&"shovel_impact", Vector2(0, -80), int(current_skill.get("shovel_damage", 80)), Vector2(360, -600), 1, 0.0, true)
 	else:
 		if _elapsed_ticks == 1:
-			actor.spawn_role_skill_effect(get_effect(&"arrow_charge"), actor.flash_actor_point(Vector2(80, -80)), true)
+			actor.spawn_role_skill_effect(
+				get_effect(&"arrow_charge"),
+				actor.flash_actor_point(
+					get_effect_display_offset(&"arrow_charge", Vector2(80, -80))
+				),
+				true
+			)
 		if _elapsed_ticks == int(current_skill.get("arrow_hit_tick", 3)):
 			_spawn_plain_area(&"arrow_impact", Vector2(60, 30), int(current_skill.get("arrow_damage", 20)), Vector2(120, 0), 1, 0.0, true)
 	_finish_at_mode_duration()
@@ -237,7 +265,9 @@ func _tick_tengkong_ji() -> void:
 # 显示调节（多重击）：铲 shovel=(150, -50)、弓 impact=(225, -80) 使用世界坐标；弓 charge=(0, 0) 跟随角色。
 func _tick_duozhong_ji() -> void:
 	if not _arrow_mode and _elapsed_ticks == int(current_skill.get("shovel_effect_tick", 1)):
-		var origin: Vector2 = actor.flash_actor_point(Vector2(150, -50))
+		var origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"shovel", Vector2(150, -50))
+		)
 		var spec: Dictionary = get_effect(&"shovel")
 		actor.spawn_role_skill_effect(spec, origin)
 		_schedule_plain_area_hits(
@@ -247,7 +277,11 @@ func _tick_duozhong_ji() -> void:
 		)
 	if _arrow_mode:
 		if _elapsed_ticks == 1:
-			actor.spawn_role_skill_effect(get_effect(&"arrow_charge"), actor.flash_actor_point(Vector2.ZERO), true)
+			actor.spawn_role_skill_effect(
+				get_effect(&"arrow_charge"),
+				actor.flash_actor_point(get_effect_display_offset(&"arrow_charge", Vector2.ZERO)),
+				true
+			)
 		if _elapsed_ticks == int(current_skill.get("arrow_effect_tick", 13)):
 			_spawn_plain_area(&"arrow_impact", Vector2(225, -80), int(current_skill.get("arrow_damage", 80)), Vector2(240, -48))
 	_finish_at_mode_duration()
@@ -261,7 +295,10 @@ func _tick_luye_biaoji() -> void:
 		return
 	if _elapsed_ticks == int(current_skill.get("mark_tick", 1)):
 		_marker_actor_position = actor.global_position
-		_marker_effect = actor.spawn_role_skill_effect(get_effect(&"mark"), actor.flash_actor_point(Vector2.ZERO))
+		_marker_effect = actor.spawn_role_skill_effect(
+			get_effect(&"mark"),
+			actor.flash_actor_point(get_effect_display_offset(&"mark", Vector2.ZERO))
+		)
 	_finish_at_mode_duration()
 
 
@@ -269,7 +306,9 @@ func _tick_luye_biaoji() -> void:
 func _tick_mumo_wu() -> void:
 	if not _arrow_mode:
 		if _elapsed_ticks == int(current_skill.get("shovel_effect_tick", 5)):
-			var origin: Vector2 = actor.flash_actor_point(Vector2(150, 0))
+			var origin: Vector2 = actor.flash_actor_point(
+				get_effect_display_offset(&"shovel", Vector2(150, 0))
+			)
 			var spec: Dictionary = get_effect(&"shovel")
 			actor.spawn_role_skill_effect(spec, origin)
 			_schedule_plain_area_hits(
@@ -281,21 +320,33 @@ func _tick_mumo_wu() -> void:
 		if _elapsed_ticks == 25:
 			actor.facing *= -1.0
 		if _elapsed_ticks in [1, 25]:
-			actor.spawn_role_skill_effect(get_effect(&"arrow_aura"), actor.flash_actor_point(Vector2(80, -100)), true)
+			actor.spawn_role_skill_effect(
+				get_effect(&"arrow_aura"),
+				actor.flash_actor_point(
+					get_effect_display_offset(&"arrow_aura", Vector2(80, -100))
+				),
+				true
+			)
 			_spawn_following_area(&"arrow_body", Vector2.ZERO, int(current_skill.get("arrow_damage", 40)), Vector2(120, -48), 2, 10.0 / 24.0)
 		var leaf_counts := {4: 17, 9: 12, 15: 6, 34: 17, 39: 12, 45: 6}
 		if leaf_counts.has(_elapsed_ticks):
 			var remaining := int(leaf_counts[_elapsed_ticks])
+			var leaf_base := Vector2(88, 7)
+			var saved_leaf_base := get_effect_display_offset(&"arrow_leaf", leaf_base)
 			_spawn_plain_area(
-				&"arrow_leaf", Vector2(88 + remaining, 7 - remaining * 2),
-				int(current_skill.get("arrow_damage", 40)), Vector2(120, -48)
+				&"arrow_leaf",
+				Vector2(88 + remaining, 7 - remaining * 2) + saved_leaf_base - leaf_base,
+				int(current_skill.get("arrow_damage", 40)), Vector2(120, -48),
+				1, 0.0, false, false
 			)
 	_finish_at_mode_duration()
 
 
 func _spawn_poison_area(effect_id: StringName, source_delta: Vector2, damage: int, repeat_count: int) -> void:
 	var spec: Dictionary = get_effect(effect_id)
-	var origin: Vector2 = actor.flash_actor_point(source_delta)
+	var origin: Vector2 = actor.flash_actor_point(
+		get_effect_display_offset(effect_id, source_delta)
+	)
 	actor.spawn_role_skill_effect(spec, origin, not _arrow_mode)
 	var center: Vector2 = actor.role_skill_effect_bounds_center(spec, origin)
 	if _arrow_mode:
@@ -343,7 +394,10 @@ func _launch_paralysis_chain() -> void:
 	var target := _find_chain_target(actor.global_position, [], true, chain_range)
 	if target == null:
 		return
-	var effect: OneShotSpriteEffect = actor.spawn_role_skill_effect(get_effect(&"orb"), actor.flash_actor_point(Vector2(25, -30)))
+	var effect: OneShotSpriteEffect = actor.spawn_role_skill_effect(
+		get_effect(&"orb"),
+		actor.flash_actor_point(get_effect_display_offset(&"orb", Vector2(25, -30)))
+	)
 	if effect == null:
 		return
 	var visited: Array = []
@@ -391,7 +445,9 @@ func _create_voodoo_doll() -> void:
 	_destroy_effect(_doll_effect)
 	_doll = ShasengVoodooDoll.new()
 	actor.get_tree().current_scene.add_child(_doll)
-	_doll.global_position = actor.flash_actor_point(Vector2(0, -20))
+	_doll.global_position = actor.flash_actor_point(
+		get_effect_display_offset(&"doll", Vector2(0, -20))
+	)
 	_doll.configure(target, actor, float(current_skill.get("doll_seconds", 10.0)))
 	_doll_effect = actor.spawn_role_skill_effect(get_effect(&"doll"), _doll.global_position)
 	if _doll_effect != null:
@@ -412,10 +468,15 @@ func _add_poison(target: Object, stacks: int, seconds: float, poison_damage: int
 
 func _spawn_plain_area(
 	effect_id: StringName, source_delta: Vector2, damage: int, knockback: Vector2,
-	repeat_count := 1, interval := 0.0, follow_actor := false
+	repeat_count := 1, interval := 0.0, follow_actor := false,
+	apply_display_override := true
 ) -> void:
 	var spec: Dictionary = get_effect(effect_id)
-	var origin: Vector2 = actor.flash_actor_point(source_delta)
+	var resolved_delta := (
+		get_effect_display_offset(effect_id, source_delta)
+		if apply_display_override else source_delta
+	)
+	var origin: Vector2 = actor.flash_actor_point(resolved_delta)
 	actor.spawn_role_skill_effect(spec, origin, follow_actor)
 	var size := Vector2(spec.get("hitbox_size", spec.get("effect_output_size", Vector2(96, 96))))
 	_schedule_plain_area_hits(actor.role_skill_effect_bounds_center(spec, origin), size, damage, knockback, repeat_count, interval)
@@ -426,7 +487,9 @@ func _spawn_following_area(
 	repeat_count: int, interval: float
 ) -> void:
 	var spec: Dictionary = get_effect(effect_id)
-	var origin: Vector2 = actor.flash_actor_point(source_delta)
+	var origin: Vector2 = actor.flash_actor_point(
+		get_effect_display_offset(effect_id, source_delta)
+	)
 	actor.spawn_role_skill_effect(spec, origin, true)
 	var size := Vector2(spec.get("hitbox_size", spec.get("effect_output_size", Vector2(96, 96))))
 	var center: Vector2 = actor.role_skill_effect_bounds_center(spec, origin)

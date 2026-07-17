@@ -128,7 +128,9 @@ func reactivate_current_skill() -> bool:
 	animator.play_action(&"skill_jindou_yun_vertical", true)
 	# 显示调节（金斗云·二次激活）：vertical=(0, -50)，跟随角色。
 	_jindou_effect = actor.spawn_role_skill_effect(
-		get_effect(&"vertical"), actor.flash_actor_point(Vector2(0, -50)), true
+		get_effect(&"vertical"),
+		actor.flash_actor_point(get_effect_display_offset(&"vertical", Vector2(0, -50))),
+		true
 	)
 	return true
 
@@ -145,7 +147,11 @@ func _tick_qishier_zhan() -> void:
 			_contact_tick = _elapsed_ticks
 			actor.set_role_skill_visual_hidden(true)
 			actor.spawn_role_skill_effect(
-				get_effect(&"impact"), actor.flash_target_point(_contact_target as Node2D)
+				get_effect(&"impact"),
+				actor.flash_target_point(
+					_contact_target as Node2D,
+					get_effect_display_offset(&"impact", Vector2.ZERO)
+				)
 			)
 		elif _elapsed_ticks >= int(current_skill.get("duration_ticks", 20)):
 			finish_skill()
@@ -167,11 +173,13 @@ func _tick_zhongzhan() -> void:
 	if _elapsed_ticks == int(current_skill.get("charge_tick", 1)):
 		actor.spawn_role_skill_effect(
 			get_effect(&"charge"),
-			actor.flash_actor_point(Vector2(-15, -85)),
+			actor.flash_actor_point(get_effect_display_offset(&"charge", Vector2(-15, -85))),
 			true
 		)
 	if _elapsed_ticks == int(current_skill.get("hit_tick", 15)):
-		var effect_origin: Vector2 = actor.flash_actor_point(Vector2(145, -60))
+		var effect_origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"slash", Vector2(145, -60))
+		)
 		actor.spawn_role_skill_effect(get_effect(&"slash"), effect_origin)
 		_damage_box(
 			Vector2(current_skill.get("hitbox_size", Vector2(194, 123))),
@@ -188,7 +196,9 @@ func _tick_lieyan_shan() -> void:
 	if _elapsed_ticks == 1:
 		actor.set_role_skill_visual_hidden(true)
 		actor.spawn_role_skill_effect(
-			get_effect(&"dash"), actor.flash_actor_point(Vector2(120, -50)), true
+			get_effect(&"dash"),
+			actor.flash_actor_point(get_effect_display_offset(&"dash", Vector2(120, -50))),
+			true
 		)
 	for target in actor.find_role_skill_targets(
 		Vector2(current_skill.get("hitbox_size", Vector2(180, 76))),
@@ -211,12 +221,18 @@ func _tick_huoyan_jinjing() -> void:
 	if _elapsed_ticks == 1:
 		var eye_x := 21.0 if actor.facing > 0.0 else 22.0
 		actor.spawn_role_skill_effect(
-			get_effect(&"cast_eye"), actor.flash_actor_point(Vector2(eye_x, -10)), true
+			get_effect(&"cast_eye"),
+			actor.flash_actor_point(get_effect_display_offset(&"cast_eye", Vector2(eye_x, -10))),
+			true
 		)
 		# The Flash source places this screen flare to the actor's left for both facings.
 		var flare_x := -65.0 if actor.facing > 0.0 else -55.0
 		actor.spawn_role_skill_effect(
-			get_effect(&"cast_flare"), actor.flash_actor_point(Vector2(flare_x, 0), false), true
+			get_effect(&"cast_flare"),
+			actor.flash_actor_point(
+				get_effect_display_offset(&"cast_flare", Vector2(flare_x, 0)), false
+			),
+			true
 		)
 	if _elapsed_ticks >= int(current_skill.get("target_tick", 17)):
 		var target: Object = actor.find_nearest_role_skill_target()
@@ -227,7 +243,8 @@ func _tick_huoyan_jinjing() -> void:
 				int(current_skill.get("damage", 27)),
 				Vector2(current_skill.get("knockback", Vector2.ZERO)),
 				int(current_skill.get("repeat_count", 3)),
-				float(current_skill.get("repeat_interval", 2.0))
+				float(current_skill.get("repeat_interval", 2.0)),
+				get_effect_display_offset(&"explosion", Vector2.ZERO)
 			)
 		finish_skill()
 
@@ -236,7 +253,9 @@ func _tick_huoyan_jinjing() -> void:
 func _tick_shenglong_zhan() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 3)):
 		actor.spawn_role_skill_effect(
-			get_effect(&"strike"), actor.flash_actor_point(Vector2(30, 40)), true
+			get_effect(&"strike"),
+			actor.flash_actor_point(get_effect_display_offset(&"strike", Vector2(30, 40))),
+			true
 		)
 		_damage_box(
 			Vector2(current_skill.get("hitbox_size", Vector2(142, 193))),
@@ -252,7 +271,9 @@ func _tick_shenglong_zhan() -> void:
 func _tick_huoyan_tuji() -> void:
 	if _elapsed_ticks == 1:
 		actor.spawn_role_skill_effect(
-			get_effect(&"dash"), actor.flash_actor_point(Vector2(175, -30)), true
+			get_effect(&"dash"),
+			actor.flash_actor_point(get_effect_display_offset(&"dash", Vector2(175, -30))),
+			true
 		)
 	var interval := int(current_skill.get("hit_interval_ticks", 4))
 	if (_elapsed_ticks - 1) % interval == 0:
@@ -270,7 +291,9 @@ func _tick_huoyan_tuji() -> void:
 func _tick_lieyan_fengbao() -> void:
 	if _elapsed_ticks == 1:
 		actor.spawn_role_skill_effect(
-			get_effect(&"storm"), actor.flash_actor_point(Vector2(20, 30)), true
+			get_effect(&"storm"),
+			actor.flash_actor_point(get_effect_display_offset(&"storm", Vector2(20, 30))),
+			true
 		)
 	var interval := int(current_skill.get("hit_interval_ticks", 3))
 	if (_elapsed_ticks - 1) % interval == 0:
@@ -288,7 +311,9 @@ func _tick_lieyan_fengbao() -> void:
 func _tick_jindou_yun() -> void:
 	if _elapsed_ticks == 1:
 		_jindou_effect = actor.spawn_role_skill_effect(
-			get_effect(&"horizontal"), actor.flash_actor_point(Vector2(50, -50)), true
+			get_effect(&"horizontal"),
+			actor.flash_actor_point(get_effect_display_offset(&"horizontal", Vector2(50, -50))),
+			true
 		)
 	var phase_elapsed := _elapsed_ticks - _jindou_phase_start_tick
 	var interval := int(current_skill.get("hit_interval_ticks", 5))
@@ -321,7 +346,10 @@ func _tick_huomo_zhan() -> void:
 				_phase_tick = 0
 				actor.set_role_skill_visual_hidden(true)
 				actor.spawn_role_skill_effect(
-					get_effect(&"hover"), actor.flash_actor_point(Vector2(-10, 0), false)
+					get_effect(&"hover"),
+					actor.flash_actor_point(
+						get_effect_display_offset(&"hover", Vector2(-10, 0)), false
+					)
 				)
 	elif _huomo_phase == &"hover":
 		_phase_tick += 1
@@ -347,7 +375,8 @@ func _start_huomo_fall() -> void:
 	_phase_tick = 0
 	actor.set_role_skill_visual_hidden(true)
 	actor.spawn_role_skill_effect(
-		get_effect(&"fall"), actor.flash_actor_point(Vector2(0, -40))
+		get_effect(&"fall"),
+		actor.flash_actor_point(get_effect_display_offset(&"fall", Vector2(0, -40)))
 	)
 	_damage_box_repeated(Vector2(164, 237), Vector2(0, -90), 14, Vector2(240, 480))
 
@@ -356,7 +385,8 @@ func _start_huomo_land() -> void:
 	_huomo_phase = &"land"
 	_phase_tick = 0
 	actor.spawn_role_skill_effect(
-		get_effect(&"land"), actor.flash_actor_point(Vector2(0, 40))
+		get_effect(&"land"),
+		actor.flash_actor_point(get_effect_display_offset(&"land", Vector2(0, 40)))
 	)
 	_damage_box_repeated(
 		Vector2(197, 178), Vector2(0, -10),

@@ -2,6 +2,11 @@ class_name SkillEffectCalibrator
 extends Node2D
 
 const FLASH_ACTOR_ORIGIN_Y := -50.0
+const CALIBRATOR_WINDOW_SIZE := Vector2i(1280, 800)
+const CONTROL_PANEL_WIDTH := 330.0
+const SKILL_EFFECT_DISPLAY_CONFIG := preload(
+	"res://src/skills/skill_effect_display_config.gd"
+)
 
 const ROLE_ENTRIES := [
 	{"name": "悟空", "path": "res://resources/roles/role_1_wukong_definition.tres"},
@@ -26,7 +31,7 @@ const SKILL_NAMES := {
 	"mumo_wu": "木魔舞",
 }
 
-# 这里保存正式技能代码当前使用的 source_delta，校准场景只预览和复制，不直接覆写源码。
+# 这里保存正式技能代码的默认 source_delta；一键保存后的值写入独立覆盖配置。
 const DEFAULT_OFFSETS := {
 	"1/qishier_zhan/impact": Vector2.ZERO,
 	"1/zhongzhan/charge": Vector2(-15, -85), "1/zhongzhan/slash": Vector2(145, -60),
@@ -92,6 +97,17 @@ const NO_MIRROR_X := {
 	"1/huomo_zhan/hover": true,
 }
 
+const RAW_REFERENCE_OFFSETS := {
+	"2/shuimo_bao/blast": true,
+	"3/shengdun/buff": true,
+}
+
+const TARGET_REFERENCE_OFFSETS := {
+	"1/qishier_zhan/impact": true,
+	"1/huoyan_jinjing/explosion": true,
+	"4/mengdu_su/blast": true,
+}
+
 @onready var preview_world: Node2D = $PreviewWorld
 @onready var animator: LayeredSpriteAnimator = $PreviewWorld/Actor/LayeredSpriteAnimator
 @onready var role_option: OptionButton = $UI/Panel/Margin/VBox/RoleOption
@@ -120,6 +136,9 @@ var _paused := false
 
 
 func _ready() -> void:
+	get_window().content_scale_size = CALIBRATOR_WINDOW_SIZE
+	get_window().size = CALIBRATOR_WINDOW_SIZE
+	get_viewport().size_changed.connect(_update_preview_layout)
 	role_option.item_selected.connect(_on_role_selected)
 	skill_option.item_selected.connect(_on_skill_selected)
 	effect_option.item_selected.connect(_on_effect_selected)
@@ -131,11 +150,12 @@ func _ready() -> void:
 	pause_button.pressed.connect(_toggle_pause)
 	$UI/Panel/Margin/VBox/Buttons/ReplayButton.pressed.connect(_replay)
 	$UI/Panel/Margin/VBox/EditButtons/ResetButton.pressed.connect(_reset_offset)
-	$UI/Panel/Margin/VBox/EditButtons/CopyButton.pressed.connect(_copy_offset)
+	$UI/Panel/Margin/VBox/EditButtons/SaveButton.pressed.connect(_save_offset)
 	for entry in ROLE_ENTRIES:
 		role_option.add_item(str(entry["name"]))
 	role_option.select(0)
 	_on_role_selected(0)
+	_update_preview_layout()
 	queue_redraw()
 
 
@@ -150,7 +170,7 @@ func _process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and event.position.x > 310.0:
+		if event.pressed and event.position.x > CONTROL_PANEL_WIDTH:
 			_dragging = true
 			_update_offset_from_mouse(event.position)
 		elif not event.pressed:
@@ -174,19 +194,20 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _draw() -> void:
 	var viewport_size := get_viewport_rect().size
-	for x in range(320, int(viewport_size.x), 50):
+	for x in range(int(CONTROL_PANEL_WIDTH) + 10, int(viewport_size.x), 50):
 		draw_line(Vector2(x, 0), Vector2(x, viewport_size.y), Color(0.16, 0.2, 0.28), 1.0)
 	for y in range(0, int(viewport_size.y), 50):
-		draw_line(Vector2(310, y), Vector2(viewport_size.x, y), Color(0.16, 0.2, 0.28), 1.0)
+		draw_line(Vector2(CONTROL_PANEL_WIDTH, y), Vector2(viewport_size.x, y), Color(0.16, 0.2, 0.28), 1.0)
 	var actor_origin := preview_world.global_position
 	var visual_nudge_y := _role.animation_profile.visual_nudge.y if _role != null else 0.0
 	var flash_origin := preview_world.to_global(Vector2(0, FLASH_ACTOR_ORIGIN_Y + visual_nudge_y))
+	var effect_reference_origin := preview_world.to_global(_effect_reference_local_origin())
 	draw_line(actor_origin + Vector2(-12, 0), actor_origin + Vector2(12, 0), Color.WHITE, 2.0)
 	draw_line(actor_origin + Vector2(0, -12), actor_origin + Vector2(0, 12), Color.WHITE, 2.0)
 	draw_circle(flash_origin, 5.0, Color(1.0, 0.78, 0.2))
 	if _effect != null and is_instance_valid(_effect):
 		var effect_origin := _effect.global_position
-		draw_line(flash_origin, effect_origin, Color(0.3, 0.85, 1.0, 0.8), 2.0)
+		draw_line(effect_reference_origin, effect_origin, Color(0.3, 0.85, 1.0, 0.8), 2.0)
 		draw_circle(effect_origin, 5.0, Color(0.3, 0.85, 1.0))
 
 
@@ -260,9 +281,9 @@ func _on_effect_selected(index: int) -> void:
 		return
 	var effect_id := StringName(effect_option.get_item_metadata(index))
 	_effect_spec = (_skill.get("effects", {}) as Dictionary).get(effect_id, {})
-	_set_source_delta(Vector2(DEFAULT_OFFSETS.get(_selection_key(), Vector2.ZERO)))
+	_set_source_delta(_get_saved_offset())
 	note_label.text = "备注：%s" % PLACEMENT_NOTES.get(
-		_selection_key(), "拖动蓝色特效，或修改 X/Y；结果需复制回技能状态脚本。"
+		_selection_key(), "拖动蓝色特效，或修改 X/Y；确认后点击一键保存。"
 	)
 	_spawn_effect()
 
@@ -313,6 +334,11 @@ func _selection_key() -> String:
 	]
 
 
+func _get_saved_offset() -> Vector2:
+	var fallback := Vector2(DEFAULT_OFFSETS.get(_selection_key(), Vector2.ZERO))
+	return SKILL_EFFECT_DISPLAY_CONFIG.get_offset_by_key(_selection_key(), fallback)
+
+
 func _set_source_delta(value: Vector2) -> void:
 	_source_delta = Vector2(roundf(value.x), roundf(value.y))
 	_updating_controls = true
@@ -330,7 +356,7 @@ func _apply_effect_position() -> void:
 	var displayed_delta := _source_delta
 	if not NO_MIRROR_X.has(_selection_key()):
 		displayed_delta.x *= _facing
-	displayed_delta.y += FLASH_ACTOR_ORIGIN_Y + _role.animation_profile.visual_nudge.y
+	displayed_delta += _effect_reference_local_origin()
 	_effect.position = displayed_delta
 
 
@@ -338,10 +364,19 @@ func _update_offset_from_mouse(mouse_position: Vector2) -> void:
 	if _role == null:
 		return
 	var local_position := preview_world.to_local(mouse_position)
-	local_position.y -= FLASH_ACTOR_ORIGIN_Y + _role.animation_profile.visual_nudge.y
+	local_position -= _effect_reference_local_origin()
 	if not NO_MIRROR_X.has(_selection_key()):
 		local_position.x *= _facing
 	_set_source_delta(local_position)
+
+
+func _effect_reference_local_origin() -> Vector2:
+	if _role == null or RAW_REFERENCE_OFFSETS.has(_selection_key()):
+		return Vector2.ZERO
+	var y := FLASH_ACTOR_ORIGIN_Y
+	if not TARGET_REFERENCE_OFFSETS.has(_selection_key()):
+		y += _role.animation_profile.visual_nudge.y
+	return Vector2(0, y)
 
 
 func _on_coordinate_changed(_value: float) -> void:
@@ -377,11 +412,26 @@ func _replay() -> void:
 
 
 func _reset_offset() -> void:
-	_set_source_delta(Vector2(DEFAULT_OFFSETS.get(_selection_key(), Vector2.ZERO)))
-	status_label.text = "已恢复正式技能当前值"
+	_set_source_delta(_get_saved_offset())
+	status_label.text = "已恢复最近一次保存值"
 
 
-func _copy_offset() -> void:
-	var text := "Vector2(%d, %d)" % [int(_source_delta.x), int(_source_delta.y)]
-	DisplayServer.clipboard_set(text)
-	status_label.text = "已复制：%s" % text
+func _save_offset() -> void:
+	var error: Error = SKILL_EFFECT_DISPLAY_CONFIG.save_offset_by_key(
+		_selection_key(), _source_delta
+	)
+	if error != OK:
+		status_label.text = "保存失败，错误码：%d" % error
+		return
+	status_label.text = "已保存，正式游戏将直接使用 Vector2(%d, %d)" % [
+		int(_source_delta.x), int(_source_delta.y),
+	]
+
+
+func _update_preview_layout() -> void:
+	var viewport_size := get_viewport_rect().size
+	preview_world.position = Vector2(
+		CONTROL_PANEL_WIDTH + (viewport_size.x - CONTROL_PANEL_WIDTH) * 0.52,
+		viewport_size.y * 0.7
+	)
+	queue_redraw()

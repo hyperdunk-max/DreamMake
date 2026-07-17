@@ -1,0 +1,25 @@
+{
+	"offsets": {
+		"1/huoyan_tuji/dash": [
+			152.0,
+			-42.0
+		],
+		"1/jindou_yun/horizontal": [
+			18.0,
+			-59.0
+		],
+		"1/lieyan_fengbao/storm": [
+			-14.0,
+			12.0
+		],
+		"1/lieyan_shan/dash": [
+			91.0,
+			-63.0
+		],
+		"1/qishier_zhan/impact": [
+			-12.0,
+			-10.0
+		]
+	},
+	"version": 1
+}

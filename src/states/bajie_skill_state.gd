@@ -160,10 +160,14 @@ func _tick_dunji() -> void:
 # 显示调节（圣盾）：cast=(70, -110)，世界坐标；buff=(-20 * facing, -80)，跟随角色。
 func _tick_shengdun() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
-		actor.spawn_role_skill_effect(get_effect(&"cast"), actor.flash_actor_point(Vector2(70, -110)))
+		actor.spawn_role_skill_effect(
+			get_effect(&"cast"),
+			actor.flash_actor_point(get_effect_display_offset(&"cast", Vector2(70, -110)))
+		)
 		_shield_seconds_left = float(current_skill.get("shield_seconds", 10.0))
 		_destroy_effect(_shield_effect)
-		var buff_origin := actor.global_position + Vector2(-20.0 * actor.facing, -80.0)
+		var buff_offset := get_effect_display_offset(&"buff", Vector2(-20, -80))
+		var buff_origin := actor.global_position + Vector2(buff_offset.x * actor.facing, buff_offset.y)
 		_shield_effect = actor.spawn_role_skill_effect(get_effect(&"buff"), buff_origin, true)
 	_finish_at_duration()
 
@@ -171,7 +175,10 @@ func _tick_shengdun() -> void:
 # 显示调节（战争怒吼）：roar=(120, -115)，世界坐标；destination=(0, -100) 是拉怪终点。
 func _tick_zhanzheng_nuhou() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
-		actor.spawn_role_skill_effect(get_effect(&"roar"), actor.flash_actor_point(Vector2(120, -115)))
+		actor.spawn_role_skill_effect(
+			get_effect(&"roar"),
+			actor.flash_actor_point(get_effect_display_offset(&"roar", Vector2(120, -115)))
+		)
 		var destination: Vector2 = actor.flash_actor_point(Vector2(0, -100))
 		for target in actor.find_role_skill_targets_at(Vector2(1880, 900), actor.global_position + Vector2(0, -200)):
 			actor.move_role_skill_target(target as Node2D, destination, float(current_skill.get("pull_seconds", 1.0)))
@@ -182,7 +189,10 @@ func _tick_zhanzheng_nuhou() -> void:
 # 显示调节（圣域之墙）：charge=(140, -160)，wall=(135, -145)，均为世界坐标。
 func _tick_shengyu_zhiqiang() -> void:
 	if _elapsed_ticks == 5:
-		actor.spawn_role_skill_effect(get_effect(&"charge"), actor.flash_actor_point(Vector2(140, -160)))
+		actor.spawn_role_skill_effect(
+			get_effect(&"charge"),
+			actor.flash_actor_point(get_effect_display_offset(&"charge", Vector2(140, -160)))
+		)
 	if _elapsed_ticks == 17:
 		_spawn_damage_effect(&"wall", Vector2(135, -145), true)
 	_finish_at_duration()
@@ -191,7 +201,10 @@ func _tick_shengyu_zhiqiang() -> void:
 # 显示调节（碎石破）：impact=(95, 0)，spikes=(-20, -20)，均为世界坐标。
 func _tick_suishi_po() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 7)):
-		actor.spawn_role_skill_effect(get_effect(&"impact"), actor.flash_actor_point(Vector2(95, 0)))
+		actor.spawn_role_skill_effect(
+			get_effect(&"impact"),
+			actor.flash_actor_point(get_effect_display_offset(&"impact", Vector2(95, 0)))
+		)
 		_spawn_damage_effect(&"spikes", Vector2(-20, -20), true)
 	_finish_at_duration()
 
@@ -206,7 +219,9 @@ func _tick_jushi_po() -> void:
 # 显示调节（地滚球）：ball=(55, -25)，跟随角色。
 func _tick_digun_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 8)):
-		var origin: Vector2 = actor.flash_actor_point(Vector2(55, -25))
+		var origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"ball", Vector2(55, -25))
+		)
 		var ball_spec: Dictionary = get_effect(&"ball")
 		_active_effect = actor.spawn_role_skill_effect(ball_spec, origin, true)
 		var center: Vector2 = actor.role_skill_effect_bounds_center(ball_spec, origin)
@@ -224,7 +239,9 @@ func _tick_digun_qiu() -> void:
 # 显示调节（旋滚球）：ball=(135, -90)，跟随角色。
 func _tick_xuangun_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 3)):
-		var origin: Vector2 = actor.flash_actor_point(Vector2(135, -90))
+		var origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"ball", Vector2(135, -90))
+		)
 		var ball_spec: Dictionary = get_effect(&"ball")
 		_active_effect = actor.spawn_role_skill_effect(ball_spec, origin, true)
 		actor.set_role_skill_visual_hidden(true)
@@ -248,7 +265,9 @@ func _tick_tumo_ci() -> void:
 		return
 	if _elapsed_ticks == int(current_skill.get("guard_tick", 1)):
 		_tumo_guard_effect = actor.spawn_role_skill_effect(
-			get_effect(&"guard"), actor.flash_actor_point(Vector2.ZERO), true
+			get_effect(&"guard"),
+			actor.flash_actor_point(get_effect_display_offset(&"guard", Vector2.ZERO)),
+			true
 		)
 	if _elapsed_ticks == int(current_skill.get("hide_tick", 11)):
 		actor.set_role_skill_visual_hidden(true)
@@ -257,7 +276,9 @@ func _tick_tumo_ci() -> void:
 
 func _spawn_damage_effect(effect_id: StringName, source_delta: Vector2, repeated := false) -> void:
 	var spec: Dictionary = get_effect(effect_id)
-	var origin: Vector2 = actor.flash_actor_point(source_delta)
+	var origin: Vector2 = actor.flash_actor_point(
+		get_effect_display_offset(effect_id, source_delta)
+	)
 	actor.spawn_role_skill_effect(spec, origin)
 	var center: Vector2 = actor.role_skill_effect_bounds_center(spec, origin)
 	var damage: int = _resolve_next_attack_damage(int(current_skill.get("damage", 0)))
@@ -278,7 +299,9 @@ func _spawn_tumo_stabs() -> void:
 	var stab_count: int = int(current_skill.get("stab_count", 10))
 	var radius: float = float(current_skill.get("stab_radius", 100.0))
 	var turn_seconds: float = float(current_skill.get("stab_delay_seconds", 1.0))
-	var center: Vector2 = actor.flash_actor_point(Vector2.ZERO)
+	var center: Vector2 = actor.flash_actor_point(
+		get_effect_display_offset(&"stab", Vector2.ZERO)
+	)
 	var target: Node2D = actor.find_nearest_role_skill_target() as Node2D
 	var target_point: Vector2 = target.global_position + Vector2(0, -50) if target != null else center + Vector2(1, 300)
 	var stab_spec: Dictionary = get_effect(&"stab")

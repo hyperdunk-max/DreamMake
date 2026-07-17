@@ -2,6 +2,9 @@ class_name RoleSkillState
 extends CharacterActionState
 
 const ID := &"role_skill"
+const SKILL_EFFECT_DISPLAY_CONFIG := preload(
+	"res://src/skills/skill_effect_display_config.gd"
+)
 
 var profile: RoleSkillProfile
 var current_skill: Dictionary = {}
@@ -154,3 +157,11 @@ func get_elapsed_ticks() -> int:
 func get_effect(effect_id: StringName) -> Dictionary:
 	var effects: Dictionary = current_skill.get("effects", {})
 	return effects.get(effect_id, {}) as Dictionary
+
+
+func get_effect_display_offset(effect_id: StringName, fallback: Vector2) -> Vector2:
+	if profile == null:
+		return fallback
+	return SKILL_EFFECT_DISPLAY_CONFIG.get_offset(
+		profile.role_id, get_current_skill_id(), effect_id, fallback
+	)

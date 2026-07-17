@@ -147,7 +147,9 @@ func _tick_binglong_bo() -> void:
 	if _elapsed_ticks <= _charge_release_tick:
 		return
 	if _charge_qualified:
-		var origin: Vector2 = actor.flash_actor_point(Vector2(50, 10))
+		var origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"beam", Vector2(50, 10))
+		)
 		var beam_spec := get_effect(&"beam")
 		actor.spawn_role_skill_effect(beam_spec, origin)
 		var hitbox_origin: Vector2 = actor.role_skill_effect_bounds_center(beam_spec, origin)
@@ -167,7 +169,9 @@ func _tick_binglong_bo() -> void:
 # 显示调节（圣光球）：orb=(175, -110)，从本体生成，世界坐标。
 func _tick_shengguang_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 51)):
-		var origin: Vector2 = _actor_or_shadow_point(Vector2(175, -110), false)
+		var origin: Vector2 = _actor_or_shadow_point(
+			get_effect_display_offset(&"orb", Vector2(175, -110)), false
+		)
 		var orb_spec := get_effect(&"orb")
 		actor.spawn_role_skill_effect(orb_spec, origin)
 		actor.schedule_role_skill_box_hits(
@@ -184,9 +188,10 @@ func _tick_shengguang_qiu() -> void:
 # 显示调节（沐浴回春）：spring=(0, -25)，本体与幻影各生成一份，世界坐标。
 func _tick_muyu_huichun() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 5)):
-		_spawn_healing_spring(_actor_or_shadow_point(Vector2(0, -25), false))
+		var spring_offset := get_effect_display_offset(&"spring", Vector2(0, -25))
+		_spawn_healing_spring(_actor_or_shadow_point(spring_offset, false))
 		if _has_active_shadow_origin:
-			_spawn_healing_spring(_actor_or_shadow_point(Vector2(0, -25), true))
+			_spawn_healing_spring(_actor_or_shadow_point(spring_offset, true))
 	_finish_at_duration()
 
 
@@ -204,7 +209,9 @@ func _spawn_healing_spring(origin: Vector2) -> void:
 # 显示调节（紧箍咒）：ring=(210, 30)，世界坐标；destination=(200, -100) 是拉怪终点，不是特效位置。
 func _tick_jingu_zhou() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 5)):
-		var origin: Vector2 = actor.flash_actor_point(Vector2(210, 30))
+		var origin: Vector2 = actor.flash_actor_point(
+			get_effect_display_offset(&"ring", Vector2(210, 30))
+		)
 		actor.spawn_role_skill_effect(get_effect(&"ring"), origin)
 		var destination: Vector2 = actor.flash_actor_point(Vector2(200, -100))
 		for target in actor.find_role_skill_targets_at(Vector2(480, 480), origin):
@@ -216,9 +223,10 @@ func _tick_jingu_zhou() -> void:
 # 显示调节（天降甘露）：rain=(-5, -60)，本体与幻影各生成一份，世界坐标。
 func _tick_tianjiang_ganlu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
-		_spawn_healing_rain(_actor_or_shadow_point(Vector2(-5, -60), false))
+		var rain_offset := get_effect_display_offset(&"rain", Vector2(-5, -60))
+		_spawn_healing_rain(_actor_or_shadow_point(rain_offset, false))
 		if _has_active_shadow_origin:
-			_spawn_healing_rain(_actor_or_shadow_point(Vector2(-5, -60), true))
+			_spawn_healing_rain(_actor_or_shadow_point(rain_offset, true))
 	_finish_at_duration()
 
 
@@ -233,26 +241,28 @@ func _spawn_healing_rain(origin: Vector2) -> void:
 
 # 显示调节（九环圣经）：aura=(20, -20)，strike=(150, -150)；本体与幻影各生成一份，均为世界坐标。
 func _tick_jiuhuan_shengjing() -> void:
+	var aura_offset := get_effect_display_offset(&"aura", Vector2(20, -20))
+	var strike_offset := get_effect_display_offset(&"strike", Vector2(150, -150))
 	if _elapsed_ticks == 1:
-		_spawn_jiuhuan_aura(_actor_or_shadow_point(Vector2(20, -20), false))
+		_spawn_jiuhuan_aura(_actor_or_shadow_point(aura_offset, false))
 		if _has_active_shadow_origin:
-			_spawn_jiuhuan_aura(_actor_or_shadow_point(Vector2(20, -20), true))
+			_spawn_jiuhuan_aura(_actor_or_shadow_point(aura_offset, true))
 	var strike_tick := int(current_skill.get("strike_tick", 11))
 	var interval := int(current_skill.get("strike_hit_interval_ticks", 5))
 	if _elapsed_ticks == strike_tick:
 		actor.spawn_role_skill_effect(
-			get_effect(&"strike"), _actor_or_shadow_point(Vector2(150, -150), false)
+			get_effect(&"strike"), _actor_or_shadow_point(strike_offset, false)
 		)
 		if _has_active_shadow_origin:
 			actor.spawn_role_skill_effect(
-				get_effect(&"strike"), _actor_or_shadow_point(Vector2(150, -150), true)
+				get_effect(&"strike"), _actor_or_shadow_point(strike_offset, true)
 			)
 	if _elapsed_ticks >= strike_tick and (_elapsed_ticks - strike_tick) % interval == 0:
 		var strike_spec := get_effect(&"strike")
-		var strike_origin := _actor_or_shadow_point(Vector2(150, -150), false)
+		var strike_origin := _actor_or_shadow_point(strike_offset, false)
 		_damage_at(actor.role_skill_effect_bounds_center(strike_spec, strike_origin), Vector2(300, 299), 20, Vector2(192, -48))
 		if _has_active_shadow_origin:
-			var shadow_strike_origin := _actor_or_shadow_point(Vector2(150, -150), true)
+			var shadow_strike_origin := _actor_or_shadow_point(strike_offset, true)
 			_damage_at(actor.role_skill_effect_bounds_center(strike_spec, shadow_strike_origin), Vector2(300, 299), 20, Vector2(192, -48))
 	_finish_at_duration()
 
@@ -266,9 +276,10 @@ func _spawn_jiuhuan_aura(origin: Vector2) -> void:
 # 显示调节（玄冰阵）：ice=(0, 10)，本体与幻影各生成一份，世界坐标。
 func _tick_xuanbing_zhen() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 13)):
-		_spawn_xuanbing(_actor_or_shadow_point(Vector2(0, 10), false))
+		var ice_offset := get_effect_display_offset(&"ice", Vector2(0, 10))
+		_spawn_xuanbing(_actor_or_shadow_point(ice_offset, false))
 		if _has_active_shadow_origin:
-			_spawn_xuanbing(_actor_or_shadow_point(Vector2(0, 10), true))
+			_spawn_xuanbing(_actor_or_shadow_point(ice_offset, true))
 	_finish_at_duration()
 
 
@@ -294,7 +305,8 @@ func _tick_shuihuanying() -> void:
 	else:
 		_shadow_actor_position = actor.global_position
 		_shadow_effect = actor.spawn_role_skill_effect(
-			get_effect(&"shadow"), actor.flash_actor_point(Vector2(0, -5))
+			get_effect(&"shadow"),
+			actor.flash_actor_point(get_effect_display_offset(&"shadow", Vector2(0, -5)))
 		)
 	finish_skill()
 
@@ -304,14 +316,18 @@ func _tick_shuimo_bao() -> void:
 	if not _shuimo_blast_phase:
 		if _elapsed_ticks == int(current_skill.get("marker_tick", 2)):
 			_shuimo_marker = actor.spawn_role_skill_effect(
-				get_effect(&"marker"), actor.flash_actor_point(Vector2(130, 10))
+				get_effect(&"marker"),
+				actor.flash_actor_point(get_effect_display_offset(&"marker", Vector2(130, 10)))
 			)
 		if _elapsed_ticks >= int(current_skill.get("duration_ticks", 4)):
 			finish_skill()
 		return
 	if _elapsed_ticks == int(current_skill.get("reactivate_hit_tick", 5)):
 		if _shuimo_marker != null and is_instance_valid(_shuimo_marker):
-			var blast_origin := _shuimo_marker.global_position + Vector2(30 * actor.facing, -320)
+			var blast_offset := get_effect_display_offset(&"blast", Vector2(30, -320))
+			var blast_origin := _shuimo_marker.global_position + Vector2(
+				blast_offset.x * actor.facing, blast_offset.y
+			)
 			_destroy_effect(_shuimo_marker)
 			_shuimo_marker = null
 			var blast_spec := get_effect(&"blast")

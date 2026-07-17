@@ -582,10 +582,11 @@ func schedule_role_skill_hits(
 	damage: int,
 	knockback: Vector2,
 	repeat_count: int,
-	interval_seconds: float
+	interval_seconds: float,
+	effect_offset := Vector2.ZERO
 ) -> void:
 	_run_scheduled_role_skill_hits(
-		target, effect_spec, damage, knockback, repeat_count, interval_seconds
+		target, effect_spec, damage, knockback, repeat_count, interval_seconds, effect_offset
 	)
 
 
@@ -595,14 +596,15 @@ func _run_scheduled_role_skill_hits(
 	damage: int,
 	knockback: Vector2,
 	repeat_count: int,
-	interval_seconds: float
+	interval_seconds: float,
+	effect_offset: Vector2
 ) -> void:
 	for repeat_index in range(repeat_count):
 		if repeat_index > 0:
 			await get_tree().create_timer(interval_seconds).timeout
 		if target == null or not is_instance_valid(target):
 			return
-		spawn_role_skill_effect(effect_spec, flash_target_point(target as Node2D))
+		spawn_role_skill_effect(effect_spec, flash_target_point(target as Node2D, effect_offset))
 		apply_role_skill_hit(target, damage, knockback)
 
 
