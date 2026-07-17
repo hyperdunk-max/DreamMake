@@ -1,0 +1,168 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/debug/skill_effect_calibrator.gd" id="1_calibrator"]
+[ext_resource type="Script" path="res://src/actors/layered_sprite_animator.gd" id="2_animator"]
+
+[node name="SkillEffectCalibrator" type="Node2D"]
+script = ExtResource("1_calibrator")
+
+[node name="PreviewWorld" type="Node2D" parent="."]
+position = Vector2(625, 430)
+
+[node name="Actor" type="Node2D" parent="PreviewWorld"]
+
+[node name="LayeredSpriteAnimator" type="Node2D" parent="PreviewWorld/Actor"]
+script = ExtResource("2_animator")
+
+[node name="Body" type="Sprite2D" parent="PreviewWorld/Actor/LayeredSpriteAnimator"]
+
+[node name="Weapon" type="Sprite2D" parent="PreviewWorld/Actor/LayeredSpriteAnimator"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="UI"]
+offset_right = 310.0
+offset_bottom = 590.0
+
+[node name="Margin" type="ScrollContainer" parent="UI/Panel"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="UI/Panel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 7
+
+[node name="Title" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "技能特效校准器"
+
+[node name="Help" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "拖动右侧特效，或用方向键微调\nShift + 方向键：每次移动 10 像素"
+
+[node name="RoleLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "角色"
+
+[node name="RoleOption" type="OptionButton" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="WeaponLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "武器模式"
+
+[node name="WeaponOption" type="OptionButton" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="SkillLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "技能"
+
+[node name="SkillOption" type="OptionButton" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="EffectLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "特效阶段"
+
+[node name="EffectOption" type="OptionButton" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="Coordinates" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="XLabel" type="Label" parent="UI/Panel/Margin/VBox/Coordinates"]
+layout_mode = 2
+text = "X"
+
+[node name="XSpin" type="SpinBox" parent="UI/Panel/Margin/VBox/Coordinates"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+min_value = -2000.0
+max_value = 2000.0
+allow_lesser = true
+allow_greater = true
+
+[node name="YLabel" type="Label" parent="UI/Panel/Margin/VBox/Coordinates"]
+layout_mode = 2
+text = "Y"
+
+[node name="YSpin" type="SpinBox" parent="UI/Panel/Margin/VBox/Coordinates"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+min_value = -2000.0
+max_value = 2000.0
+allow_lesser = true
+allow_greater = true
+
+[node name="ZoomRow" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ZoomLabel" type="Label" parent="UI/Panel/Margin/VBox/ZoomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "预览缩放"
+
+[node name="ZoomSpin" type="SpinBox" parent="UI/Panel/Margin/VBox/ZoomRow"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="Buttons" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="FacingButton" type="Button" parent="UI/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+text = "朝向：右"
+
+[node name="ReplayButton" type="Button" parent="UI/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+text = "重播"
+
+[node name="PauseButton" type="Button" parent="UI/Panel/Margin/VBox/Buttons"]
+layout_mode = 2
+text = "暂停"
+
+[node name="EditButtons" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="UI/Panel/Margin/VBox/EditButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "恢复当前值"
+
+[node name="CopyButton" type="Button" parent="UI/Panel/Margin/VBox/EditButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "复制 Vector2"
+
+[node name="PositionLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "当前：Vector2(0, 0)"
+
+[node name="FrameLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+text = "当前帧：-"
+
+[node name="NoteLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+autowrap_mode = 2
+text = "备注："
+
+[node name="StatusLabel" type="Label" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+autowrap_mode = 2
+text = "准备中"
+
+[node name="Legend" type="Label" parent="UI"]
+offset_left = 325.0
+offset_top = 12.0
+offset_right = 920.0
+offset_bottom = 65.0
+text = "白色十字：角色物理原点　黄色点：Flash 角色基准点　蓝色点：特效注册点\n坐标含义：X 正数=角色前方，Y 负数=角色上方"
+horizontal_alignment = 1

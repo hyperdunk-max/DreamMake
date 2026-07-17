@@ -1,6 +1,11 @@
 class_name ShasengSkillState
 extends RoleSkillState
 
+# 技能显示调节说明：
+# - Vector2(x, y)：x 正数=面朝方向前方，x 负数=身后；y 负数=上方，y 正数=下方。
+# - 沙僧同一技能可能有弓/铲两套显示，备注会分别列出；视觉与攻击判定仍是两套参数。
+# - 搜索“显示调节”可快速定位每个技能的视觉入口。
+
 const ZHANG_QI := &"zhang_qi"
 const WUDU_WAWA := &"wudu_wawa"
 const MABI_YAOJI := &"mabi_yaoji"
@@ -138,6 +143,7 @@ func get_poison_stacks(target: Object) -> int:
 	return int((_poison_states[target] as Dictionary).get("stacks", 0))
 
 
+# 显示调节（瘴气）：弓 arrow=(30, 0)，世界坐标；铲 shovel=(245, -110)，跟随角色。
 func _tick_zhang_qi() -> void:
 	var effect_tick := int(current_skill.get("arrow_effect_tick", 7) if _arrow_mode else current_skill.get("shovel_effect_tick", 3))
 	if _elapsed_ticks == effect_tick:
@@ -149,6 +155,7 @@ func _tick_zhang_qi() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（巫毒娃娃）：cast=(115, -110)，跟随角色；doll=(0, -20)，生成后跟随娃娃实体。
 func _tick_wudu_wawa() -> void:
 	var cast_tick := int(current_skill.get("arrow_cast_tick", 1) if _arrow_mode else current_skill.get("shovel_cast_tick", 3))
 	var bind_tick := int(current_skill.get("arrow_bind_tick", 7) if _arrow_mode else current_skill.get("shovel_bind_tick", 8))
@@ -159,12 +166,14 @@ func _tick_wudu_wawa() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（麻痹药剂）：orb 起点=(25, -30)，随后在目标之间移动，世界坐标。
 func _tick_mabi_yaoji() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
 		_launch_paralysis_chain()
 	_finish_at_mode_duration()
 
 
+# 显示调节（剧毒阵）：array=(155, -50)；burst 三处=(150, -70)/(190, -90)/(110, -80)，均为世界坐标。
 func _tick_judu_zhen() -> void:
 	if _elapsed_ticks == int(current_skill.get("array_tick", 15)):
 		actor.spawn_role_skill_effect(get_effect(&"array"), actor.flash_actor_point(Vector2(155, -50)))
@@ -180,6 +189,7 @@ func _tick_judu_zhen() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（猛毒素）：blast 直接生成在每个中毒目标的 Flash 基准点，并跟随该目标。
 func _tick_mengdu_su() -> void:
 	if _elapsed_ticks == 1:
 		var candidates: Array = actor.find_role_skill_targets_at(Vector2(1880, 900), actor.global_position + Vector2(0, -200))
@@ -197,6 +207,7 @@ func _tick_mengdu_su() -> void:
 	finish_skill()
 
 
+# 显示调节（强力击）：弓 charge=(75, -60)、impact=(65, -10)；铲 shovel=(125, -30)，铲特效跟随角色。
 func _tick_qiangli_ji() -> void:
 	var effect_tick := int(current_skill.get("arrow_effect_tick", 1) if _arrow_mode else current_skill.get("shovel_effect_tick", 5))
 	if _elapsed_ticks == effect_tick:
@@ -208,6 +219,7 @@ func _tick_qiangli_ji() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（腾空击）：铲 charge=(0, 0)、impact=(0, -80)；弓 charge=(80, -80)、impact=(60, 30)，各阶段均跟随角色。
 func _tick_tengkong_ji() -> void:
 	if not _arrow_mode:
 		if _elapsed_ticks == 1:
@@ -222,6 +234,7 @@ func _tick_tengkong_ji() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（多重击）：铲 shovel=(150, -50)、弓 impact=(225, -80) 使用世界坐标；弓 charge=(0, 0) 跟随角色。
 func _tick_duozhong_ji() -> void:
 	if not _arrow_mode and _elapsed_ticks == int(current_skill.get("shovel_effect_tick", 1)):
 		var origin: Vector2 = actor.flash_actor_point(Vector2(150, -50))
@@ -240,6 +253,7 @@ func _tick_duozhong_ji() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（绿叶标记）：mark=(0, 0)，世界坐标；再次使用技能时传送到记录的角色位置。
 func _tick_luye_biaoji() -> void:
 	if _marker_teleport_phase:
 		if _elapsed_ticks == 1:
@@ -251,6 +265,7 @@ func _tick_luye_biaoji() -> void:
 	_finish_at_mode_duration()
 
 
+# 显示调节（木魔舞）：铲 shovel=(150, 0)；弓 aura=(80, -100)、body=(0, 0)，leaf 使用动态偏移=(88+n, 7-2n)。
 func _tick_mumo_wu() -> void:
 	if not _arrow_mode:
 		if _elapsed_ticks == int(current_skill.get("shovel_effect_tick", 5)):

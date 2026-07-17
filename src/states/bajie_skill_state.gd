@@ -1,6 +1,11 @@
 class_name BajieSkillState
 extends RoleSkillState
 
+# 技能显示调节说明：
+# - Vector2(x, y)：x 正数=面朝方向前方，x 负数=身后；y 负数=上方，y 正数=下方。
+# - “跟随”表示角色移动时特效一起移动；未标注跟随的特效生成后使用世界坐标。
+# - 搜索“显示调节”可快速定位每个技能；视觉与 hitbox_offset 需要分别调整。
+
 const DUNJI := &"dunji"
 const SHENGDUN := &"shengdun"
 const ZHANZHENG_NUHOU := &"zhanzheng_nuhou"
@@ -64,6 +69,7 @@ func reactivate_current_skill() -> bool:
 	animator.play_action(StringName(current_skill.get("reactivate_action", &"skill_tumo_ci_finish")), true)
 	if _tumo_guard_effect != null and is_instance_valid(_tumo_guard_effect):
 		_tumo_guard_effect.seek_frame(139)
+	# 显示调节（土魔刺·二次激活）：刺以角色基准点为圆心，半径由 stab_radius 控制，随后转向目标。
 	_spawn_tumo_stabs()
 	return true
 
@@ -144,12 +150,14 @@ func get_horizontal_velocity(facing: float) -> float:
 	return super.get_horizontal_velocity(facing)
 
 
+# 显示调节（盾击）：bash=(35, -55)，世界坐标。
 func _tick_dunji() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
 		_spawn_damage_effect(&"bash", Vector2(35, -55))
 	_finish_at_duration()
 
 
+# 显示调节（圣盾）：cast=(70, -110)，世界坐标；buff=(-20 * facing, -80)，跟随角色。
 func _tick_shengdun() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
 		actor.spawn_role_skill_effect(get_effect(&"cast"), actor.flash_actor_point(Vector2(70, -110)))
@@ -160,6 +168,7 @@ func _tick_shengdun() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（战争怒吼）：roar=(120, -115)，世界坐标；destination=(0, -100) 是拉怪终点。
 func _tick_zhanzheng_nuhou() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
 		actor.spawn_role_skill_effect(get_effect(&"roar"), actor.flash_actor_point(Vector2(120, -115)))
@@ -170,6 +179,7 @@ func _tick_zhanzheng_nuhou() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（圣域之墙）：charge=(140, -160)，wall=(135, -145)，均为世界坐标。
 func _tick_shengyu_zhiqiang() -> void:
 	if _elapsed_ticks == 5:
 		actor.spawn_role_skill_effect(get_effect(&"charge"), actor.flash_actor_point(Vector2(140, -160)))
@@ -178,6 +188,7 @@ func _tick_shengyu_zhiqiang() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（碎石破）：impact=(95, 0)，spikes=(-20, -20)，均为世界坐标。
 func _tick_suishi_po() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 7)):
 		actor.spawn_role_skill_effect(get_effect(&"impact"), actor.flash_actor_point(Vector2(95, 0)))
@@ -185,12 +196,14 @@ func _tick_suishi_po() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（巨石破）：rocks=(195, -160)，世界坐标。
 func _tick_jushi_po() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 7)):
 		_spawn_damage_effect(&"rocks", Vector2(195, -160), true)
 	_finish_at_duration()
 
 
+# 显示调节（地滚球）：ball=(55, -25)，跟随角色。
 func _tick_digun_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 8)):
 		var origin: Vector2 = actor.flash_actor_point(Vector2(55, -25))
@@ -208,6 +221,7 @@ func _tick_digun_qiu() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（旋滚球）：ball=(135, -90)，跟随角色。
 func _tick_xuangun_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 3)):
 		var origin: Vector2 = actor.flash_actor_point(Vector2(135, -90))
@@ -226,6 +240,7 @@ func _tick_xuangun_qiu() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（土魔刺）：guard=(0, 0)，跟随角色；二次激活的环形刺参数见 reactivate_current_skill()。
 func _tick_tumo_ci() -> void:
 	if _tumo_reactivated:
 		if _elapsed_ticks >= int(current_skill.get("reactivate_duration_ticks", 20)):

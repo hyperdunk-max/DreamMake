@@ -1,6 +1,12 @@
 class_name WukongSkillState
 extends RoleSkillState
 
+# 技能显示调节说明：
+# - 下方每个“显示调节”备注都列出了该技能的特效阶段与角色基准偏移。
+# - Vector2(x, y)：x 正数=面朝方向前方，x 负数=身后；y 负数=上方，y 正数=下方。
+# - “跟随”表示角色移动时特效一起移动；“世界坐标”表示生成后留在原地。
+# - 这里只调整视觉；若希望伤害范围同步移动，还要调整对应 hitbox_offset。
+
 const QISHIER_ZHAN := &"qishier_zhan"
 const ZHONGZHAN := &"zhongzhan"
 const LIEYAN_SHAN := &"lieyan_shan"
@@ -120,12 +126,14 @@ func reactivate_current_skill() -> bool:
 	if _jindou_effect != null and is_instance_valid(_jindou_effect):
 		_jindou_effect.queue_free()
 	animator.play_action(&"skill_jindou_yun_vertical", true)
+	# 显示调节（金斗云·二次激活）：vertical=(0, -50)，跟随角色。
 	_jindou_effect = actor.spawn_role_skill_effect(
 		get_effect(&"vertical"), actor.flash_actor_point(Vector2(0, -50)), true
 	)
 	return true
 
 
+# 显示调节（七十二斩）：impact 直接生成在命中目标的 Flash 基准点，无角色偏移。
 func _tick_qishier_zhan() -> void:
 	if _contact_target == null:
 		var targets: Array = actor.find_role_skill_targets(
@@ -154,6 +162,7 @@ func _tick_qishier_zhan() -> void:
 		finish_skill()
 
 
+# 显示调节（重斩）：charge=(-15, -85)，跟随角色；slash=(145, -60)，世界坐标。
 func _tick_zhongzhan() -> void:
 	if _elapsed_ticks == int(current_skill.get("charge_tick", 1)):
 		actor.spawn_role_skill_effect(
@@ -174,6 +183,7 @@ func _tick_zhongzhan() -> void:
 		finish_skill()
 
 
+# 显示调节（烈焰闪）：dash=(120, -50)，跟随角色。
 func _tick_lieyan_shan() -> void:
 	if _elapsed_ticks == 1:
 		actor.set_role_skill_visual_hidden(true)
@@ -196,6 +206,7 @@ func _tick_lieyan_shan() -> void:
 		finish_skill()
 
 
+# 显示调节（火眼金睛）：cast_eye≈(21, -10)，跟随角色；cast_flare≈(-65, 0)，关闭朝向镜像并跟随角色；explosion 生成在目标处。
 func _tick_huoyan_jinjing() -> void:
 	if _elapsed_ticks == 1:
 		var eye_x := 21.0 if actor.facing > 0.0 else 22.0
@@ -221,6 +232,7 @@ func _tick_huoyan_jinjing() -> void:
 		finish_skill()
 
 
+# 显示调节（升龙斩）：strike=(30, 40)，跟随角色。
 func _tick_shenglong_zhan() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 3)):
 		actor.spawn_role_skill_effect(
@@ -236,6 +248,7 @@ func _tick_shenglong_zhan() -> void:
 		finish_skill()
 
 
+# 显示调节（火焰突击）：dash=(175, -30)，跟随角色。
 func _tick_huoyan_tuji() -> void:
 	if _elapsed_ticks == 1:
 		actor.spawn_role_skill_effect(
@@ -253,6 +266,7 @@ func _tick_huoyan_tuji() -> void:
 		finish_skill()
 
 
+# 显示调节（烈焰风暴）：storm=(20, 30)，跟随角色。
 func _tick_lieyan_fengbao() -> void:
 	if _elapsed_ticks == 1:
 		actor.spawn_role_skill_effect(
@@ -270,6 +284,7 @@ func _tick_lieyan_fengbao() -> void:
 		finish_skill()
 
 
+# 显示调节（金斗云）：horizontal=(50, -50)，跟随角色；vertical=(0, -50) 在二次激活处生成。
 func _tick_jindou_yun() -> void:
 	if _elapsed_ticks == 1:
 		_jindou_effect = actor.spawn_role_skill_effect(
@@ -292,6 +307,7 @@ func _tick_jindou_yun() -> void:
 		finish_skill()
 
 
+# 显示调节（火魔斩）：hover=(-10, 0)，关闭朝向镜像、世界坐标；fall=(0, -40)、land=(0, 40)，均为世界坐标。
 func _tick_huomo_zhan() -> void:
 	if _huomo_phase == &"launch":
 		if _elapsed_ticks == 1:

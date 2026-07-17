@@ -1,6 +1,11 @@
 class_name TangsengSkillState
 extends RoleSkillState
 
+# 技能显示调节说明：
+# - Vector2(x, y)：x 正数=面朝方向前方，x 负数=身后；y 负数=上方，y 正数=下方。
+# - 标注“本体/幻影”的技能会从相同偏移分别生成；视觉和伤害判定仍是两套参数。
+# - 搜索“显示调节”可快速定位每个技能的视觉入口。
+
 const SHENGGUANG_QIU := &"shengguang_qiu"
 const MUYU_HUICHUN := &"muyu_huichun"
 const JINGU_ZHOU := &"jingu_zhou"
@@ -135,6 +140,7 @@ func skill_tick() -> void:
 			super.skill_tick()
 
 
+# 显示调节（冰龙波·蓄力攻击）：beam=(50, 10)，从本体生成，世界坐标。
 func _tick_binglong_bo() -> void:
 	if not _charge_released:
 		return
@@ -158,6 +164,7 @@ func _tick_binglong_bo() -> void:
 	finish_skill()
 
 
+# 显示调节（圣光球）：orb=(175, -110)，从本体生成，世界坐标。
 func _tick_shengguang_qiu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 51)):
 		var origin: Vector2 = _actor_or_shadow_point(Vector2(175, -110), false)
@@ -174,6 +181,7 @@ func _tick_shengguang_qiu() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（沐浴回春）：spring=(0, -25)，本体与幻影各生成一份，世界坐标。
 func _tick_muyu_huichun() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 5)):
 		_spawn_healing_spring(_actor_or_shadow_point(Vector2(0, -25), false))
@@ -193,6 +201,7 @@ func _spawn_healing_spring(origin: Vector2) -> void:
 	)
 
 
+# 显示调节（紧箍咒）：ring=(210, 30)，世界坐标；destination=(200, -100) 是拉怪终点，不是特效位置。
 func _tick_jingu_zhou() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 5)):
 		var origin: Vector2 = actor.flash_actor_point(Vector2(210, 30))
@@ -204,6 +213,7 @@ func _tick_jingu_zhou() -> void:
 	_finish_at_duration()
 
 
+# 显示调节（天降甘露）：rain=(-5, -60)，本体与幻影各生成一份，世界坐标。
 func _tick_tianjiang_ganlu() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 1)):
 		_spawn_healing_rain(_actor_or_shadow_point(Vector2(-5, -60), false))
@@ -221,6 +231,7 @@ func _spawn_healing_rain(origin: Vector2) -> void:
 	)
 
 
+# 显示调节（九环圣经）：aura=(20, -20)，strike=(150, -150)；本体与幻影各生成一份，均为世界坐标。
 func _tick_jiuhuan_shengjing() -> void:
 	if _elapsed_ticks == 1:
 		_spawn_jiuhuan_aura(_actor_or_shadow_point(Vector2(20, -20), false))
@@ -252,6 +263,7 @@ func _spawn_jiuhuan_aura(origin: Vector2) -> void:
 	_damage_at(actor.role_skill_effect_bounds_center(aura_spec, origin), Vector2(91, 91), int(current_skill.get("damage", 20)), Vector2(0, -48))
 
 
+# 显示调节（玄冰阵）：ice=(0, 10)，本体与幻影各生成一份，世界坐标。
 func _tick_xuanbing_zhen() -> void:
 	if _elapsed_ticks == int(current_skill.get("effect_tick", 13)):
 		_spawn_xuanbing(_actor_or_shadow_point(Vector2(0, 10), false))
@@ -271,6 +283,7 @@ func _spawn_xuanbing(origin: Vector2) -> void:
 	)
 
 
+# 显示调节（水幻影）：shadow=(0, -5)，生成在本体位置；再次使用技能时传送回记录点。
 func _tick_shuihuanying() -> void:
 	if _elapsed_ticks != 1:
 		return
@@ -286,6 +299,7 @@ func _tick_shuihuanying() -> void:
 	finish_skill()
 
 
+# 显示调节（水魔爆）：marker=(130, 10)；引爆 blast 相对标记点偏移=(30 * facing, -320)。
 func _tick_shuimo_bao() -> void:
 	if not _shuimo_blast_phase:
 		if _elapsed_ticks == int(current_skill.get("marker_tick", 2)):
