@@ -3,6 +3,10 @@
 *.log
 exports/
 .tools/
+.claude/
+logs/
+__pycache__/
+*.py[cod]
 
 # Raw Flash sources and extracted copyrighted assets stay local by default.
 sources/raw/

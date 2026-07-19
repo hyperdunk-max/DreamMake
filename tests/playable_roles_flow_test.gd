@@ -339,6 +339,9 @@ func _run() -> void:
 	enemy.global_position = Vector2(465, 515)
 	enemy.health = enemy.max_health
 	enemy.velocity = Vector2.ZERO
+	# Zero out stats so damage matches the source-calibrated raw values.
+	player.stats.attack = 0
+	enemy.defense = 0
 	await physics_frame
 	_assert(player.combo_attack_state.request_attack(), "Wukong full combo should start.")
 	for step_index in range(player.combo_attack_profile.steps.size()):

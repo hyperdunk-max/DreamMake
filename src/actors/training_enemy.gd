@@ -10,6 +10,7 @@ const ATTACK_RECOVERY := 0.28
 const ATTACK_RANGE := 145.0
 
 @export var max_health := 600
+@export var defense := 2
 var health := max_health
 var hit_flash := 0.0
 var defeated_once := false
@@ -79,6 +80,10 @@ func take_hit(damage: int, impulse: Vector2) -> void:
 	if health == 0 and not defeated_once:
 		defeated_once = true
 		defeated.emit()
+
+
+func get_defense() -> int:
+	return defense
 
 
 func apply_stun(seconds: float) -> void:

@@ -10,6 +10,7 @@ extends Resource
 @export var air_attack_overrides: Dictionary = {}
 @export var skill_profile: RoleSkillProfile
 @export var skill_state_script: Script
+@export var base_stats: CharacterStats
 @export var default_body_showid := -1
 @export var default_weapon_showid := -1
 

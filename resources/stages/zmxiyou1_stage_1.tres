@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="StageDefinition" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://src/stages/stage_definition.gd" id="1_stage"]
+[ext_resource type="Script" path="res://src/stages/enemy_spawn_definition.gd" id="2_spawn"]
+[ext_resource type="Script" path="res://src/stages/boss_defeated_condition.gd" id="3_condition"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/stage_1/mountain_background.jpg" id="4_background"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/stage_1/grass_ground.jpg" id="5_ground"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_bat_sandbag.tres" id="6_bat"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_rat_boss.tres" id="7_boss"]
+
+[sub_resource type="Resource" id="EnemySpawn_bats"]
+script = ExtResource("2_spawn")
+spawn_id = &"bat_wave"
+enemy = ExtResource("6_bat")
+position = Vector2(470, 515)
+count = 2
+spacing = Vector2(120, 0)
+initial_delay_seconds = 0.0
+
+[sub_resource type="Resource" id="EnemySpawn_boss"]
+script = ExtResource("2_spawn")
+spawn_id = &"boss"
+enemy = ExtResource("7_boss")
+position = Vector2(800, 515)
+count = 1
+spacing = Vector2(0, 0)
+initial_delay_seconds = 0.0
+
+[sub_resource type="Resource" id="BossDefeatedCondition_stage1"]
+script = ExtResource("3_condition")
+boss_spawn_id = &"boss"
+
+[resource]
+script = ExtResource("1_stage")
+stage_id = &"zmxiyou1_stage_1"
+display_name = "造梦西游一 · 第一关"
+source_game = 1
+background_texture = ExtResource("4_background")
+ground_texture = ExtResource("5_ground")
+viewport_size = Vector2(940, 590)
+floor_y = 515.0
+player_spawn_position = Vector2(150, 515)
+enemy_spawns = Array[ExtResource("2_spawn")]([SubResource("EnemySpawn_bats"), SubResource("EnemySpawn_boss")])
+end_condition = SubResource("BossDefeatedCondition_stage1")

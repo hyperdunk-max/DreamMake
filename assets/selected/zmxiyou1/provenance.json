@@ -1,0 +1,44 @@
+{
+  "source_game": "造梦西游1",
+  "source_url_base": "https://sbai.4399.com/4399swf/upload_swf/ftp5/hanbao/20110624/3/",
+  "sources": {
+    "v25928.swf": "A5E9650CA4C3B779D62FB7987A0B7E7D5AF5983B3197FA2F2E846A91B3F9CCCE",
+    "Monster_v1.swf": "A6552637AC61553C3E021C79B725587CBA66F6303E3245180ABABD1F7DB97026"
+  },
+  "selection": [
+    {
+      "file": "stage_1/mountain_background.jpg",
+      "container": "v25928.swf -> L4399Main_gamefile",
+      "swf_bitmap_id": 19,
+      "symbol_class": "1",
+      "selection_reason": "The main SWF assigns character id 19 to symbol class '1', identifying the first map background.",
+      "sha256": "D49D494150E6F64AA10B1DE2ED301C4B3223DA83D79073F8C2CBEC0815F94F1D"
+    },
+    {
+      "file": "stage_1/grass_ground.jpg",
+      "container": "v25928.swf -> L4399Main_gamefile",
+      "swf_bitmap_id": 59,
+      "sha256": "7B748716B90CDF893E1477DB1D1F26FB4CA7AD89E33BBD0F0716B0E575C29F24"
+    },
+    {
+      "file": "stage_1/tree.png",
+      "container": "v25928.swf -> L4399Main_gamefile",
+      "swf_bitmap_id": 144,
+      "alpha_composed": true,
+      "sha256": "48F0D8F55E12177A974BD79E18435CDEC0FE00C3FAB9E001B0BC12F296258179"
+    },
+    {
+      "file": "monsters/bat_sandbag.png",
+      "container": "Monster_v1.swf",
+      "swf_bitmap_id": 224,
+      "sha256": "3B0979FDC1AB3D2F6DA387A6CBC2234FCBDDAD65EE2E1B4C4EB6FD61E46621D2"
+    },
+    {
+      "file": "monsters/rat_boss.png",
+      "container": "Monster_v1.swf",
+      "swf_bitmap_id": 140,
+      "alpha_composed": true,
+      "sha256": "B197C93F8968F8BE501DB1489AACBBDF56D7D3189889E28F464A517AA29F3100"
+    }
+  ]
+}

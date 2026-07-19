@@ -1,10 +1,11 @@
-extends CharacterBody2D
+extends PropertyActor2D
 
 signal health_changed(current: int, maximum: int)
 signal mana_changed(current: int, maximum: int)
 signal weapon_changed(showid: int, weapon_name: String)
 signal body_changed(showid: int, body_name: String)
 signal role_changed(role_id: int, display_name: String)
+signal equipment_changed(slot: String, equip_id: String)
 
 const WALK_SPEED := 144.0
 const RUN_SPEED := 240.0
@@ -27,6 +28,18 @@ const SKILL_INPUTS: Array[StringName] = [&"skill", &"skill_2", &"skill_3", &"ski
 @export var weapon_showid := -1
 var health := max_health
 var mana := max_mana
+
+# -- Attribute / Equipment / Inventory systems ------------------------------------
+var stats: CharacterStats
+var equipped: Dictionary = {
+	"weapon": "",
+	"armor": "",
+	"accessory_1": "",
+	"accessory_2": "",
+}
+var inventory: Inventory
+var equipment_data: EquipmentData
+var item_data: ItemData
 var facing := 1.0
 var hurt_time := 0.0
 var jump_count := 0
@@ -48,8 +61,19 @@ var _lifesteal_accumulator := 0.0
 
 func _ready() -> void:
 	add_to_group(&"players")
+	if stats == null:
+		stats = CharacterStats.new()
+		stats.max_health = max_health
+		stats.max_mana = max_mana
+	if inventory == null:
+		inventory = Inventory.new()
+	if equipment_data == null:
+		equipment_data = EquipmentData.new()
+	if item_data == null:
+		item_data = ItemData.new()
 	if role_definition != null:
 		_apply_role_definition(role_definition)
+	bind_actor_property(stats)
 	_configure_runtime_role()
 	queue_redraw()
 
@@ -65,6 +89,7 @@ func configure_role(definition: RoleDefinition) -> bool:
 	action_state_machine.clear_state()
 	role_definition = definition
 	_apply_role_definition(definition)
+	_clear_equipped()
 	if not _configure_runtime_role():
 		return false
 	velocity = Vector2.ZERO
@@ -72,9 +97,14 @@ func configure_role(definition: RoleDefinition) -> bool:
 	double_jump_animation_time = 0.0
 	jump_count = 0
 	_reset_locomotion_input()
-	mana = max_mana
+	var effective_max_mana: int = stats.get_effective_max_mana()
+	mana = effective_max_mana
 	_lifesteal_accumulator = 0.0
-	mana_changed.emit(mana, max_mana)
+	var effective_max_health: int = stats.get_effective_max_health()
+	if health > effective_max_health:
+		health = effective_max_health
+	health_changed.emit(health, effective_max_health)
+	mana_changed.emit(mana, effective_max_mana)
 	role_changed.emit(role_id, definition.display_name)
 	body_changed.emit(body_showid, layered_animator.get_body_name())
 	weapon_changed.emit(weapon_showid, layered_animator.get_weapon_name())
@@ -87,9 +117,18 @@ func _apply_role_definition(definition: RoleDefinition) -> void:
 	body_showid = definition.default_body_showid
 	weapon_showid = definition.default_weapon_showid
 	combo_attack_profile = definition.get_combo_profile_for_weapon(weapon_showid)
+	if definition.base_stats != null:
+		stats = definition.base_stats.duplicate(true)
+	elif stats == null:
+		stats = CharacterStats.new()
+		stats.max_health = max_health
+		stats.max_mana = max_mana
+	bind_actor_property(stats)
 
 
 func _configure_runtime_role() -> bool:
+	# Sync health/mana caps with stats before role registration
+	stats.reset_bonuses()
 	if not layered_animator.register_role(role_id, animation_profile, body_showid, weapon_showid):
 		push_error("Player failed to register role id %d." % role_id)
 		return false
@@ -148,10 +187,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 
 	if Input.is_action_just_pressed("switch_weapon") and not action_state_machine.has_active_state():
-		select_weapon(animation_profile.get_next_weapon_showid(weapon_showid))
+		_cycle_equipment_slot("weapon")
 
 	if Input.is_action_just_pressed("switch_body") and not action_state_machine.has_active_state():
-		select_body(animation_profile.get_next_body_showid(body_showid))
+		_cycle_equipment_slot("armor")
 
 	for skill_slot in range(SKILL_INPUTS.size()):
 		if Input.is_action_just_pressed(SKILL_INPUTS[skill_slot]):
@@ -213,7 +252,7 @@ func spend_mana(amount: int) -> bool:
 	if not can_spend_mana(amount):
 		return false
 	mana -= amount
-	mana_changed.emit(mana, max_mana)
+	mana_changed.emit(mana, stats.get_effective_max_mana())
 	return true
 
 
@@ -221,9 +260,9 @@ func restore_mana(amount: int) -> void:
 	if amount <= 0:
 		return
 	var previous := mana
-	mana = mini(max_mana, mana + amount)
+	mana = mini(stats.get_effective_max_mana(), mana + amount)
 	if mana != previous:
-		mana_changed.emit(mana, max_mana)
+		mana_changed.emit(mana, stats.get_effective_max_mana())
 
 
 func on_role_skill_started(_skill: Dictionary) -> void:
@@ -453,15 +492,27 @@ func find_nearest_role_skill_target() -> Object:
 func apply_role_skill_hit(target: Object, damage: int, knockback: Vector2) -> void:
 	if target == null or not is_instance_valid(target) or not target.has_method("take_hit"):
 		return
-	var resolved_damage := damage
+	var resolved_damage: int = calculate_damage_output(damage, target)
 	if role_skill_state != null:
-		resolved_damage = role_skill_state.modify_outgoing_damage(damage)
+		resolved_damage = role_skill_state.modify_outgoing_damage(resolved_damage)
 	var health_before := int(target.get("health"))
 	var directed_knockback := knockback
 	directed_knockback.x *= facing
 	target.take_hit(resolved_damage, directed_knockback)
 	var actual_damage := maxi(0, health_before - int(target.get("health")))
 	_apply_lifesteal(actual_damage)
+
+
+## Calculate final damage output applying character stats.
+## Formula: max(1, raw_damage + attack - target_defense) × crit_multiplier
+func calculate_damage_output(raw_damage: int, target: Object) -> int:
+	var final_damage: int = raw_damage + stats.get_effective_attack()
+	if target.has_method("get_defense"):
+		final_damage -= int(target.get_defense())
+	final_damage = maxi(1, final_damage)
+	if stats.roll_crit():
+		final_damage *= 2
+	return final_damage
 
 
 func flash_actor_point(source_delta := Vector2.ZERO, mirror_x := true) -> Vector2:
@@ -540,9 +591,9 @@ func heal(amount: int) -> int:
 	if amount <= 0 or health <= 0:
 		return 0
 	var previous := health
-	health = mini(max_health, health + amount)
+	health = mini(stats.get_effective_max_health(), health + amount)
 	if health != previous:
-		health_changed.emit(health, max_health)
+		health_changed.emit(health, stats.get_effective_max_health())
 	return health - previous
 
 
@@ -620,9 +671,9 @@ func _apply_lifesteal(actual_damage: int) -> void:
 		return
 	_lifesteal_accumulator -= healing
 	var previous := health
-	health = mini(max_health, health + healing)
+	health = mini(stats.get_effective_max_health(), health + healing)
 	if health != previous:
-		health_changed.emit(health, max_health)
+		health_changed.emit(health, stats.get_effective_max_health())
 
 
 func _spawn_attack_effect(step: Dictionary) -> OneShotSpriteEffect:
@@ -689,7 +740,7 @@ func take_hit(
 	velocity = impulse
 	hurt_time = HURT_TIME
 	layered_animator.play_action(&"hurt", true)
-	health_changed.emit(health, max_health)
+	health_changed.emit(health, stats.get_effective_max_health())
 	if role_skill_state != null:
 		role_skill_state.on_damage_received(resolved_damage)
 
@@ -727,6 +778,192 @@ func _refresh_combo_profile_for_weapon() -> void:
 		return
 	combo_attack_profile = next_profile
 	combo_attack_state.configure(combo_attack_profile)
+
+
+# -- Equipment & Inventory -------------------------------------------------------
+
+## Equip an inventory item after validating ownership and its catalog reference.
+## UI should use this entry point instead of equipping arbitrary catalog ids.
+func equip_inventory_item(item_id: String) -> bool:
+	if item_data == null or inventory == null:
+		return false
+	if not inventory.has_item(item_id) or not item_data.is_equipment(item_id):
+		return false
+	var equip_id: String = item_data.get_equip_id(item_id)
+	if equip_id.is_empty():
+		return false
+	return equip_item(equip_id)
+
+## Equip an item by its equip_id (from equipment_data.json).
+## Updates visuals (showid) and applies stat bonuses.
+func equip_item(equip_id: String) -> bool:
+	if equipment_data == null or not equipment_data.is_loaded():
+		push_warning("Equipment data not loaded, cannot equip '%s'." % equip_id)
+		return false
+	var entry: Dictionary = equipment_data.get_equipment(equip_id)
+	if entry.is_empty():
+		push_warning("Equipment '%s' not found in catalog." % equip_id)
+		return false
+	var entry_role: int = int(entry.get("role_id", 0))
+	if entry_role != 0 and entry_role != role_id:
+		push_warning("Equipment '%s' is not compatible with role %d." % [equip_id, role_id])
+		return false
+	var slot := str(entry.get("slot", ""))
+	if not equipped.has(slot):
+		push_warning("Unknown equipment slot '%s'." % slot)
+		return false
+
+	# Unequip any item currently in this slot
+	var previous_id := str(equipped.get(slot, ""))
+	if not previous_id.is_empty():
+		_apply_equipment_stats(previous_id, false)
+
+	# Apply visual
+	var showid := int(entry.get("showid", -1))
+	if slot == "weapon" and showid >= 0:
+		select_weapon(showid)
+	elif slot == "armor" and showid >= 0:
+		select_body(showid)
+
+	equipped[slot] = equip_id
+	_apply_equipment_stats(equip_id, true)
+	equipment_changed.emit(slot, equip_id)
+	# Re-clamp health/mana to new effective max
+	var effective_max_health: int = stats.get_effective_max_health()
+	if health > effective_max_health:
+		health = effective_max_health
+	health_changed.emit(health, effective_max_health)
+	mana_changed.emit(mana, stats.get_effective_max_mana())
+	return true
+
+
+## Unequip a specific slot.
+func unequip_slot(slot: String) -> bool:
+	if not equipped.has(slot):
+		return false
+	var equip_id := str(equipped.get(slot, ""))
+	if equip_id.is_empty():
+		return false
+	_apply_equipment_stats(equip_id, false)
+	equipped[slot] = ""
+
+	# Revert to default visual
+	if slot == "weapon":
+		select_weapon(animation_profile.default_weapon_showid if animation_profile != null else 0)
+	elif slot == "armor":
+		select_body(animation_profile.default_body_showid if animation_profile != null else 0)
+	weapon_showid = layered_animator.get_weapon_showid() if slot == "weapon" else weapon_showid
+	body_showid = layered_animator.get_body_showid() if slot == "armor" else body_showid
+	equipment_changed.emit(slot, "")
+	var effective_max_health: int = stats.get_effective_max_health()
+	if health > effective_max_health:
+		health = effective_max_health
+	health_changed.emit(health, effective_max_health)
+	mana_changed.emit(mana, stats.get_effective_max_mana())
+	return true
+
+
+## Use a consumable item from inventory by its item_id.
+func use_consumable(item_id: String) -> bool:
+	if item_data == null or not item_data.is_loaded():
+		return false
+	if not inventory.has_item(item_id):
+		return false
+	if not item_data.is_consumable(item_id):
+		push_warning("Item '%s' is not a consumable." % item_id)
+		return false
+	var effect: Dictionary = item_data.get_effect(item_id)
+	if effect.is_empty():
+		return false
+	var healed: int = int(effect.get("heal", 0))
+	var mana_restored: int = int(effect.get("restore_mana", 0))
+	if healed > 0:
+		heal(healed)
+	if mana_restored > 0:
+		restore_mana(mana_restored)
+	inventory.remove_item(item_id, 1)
+	return true
+
+
+func _apply_equipment_stats(equip_id: String, adding: bool) -> void:
+	if equipment_data == null:
+		return
+	var bonus: Dictionary = equipment_data.get_stats(equip_id)
+	if bonus.is_empty():
+		return
+	if adding:
+		stats.apply_bonus(bonus)
+	else:
+		stats.remove_bonus(bonus)
+
+
+func _clear_equipped() -> void:
+	stats.reset_bonuses()
+	for slot in equipped.keys():
+		equipped[slot] = ""
+
+
+## Cycle equipment for a slot.  Always cycles available showids so every
+## visual variant is reachable; if a matching equipment entry exists in the
+## catalog its stats are auto-applied, otherwise the switch is visual-only.
+func _cycle_equipment_slot(slot: String) -> void:
+	var next_showid: int = -1
+	if slot == "weapon":
+		next_showid = animation_profile.get_next_weapon_showid(weapon_showid)
+		select_weapon(next_showid)
+	elif slot == "armor":
+		next_showid = animation_profile.get_next_body_showid(body_showid)
+		select_body(next_showid)
+	else:
+		return
+
+	# Try to find matching equipment data for the new showid and apply stats.
+	if equipment_data != null and equipment_data.is_loaded():
+		var matching_id := _find_equipment_by_showid(slot, next_showid)
+		if not matching_id.is_empty():
+			# Unequip previous item in this slot
+			var previous := str(equipped.get(slot, ""))
+			if not previous.is_empty():
+				_apply_equipment_stats(previous, false)
+			equipped[slot] = matching_id
+			_apply_equipment_stats(matching_id, true)
+			equipment_changed.emit(slot, matching_id)
+		else:
+			# No matching equipment — just clear slot stats
+			var previous := str(equipped.get(slot, ""))
+			if not previous.is_empty():
+				_apply_equipment_stats(previous, false)
+				equipped[slot] = ""
+				equipment_changed.emit(slot, "")
+
+	# Re-clamp after stat changes
+	_refresh_stats_caps()
+
+
+## Find an equipment id in the catalog that matches this role, slot and showid.
+func _find_equipment_by_showid(slot: String, showid: int) -> String:
+	for equip_id in equipment_data.get_all_ids():
+		var entry: Dictionary = equipment_data.get_equipment(equip_id)
+		if entry.is_empty():
+			continue
+		if str(entry.get("slot", "")) != slot:
+			continue
+		if int(entry.get("showid", -1)) != showid:
+			continue
+		var equip_role: int = int(entry.get("role_id", 0))
+		if equip_role != 0 and equip_role != role_id:
+			continue
+		return equip_id
+	return ""
+
+
+## Re-emit health/mana signals after equipment change.
+func _refresh_stats_caps() -> void:
+	var effective_max_health: int = stats.get_effective_max_health()
+	if health > effective_max_health:
+		health = effective_max_health
+	health_changed.emit(health, effective_max_health)
+	mana_changed.emit(mana, stats.get_effective_max_mana())
 
 
 func _draw() -> void:

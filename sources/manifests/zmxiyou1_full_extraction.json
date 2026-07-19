@@ -1,0 +1,535 @@
+{
+  "generated_at": "2026-07-19T15:26:21+08:00",
+  "game": "造梦西游1",
+  "scope": "主程序、4399 外壳、7 个动态资源包及递归发现的内嵌 SWF",
+  "active_loader_source": "assets/extracted/full/zmxiyou1/shared/main/main_game/scripts/loader/Aloader.as",
+  "active_loader_packages": [
+    "Role_v7.swf",
+    "Monster_v1.swf",
+    "Monster2_v4.swf",
+    "Monster3_v3.swf",
+    "OtherMat_v9.swf",
+    "backpack_v2.swf",
+    "Music.swf"
+  ],
+  "scope_notes": [
+    "无版本号和旧版本 SWF 名称仅出现在各资源包附带的历史 Loader 副本中，不在当前主程序加载队列。",
+    "cdn.comment.4399pk.com 下的 SWF 是网页评论控件，不属于游戏客户端资源。"
+  ],
+  "export_root": "assets/extracted/full/zmxiyou1",
+  "godot_ignored_by": "assets/extracted/.gdignore",
+  "containers_exported": 10,
+  "files": 19596,
+  "bytes": 724802726,
+  "files_by_type": {
+    "binaryData": {
+      "files": 3,
+      "bytes": 2057811
+    },
+    "buttons": {
+      "files": 188,
+      "bytes": 1443663
+    },
+    "fonts": {
+      "files": 7,
+      "bytes": 468396
+    },
+    "frames": {
+      "files": 11,
+      "bytes": 46236
+    },
+    "images": {
+      "files": 976,
+      "bytes": 53732764
+    },
+    "morphshapes": {
+      "files": 1,
+      "bytes": 1582
+    },
+    "scripts": {
+      "files": 1287,
+      "bytes": 5143785
+    },
+    "shapes": {
+      "files": 2512,
+      "bytes": 173596660
+    },
+    "sounds": {
+      "files": 28,
+      "bytes": 3063053
+    },
+    "sprites": {
+      "files": 14542,
+      "bytes": 485236214
+    },
+    "symbolClass": {
+      "files": 9,
+      "bytes": 12385
+    },
+    "texts": {
+      "files": 32,
+      "bytes": 177
+    }
+  },
+  "packages": [
+    {
+      "package": "Music",
+      "path": "assets/extracted/full/zmxiyou1/audio/Music",
+      "exists": true,
+      "files": 57,
+      "bytes": 3071903,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 1833
+        },
+        "scripts": {
+          "files": 27,
+          "bytes": 6570
+        },
+        "sounds": {
+          "files": 28,
+          "bytes": 3063053
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 447
+        }
+      }
+    },
+    {
+      "package": "Role_v7",
+      "path": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7",
+      "exists": true,
+      "files": 3834,
+      "bytes": 57382428,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 1837
+        },
+        "images": {
+          "files": 175,
+          "bytes": 5758260
+        },
+        "scripts": {
+          "files": 181,
+          "bytes": 714168
+        },
+        "shapes": {
+          "files": 775,
+          "bytes": 11935913
+        },
+        "sprites": {
+          "files": 2701,
+          "bytes": 38970278
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 1972
+        }
+      }
+    },
+    {
+      "package": "Monster_v1",
+      "path": "assets/extracted/full/zmxiyou1/monsters/Monster_v1",
+      "exists": true,
+      "files": 2294,
+      "bytes": 117385981,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 1833
+        },
+        "images": {
+          "files": 137,
+          "bytes": 21951559
+        },
+        "scripts": {
+          "files": 150,
+          "bytes": 625439
+        },
+        "shapes": {
+          "files": 346,
+          "bytes": 33684186
+        },
+        "sprites": {
+          "files": 1659,
+          "bytes": 61121534
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 1430
+        }
+      }
+    },
+    {
+      "package": "Monster2_v4",
+      "path": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4",
+      "exists": true,
+      "files": 5606,
+      "bytes": 128752012,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 1833
+        },
+        "images": {
+          "files": 193,
+          "bytes": 7238374
+        },
+        "scripts": {
+          "files": 209,
+          "bytes": 774555
+        },
+        "shapes": {
+          "files": 823,
+          "bytes": 34094056
+        },
+        "sprites": {
+          "files": 4379,
+          "bytes": 86639965
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 3229
+        }
+      }
+    },
+    {
+      "package": "Monster3_v3",
+      "path": "assets/extracted/full/zmxiyou1/monsters/Monster3_v3",
+      "exists": true,
+      "files": 1233,
+      "bytes": 51854423,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 1833
+        },
+        "images": {
+          "files": 9,
+          "bytes": 3220994
+        },
+        "scripts": {
+          "files": 122,
+          "bytes": 601749
+        },
+        "shapes": {
+          "files": 79,
+          "bytes": 8712637
+        },
+        "sprites": {
+          "files": 1021,
+          "bytes": 39316777
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 433
+        }
+      }
+    },
+    {
+      "package": "OtherMat_v9",
+      "path": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9",
+      "exists": true,
+      "files": 3644,
+      "bytes": 82369621,
+      "types": {
+        "buttons": {
+          "files": 172,
+          "bytes": 1420462
+        },
+        "fonts": {
+          "files": 2,
+          "bytes": 70316
+        },
+        "frames": {
+          "files": 1,
+          "bytes": 1837
+        },
+        "images": {
+          "files": 270,
+          "bytes": 4530259
+        },
+        "morphshapes": {
+          "files": 1,
+          "bytes": 1582
+        },
+        "scripts": {
+          "files": 305,
+          "bytes": 724748
+        },
+        "shapes": {
+          "files": 244,
+          "bytes": 14271026
+        },
+        "sprites": {
+          "files": 2634,
+          "bytes": 61345472
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 3783
+        },
+        "texts": {
+          "files": 14,
+          "bytes": 136
+        }
+      }
+    },
+    {
+      "package": "backpack_v2",
+      "path": "assets/extracted/full/zmxiyou1/shared/backpack_v2",
+      "exists": true,
+      "files": 767,
+      "bytes": 10096780,
+      "types": {
+        "buttons": {
+          "files": 16,
+          "bytes": 23201
+        },
+        "fonts": {
+          "files": 1,
+          "bytes": 70824
+        },
+        "frames": {
+          "files": 1,
+          "bytes": 3553
+        },
+        "images": {
+          "files": 67,
+          "bytes": 1488128
+        },
+        "scripts": {
+          "files": 124,
+          "bytes": 594899
+        },
+        "shapes": {
+          "files": 177,
+          "bytes": 2970840
+        },
+        "sprites": {
+          "files": 368,
+          "bytes": 4944803
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 531
+        },
+        "texts": {
+          "files": 12,
+          "bytes": 1
+        }
+      }
+    },
+    {
+      "package": "main_game",
+      "path": "assets/extracted/full/zmxiyou1/shared/main/main_game",
+      "exists": true,
+      "files": 2112,
+      "bytes": 271565988,
+      "types": {
+        "fonts": {
+          "files": 4,
+          "bytes": 327256
+        },
+        "frames": {
+          "files": 1,
+          "bytes": 3548
+        },
+        "images": {
+          "files": 124,
+          "bytes": 9518899
+        },
+        "scripts": {
+          "files": 129,
+          "bytes": 926294
+        },
+        "shapes": {
+          "files": 67,
+          "bytes": 67892138
+        },
+        "sprites": {
+          "files": 1780,
+          "bytes": 192897385
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 428
+        },
+        "texts": {
+          "files": 6,
+          "bytes": 40
+        }
+      }
+    },
+    {
+      "package": "portal_loader",
+      "path": "assets/extracted/full/zmxiyou1/shared/portal_loader/portal_loader",
+      "exists": true,
+      "files": 46,
+      "bytes": 2239966,
+      "types": {
+        "binaryData": {
+          "files": 3,
+          "bytes": 2057811
+        },
+        "frames": {
+          "files": 2,
+          "bytes": 6660
+        },
+        "scripts": {
+          "files": 40,
+          "bytes": 175363
+        },
+        "symbolClass": {
+          "files": 1,
+          "bytes": 132
+        }
+      }
+    },
+    {
+      "package": "portal_4399_gif",
+      "path": "assets/extracted/full/zmxiyou1/shared/portal_embedded/4399_gif",
+      "exists": true,
+      "files": 3,
+      "bytes": 83624,
+      "types": {
+        "frames": {
+          "files": 1,
+          "bytes": 21469
+        },
+        "images": {
+          "files": 1,
+          "bytes": 26291
+        },
+        "shapes": {
+          "files": 1,
+          "bytes": 35864
+        }
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/backpack_v2.swf",
+      "bytes": 681324,
+      "sha256": "E4360195F803D7FE0B36F70C2EA88ADE5E7FE9DE7FFACDE3D2FA7E0452C4A0F9"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/Monster2_v4.swf",
+      "bytes": 3391987,
+      "sha256": "42A301A5AE4222AEC54DFDC4C14EFCED48B9AD4F979902471011FF226D8CD09B"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/Monster3_v3.swf",
+      "bytes": 811124,
+      "sha256": "5F6478C13CB57A46D46ABAC6FC70549F517358D727C3F2641AA75754C14F33C7"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/Monster_v1.swf",
+      "bytes": 4056848,
+      "sha256": "A6552637AC61553C3E021C79B725587CBA66F6303E3245180ABABD1F7DB97026"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/Music.swf",
+      "bytes": 2939915,
+      "sha256": "2AF5DC71D0D6354A9B7372B16D10114D5CC9A57F7504EB7C526E1177A16E5974"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/OtherMat_v9.swf",
+      "bytes": 2655079,
+      "sha256": "EF03008E68D64F613A2F7B3ABFEEC4CBA3D4BD579C67E0F4703D8F15D3E115C9"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/Role_v7.swf",
+      "bytes": 2388099,
+      "sha256": "FDEDCD581DCAA02406AAB12BF137B2ACAADEF0402FE8D82B1E43EE85782B9582"
+    },
+    {
+      "kind": "raw",
+      "file": "sources/raw/zmxiyou1/v25928.swf",
+      "bytes": 2089750,
+      "sha256": "A5E9650CA4C3B779D62FB7987A0B7E7D5AF5983B3197FA2F2E846A91B3F9CCCE"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/backpack_v2.swf",
+      "bytes": 681324,
+      "sha256": "47215D42043801243E7BEAE00CA4601D6040B343BE8BD8A29A9C4AA4E8DF17EA"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/main_game.swf",
+      "bytes": 2047512,
+      "sha256": "F8E3E1F5B545BC2423A02F5C6155F87215E01C14D21554D77681F32A7DEFB75B"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/Monster2_v4.swf",
+      "bytes": 3391987,
+      "sha256": "42A301A5AE4222AEC54DFDC4C14EFCED48B9AD4F979902471011FF226D8CD09B"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/Monster3_v3.swf",
+      "bytes": 811124,
+      "sha256": "5F6478C13CB57A46D46ABAC6FC70549F517358D727C3F2641AA75754C14F33C7"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/Monster_v1.swf",
+      "bytes": 4056848,
+      "sha256": "5BD88DA4211870F2CA2354B7CEC8D1790747869641C11FE553910B10FE2A264A"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/Music.swf",
+      "bytes": 2939915,
+      "sha256": "5CAD2F1EF3CE592C2E9E44C631748E042D8CACAE2C7571E57B1A0546998A7578"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/OtherMat_v9.swf",
+      "bytes": 2655079,
+      "sha256": "FA7681AAD99FB06F50228530B7F70F6334A1D7052A7BB6EF2CE3C3D81867FD5E"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/portal_4399_gif.swf",
+      "bytes": 10043,
+      "sha256": "F9D3EED408052F49A765FB6F1989FE259149960386D17DFAECF90FA73E6312ED"
+    },
+    {
+      "kind": "decoded",
+      "file": "sources/decoded/zmxiyou1/Role_v7.swf",
+      "bytes": 2388099,
+      "sha256": "11CAE2F4F4E63DBB1E7199B9D1A8ED432036138B72E2D04D1DA974329133FBE7"
+    }
+  ],
+  "embedded_swf": [
+    {
+      "file": "assets/extracted/full/zmxiyou1/shared/portal_loader/portal_loader/binaryData/2_prefor.System4399Manager__4399Gif.bin",
+      "signature": "CWS",
+      "bytes": 10043,
+      "sha256": "F9D3EED408052F49A765FB6F1989FE259149960386D17DFAECF90FA73E6312ED"
+    },
+    {
+      "file": "assets/extracted/full/zmxiyou1/shared/portal_loader/portal_loader/binaryData/3_L4399Main_gamefile.bin",
+      "signature": "CWS",
+      "bytes": 2047512,
+      "sha256": "F8E3E1F5B545BC2423A02F5C6155F87215E01C14D21554D77681F32A7DEFB75B"
+    }
+  ],
+  "duplicate_groups": 2166,
+  "duplicate_reclaimable_bytes": 205926147,
+  "duplicates_manifest": "sources/manifests/zmxiyou1_duplicate_files.json"
+}

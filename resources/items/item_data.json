@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "description": "造梦西游3 道具数据。type: consumable(消耗品), material(材料), equipment(装备)。equipment类型道具的equip_id对应equipment_data.json中的装备ID。",
+  "items": {
+    "health_potion_small": {
+      "id": "health_potion_small",
+      "name": "小瓶生命药水",
+      "type": "consumable",
+      "effect": { "heal": 50 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复50点生命值。"
+    },
+    "health_potion_medium": {
+      "id": "health_potion_medium",
+      "name": "中瓶生命药水",
+      "type": "consumable",
+      "effect": { "heal": 150 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复150点生命值。"
+    },
+    "health_potion_large": {
+      "id": "health_potion_large",
+      "name": "大瓶生命药水",
+      "type": "consumable",
+      "effect": { "heal": 400 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复400点生命值。"
+    },
+    "mana_potion_small": {
+      "id": "mana_potion_small",
+      "name": "小瓶魔法药水",
+      "type": "consumable",
+      "effect": { "restore_mana": 30 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复30点魔法值。"
+    },
+    "mana_potion_medium": {
+      "id": "mana_potion_medium",
+      "name": "中瓶魔法药水",
+      "type": "consumable",
+      "effect": { "restore_mana": 80 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复80点魔法值。"
+    },
+    "mana_potion_large": {
+      "id": "mana_potion_large",
+      "name": "大瓶魔法药水",
+      "type": "consumable",
+      "effect": { "restore_mana": 200 },
+      "stackable": true,
+      "max_stack": 99,
+      "description": "恢复200点魔法值。"
+    },
+    "elixir_both": {
+      "id": "elixir_both",
+      "name": "回元露",
+      "type": "consumable",
+      "effect": { "heal": 100, "restore_mana": 50 },
+      "stackable": true,
+      "max_stack": 50,
+      "description": "同时恢复100点生命和50点魔法。"
+    },
+    "material_sandalwood": {
+      "id": "material_sandalwood",
+      "name": "檀木",
+      "type": "material",
+      "stackable": true,
+      "max_stack": 999,
+      "description": "常见的木材，用于打造装备。"
+    },
+    "material_iron": {
+      "id": "material_iron",
+      "name": "玄铁",
+      "type": "material",
+      "stackable": true,
+      "max_stack": 999,
+      "description": "坚硬的铁矿石，用于打造装备。"
+    },
+    "material_silk": {
+      "id": "material_silk",
+      "name": "丝绸",
+      "type": "material",
+      "stackable": true,
+      "max_stack": 999,
+      "description": "柔韧的丝织品，用于制作防具。"
+    },
+    "material_strengthening_stone": {
+      "id": "material_strengthening_stone",
+      "name": "强化石",
+      "type": "material",
+      "stackable": true,
+      "max_stack": 999,
+      "description": "用于强化装备，提升基础属性。"
+    },
+    "material_soul_potion": {
+      "id": "material_soul_potion",
+      "name": "灵魂药水",
+      "type": "material",
+      "stackable": true,
+      "max_stack": 999,
+      "description": "蕴含灵魂精华，用于炼丹合成。"
+    },
+    "equip_wukong_weapon_0": {
+      "id": "equip_wukong_weapon_0",
+      "name": "普通行者棍",
+      "type": "equipment",
+      "equip_id": "wukong_weapon_0",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "悟空的基础武器。"
+    },
+    "equip_wukong_armor_1": {
+      "id": "equip_wukong_armor_1",
+      "name": "普通行者服",
+      "type": "equipment",
+      "equip_id": "wukong_armor_1",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "悟空的基础防具。"
+    },
+    "equip_tangseng_weapon_0": {
+      "id": "equip_tangseng_weapon_0",
+      "name": "普通禅杖",
+      "type": "equipment",
+      "equip_id": "tangseng_weapon_0",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "唐僧的基础武器。"
+    },
+    "equip_tangseng_armor_1": {
+      "id": "equip_tangseng_armor_1",
+      "name": "普通僧袍",
+      "type": "equipment",
+      "equip_id": "tangseng_armor_1",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "唐僧的基础防具。"
+    },
+    "equip_bajie_weapon_0": {
+      "id": "equip_bajie_weapon_0",
+      "name": "普通钉耙",
+      "type": "equipment",
+      "equip_id": "bajie_weapon_0",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "八戒的基础武器。"
+    },
+    "equip_bajie_armor_1": {
+      "id": "equip_bajie_armor_1",
+      "name": "普通铠甲",
+      "type": "equipment",
+      "equip_id": "bajie_armor_1",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "八戒的基础防具。"
+    },
+    "equip_shaseng_weapon_0": {
+      "id": "equip_shaseng_weapon_0",
+      "name": "普通月牙铲",
+      "type": "equipment",
+      "equip_id": "shaseng_weapon_0",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "沙僧的基础武器。"
+    },
+    "equip_shaseng_armor_1": {
+      "id": "equip_shaseng_armor_1",
+      "name": "普通战袍",
+      "type": "equipment",
+      "equip_id": "shaseng_armor_1",
+      "stackable": false,
+      "max_stack": 1,
+      "description": "沙僧的基础防具。"
+    }
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "description": "造梦西游3 装备数据。每条装备定义名称、槽位、showid（对应精灵图集）和属性加成。可直接编辑此文件调整装备数值。",
+  "equipment": {
+    "wukong_weapon_0": {
+      "id": "wukong_weapon_0",
+      "name": "普通行者棍",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "attack": 5 },
+      "description": "行者入门长棍，朴实无华。"
+    },
+    "wukong_weapon_1": {
+      "id": "wukong_weapon_1",
+      "name": "枯叶杖",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 1,
+      "quality": "excellent",
+      "stats": { "attack": 12, "crit_rate": 0.02 },
+      "description": "天宫道枯木精华所化，轻盈灵动。"
+    },
+    "wukong_weapon_2": {
+      "id": "wukong_weapon_2",
+      "name": "青云冰刀",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 2,
+      "quality": "fine",
+      "stats": { "attack": 25, "crit_rate": 0.04 },
+      "description": "南天王殿寒冰锻造，刀锋凛冽。"
+    },
+    "wukong_weapon_3": {
+      "id": "wukong_weapon_3",
+      "name": "紫金镔铁棍",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "attack": 48, "crit_rate": 0.05, "max_health": 50 },
+      "description": "朝会殿紫金打造，重若千钧，无坚不摧。"
+    },
+    "wukong_weapon_4": {
+      "id": "wukong_weapon_4",
+      "name": "天荒",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 4,
+      "quality": "evil",
+      "stats": { "attack": 80, "crit_rate": 0.07, "max_mana": 40 },
+      "description": "玲珑宝塔邪灵之力凝聚，挥舞时天地变色。"
+    },
+    "wukong_weapon_5": {
+      "id": "wukong_weapon_5",
+      "name": "如意金箍棒",
+      "role_id": 1,
+      "slot": "weapon",
+      "showid": 5,
+      "quality": "legendary",
+      "stats": { "attack": 120, "crit_rate": 0.10, "max_health": 100, "max_mana": 60 },
+      "description": "东海龙王镇海之宝，随心变化，重一万三千五百斤。"
+    },
+    "wukong_armor_0": {
+      "id": "wukong_armor_0",
+      "name": "默认行者服",
+      "role_id": 1,
+      "slot": "armor",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "defense": 2 },
+      "description": "行者最基础的装束。"
+    },
+    "wukong_armor_1": {
+      "id": "wukong_armor_1",
+      "name": "普通行者服",
+      "role_id": 1,
+      "slot": "armor",
+      "showid": 1,
+      "quality": "common",
+      "stats": { "defense": 3, "max_health": 20 },
+      "description": "行者日常修炼所穿的布衣。"
+    },
+    "wukong_armor_2": {
+      "id": "wukong_armor_2",
+      "name": "枯叶衫",
+      "role_id": 1,
+      "slot": "armor",
+      "showid": 2,
+      "quality": "excellent",
+      "stats": { "defense": 6, "max_health": 40, "dodge_rate": 0.02 },
+      "description": "天宫道枯叶编制而成，轻便灵活。"
+    },
+    "wukong_armor_3": {
+      "id": "wukong_armor_3",
+      "name": "紫金轻甲",
+      "role_id": 1,
+      "slot": "armor",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "defense": 18, "max_health": 120, "dodge_rate": 0.03 },
+      "description": "彩虹楼紫金护甲，轻如鸿毛坚如磐石。"
+    },
+    "wukong_armor_4": {
+      "id": "wukong_armor_4",
+      "name": "厄夜",
+      "role_id": 1,
+      "slot": "armor",
+      "showid": 4,
+      "quality": "evil",
+      "stats": { "defense": 35, "max_health": 250, "max_mana": 50, "dodge_rate": 0.05 },
+      "description": "暗夜邪力护体，土行孙宝藏中最强防具。"
+    },
+    "tangseng_weapon_0": {
+      "id": "tangseng_weapon_0",
+      "name": "普通禅杖",
+      "role_id": 2,
+      "slot": "weapon",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "attack": 8 },
+      "description": "出家人基础法杖。"
+    },
+    "tangseng_weapon_1": {
+      "id": "tangseng_weapon_1",
+      "name": "枯叶杖",
+      "role_id": 2,
+      "slot": "weapon",
+      "showid": 1,
+      "quality": "excellent",
+      "stats": { "attack": 18, "max_mana": 20 },
+      "description": "天宫道灵木法杖，蕴含自然法力。"
+    },
+    "tangseng_weapon_2": {
+      "id": "tangseng_weapon_2",
+      "name": "混元灵杖",
+      "role_id": 2,
+      "slot": "weapon",
+      "showid": 2,
+      "quality": "fine",
+      "stats": { "attack": 32, "max_mana": 50, "mp_regen": 2 },
+      "description": "混元灵气凝聚而成，法力悠长。"
+    },
+    "tangseng_weapon_3": {
+      "id": "tangseng_weapon_3",
+      "name": "嗜魔杖",
+      "role_id": 2,
+      "slot": "weapon",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "attack": 60, "max_mana": 80, "mp_regen": 4, "magic_resist": 0.05 },
+      "description": "朝会殿魔道法器，嗜魔之杖，法力无边。"
+    },
+    "tangseng_armor_0": {
+      "id": "tangseng_armor_0",
+      "name": "默认僧袍",
+      "role_id": 2,
+      "slot": "armor",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "defense": 1 },
+      "description": "出家人最朴素的僧袍。"
+    },
+    "tangseng_armor_1": {
+      "id": "tangseng_armor_1",
+      "name": "普通僧袍",
+      "role_id": 2,
+      "slot": "armor",
+      "showid": 1,
+      "quality": "common",
+      "stats": { "defense": 2, "max_health": 15 },
+      "description": "日常修行所穿的法衣。"
+    },
+    "tangseng_armor_2": {
+      "id": "tangseng_armor_2",
+      "name": "青云法袍",
+      "role_id": 2,
+      "slot": "armor",
+      "showid": 2,
+      "quality": "fine",
+      "stats": { "defense": 8, "max_health": 60, "max_mana": 30 },
+      "description": "南天王殿青云法袍，灵力环绕。"
+    },
+    "tangseng_armor_3": {
+      "id": "tangseng_armor_3",
+      "name": "残昼",
+      "role_id": 2,
+      "slot": "armor",
+      "showid": 3,
+      "quality": "evil",
+      "stats": { "defense": 28, "max_health": 180, "max_mana": 100, "mp_regen": 3 },
+      "description": "玲珑宝塔邪灵法袍，雷震子守护的至宝。"
+    },
+    "bajie_weapon_0": {
+      "id": "bajie_weapon_0",
+      "name": "普通钉耙",
+      "role_id": 3,
+      "slot": "weapon",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "attack": 6 },
+      "description": "天蓬元帅的基础兵器。"
+    },
+    "bajie_weapon_1": {
+      "id": "bajie_weapon_1",
+      "name": "宣花锤",
+      "role_id": 3,
+      "slot": "weapon",
+      "showid": 1,
+      "quality": "excellent",
+      "stats": { "attack": 14, "max_health": 30 },
+      "description": "南天门宣花大锤，势大力沉。"
+    },
+    "bajie_weapon_2": {
+      "id": "bajie_weapon_2",
+      "name": "混元雷叉",
+      "role_id": 3,
+      "slot": "weapon",
+      "showid": 2,
+      "quality": "fine",
+      "stats": { "attack": 28, "defense": 5, "max_health": 60 },
+      "description": "北天王殿雷叉，攻守兼备。"
+    },
+    "bajie_weapon_3": {
+      "id": "bajie_weapon_3",
+      "name": "紫金开山斧",
+      "role_id": 3,
+      "slot": "weapon",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "attack": 55, "defense": 10, "max_health": 120, "crit_rate": 0.03 },
+      "description": "彩虹楼紫金巨斧，开山裂石。"
+    },
+    "bajie_weapon_4": {
+      "id": "bajie_weapon_4",
+      "name": "天罪",
+      "role_id": 3,
+      "slot": "weapon",
+      "showid": 4,
+      "quality": "evil",
+      "stats": { "attack": 90, "defense": 15, "max_health": 200, "crit_rate": 0.05 },
+      "description": "玲珑宝塔邪灵之力，土行孙之最强武器。"
+    },
+    "bajie_armor_0": {
+      "id": "bajie_armor_0",
+      "name": "默认铠甲",
+      "role_id": 3,
+      "slot": "armor",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "defense": 3 },
+      "description": "天蓬元帅的基础铠甲。"
+    },
+    "bajie_armor_1": {
+      "id": "bajie_armor_1",
+      "name": "普通铠甲",
+      "role_id": 3,
+      "slot": "armor",
+      "showid": 1,
+      "quality": "common",
+      "stats": { "defense": 5, "max_health": 30 },
+      "description": "日常披挂的厚重铠甲。"
+    },
+    "bajie_armor_2": {
+      "id": "bajie_armor_2",
+      "name": "混元龙铠",
+      "role_id": 3,
+      "slot": "armor",
+      "showid": 2,
+      "quality": "fine",
+      "stats": { "defense": 14, "max_health": 100, "hp_regen": 2 },
+      "description": "西天王殿龙鳞铠甲，坚韧不破。"
+    },
+    "bajie_armor_4": {
+      "id": "bajie_armor_4",
+      "name": "顽石金刚",
+      "role_id": 3,
+      "slot": "armor",
+      "showid": 4,
+      "quality": "epic",
+      "stats": { "defense": 30, "max_health": 250, "hp_regen": 5, "magic_resist": 0.05 },
+      "description": "梅山顽石所铸，坚如金刚不坏之身。"
+    },
+    "shaseng_weapon_0": {
+      "id": "shaseng_weapon_0",
+      "name": "普通月牙铲",
+      "role_id": 4,
+      "slot": "weapon",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "attack": 6 },
+      "description": "卷帘大将的基础兵器。"
+    },
+    "shaseng_weapon_1": {
+      "id": "shaseng_weapon_1",
+      "name": "枯叶弓",
+      "role_id": 4,
+      "slot": "weapon",
+      "showid": 1,
+      "quality": "excellent",
+      "stats": { "attack": 14, "dodge_rate": 0.03 },
+      "description": "天宫道枯木灵弓，箭无虚发。"
+    },
+    "shaseng_weapon_2": {
+      "id": "shaseng_weapon_2",
+      "name": "银弹金弓",
+      "role_id": 4,
+      "slot": "weapon",
+      "showid": 2,
+      "quality": "epic",
+      "stats": { "attack": 42, "crit_rate": 0.05, "dodge_rate": 0.04 },
+      "description": "梅山银弹金弓，百步穿杨。"
+    },
+    "shaseng_weapon_3": {
+      "id": "shaseng_weapon_3",
+      "name": "卷帘绿魔",
+      "role_id": 4,
+      "slot": "weapon",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "attack": 52, "max_health": 60, "max_mana": 40 },
+      "description": "朝会殿卷帘大将专属魔兵。"
+    },
+    "shaseng_weapon_4": {
+      "id": "shaseng_weapon_4",
+      "name": "天殇",
+      "role_id": 4,
+      "slot": "weapon",
+      "showid": 4,
+      "quality": "evil",
+      "stats": { "attack": 85, "crit_rate": 0.06, "dodge_rate": 0.05, "max_mana": 50 },
+      "description": "玲珑宝塔雷震子守护的邪灵兵器。"
+    },
+    "shaseng_armor_0": {
+      "id": "shaseng_armor_0",
+      "name": "默认战袍",
+      "role_id": 4,
+      "slot": "armor",
+      "showid": 0,
+      "quality": "common",
+      "stats": { "defense": 2 },
+      "description": "卷帘大将的基础战袍。"
+    },
+    "shaseng_armor_1": {
+      "id": "shaseng_armor_1",
+      "name": "普通战袍",
+      "role_id": 4,
+      "slot": "armor",
+      "showid": 1,
+      "quality": "common",
+      "stats": { "defense": 3, "max_health": 20 },
+      "description": "日常披挂的战袍。"
+    },
+    "shaseng_armor_2": {
+      "id": "shaseng_armor_2",
+      "name": "宣花袍",
+      "role_id": 4,
+      "slot": "armor",
+      "showid": 2,
+      "quality": "excellent",
+      "stats": { "defense": 7, "max_health": 50, "dodge_rate": 0.02 },
+      "description": "南天门宣花战袍，坚韧灵活。"
+    },
+    "shaseng_armor_3": {
+      "id": "shaseng_armor_3",
+      "name": "卷帘战甲",
+      "role_id": 4,
+      "slot": "armor",
+      "showid": 3,
+      "quality": "epic",
+      "stats": { "defense": 22, "max_health": 150, "max_mana": 60, "dodge_rate": 0.04 },
+      "description": "卷帘大将的专属战甲，轻便坚韧。"
+    },
+    "shaseng_armor_4": {
+      "id": "shaseng_armor_4",
+      "name": "流沙战甲",
+      "role_id": 4,
+      "slot": "armor",
+      "showid": 4,
+      "quality": "evil",
+      "stats": { "defense": 32, "max_health": 220, "dodge_rate": 0.06, "magic_resist": 0.05 },
+      "description": "流沙河邪灵之力凝聚的战甲，沙暴护体。"
+    },
+    "accessory_flower_necklace": {
+      "id": "accessory_flower_necklace",
+      "name": "宣花坠",
+      "role_id": 0,
+      "slot": "accessory",
+      "showid": -1,
+      "quality": "excellent",
+      "stats": { "max_health": 30, "max_mana": 20 },
+      "description": "天宫道灵花所化的坠饰，温和滋养。"
+    },
+    "accessory_cloud_bracelet": {
+      "id": "accessory_cloud_bracelet",
+      "name": "青云手镯",
+      "role_id": 0,
+      "slot": "accessory",
+      "showid": -1,
+      "quality": "fine",
+      "stats": { "max_health": 60, "max_mana": 40, "mp_regen": 1 },
+      "description": "青云灵气凝结的手镯，法力流转不息。"
+    },
+    "accessory_ring_of_protection": {
+      "id": "accessory_ring_of_protection",
+      "name": "提多罗吒之戒",
+      "role_id": 0,
+      "slot": "accessory",
+      "showid": -1,
+      "quality": "epic",
+      "stats": { "max_health": 100, "defense": 5, "magic_resist": 0.05 },
+      "description": "东天王殿天王之戒，护体灵光。"
+    },
+    "accessory_jade_spirit": {
+      "id": "accessory_jade_spirit",
+      "name": "玲珑玉",
+      "role_id": 0,
+      "slot": "accessory",
+      "showid": -1,
+      "quality": "evil",
+      "stats": { "attack": 15, "crit_rate": 0.04, "dodge_rate": 0.04, "max_health": 80 },
+      "description": "李天王所持的玲珑宝玉，邪灵之力蕴含其中。"
+    }
+  }
+}

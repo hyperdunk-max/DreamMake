@@ -80,11 +80,26 @@ func _can_hit_target(target: Object) -> bool:
 func _apply_hit(target: Object) -> void:
 	_target_last_hit_frame[target] = _frame_index
 	_total_hits += 1
+	var raw_damage: int = int(_step.get("damage", 18))
+	# Calculate stat-based damage through the source actor if available.
+	if _source_actor != null and is_instance_valid(_source_actor) and _source_actor.has_method("calculate_damage_output"):
+		raw_damage = _source_actor.calculate_damage_output(raw_damage, target)
+	# Apply skill-specific modifiers if available.
+	if _source_actor != null and is_instance_valid(_source_actor):
+		var skill_state = _source_actor.get("role_skill_state")
+		if skill_state != null and skill_state.has_method("modify_outgoing_damage"):
+			raw_damage = skill_state.modify_outgoing_damage(raw_damage)
+	# Knockback is projectile-specific — do NOT route through apply_role_skill_hit
+	# because its facing calculation would corrupt the projectile's direction.
 	var knockback := Vector2(_step.get("knockback", Vector2(220, -120)))
 	knockback.x *= 1.0 if scale.x == 1.0 else -1.0
-	# Source art faces according to effect_source_facing.  The sprite scale is
-	# the authoritative runtime flip, so restore gameplay direction here.
 	var source_facing := int(_step.get("effect_source_facing", -1))
 	knockback.x *= source_facing
-	target.take_hit(int(_step.get("damage", 18)), knockback)
+	var health_before := int(target.get("health"))
+	target.take_hit(raw_damage, knockback)
+	# Apply lifesteal through the source actor.
+	if _source_actor != null and is_instance_valid(_source_actor) and _source_actor.has_method("_apply_lifesteal"):
+		var actual_damage := maxi(0, health_before - int(target.get("health")))
+		if actual_damage > 0:
+			_source_actor._apply_lifesteal(actual_damage)
 	target_hit.emit(target, _frame_index)

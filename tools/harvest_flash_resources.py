@@ -278,6 +278,24 @@ def download_one(resource: Resource, timeout: int = 45) -> dict[str, object]:
                 "category": resource.category,
             }
 
+    # Reuse already downloaded packages before touching the network.  Some
+    # Dream Journey packages rotate their first bytes, so the raw file is not
+    # itself a valid SWF until decode_swf restores the header.
+    if raw_path.exists():
+        raw_data = raw_path.read_bytes()
+        decoded = decode_swf(resource.game, raw_data)
+        if decoded is not None:
+            decoded_path.write_bytes(decoded)
+            return {
+                "game": resource.game,
+                "name": resource.name,
+                "status": "cached",
+                "bytes": len(raw_data),
+                "raw_sha256": hashlib.sha256(raw_data).hexdigest(),
+                "decoded_sha256": hashlib.sha256(decoded).hexdigest(),
+                "category": resource.category,
+            }
+
     request = urllib.request.Request(resource.url, headers={"User-Agent": "Mozilla/5.0 CodexResourceHarvester/1.0"})
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
@@ -326,24 +344,26 @@ def download_all(resources: list[Resource], workers: int) -> list[dict[str, obje
     return results
 
 
-def local_main_resources() -> list[tuple[Resource, Path]]:
+def local_main_resources(game_filter: str | None = None) -> list[tuple[Resource, Path]]:
     local: list[tuple[Resource, Path]] = []
     mains = [
         # The first two embedded game files are already valid CWS files.  Keep
         # them in raw/ because no byte rotation is required, but still export
         # them as the canonical main-game containers.
-        ("zmxiyou1", "main_game.swf", "shared/main", ROOT / "sources/raw/zmxiyou1_game.swf"),
+        ("zmxiyou1", "main_game.swf", "shared/main", ROOT / "sources/decoded/zmxiyou1/main_game.swf"),
         ("zmxiyou2", "main_game.swf", "shared/main", ROOT / "sources/raw/zmxiyou2_game.swf"),
         ("zmxiyou3", "main_game.swf", "shared/main", ROOT / "sources/decoded/zmxiyou3_game.swf"),
         # Preserve assets embedded in the 4399 page-level loader as well as
         # the game itself.  zmxiyou3_loader.swf is only the 23 KiB error
         # animation returned by the obsolete sda host and is intentionally
         # not included here.
-        ("zmxiyou1", "portal_loader.swf", "shared/portal_loader", ROOT / "sources/raw/zmxiyou1.swf"),
+        ("zmxiyou1", "portal_loader.swf", "shared/portal_loader", ROOT / "sources/raw/zmxiyou1/v25928.swf"),
         ("zmxiyou2", "portal_loader.swf", "shared/portal_loader", ROOT / "sources/raw/zmxiyou2.swf"),
         ("zmxiyou3", "portal_loader.swf", "shared/portal_loader", ROOT / "sources/raw/zmxiyou3.swf"),
     ]
     for game, name, category, path in mains:
+        if game_filter is not None and game != game_filter:
+            continue
         if path.exists():
             local.append((Resource(game, name, category, "embedded main SWF"), path))
     return local
@@ -394,8 +414,13 @@ def extract_one(resource: Resource, swf_path: Path, force: bool = False) -> dict
     return result
 
 
-def extract_all(resources: list[Resource], force: bool = False, workers: int = 3) -> list[dict[str, object]]:
-    jobs: list[tuple[Resource, Path]] = local_main_resources()
+def extract_all(
+    resources: list[Resource],
+    force: bool = False,
+    workers: int = 3,
+    game_filter: str | None = None,
+) -> list[dict[str, object]]:
+    jobs: list[tuple[Resource, Path]] = local_main_resources(game_filter)
     for resource in resources:
         path = ROOT / "sources" / "decoded" / resource.game / safe_local_name(resource.name)
         if path.exists() and path.read_bytes()[:3] in SWF_MAGIC:
@@ -453,6 +478,7 @@ def main() -> None:
     parser.add_argument("command", choices=("discover", "download", "extract", "all", "summary"))
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--game", choices=tuple(BASE_URLS), help="Limit work to one game.")
     args = parser.parse_args()
 
     if args.command == "discover":
@@ -461,10 +487,17 @@ def main() -> None:
         return
 
     resources = load_manifest()
+    if args.game is not None:
+        resources = [resource for resource in resources if resource.game == args.game]
     if args.command in {"download", "all"}:
         download_all(resources, max(1, args.workers))
     if args.command in {"extract", "all"}:
-        extract_all(resources, force=args.force, workers=max(1, args.workers))
+        extract_all(
+            resources,
+            force=args.force,
+            workers=max(1, args.workers),
+            game_filter=args.game,
+        )
     summary(resources)
 
 

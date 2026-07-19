@@ -6,8 +6,11 @@ var enemy_bar: ProgressBar
 var message_label: Label
 var weapon_label: Label
 var body_label: Label
+var stats_label: Label
 var player_name_label: Label
 var controls_label: Label
+var title_label: Label
+var enemy_name_label: Label
 
 
 func _ready() -> void:
@@ -15,11 +18,11 @@ func _ready() -> void:
 	mana_bar = _make_bar(Vector2(32, 60), Vector2(285, 16), Color("3f78d6"))
 	enemy_bar = _make_bar(Vector2(623, 35), Vector2(285, 22), Color("9e3131"))
 
-	var title := Label.new()
-	title.text = "造梦西游 3 · 角色战斗验证"
-	title.position = Vector2(350, 15)
-	title.add_theme_font_size_override("font_size", 18)
-	add_child(title)
+	title_label = Label.new()
+	title_label.text = "造梦西游 3 · 角色战斗验证"
+	title_label.position = Vector2(350, 15)
+	title_label.add_theme_font_size_override("font_size", 18)
+	add_child(title_label)
 
 	player_name_label = Label.new()
 	player_name_label.text = "悟空"
@@ -27,11 +30,13 @@ func _ready() -> void:
 	player_name_label.add_theme_font_size_override("font_size", 18)
 	add_child(player_name_label)
 
-	var enemy_name := Label.new()
-	enemy_name.text = "训练木妖"
-	enemy_name.position = Vector2(824, 10)
-	enemy_name.add_theme_font_size_override("font_size", 18)
-	add_child(enemy_name)
+	enemy_name_label = Label.new()
+	enemy_name_label.text = "训练木妖"
+	enemy_name_label.position = Vector2(780, 10)
+	enemy_name_label.size = Vector2(128, 24)
+	enemy_name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	enemy_name_label.add_theme_font_size_override("font_size", 18)
+	add_child(enemy_name_label)
 
 	controls_label = Label.new()
 	controls_label.position = Vector2(48, 550)
@@ -42,6 +47,7 @@ func _ready() -> void:
 
 	weapon_label = _make_equipment_label(Vector2(32, 84))
 	body_label = _make_equipment_label(Vector2(32, 105))
+	stats_label = _make_equipment_label(Vector2(32, 126))
 
 	message_label = Label.new()
 	message_label.position = Vector2(250, 245)
@@ -100,6 +106,14 @@ func show_message(text: String) -> void:
 	message_label.text = text
 
 
+func set_title(text: String) -> void:
+	title_label.text = text
+
+
+func set_enemy_name(text: String) -> void:
+	enemy_name_label.text = text
+
+
 func set_weapon(showid: int, weapon_name: String) -> void:
 	weapon_label.text = "武器 showid %d · %s" % [showid, weapon_name]
 
@@ -108,14 +122,18 @@ func set_body(showid: int, body_name: String) -> void:
 	body_label.text = "衣服 showid %d · %s" % [showid, body_name]
 
 
+func set_stats(atk: int, def: int, crit: float, dodge: float) -> void:
+	stats_label.text = "攻击 %d  防御 %d  暴击 %.0f%%  闪避 %.0f%%" % [atk, def, crit * 100.0, dodge * 100.0]
+
+
 func set_role(role_id: int, display_name: String) -> void:
 	player_name_label.text = display_name
 	match role_id:
 		1:
-			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  R 重开"
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 七十二斩  I 重斩  O 烈焰闪  L 火眼金睛  E 属性  Tab 背包  R 重开"
 		2:
-			controls_label.text = "A/D 移动  K 二段跳  J 普攻/长按冰龙波  U 圣光球  I 沐浴回春  O 紧箍咒  L 天降甘露"
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻/长按冰龙波  U 圣光球  I 沐浴回春  O 紧箍咒  L 天降甘露  E 属性  Tab 背包"
 		3:
-			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 盾击  I 圣盾  O 战争怒吼  L 圣域之墙"
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  U 盾击  I 圣盾  O 战争怒吼  L 圣域之墙  E 属性  Tab 背包"
 		_:
-			controls_label.text = "A/D 移动  K 二段跳  J 普攻  Q/E 切换装备  1-4 切换角色  R 重开"
+			controls_label.text = "A/D 移动  K 二段跳  J 普攻  Q/V 切换装备  E 属性  Tab 背包  1-4 切换角色  R 重开"
