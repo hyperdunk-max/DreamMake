@@ -12,15 +12,27 @@ func get_item_icon(item: Dictionary) -> Texture2D:
 	if _cache.has(item_id):
 		return _cache[item_id] as Texture2D
 	var icon_source: Dictionary = item.get("icon_source", {})
+	var direct_texture: Texture2D = icon_source.get("texture") as Texture2D
+	var texture_path: String = str(icon_source.get("texture_path", ""))
 	var atlas: Texture2D = icon_source.get("atlas") as Texture2D
 	var frame_size: Vector2i = Vector2i(icon_source.get("frame_size", Vector2i.ZERO))
 	var texture: Texture2D
-	if atlas != null and frame_size.x > 0 and frame_size.y > 0:
+	if direct_texture != null:
+		texture = direct_texture
+	elif not texture_path.is_empty():
+		texture = load(texture_path) as Texture2D
+	elif atlas != null and frame_size.x > 0 and frame_size.y > 0:
 		texture = crop_flash_frame(atlas, frame_size)
 	if texture == null:
 		texture = _make_fallback_icon(item_id, str(item.get("type", "")))
 	_cache[item_id] = texture
 	return texture
+
+
+## World drops and backpack cells deliberately request the same cached base
+## texture. Their frame/glow treatment belongs to the view, not the asset.
+func get_drop_icon(item: Dictionary) -> Texture2D:
+	return get_item_icon(item)
 
 
 func get_character_portrait(body_atlas: Texture2D, weapon_atlas: Texture2D, frame_size: Vector2i) -> Texture2D:

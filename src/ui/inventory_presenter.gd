@@ -177,7 +177,12 @@ func _build_detail(item: Dictionary) -> Dictionary:
 
 
 func _get_icon_source(equip_entry: Dictionary) -> Dictionary:
-	if equip_entry.is_empty() or _player.animation_profile == null:
+	if equip_entry.is_empty():
+		return {}
+	var icon_path: String = str(equip_entry.get("icon_path", ""))
+	if not icon_path.is_empty():
+		return {"texture_path": icon_path}
+	if _player.animation_profile == null:
 		return {}
 	var slot: String = str(equip_entry.get("slot", ""))
 	var showid: int = int(equip_entry.get("showid", -1))

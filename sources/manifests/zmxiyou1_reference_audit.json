@@ -1,0 +1,1638 @@
+{
+  "generated_at": "2026-07-20T20:55:57+08:00",
+  "source_manifest": "sources/manifests/zmxiyou1_image_classification.json",
+  "policy": "保留有 symbolClass、源码、包来源或 SWF XML 引用链证据且运行时仍需要的素材；无法归属、视觉为空白、可由运行时生成或已烘焙重复的分类副本删除，完整提取库不变。",
+  "counts": {
+    "input_files": 18229,
+    "retained_files": 18050,
+    "rejected_files": 179,
+    "direct": 4483,
+    "reference_graph": 11462,
+    "rejected": 5,
+    "rejected_redundant": 174,
+    "specialized_public": 2105
+  },
+  "packages": {
+    "Role_v7": {
+      "xml": ".tools/zmxiyou1_xml/Role_v7.xml",
+      "definitions": 1132,
+      "reference_edges": 1389,
+      "trusted_seed_symbols": 36,
+      "reachable_character_ids": 1133,
+      "specialized_public_character_ids": 0
+    },
+    "Monster_v1": {
+      "xml": ".tools/zmxiyou1_xml/Monster_v1.xml",
+      "definitions": 568,
+      "reference_edges": 623,
+      "trusted_seed_symbols": 15,
+      "reachable_character_ids": 569,
+      "specialized_public_character_ids": 0
+    },
+    "Monster2_v4": {
+      "xml": ".tools/zmxiyou1_xml/Monster2_v4.xml",
+      "definitions": 1233,
+      "reference_edges": 1277,
+      "trusted_seed_symbols": 32,
+      "reachable_character_ids": 1234,
+      "specialized_public_character_ids": 0
+    },
+    "Monster3_v3": {
+      "xml": ".tools/zmxiyou1_xml/Monster3_v3.xml",
+      "definitions": 125,
+      "reference_edges": 149,
+      "trusted_seed_symbols": 5,
+      "reachable_character_ids": 126,
+      "specialized_public_character_ids": 0
+    },
+    "OtherMat_v9": {
+      "xml": ".tools/zmxiyou1_xml/OtherMat_v9.xml",
+      "definitions": 714,
+      "reference_edges": 697,
+      "trusted_seed_symbols": 699,
+      "reachable_character_ids": 714,
+      "specialized_public_character_ids": 368
+    },
+    "backpack_v2": {
+      "xml": ".tools/zmxiyou1_xml/backpack_v2.xml",
+      "definitions": 309,
+      "reference_edges": 353,
+      "trusted_seed_symbols": 296,
+      "reachable_character_ids": 309,
+      "specialized_public_character_ids": 0
+    },
+    "main_game": {
+      "xml": ".tools/zmxiyou1_xml/main_game.xml",
+      "definitions": 252,
+      "reference_edges": 420,
+      "trusted_seed_symbols": 21,
+      "reachable_character_ids": 249,
+      "specialized_public_character_ids": 0
+    }
+  },
+  "manual_source_evidence": [
+    {
+      "package": "OtherMat_v9",
+      "classification": "装备、关卡入口、数字、技能图标、片头片尾",
+      "evidence": "AllEquipment.as 装备表、SelectPLace.as 关卡选择界面、ANumber.as 数字前缀调用、技能图标视觉抽样，以及 export.scene.Opening/Ending 引用子树。"
+    },
+    {
+      "package": "Monster2_v4",
+      "character_id": 509,
+      "symbol": "Monster13Bullet1",
+      "classification": "Monster13 与 Monster16 共用特效",
+      "evidence": "Monster13.as:87 与 Monster16.as:87 均创建 SpecialEffectBullet(\"Monster13Bullet1\")；视觉为飞剑。"
+    },
+    {
+      "package": "Monster2_v4",
+      "character_id": 755,
+      "symbol": "export.monster.Monster23Child.Fire",
+      "classification": "Monster24 特效",
+      "evidence": "Monster24.as:7 导入 Monster23Child.*，Monster24.as:154 执行 new Fire(this)；视觉为火焰。"
+    },
+    {
+      "package": "Role_v7",
+      "character_ids": [
+        656,
+        657
+      ],
+      "symbols": [
+        "Role_fla.元件4_97",
+        "hit4FallDown"
+      ],
+      "classification": "唐僧第四段攻击特效",
+      "evidence": "元件4_97.as:18 播放 Role2_hit4；Role2.as:281 创建 hit4FallDown；视觉为黄/青落地光柱。"
+    }
+  ],
+  "rejected": [
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/frames/1.png",
+      "package": "Role_v7",
+      "asset_type": "frames",
+      "character_id": null,
+      "reason": "无 character_id 且视觉为空白"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/monsters/Monster_v1/frames/1.png",
+      "package": "Monster_v1",
+      "asset_type": "frames",
+      "character_id": null,
+      "reason": "无 character_id 且视觉为空白"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/frames/1.png",
+      "package": "Monster2_v4",
+      "asset_type": "frames",
+      "character_id": null,
+      "reason": "无 character_id 且视觉为空白"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/monsters/Monster3_v3/frames/1.png",
+      "package": "Monster3_v3",
+      "asset_type": "frames",
+      "character_id": null,
+      "reason": "无 character_id 且视觉为空白"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/100_hurtnum5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 100,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/101_bulnum4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 101,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/102_hurtnum4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 102,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/103_bulnum3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 103,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/104_hurtnum3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 104,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/106_bulnum2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 106,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/107_hurtnum2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 107,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/109_bulnum1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 109,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/110_hurtnum1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 110,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/112_dsqz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 112,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/114_dsyj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 114,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/118_tndblg.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 118,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/119_tndbthl.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 119,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/11_dhqf.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 11,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/120_zcld.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 120,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/121_bulnum0.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 121,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/122_hurtnum0.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 122,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/124_tsyp.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 124,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/126_tsyj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 126,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/127_bnum9.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 127,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/128_bnum8.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 128,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/129_bnum7.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 129,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/12_jgz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 12,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/130_bnum6.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 130,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/131_bnum5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 131,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/132_bnum4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 132,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/133_bnum3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 133,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/134_bnum2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 134,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/135_bnum1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 135,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/136_bnum0.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 136,
+      "category": "UI/公共素材/数字/bnum_暴击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/2_qlp.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 2,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/36_jhcz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 36,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/38_xhyk.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 38,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/39_jlsmz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 39,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/40_zqj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 40,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/41_qxsh.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 41,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/42_jcsz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 42,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/43_tsgl.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 43,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/44_dslj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 44,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/45_jljs.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 45,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/46_yxjs.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 46,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/47_ptjs.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 47,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/48_ccjs.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 48,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/49_jlxzf.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 49,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/4_xwj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 4,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/50_yxxzf.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 50,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/51_ptxzf.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 51,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/524.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 524,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/528.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 528,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/52_ccxzf.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 52,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/532.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 532,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/536.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 536,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/53_yxsmz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 53,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/540.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 540,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/545.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 545,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/549.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 549,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/54_ptsmz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 54,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/553.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 553,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/557.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 557,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/55_ccsmz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 55,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/561.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 561,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/56_jcbj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 56,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/57_jlxzg.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 57,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/58_yxxzg.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 58,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/59_ptxzg.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 59,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/60_ccxzg.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 60,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/61_qld.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 61,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/63_hjsl.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 63,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/65_bhz.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 65,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/66_pnum9.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 66,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/67_pnum8.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 67,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/68_pnum7.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 68,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/69_pnum6.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 69,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/6_jcys.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 6,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/70_pnum5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 70,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/71_pnum4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 71,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/72_pnum3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 72,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/73_pnum2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 73,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/74_pnum1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 74,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/75_pnum0.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 75,
+      "category": "UI/公共素材/数字/pnum_玩家数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/76_miss.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 76,
+      "category": "UI/公共素材/数字/战斗文字",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/77_bunum9.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 77,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/78_bunum8.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 78,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/79_bunum7.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 79,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/80_bunum6.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 80,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/81_bunum5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 81,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/82_bunum4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 82,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/83_bunum3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 83,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/84_bunum2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 84,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/85_bunum1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 85,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/86_bunum0.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 86,
+      "category": "UI/公共素材/数字/bunum_恢复数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/88_xhxh.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 88,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/8_ryjgb.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 8,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/90_xhmj.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 90,
+      "category": "UI/公共素材/装备/背包图标",
+      "reason": "背包格背景已烘焙，与透明装备通用图标重复"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/91_bulnum9.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 91,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/92_hurtnum9.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 92,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/93_bulnum8.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 93,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/94_hurtnum8.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 94,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/95_bulnum7.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 95,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/96_hurtnum7.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 96,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/97_bulnum6.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 97,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/98_hurtnum6.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 98,
+      "category": "UI/公共素材/数字/hurtnum_伤害数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/99_bulnum5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "images",
+      "character_id": 99,
+      "category": "UI/公共素材/数字/bulnum_子弹数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/525.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 525,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/529.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 529,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/533.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 533,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/537.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 537,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/541.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 541,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/546.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 546,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/550.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 550,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/554.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 554,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/558.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 558,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/shapes/562.svg",
+      "package": "OtherMat_v9",
+      "asset_type": "shapes",
+      "character_id": 562,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_526/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 526,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_527_num9/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 527,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_527_num9/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 527,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_527_num9/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 527,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_527_num9/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 527,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_527_num9/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 527,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_530/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 530,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_531_num8/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 531,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_531_num8/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 531,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_531_num8/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 531,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_531_num8/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 531,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_531_num8/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 531,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_534/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 534,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_535_num7/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 535,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_535_num7/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 535,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_535_num7/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 535,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_535_num7/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 535,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_535_num7/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 535,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_538/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 538,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_539_num6/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 539,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_539_num6/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 539,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_539_num6/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 539,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_539_num6/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 539,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_539_num6/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 539,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_542/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 542,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_543/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 543,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_544_num5/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 544,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_544_num5/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 544,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_544_num5/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 544,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_544_num5/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 544,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_544_num5/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 544,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_547/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 547,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_548_num4/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 548,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_548_num4/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 548,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_548_num4/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 548,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_548_num4/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 548,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_548_num4/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 548,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_551/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 551,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_552_num3/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 552,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_552_num3/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 552,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_552_num3/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 552,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_552_num3/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 552,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_552_num3/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 552,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_555/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 555,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_556_num2/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 556,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_556_num2/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 556,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_556_num2/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 556,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_556_num2/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 556,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_556_num2/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 556,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_559/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 559,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_560_num1/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 560,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_560_num1/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 560,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_560_num1/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 560,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_560_num1/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 560,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_560_num1/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 560,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_563/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 563,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_564_num0/1.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 564,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_564_num0/2.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 564,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_564_num0/3.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 564,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_564_num0/4.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 564,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_564_num0/5.png",
+      "package": "OtherMat_v9",
+      "asset_type": "sprites",
+      "character_id": 564,
+      "category": "UI/公共素材/数字/num_连击数值",
+      "reason": "数字位图由 Godot Text、Style 与 shader 在运行时生成"
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/shared/main/main_game/frames/1.png",
+      "package": "main_game",
+      "asset_type": "frames",
+      "character_id": null,
+      "reason": "无 character_id 且视觉为空白"
+    }
+  ],
+  "counts_by_category": {
+    "UI/4399外壳/未命名素材": 5,
+    "UI/HUD与血条": 203,
+    "UI/HUD与血条/组成元件": 39,
+    "UI/公共界面与图标": 413,
+    "UI/公共界面与图标/未命名素材": 508,
+    "UI/公共素材/关卡入口": 439,
+    "UI/公共素材/技能图标": 60,
+    "UI/公共素材/装备/通用图标": 41,
+    "UI/公共素材/过场动画/片头": 350,
+    "UI/公共素材/过场动画/片尾": 1215,
+    "UI/战斗提示/组成元件": 93,
+    "UI/技能界面": 13,
+    "UI/背包": 134,
+    "UI/背包/未命名素材": 495,
+    "UI/菜单与面板": 14,
+    "UI/菜单与面板/组成元件": 149,
+    "人物/公共元件": 59,
+    "人物/唐僧_Role2/动作片段": 133,
+    "人物/唐僧_Role2/本体": 131,
+    "人物/唐僧_Role2/组成元件": 977,
+    "人物/悟空_Role1/动作片段": 42,
+    "人物/悟空_Role1/本体": 105,
+    "人物/悟空_Role1/组成元件": 617,
+    "公共元件/main_game": 1045,
+    "场景与地图/关卡元件": 676,
+    "怪物/Monster1/本体": 40,
+    "怪物/Monster1/组成元件": 99,
+    "怪物/Monster10_鲛魔王/本体": 53,
+    "怪物/Monster10_鲛魔王/特效": 35,
+    "怪物/Monster10_鲛魔王/特效元件": 48,
+    "怪物/Monster10_鲛魔王/组成元件": 330,
+    "怪物/Monster11_狮驼王/本体": 43,
+    "怪物/Monster11_狮驼王/特效": 241,
+    "怪物/Monster11_狮驼王/特效元件": 49,
+    "怪物/Monster11_狮驼王/组成元件": 357,
+    "怪物/Monster13/本体": 37,
+    "怪物/Monster13/组成元件": 114,
+    "怪物/Monster14/本体": 38,
+    "怪物/Monster14/特效": 1,
+    "怪物/Monster14/特效元件": 1,
+    "怪物/Monster14/组成元件": 104,
+    "怪物/Monster15/本体": 45,
+    "怪物/Monster15/组成元件": 115,
+    "怪物/Monster16/本体": 52,
+    "怪物/Monster16/组成元件": 147,
+    "怪物/Monster17_龟丞相/本体": 30,
+    "怪物/Monster17_龟丞相/组成元件": 125,
+    "怪物/Monster18/本体": 38,
+    "怪物/Monster18/特效": 87,
+    "怪物/Monster18/特效元件": 35,
+    "怪物/Monster18/组成元件": 391,
+    "怪物/Monster19_鲨魔王/本体": 84,
+    "怪物/Monster19_鲨魔王/特效": 105,
+    "怪物/Monster19_鲨魔王/特效元件": 18,
+    "怪物/Monster19_鲨魔王/组成元件": 361,
+    "怪物/Monster2/本体": 43,
+    "怪物/Monster2/组成元件": 113,
+    "怪物/Monster20/本体": 35,
+    "怪物/Monster20/组成元件": 129,
+    "怪物/Monster21_蝙蝠洞/本体": 17,
+    "怪物/Monster21_蝙蝠洞/组成元件": 28,
+    "怪物/Monster22_牛魔王/本体": 18,
+    "怪物/Monster22_牛魔王/组成元件": 223,
+    "怪物/Monster23_牛魔王/本体": 78,
+    "怪物/Monster23_牛魔王/组成元件": 977,
+    "怪物/Monster24_牛魔王/本体": 11,
+    "怪物/Monster24_牛魔王/特效": 2,
+    "怪物/Monster24_牛魔王/特效元件": 60,
+    "怪物/Monster24_牛魔王/组成元件": 56,
+    "怪物/Monster25/本体": 42,
+    "怪物/Monster25/组成元件": 110,
+    "怪物/Monster26_龙王/本体": 71,
+    "怪物/Monster26_龙王/特效": 144,
+    "怪物/Monster26_龙王/特效元件": 86,
+    "怪物/Monster26_龙王/组成元件": 747,
+    "怪物/Monster27_宝箱/本体": 22,
+    "怪物/Monster27_宝箱/组成元件": 38,
+    "怪物/Monster3_大猩猩/本体": 36,
+    "怪物/Monster3_大猩猩/组成元件": 111,
+    "怪物/Monster4_彌猴王/本体": 64,
+    "怪物/Monster4_彌猴王/特效": 50,
+    "怪物/Monster4_彌猴王/特效元件": 12,
+    "怪物/Monster4_彌猴王/组成元件": 285,
+    "怪物/Monster6_禺狨王/本体": 46,
+    "怪物/Monster6_禺狨王/组成元件": 431,
+    "怪物/Monster7/本体": 47,
+    "怪物/Monster7/组成元件": 153,
+    "怪物/Monster8/本体": 39,
+    "怪物/Monster8/组成元件": 182,
+    "怪物/Monster9_彭魔王/本体": 72,
+    "怪物/Monster9_彭魔王/特效": 1,
+    "怪物/Monster9_彭魔王/特效元件": 18,
+    "怪物/Monster9_彭魔王/组成元件": 453,
+    "怪物/公共元件": 80,
+    "特效/公共战斗特效": 137,
+    "特效/唐僧_Role2": 226,
+    "特效/唐僧_Role2/组成元件": 705,
+    "特效/怪物公共特效": 154,
+    "特效/悟空_Role1": 139,
+    "特效/悟空_Role1/组成元件": 380
+  }
+}

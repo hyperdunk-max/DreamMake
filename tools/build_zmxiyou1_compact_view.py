@@ -13,6 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from refine_zmxiyou1_classification import AUDIT_PATH, refine_manifest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_MANIFEST = ROOT / "sources" / "manifests" / "zmxiyou1_image_classification.json"
@@ -183,12 +185,18 @@ def output_category(record: dict[str, Any], monsters_by_old_folder: dict[str, di
     leaf = safe_name(symbol_name)
     parts = category.split("/")
 
+    if category == "怪物/公共元件":
+        return Path("怪物") / "公共元件", "part", "monster_part"
     if category.startswith("怪物/") and len(parts) >= 3:
         old_folder = parts[1]
         info = monsters_by_old_folder[old_folder]
         base = Path("怪物") / monster_folder(info)
         if parts[2] == "特效":
             return base / "特效" / leaf, "fx", "monster_effect"
+        if parts[2] == "特效元件":
+            return base / "特效" / "组成元件" / leaf, "part", "monster_part"
+        if parts[2] in {"组成元件", "共享元件"}:
+            return base / parts[2] / leaf, "part", "monster_part"
         return base, "frame", "monster_body"
     if category == "特效/怪物公共特效":
         return Path("怪物") / "公共特效" / leaf, "fx", "effect"
@@ -201,21 +209,35 @@ def output_category(record: dict[str, Any], monsters_by_old_folder: dict[str, di
     if category.startswith("人物/悟空"):
         if "动作片段" in category:
             return Path("人物") / "悟空" / "动作零件" / leaf, "part", "role_part"
+        if "组成元件" in category or "共享元件" in category:
+            return Path("人物") / "悟空" / "组成元件" / leaf, "part", "role_part"
         return Path("人物") / "悟空", "frame", "role_body"
     if category.startswith("人物/唐僧"):
         if "动作片段" in category:
             return Path("人物") / "唐僧" / "动作零件" / leaf, "part", "role_part"
+        if "组成元件" in category or "共享元件" in category:
+            return Path("人物") / "唐僧" / "组成元件" / leaf, "part", "role_part"
         if symbol_name == "export.hero.Role2Shadow":
             return Path("人物") / "唐僧" / "分身", "frame", "role_body"
         return Path("人物") / "唐僧", "frame", "role_body"
+    if category == "人物/公共元件":
+        return Path("人物") / "公共元件" / leaf, "part", "role_part"
 
     ui_map = {
         "UI/HUD与血条": "HUD",
+        "UI/战斗提示": "HUD",
         "UI/技能界面": "技能",
         "UI/菜单与面板": "菜单",
     }
-    if category in ui_map:
-        return Path("UI") / ui_map[category] / leaf, "ui", "ui"
+    for category_prefix, folder in ui_map.items():
+        if category == category_prefix or category.startswith(category_prefix + "/"):
+            component_folder = Path("组成元件") if category.endswith("/组成元件") else Path()
+            return Path("UI") / folder / component_folder / leaf, "ui", "ui"
+    if category.startswith("UI/公共素材/"):
+        family = parts[2] if len(parts) >= 3 else "其他"
+        detail_parts = [safe_name(part) for part in parts[3:]]
+        detail = Path(*detail_parts) if detail_parts else Path()
+        return Path("UI") / "公共素材" / safe_name(family) / detail / leaf, "ui", "ui"
     if category.startswith("UI/背包"):
         symbol_folder = leaf if symbol_name else "其他"
         return Path("UI") / "背包" / symbol_folder, "bag", "ui"
@@ -225,9 +247,14 @@ def output_category(record: dict[str, Any], monsters_by_old_folder: dict[str, di
     if category.startswith("UI/4399外壳"):
         return Path("UI") / "外壳" / (leaf if symbol_name else "其他"), "ui", "ui"
 
-    package = str(record["package"])
-    asset_type = str(record["asset_type"])
-    return Path("未分类") / package / asset_type, "asset", "unclassified"
+    if category.startswith("场景与地图/"):
+        section = parts[1] if len(parts) >= 2 else "其他"
+        return Path("场景与地图") / safe_name(section) / leaf, "scene", "scene"
+    if category.startswith("公共元件/"):
+        package = str(record["package"])
+        return Path("公共元件") / package / leaf, "part", "shared_part"
+
+    raise ValueError(f"Unsupported refined category: {category!r} for {record['source']}")
 
 
 def link(source: Path, destination: Path) -> None:
@@ -240,7 +267,8 @@ def link(source: Path, destination: Path) -> None:
 def main() -> None:
     if TEMP_ROOT.exists() and any(TEMP_ROOT.iterdir()):
         raise SystemExit(f"Compact output is not empty: {TEMP_ROOT}")
-    source_manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    first_pass_manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    source_manifest = refine_manifest(first_pass_manifest, write_audit=True)
     sprite_maps = {key: parse_sprite_labels(path) for key, path in XML_FILES.items()}
 
     monsters_by_old_folder: dict[str, dict[str, Any]] = {}
@@ -328,20 +356,29 @@ def main() -> None:
     manifest = {
         "generated_at": generated_at,
         "source_manifest": relative(SOURCE_MANIFEST),
+        "reference_audit": relative(AUDIT_PATH),
         "classified_root": relative(FINAL_ROOT),
         "storage": "NTFS hard links",
+        "input_files": len(first_pass_manifest["files"]),
+        "rejected_files": source_manifest["rejected_files"],
         "files": compact_records,
         "monster_action_audit": action_audit,
         "counts_by_category": dict(sorted(category_counts.items())),
     }
-    MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    MANIFEST_PATH.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
 
     lines = [
         "# 《造梦西游1》简洁资源分类",
         "",
         f"生成时间：{generated_at}",
         "",
-        "目录已经压缩为 `人物 / 怪物 / UI / 未分类` 四层主结构。怪物本体依据 SWF `FrameLabel` 拆为待机、移动、攻击、受伤、死亡和特殊动作。",
+        "目录按照 `人物 / 怪物 / UI / 场景与地图 / 公共元件` 分类。怪物本体依据 SWF `FrameLabel` 拆为待机、移动、攻击、受伤、死亡和特殊动作。",
+        f"共保留 {len(compact_records):,} 项有源码、符号、包来源或 SWF 引用链证据的素材；删除 {len(source_manifest['rejected_files'])} 项空白或运行时冗余的分类副本。完整提取库未改动。",
+        "公共素材依据源码引用与视觉特征进一步拆为装备通用图标、关卡入口、技能图标和过场动画；数字由 Godot Text、Style 与 shader 生成。",
         "文件名使用 `idle_001.png`、`attack1_001.png`、`hurt_001.png` 等简洁形式。",
         "",
         "## 怪物动画",
@@ -362,12 +399,18 @@ def main() -> None:
             f"`{relative(MANIFEST_PATH)}`",
             "",
             "分类目录使用硬链接，仅供浏览和复制；不要直接编辑。",
+            f"引用图、人工源码与视觉证据见 `{relative(AUDIT_PATH)}`。",
             "",
         ]
     )
     report = "\n".join(lines)
-    REPORT_PATH.write_text(report, encoding="utf-8")
-    (TEMP_ROOT / "README.md").write_text(report, encoding="utf-8")
+    REPORT_PATH.write_text(report, encoding="utf-8", newline="\n")
+    (TEMP_ROOT / "README.md").write_text(report, encoding="utf-8", newline="\n")
+    (TEMP_ROOT / ".gdignore").write_text(
+        "# Browse-only extracted resources. Runtime-ready selections live outside this tree.\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
     print(
         json.dumps(

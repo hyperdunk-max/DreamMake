@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FloatingNumberStyle" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/ui/floating_number_style.gd" id="1_style"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/zmxiyou1_fangzheng_cuyuan.ttf" id="2_font"]
+
+[resource]
+script = ExtResource("1_style")
+style_id = &"bunum"
+display_name = "恢复数值（绿）"
+font = ExtResource("2_font")
+font_size = 24
+fill_color = Color(0.25, 0.72, 0.09, 1)
+inner_outline_color = Color(1, 1, 1, 1)
+inner_outline_size = 2
+outer_outline_color = Color(0.03, 0.12, 0.02, 1)
+outer_outline_size = 4
+glow_color = Color(0.35, 1, 0.12, 0.38)
+glow_radius = 2.5
+glow_strength = 0.65
+shadow_offset = Vector2(1, 2)
+shadow_size = 1
+intro_scale = 1.25

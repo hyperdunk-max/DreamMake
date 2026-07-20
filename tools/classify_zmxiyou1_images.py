@@ -79,7 +79,13 @@ def visual_character_id(package: Package, path: Path) -> int | None:
     if parts and parts[0] == "sprites" and len(parts) >= 2:
         match = re.match(r"DefineSprite_(\d+)(?:_|$)", parts[1])
         return int(match.group(1)) if match else None
-    if parts and parts[0] in {"images", "shapes", "buttons", "morphshapes"}:
+    if parts and parts[0] == "buttons" and len(parts) >= 2:
+        # Button exports use state filenames such as 1_up.png.  The SWF
+        # character id is encoded in the parent DefineButton[2]_<id> folder,
+        # not in the state number at the start of the filename.
+        match = re.match(r"DefineButton(?:2)?_(\d+)(?:_|$)", parts[1])
+        return int(match.group(1)) if match else None
+    if parts and parts[0] in {"images", "shapes", "morphshapes"}:
         match = re.match(r"(\d+)(?:_|\.|$)", path.name)
         return int(match.group(1)) if match else None
     return None
@@ -334,7 +340,11 @@ def main() -> None:
         "files": records,
     }
     MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    MANIFEST_PATH.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
 
     lines = [
         "# 《造梦西游1》图片用途分类",
@@ -378,8 +388,8 @@ def main() -> None:
         ]
     )
     report = "\n".join(lines)
-    REPORT_PATH.write_text(report, encoding="utf-8")
-    (OUTPUT_ROOT / "README.md").write_text(report, encoding="utf-8")
+    REPORT_PATH.write_text(report, encoding="utf-8", newline="\n")
+    (OUTPUT_ROOT / "README.md").write_text(report, encoding="utf-8", newline="\n")
 
     print(
         json.dumps(

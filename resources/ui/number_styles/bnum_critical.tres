@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="FloatingNumberStyle" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/ui/floating_number_style.gd" id="1_style"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/zmxiyou1_fangzheng_cuyuan.ttf" id="2_font"]
+
+[resource]
+script = ExtResource("1_style")
+style_id = &"bnum"
+display_name = "暴击伤害（红）"
+font = ExtResource("2_font")
+font_size = 34
+fill_color = Color(0.94, 0.02, 0.015, 1)
+inner_outline_color = Color(1, 1, 1, 1)
+inner_outline_size = 3
+outer_outline_color = Color(0.12, 0.0, 0.0, 1)
+outer_outline_size = 6
+glow_color = Color(1, 0.05, 0.02, 0.52)
+glow_radius = 4.0
+glow_strength = 0.95
+shadow_offset = Vector2(2, 3)
+shadow_size = 2
+intro_scale = 1.65
+rise_distance = 52.0
