@@ -11,4 +11,8 @@ __pycache__/
 # Raw Flash sources and extracted copyrighted assets stay local by default.
 sources/raw/
 sources/decoded/
-assets/extracted/
+assets/extracted/*
+!assets/extracted/.gdignore
+!assets/extracted/classified/
+assets/extracted/classified/*
+!assets/extracted/classified/zmxiyou1/
