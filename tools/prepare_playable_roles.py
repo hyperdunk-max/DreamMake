@@ -1,19 +1,19 @@
-"""Prepare selected role atlases and source-anchored normal-attack effects.
+"""Promote role atlases and normal-attack effects into ``assets/selected``.
 
-The full Flash extraction stays behind ``.gdignore``.  This script copies the
-small, reviewable subset used by the Godot prototype into ``assets/selected``
-without repainting, cropping, or resampling any PNG.
+Promotion is move-only: once a byte-identical PNG becomes a selected runtime
+asset, the classified source position is removed and retained only as
+provenance in the manifest.
 """
 
 from __future__ import annotations
 
 import json
-import shutil
+import hashlib
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "assets" / "extracted" / "full" / "zmxiyou3" / "characters"
+SOURCE = ROOT / "assets" / "extracted" / "classified" / "zmxiyou3" / "人物"
 DESTINATION = ROOT / "assets" / "selected" / "zmxiyou3"
 
 
@@ -66,21 +66,32 @@ EFFECTS = {
 }
 
 
-def copy_file(source: Path, destination: Path, **metadata: object) -> dict[str, object]:
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def promote_file(source: Path, destination: Path, **metadata: object) -> dict[str, object]:
     if not source.is_file():
         raise FileNotFoundError(f"Missing extracted asset: {source}")
     destination.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(source, destination)
+    if destination.exists():
+        if sha256(source) != sha256(destination):
+            raise RuntimeError(f"Existing selected file differs from source: {destination}")
+        source.unlink()
+    else:
+        source.replace(destination)
     return {
-        "source": source.relative_to(ROOT).as_posix(),
-        "destination": destination.relative_to(ROOT).as_posix(),
+        "canonical": destination.relative_to(ROOT).as_posix(),
+        "original_source": source.relative_to(ROOT).as_posix(),
+        "sha256": sha256(destination),
         "bytes": destination.stat().st_size,
         **metadata,
     }
 
 
 def find_atlas(role_key: str, source_kind: str, prefix: str, showid: int) -> Path:
-    image_directory = SOURCE / role_key / source_kind / str(showid) / f"{prefix}_{showid}" / "images"
+    role_names = {"wukong": "悟空", "tangseng": "唐僧", "bajie": "八戒", "shaseng": "沙僧"}
+    image_directory = SOURCE / role_names[role_key] / source_kind / str(showid) / f"{prefix}_{showid}" / "images"
     matches = sorted(image_directory.glob("1_*.png"))
     if len(matches) != 1:
         raise FileNotFoundError(f"Expected one bitmap atlas in {image_directory}, found {len(matches)}")
@@ -101,7 +112,7 @@ def prepare_equipment() -> list[dict[str, object]]:
                 if mode != "default":
                     destination /= mode
                 destination = destination / f"showid_{showid}" / "source_atlas.png"
-                record = copy_file(
+                record = promote_file(
                     source,
                     destination,
                     kind="weapon" if destination_kind == "weapon" else "body",
@@ -110,7 +121,7 @@ def prepare_equipment() -> list[dict[str, object]]:
                     showid=showid,
                 )
                 copied.append(record)
-                entries.append({"showid": showid, "file": record["destination"]})
+                entries.append({"showid": showid, "file": record["canonical"]})
             role_catalog["categories"][destination_kind] = entries
         catalog_path = DESTINATION / role_key / "equipment_catalog.json"
         catalog_path.parent.mkdir(parents=True, exist_ok=True)
@@ -126,7 +137,8 @@ def prepare_effects() -> list[dict[str, object]]:
     copied: list[dict[str, object]] = []
     for role_key, effects in EFFECTS.items():
         for action, (package, symbol, sprite_offset) in effects.items():
-            source_directory = SOURCE / "mixed_packages" / package / "sprites" / symbol
+            role_names = {"wukong": "悟空", "tangseng": "唐僧", "bajie": "八戒", "shaseng": "沙僧"}
+            source_directory = SOURCE / role_names[role_key] / "技能与动作" / package / "sprites" / symbol
             frames = sorted(source_directory.glob("*.png"), key=lambda path: int(path.stem))
             if not frames:
                 raise FileNotFoundError(f"Missing extracted effect frames: {source_directory}")
@@ -135,7 +147,7 @@ def prepare_effects() -> list[dict[str, object]]:
                     DESTINATION / role_key / "effects" / "normal_attack" / action / f"frame_{frame_index:02d}.png"
                 )
                 copied.append(
-                    copy_file(
+                    promote_file(
                         source,
                         destination,
                         action=action,
@@ -149,19 +161,28 @@ def prepare_effects() -> list[dict[str, object]]:
 
 
 def main() -> None:
+    manifest_path = DESTINATION / "playable_roles_manifest.json"
+    if manifest_path.is_file():
+        existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if existing.get("files") and all("canonical" in record for record in existing["files"]):
+            for record in existing["files"]:
+                canonical = ROOT / record["canonical"]
+                if not canonical.is_file() or sha256(canonical) != record["sha256"]:
+                    raise RuntimeError(f"Canonical selected file failed verification: {canonical}")
+            print(f"Verified {len(existing['files'])} already-promoted PNG files")
+            return
     files = prepare_equipment() + prepare_effects()
     manifest = {
         "purpose": "Playable equipment variants and source-anchored normal-attack effects",
-        "policy": "Byte-for-byte copies of extracted PNG files; no repainting, cropping, or resampling",
+        "policy": "One canonical selected PNG per asset; classified source positions are removed after SHA-256 verification",
         "files": files,
     }
-    manifest_path = DESTINATION / "playable_roles_manifest.json"
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
         newline="\n",
     )
-    print(f"Prepared {len(files)} source PNG files")
+    print(f"Promoted {len(files)} source PNG files")
     print(manifest_path)
 
 

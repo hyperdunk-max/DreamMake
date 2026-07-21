@@ -4,14 +4,13 @@
 from __future__ import annotations
 
 import json
-import shutil
 from pathlib import Path
 
 from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role2v3550"
+PACKAGE = ROOT / "assets/extracted/classified/zmxiyou3/人物/唐僧/技能与动作/Role2v3550"
 SOURCE = PACKAGE / "sprites"
 DESTINATION = ROOT / "assets/selected/zmxiyou3/tangseng/effects/skills"
 SHADOW_DESTINATION = ROOT / "assets/selected/zmxiyou3/tangseng/shadow/source_atlas.png"
@@ -123,7 +122,15 @@ def prepare_effect(effect_id: str, symbol: str) -> dict[str, object]:
 def main() -> None:
     records = [prepare_effect(effect_id, symbol) for effect_id, symbol in EFFECTS.items()]
     SHADOW_DESTINATION.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(PACKAGE / "images/1_ROLE2_SHALLDOW.png", SHADOW_DESTINATION)
+    shadow_source = PACKAGE / "images/1_ROLE2_SHALLDOW.png"
+    if shadow_source.exists() and SHADOW_DESTINATION.exists():
+        if shadow_source.read_bytes() != SHADOW_DESTINATION.read_bytes():
+            raise RuntimeError(f"Existing shadow atlas differs from source: {SHADOW_DESTINATION}")
+        shadow_source.unlink()
+    elif shadow_source.exists():
+        shadow_source.replace(SHADOW_DESTINATION)
+    elif not SHADOW_DESTINATION.exists():
+        raise FileNotFoundError(f"Missing shadow atlas: {shadow_source}")
     shadow_atlas = Image.open(SHADOW_DESTINATION).convert("RGBA")
     SHADOW_FRAMES.mkdir(parents=True, exist_ok=True)
     for column in range(4):

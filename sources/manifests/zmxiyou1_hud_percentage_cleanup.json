@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-07-21",
+  "policy": "sources/ASSET_ORGANIZATION_GUIDE.md",
+  "scope": "assets/extracted/classified/zmxiyou1/UI/HUD",
+  "source_archives_preserved": [
+    "sources/raw",
+    "sources/decoded",
+    "assets/extracted/full/zmxiyou1"
+  ],
+  "flash_evidence": {
+    "script": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/scripts/export/RoleInfo.as",
+    "method": "RoleInfo.step",
+    "controls": ["hpline", "mpline", "expline", "wsmc"],
+    "behavior": "gotoAndStop selects a timeline frame from a percentage or integer gauge value"
+  },
+  "runtime_replacement": {
+    "engine": "Godot 4",
+    "component": "TextureProgressBar",
+    "canonical_fill_count_per_style": 1,
+    "optional_integer_step": 1
+  },
+  "retained_player_hud": [
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/hp_slider.png",
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/hp_slider_bg.png",
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/mp_slider.png",
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/energy_slider.png",
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/exp_slider.png",
+    "assets/extracted/classified/zmxiyou1/UI/HUD/PlayerHud/exp_slider_bg.png"
+  ],
+  "semantic_variants_retained": {
+    "directory": "assets/extracted/classified/zmxiyou1/UI/HUD/BossName",
+    "count": 11,
+    "reason": "different boss names, not percentage frames"
+  },
+  "classified_cleanup": {
+    "commit": "babd91b",
+    "removed_total": 321,
+    "groups": [
+      {"name": "BossBlood", "removed": 100},
+      {"name": "血_135", "removed": 101},
+      {"name": "GOGO", "removed": 67},
+      {"name": "other_unused_hud_parts", "removed": 53}
+    ],
+    "retained_total": 18
+  },
+  "apply_same_policy_to": ["zmxiyou2", "zmxiyou3"]
+}

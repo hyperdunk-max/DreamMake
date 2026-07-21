@@ -11,8 +11,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = ROOT / "assets/extracted/full/zmxiyou3/characters/wukong/body"
-WEAPON_SOURCE_ROOT = ROOT / "assets/extracted/full/zmxiyou3/characters/wukong/weapon"
+SOURCE_ROOT = ROOT / "assets/extracted/classified/zmxiyou3/人物/悟空/body"
+WEAPON_SOURCE_ROOT = ROOT / "assets/extracted/classified/zmxiyou3/人物/悟空/weapon"
 SELECTED_ROOT = ROOT / "assets/selected/zmxiyou3/wukong"
 OUTPUT_ROOT = SELECTED_ROOT / "review"
 CANDIDATE_ROOT = SELECTED_ROOT / "body_candidates"

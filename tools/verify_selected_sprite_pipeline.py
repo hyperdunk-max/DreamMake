@@ -62,11 +62,9 @@ def parse_visual_nudge(profile_path: Path) -> tuple[float, float]:
 def verify_fidelity() -> int:
     manifest = json.loads((SELECTED / "playable_roles_manifest.json").read_text(encoding="utf-8"))
     for record in manifest["files"]:
-        source = ROOT / record["source"]
-        destination = ROOT / record["destination"]
-        assert source.is_file(), f"Missing source: {source}"
-        assert destination.is_file(), f"Missing selected file: {destination}"
-        assert sha256(source) == sha256(destination), f"Selected PNG changed: {destination}"
+        canonical = ROOT / record["canonical"]
+        assert canonical.is_file(), f"Missing canonical selected file: {canonical}"
+        assert sha256(canonical) == record["sha256"], f"Selected PNG changed: {canonical}"
     return len(manifest["files"])
 
 

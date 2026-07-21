@@ -51,6 +51,10 @@ func register_role(
 		return false
 
 	_profile = profile
+	# Keep both equipment layers at or above the actor's base canvas layer.
+	# A negative profile value means "behind the body", not "behind the world".
+	body.z_index = maxi(0, -profile.weapon_z_index)
+	weapon.z_index = maxi(0, profile.weapon_z_index)
 	_registered_role_id = role_id
 	_animations.clear()
 	_current_action = &""

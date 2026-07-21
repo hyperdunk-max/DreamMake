@@ -3,7 +3,8 @@
   "source_url_base": "https://sbai.4399.com/4399swf/upload_swf/ftp5/hanbao/20110624/3/",
   "sources": {
     "v25928.swf": "A5E9650CA4C3B779D62FB7987A0B7E7D5AF5983B3197FA2F2E846A91B3F9CCCE",
-    "Monster_v1.swf": "A6552637AC61553C3E021C79B725587CBA66F6303E3245180ABABD1F7DB97026"
+    "Monster_v1.swf": "A6552637AC61553C3E021C79B725587CBA66F6303E3245180ABABD1F7DB97026",
+    "Monster2_v4.swf": "42A301A5AE4222AEC54DFDC4C14EFCED48B9AD4F979902471011FF226D8CD09B"
   },
   "selection": [
     {
@@ -39,6 +40,18 @@
       "swf_bitmap_id": 140,
       "alpha_composed": true,
       "sha256": "B197C93F8968F8BE501DB1489AACBBDF56D7D3189889E28F464A517AA29F3100"
+    },
+    {
+      "file": "monsters/m17_turtle_chancellor/attack1_unique.png",
+      "container": "Monster2_v4.swf -> export.monster.Monster17 -> hit1",
+      "source_character_id": 1228,
+      "source_timeline_frames": [7, 8, 9, 10, 11, 12],
+      "unique_source_frames": [7, 9, 11, 12],
+      "crop_rect": [407, 0, 127, 83],
+      "virtual_frame_size": [541, 86],
+      "logical_frame_order": [0, 0, 1, 1, 2, 3],
+      "selection_reason": "Runtime attack spritesheet with exact duplicate pixels removed and shared transparent bounds cropped; SpriteFrames restores the original six-tick timing and virtual canvas.",
+      "sha256": "0E211CAE8855605E8FA43D86D6B2BE76E3BF78A063285264461A96557EE5EC70"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "name": "斗战",
   "format": "movieclip_sprite_groups",
   "outer_action_group": "DefineSprite_130_ROLE1_11",
-  "source": "assets/extracted/full/zmxiyou3/characters/wukong/body/11/ROLE1_11/sprites",
+  "source": "assets/extracted/classified/zmxiyou3/人物/悟空/body/11/ROLE1_11/sprites",
   "sprite_groups": [
     {
       "group": "DefineSprite_102",

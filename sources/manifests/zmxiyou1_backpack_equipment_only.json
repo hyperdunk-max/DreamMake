@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-07-21",
+  "policy": "sources/ASSET_ORGANIZATION_GUIDE.md",
+  "scope": "assets/extracted/classified/zmxiyou1/UI/背包",
+  "source_archive_preserved": true,
+  "decision": "背包分类目录只保留武器贴图和防具贴图",
+  "previous_state": {
+    "files": 560,
+    "description": "时间轴首次语义整理后的状态，包含装备层、基础预览、等级徽章、经验条、面板和其他提取素材"
+  },
+  "final_state": {
+    "files": 45,
+    "root": "assets/extracted/classified/zmxiyou1/UI/背包/装备贴图",
+    "categories": {
+      "武器": 16,
+      "防具": 29
+    },
+    "roles": {
+      "悟空": {
+        "武器": 8,
+        "防具": 20
+      },
+      "唐僧": {
+        "武器": 8,
+        "防具": 9
+      }
+    }
+  },
+  "removed_or_excluded": {
+    "files": 515,
+    "groups": [
+      {"name": "背包面板与按钮", "files": 5},
+      {"name": "其他未语义化导出及重复组合预览", "files": 467},
+      {"name": "经验条", "files": 1},
+      {"name": "等级徽章", "files": 40},
+      {"name": "悟空和唐僧基础人物预览", "files": 2}
+    ]
+  },
+  "retained_layout": [
+    "装备贴图/悟空/武器/weapon1/showid_01.png-showid_08.png",
+    "装备贴图/悟空/防具/cloth1/showid_02.png-showid_06.png",
+    "装备贴图/悟空/防具/cloth2/showid_02.png-showid_06.png",
+    "装备贴图/悟空/防具/cloth3/showid_02.png-showid_06.png",
+    "装备贴图/悟空/防具/cloth4/showid_02.png-showid_06.png",
+    "装备贴图/唐僧/武器/weapon1/showid_01.png-showid_08.png",
+    "装备贴图/唐僧/防具/cloth/showid_02.png-showid_06.png",
+    "装备贴图/唐僧/防具/head/showid_03.png-showid_06.png"
+  ],
+  "usage": {
+    "combat_animation": false,
+    "original_flash_usage": "背包静态换装预览",
+    "godot_usage": "可作为装备预览或图层组合素材"
+  }
+}

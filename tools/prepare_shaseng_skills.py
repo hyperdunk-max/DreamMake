@@ -10,7 +10,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role4v3550"
+PACKAGE = ROOT / "assets/extracted/classified/zmxiyou3/人物/沙僧/技能与动作/Role4v3550"
 SOURCE = PACKAGE / "sprites"
 DESTINATION = ROOT / "assets/selected/zmxiyou3/shaseng/effects/skills"
 

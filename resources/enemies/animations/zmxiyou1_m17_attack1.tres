@@ -1,0 +1,49 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/monsters/m17_turtle_chancellor/attack1_unique.png" id="1_attack"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_attack_a"]
+atlas = ExtResource("1_attack")
+region = Rect2(0, 0, 127, 83)
+margin = Rect2(407, 0, 414, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_attack_b"]
+atlas = ExtResource("1_attack")
+region = Rect2(127, 0, 127, 83)
+margin = Rect2(407, 0, 414, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_attack_c"]
+atlas = ExtResource("1_attack")
+region = Rect2(254, 0, 127, 83)
+margin = Rect2(407, 0, 414, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_attack_d"]
+atlas = ExtResource("1_attack")
+region = Rect2(381, 0, 127, 83)
+margin = Rect2(407, 0, 414, 3)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attack_d")
+}],
+"loop": false,
+"name": &"attack1",
+"speed": 24.0
+}]

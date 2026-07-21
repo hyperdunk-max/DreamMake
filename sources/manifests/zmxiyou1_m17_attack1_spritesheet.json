@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-07-21",
+  "game": "zmxiyou1",
+  "asset_type": "real_animation_spritesheet",
+  "source": {
+    "raw_swf": "sources/raw/zmxiyou1/Monster2_v4.swf",
+    "decoded_swf": "sources/decoded/zmxiyou1/Monster2_v4.swf",
+    "raw_swf_sha256": "42a301a5ae4222aec54dfdc4c14efced48b9ad4f979902471011ff226d8cd09b",
+    "package": "Monster2_v4",
+    "symbol_name": "export.monster.Monster17",
+    "character_id": 1228,
+    "monster": "M17_龟丞相",
+    "action_label": "hit1",
+    "timeline_frames": [7, 8, 9, 10, 11, 12],
+    "code_called": true
+  },
+  "input": {
+    "directory": "assets/extracted/classified/zmxiyou1/怪物/M17_龟丞相/攻击1",
+    "frame_count": 6,
+    "frame_width": 541,
+    "frame_height": 86,
+    "frames": [
+      {
+        "slot": 1,
+        "file": "attack1_001.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/7.png",
+        "sha256": "4249cd75618b575fa6000622a4dab0933f1f84611aefc5b7db4233b7c8804bc0"
+      },
+      {
+        "slot": 2,
+        "file": "attack1_002.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/8.png",
+        "sha256": "4249cd75618b575fa6000622a4dab0933f1f84611aefc5b7db4233b7c8804bc0"
+      },
+      {
+        "slot": 3,
+        "file": "attack1_003.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/9.png",
+        "sha256": "ac1255e74ed1151ed374c031cad049ab24aa49812c0f2a9d8507539c7c861fd6"
+      },
+      {
+        "slot": 4,
+        "file": "attack1_004.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/10.png",
+        "sha256": "ac1255e74ed1151ed374c031cad049ab24aa49812c0f2a9d8507539c7c861fd6"
+      },
+      {
+        "slot": 5,
+        "file": "attack1_005.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/11.png",
+        "sha256": "6a5bca74fcbbc7b4b1774934b4d68b3a3c9e9efb3938bb291c500f2872cb368b"
+      },
+      {
+        "slot": 6,
+        "file": "attack1_006.png",
+        "full_extraction_source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/sprites/DefineSprite_1228_export.monster.Monster17/12.png",
+        "sha256": "5d3c6314bb372020b937ca954e6da55405d461b1092d25a53fd1d6227557399b"
+      }
+    ]
+  },
+  "output": {
+    "file": "assets/extracted/classified/zmxiyou1/怪物/M17_龟丞相/攻击1/attack1_spritesheet.png",
+    "width": 3246,
+    "height": 86,
+    "layout": {
+      "columns": 6,
+      "rows": 1,
+      "frame_width": 541,
+      "frame_height": 86,
+      "order": "left_to_right"
+    },
+    "sha256": "3c233762961ec4a4915c7770c28563fdcc74c79326363304dcc1cde9297a3921",
+    "transparency": "RGBA",
+    "anchor_policy": "Preserve each source frame's full 541x86 canvas and existing registration; no cropping, scaling, or re-anchoring."
+  },
+  "decisions": {
+    "classification": "真实攻击动画",
+    "duplicate_slots": [
+      [1, 2],
+      [3, 4]
+    ],
+    "duplicate_policy": "Keep all six slots in the classified spritesheet for direct review. The selected runtime sheet stores four unique regions, while SpriteFrames references A,A,B,B,C,D to preserve the original timing.",
+    "source_frame_policy": "Keep all six classified PNG frames and all full-extraction frames; this operation adds a runtime-friendly spritesheet and deletes nothing.",
+    "frame_rate": 24,
+    "frame_rate_note": "The extracted game documentation identifies the original 940x590 game SWF as 24 FPS. Six logical frames therefore play for 0.25 seconds."
+  },
+  "godot_usage": {
+    "hframes": 6,
+    "vframes": 1,
+    "frame_order": [0, 1, 2, 3, 4, 5],
+    "loop": false
+  },
+  "runtime_selection": {
+    "sheet": "assets/selected/zmxiyou1/monsters/m17_turtle_chancellor/attack1_unique.png",
+    "sprite_frames": "resources/enemies/animations/zmxiyou1_m17_attack1.tres",
+    "sheet_width": 508,
+    "sheet_height": 83,
+    "unique_region_count": 4,
+    "region_width": 127,
+    "region_height": 83,
+    "crop_rect_in_source_frame": [407, 0, 127, 83],
+    "virtual_frame_width": 541,
+    "virtual_frame_height": 86,
+    "atlas_margin": [407, 0, 414, 3],
+    "logical_frame_order": [0, 0, 1, 1, 2, 3],
+    "speed_fps": 24,
+    "duration_seconds": 0.25,
+    "loop": false,
+    "sha256": "0e211cae8855605e8fa43d86d6b2be76e3bf78a063285264461a96557ee5ec70",
+    "area_reduction_percent_vs_classified_sheet": 84.9
+  },
+  "validation": {
+    "dimensions_checked": true,
+    "rgba_slice_exact": true,
+    "selected_crop_rgba_exact": true,
+    "selected_reconstruction_rgba_exact": true,
+    "godot_import_succeeded": true,
+    "sprite_frames_load_succeeded": true,
+    "logical_frame_count": 6,
+    "unique_region_count": 4,
+    "virtual_frame_size_checked": [541, 86],
+    "visual_preview_checked": true,
+    "deleted_files": []
+  },
+  "unresolved": [
+    "Confirm the active hitbox frames from the original stick timeline before wiring AttackArea2D.",
+    "Validate the same virtual pivot against idle, move, hurt and death when the complete M17 runtime animation set is selected."
+  ]
+}

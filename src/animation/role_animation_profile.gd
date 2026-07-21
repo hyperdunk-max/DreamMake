@@ -9,6 +9,7 @@ extends Resource
 @export_enum("Left:-1", "Right:1") var source_facing := -1
 @export var visual_offset := Vector2.ZERO
 @export var visual_nudge := Vector2.ZERO
+@export var weapon_z_index := 1
 @export var default_action: StringName = &"idle"
 @export var default_body_showid := 0
 @export var default_weapon_showid := 0

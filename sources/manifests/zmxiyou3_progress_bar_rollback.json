@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-21T20:24:51+08:00",
+  "game": "zmxiyou3",
+  "action": "revert progress bar cleanup",
+  "cleanup_manifest": "sources/manifests/zmxiyou3_progress_bar_cleanup.json",
+  "restored_files": 705,
+  "restored_retained_moves": 8,
+  "restored_deleted_exports": 697,
+  "sha256_verified": 705,
+  "removed_empty_standard_directories": [
+    "assets/extracted/classified/zmxiyou3/UI/HUD/进度条/Boss",
+    "assets/extracted/classified/zmxiyou3/UI/HUD/进度条/加载",
+    "assets/extracted/classified/zmxiyou3/UI/HUD/进度条/角色",
+    "assets/extracted/classified/zmxiyou3/UI/HUD/进度条",
+    "assets/extracted/classified/zmxiyou3/UI/HUD"
+  ],
+  "source_exports": [
+    ".tools/restore_progress/OtherMatv3570",
+    ".tools/restore_progress/Commonv3720",
+    ".tools/restore_progress/main_game"
+  ],
+  "preflight": {
+    "checked_files": 705,
+    "errors": 0
+  }
+}

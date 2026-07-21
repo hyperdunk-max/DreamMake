@@ -17,6 +17,7 @@ SOURCES = ROOT / "sources"
 INDEX_PATH = SOURCES / "manifests" / "full_extraction_index.json"
 UNAVAILABLE_PATH = SOURCES / "manifests" / "unavailable_resources.json"
 REPORT_PATH = SOURCES / "FULL_EXTRACTION_REPORT.md"
+ZMXIYOU2_ORGANIZATION_PATH = SOURCES / "manifests" / "zmxiyou2_standard_cleanup.json"
 
 FFDEC_TYPES = {
     "binaryData",
@@ -74,6 +75,11 @@ def main() -> None:
     markers = [read_json(path) for path in sorted(STATE.glob("*.json"))]
     download_report = read_json(TOOLS / "full_resource_report.json")
     export_report = read_json(TOOLS / "full_export_report.json")
+    classified_rows_by_package: dict[str, list[dict[str, object]]] = defaultdict(list)
+    if ZMXIYOU2_ORGANIZATION_PATH.is_file():
+        organization = read_json(ZMXIYOU2_ORGANIZATION_PATH)
+        for row in organization.get("retained_files", organization.get("files", [])):
+            classified_rows_by_package[str(row["package"])].append(row)
 
     packages_by_game: Counter[str] = Counter()
     packages_by_category: Counter[tuple[str, str]] = Counter()
@@ -103,6 +109,7 @@ def main() -> None:
         package_file_count = 0
         package_bytes = 0
         package_type_files: Counter[str] = Counter()
+        recorded_output = str(output.relative_to(ROOT)).replace("\\", "/")
         if output.exists():
             for path in output.rglob("*"):
                 if not path.is_file():
@@ -118,6 +125,26 @@ def main() -> None:
                 game_files[game] += 1
                 game_bytes[game] += size
                 extensions[path.suffix.lower() or "[no extension]"] += 1
+        elif game == "zmxiyou2" and classified_rows_by_package:
+            old_game_root = EXPORT_ROOT / game
+            package_key = "__".join(output.relative_to(old_game_root).parts)
+            fallback_rows = classified_rows_by_package.get(package_key, [])
+            old_package_prefix = output.relative_to(ROOT).as_posix()
+            for row in fallback_rows:
+                destination = ROOT / str(row["destination"])
+                size = int(row["bytes"])
+                source_relative = Path(str(row["source"])).relative_to(old_package_prefix)
+                relative_parts = source_relative.parts
+                asset_type = relative_parts[0] if relative_parts and relative_parts[0] in FFDEC_TYPES else "other"
+                type_files[asset_type] += 1
+                type_bytes[asset_type] += size
+                package_type_files[asset_type] += 1
+                package_file_count += 1
+                package_bytes += size
+                game_files[game] += 1
+                game_bytes[game] += size
+                extensions[destination.suffix.lower() or "[no extension]"] += 1
+            recorded_output = f"assets/extracted/classified/zmxiyou2 (manifest package {package_key})"
 
         package_rows.append(
             {
@@ -126,7 +153,7 @@ def main() -> None:
                 "category": category,
                 "origin": resource["origin"],
                 "source_sha256": marker["source_sha256"],
-                "output": str(output.relative_to(ROOT)).replace("\\", "/"),
+                "output": recorded_output,
                 "files": package_file_count,
                 "bytes": package_bytes,
                 "types": dict(sorted(package_type_files.items())),
@@ -178,8 +205,8 @@ def main() -> None:
     }
 
     INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
-    INDEX_PATH.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
-    UNAVAILABLE_PATH.write_text(json.dumps(unavailable, ensure_ascii=False, indent=2), encoding="utf-8")
+    INDEX_PATH.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
+    UNAVAILABLE_PATH.write_text(json.dumps(unavailable, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
 
     lines = [
         "# 《造梦西游》1–3 全资源提取报告",
@@ -241,7 +268,9 @@ def main() -> None:
             "",
             "## 目录与索引",
             "",
-            "- 全部导出资源：`assets/extracted/full/`",
+            "- 造 1 完整导出：`assets/extracted/full/zmxiyou1/`",
+            "- 造 2 唯一分类库：`assets/extracted/classified/zmxiyou2/`",
+            "- 造 3 唯一分类库：`assets/extracted/classified/zmxiyou3/`（移动式整理，不另留完整提取副本）",
             "- 完整机器索引：`sources/manifests/full_extraction_index.json`",
             "- HTTP 404 候选详单：`sources/manifests/unavailable_resources.json`",
             "- 下载审计：`.tools/full_resource_report.json`",
@@ -256,7 +285,7 @@ def main() -> None:
             "",
         ]
     )
-    REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
+    REPORT_PATH.write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
     print(json.dumps({
         "containers": len(markers),

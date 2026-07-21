@@ -1,10 +1,10 @@
 # 《造梦西游》1–3 全资源提取报告
 
-> 生成时间：2026-07-14T16:34:58+08:00
+> 生成时间：2026-07-21T17:37:42+08:00
 
 ## 结论
 
-已成功导出 **243 个有效 SWF 容器**，共 **119,360 个文件**（**4.45 GB**）。导出失败和超时均为 0。
+已成功导出 **243 个有效 SWF 容器**，共 **119,203 个文件**（**4.42 GB**）。导出失败和超时均为 0。
 
 资源来自客户端主程序、网页外层加载器以及客户端代码实际发现的动态 SWF 地址。远端共检查 461 个候选地址，其中 237 个仍可取得；224 个返回 HTTP 404，未冒充为已提取资源，详单见 `sources/manifests/unavailable_resources.json`。造 3 页面旧 `sda` 地址返回的 23 KB 错误提示动画不计入游戏资源。
 
@@ -14,7 +14,7 @@
 | --- | --- | --- | --- |
 | 造梦西游 1 | 9 | 19,593 | 691.15 MB |
 | 造梦西游 2 | 19 | 35,444 | 1.12 GB |
-| 造梦西游 3 | 215 | 64,323 | 2.65 GB |
+| 造梦西游 3 | 215 | 64,166 | 2.62 GB |
 
 ## FFDec 类型分类
 
@@ -24,12 +24,12 @@
 | buttons | 2,240 | 23.16 MB |
 | fonts | 54 | 13.30 MB |
 | frames | 246 | 1.50 MB |
-| images | 9,330 | 636.87 MB |
+| images | 9,263 | 605.80 MB |
 | morphshapes | 16 | 27.84 KB |
 | scripts | 16,797 | 94.38 MB |
 | shapes | 16,442 | 1.25 GB |
 | sounds | 185 | 7.86 MB |
-| sprites | 73,208 | 2.43 GB |
+| sprites | 73,118 | 2.43 GB |
 | symbolClass | 243 | 119.65 KB |
 | texts | 588 | 4.60 KB |
 
@@ -78,7 +78,9 @@
 
 ## 目录与索引
 
-- 全部导出资源：`assets/extracted/full/`
+- 造 1 完整导出：`assets/extracted/full/zmxiyou1/`
+- 造 2 唯一分类库：`assets/extracted/classified/zmxiyou2/`
+- 造 3 唯一分类库：`assets/extracted/classified/zmxiyou3/`（移动式整理，不另留完整提取副本）
 - 完整机器索引：`sources/manifests/full_extraction_index.json`
 - HTTP 404 候选详单：`sources/manifests/unavailable_resources.json`
 - 下载审计：`.tools/full_resource_report.json`

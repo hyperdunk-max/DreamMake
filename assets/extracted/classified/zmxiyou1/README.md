@@ -54,3 +54,16 @@
 依据 SWF 定义引用链与归一化视觉比对，删除 626 个与保留 PNG 等价的 SVG/JPG 分类副本；分类目录现保留 17,424 项素材。完整提取库未改动。
 
 逐项证据见 `sources/manifests/zmxiyou1_format_duplicates.json`。
+
+## HUD 百分比帧精简
+
+生命、魔法、经验、能量和 Boss 血条若只是通过 `gotoAndStop` 按百分比切换长度，分类库只保留一张完整填充图及必要的底槽/边框；运行时由 Godot `TextureProgressBar` 裁切显示。Boss 名称等语义不同的枚举图继续保留。
+
+通用整理规范见 `sources/ASSET_ORGANIZATION_GUIDE.md`；本次专项清理记录见
+`sources/manifests/zmxiyou1_hud_percentage_cleanup.json`。造 2、造 3 也按同一判断流程整理。
+
+## 背包装备贴图
+
+背包分类目录最终只保留悟空和唐僧的武器、防具分层贴图，共 45 张：武器 16 张、防具 29 张。原 Flash 仅在背包静态换装预览中按 `showid` 切换这些图层，它们不参与战斗动画。
+
+背包面板、按钮、等级徽章、经验条、基础人物预览、重复组合预览和其他未采用导出均已从分类目录删除。最终清单见 `sources/manifests/zmxiyou1_backpack_equipment_only.json`；首次时间轴判定记录仍保存在 `sources/manifests/zmxiyou1_backpack_timeline_cleanup.json`。

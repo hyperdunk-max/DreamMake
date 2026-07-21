@@ -1,0 +1,136 @@
+{
+  "recorded_at": "2026-07-21",
+  "status": "superseded_by_equipment_only_policy",
+  "superseded_by": "sources/manifests/zmxiyou1_backpack_equipment_only.json",
+  "policy": "sources/ASSET_ORGANIZATION_GUIDE.md",
+  "source_package": "sources/decoded/zmxiyou1/backpack_v2.swf",
+  "source_export_root": "assets/extracted/full/zmxiyou1/shared/backpack_v2",
+  "classified_root": "assets/extracted/classified/zmxiyou1/UI/背包",
+  "source_archive_preserved": true,
+  "summary": {
+    "original_files": 124,
+    "retained_and_renamed": 88,
+    "removed_from_classified": 36
+  },
+  "decisions": [
+    {
+      "timeline": "Timeline_9",
+      "source_symbol": "DefineSprite_10_backpack_fla.Timeline_9",
+      "purpose": "背包经验进度条",
+      "code_evidence": "BackPack.as:94 mc_exp.gotoAndStop(round(30 * current_exp / required_exp))",
+      "original_frames": 30,
+      "retained_frames": [30],
+      "removed_frames": "1-29",
+      "target": "经验条/exp_slider.png",
+      "runtime_replacement": "Godot TextureProgressBar"
+    },
+    {
+      "timeline": "Timeline_14",
+      "source_symbol": "DefineSprite_105_backpack_fla.Timeline_14",
+      "purpose": "1-40 级彩色翅膀徽章",
+      "code_evidence": "BackPack.as:93 levelmc.gotoAndStop(level)",
+      "original_frames": 40,
+      "retained_frames": "1-40",
+      "removed_frames": [],
+      "target_pattern": "等级徽章/level_{level:02}.png",
+      "reason": "每帧数字和配色具有不同等级语义"
+    },
+    {
+      "timeline": "Timeline_21",
+      "source_symbol": "DefineSprite_284_backpack_fla.Timeline_21",
+      "purpose": "背包静态角色预览入口",
+      "frame_labels": ["孙悟空", "唐僧"],
+      "original_frames": 2,
+      "retained_frames": [1, 2],
+      "targets": [
+        "角色预览/悟空/基础/preview.png",
+        "角色预览/唐僧/基础/preview.png"
+      ]
+    },
+    {
+      "timeline": "Timeline_24",
+      "source_symbol": "DefineSprite_159_backpack_fla.Timeline_24",
+      "instance_name": "cloth2",
+      "role": "悟空",
+      "original_frames": 6,
+      "retained_showids": "2-6",
+      "removed_showids": [1],
+      "target_pattern": "角色预览/悟空/防具/cloth2/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_27",
+      "source_symbol": "DefineSprite_167_backpack_fla.Timeline_27",
+      "instance_name": "cloth4",
+      "role": "悟空",
+      "original_frames": 6,
+      "retained_showids": "2-6",
+      "removed_showids": [1],
+      "target_pattern": "角色预览/悟空/防具/cloth4/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_30",
+      "source_symbol": "DefineSprite_175_backpack_fla.Timeline_30",
+      "instance_name": "cloth3",
+      "role": "悟空",
+      "original_frames": 6,
+      "retained_showids": "2-6",
+      "removed_showids": [1],
+      "target_pattern": "角色预览/悟空/防具/cloth3/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_33",
+      "source_symbol": "DefineSprite_192_backpack_fla.Timeline_33",
+      "instance_name": "weapon1",
+      "role": "悟空",
+      "original_frames": 8,
+      "retained_showids": "1-8",
+      "removed_showids": [],
+      "target_pattern": "角色预览/悟空/武器/weapon1/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_40",
+      "source_symbol": "DefineSprite_200_backpack_fla.Timeline_40",
+      "instance_name": "cloth1",
+      "role": "悟空",
+      "original_frames": 6,
+      "retained_showids": "2-6",
+      "removed_showids": [1],
+      "target_pattern": "角色预览/悟空/防具/cloth1/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_45",
+      "source_symbol": "DefineSprite_269_backpack_fla.Timeline_45",
+      "instance_name": "weapon1",
+      "role": "唐僧",
+      "original_frames": 8,
+      "retained_showids": "1-8",
+      "removed_showids": [],
+      "target_pattern": "角色预览/唐僧/武器/weapon1/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_51",
+      "source_symbol": "DefineSprite_276_backpack_fla.Timeline_51",
+      "instance_name": "cloth",
+      "role": "唐僧",
+      "original_frames": 6,
+      "retained_showids": "2-6",
+      "removed_showids": [1],
+      "target_pattern": "角色预览/唐僧/防具/cloth/showid_{showid:02}.png"
+    },
+    {
+      "timeline": "Timeline_52",
+      "source_symbol": "DefineSprite_282_backpack_fla.Timeline_52",
+      "instance_name": "head",
+      "role": "唐僧",
+      "original_frames": 6,
+      "retained_showids": "3-6",
+      "removed_showids": [1, 2],
+      "target_pattern": "角色预览/唐僧/防具/head/showid_{showid:02}.png"
+    }
+  ],
+  "animation_usage": {
+    "combat_animation": false,
+    "backpack_preview": true,
+    "behavior": "打开背包或更换装备时按角色名和 showid 切换静态预览层"
+  }
+}

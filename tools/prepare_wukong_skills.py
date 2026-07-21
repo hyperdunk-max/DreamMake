@@ -20,7 +20,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = (
     ROOT
-    / "assets/extracted/full/zmxiyou3/characters/mixed_packages/Role1v690/sprites"
+    / "assets/extracted/classified/zmxiyou3/人物/悟空/技能与动作/Role1v690/sprites"
 )
 DESTINATION = ROOT / "assets/selected/zmxiyou3/wukong/effects/skills"
 
