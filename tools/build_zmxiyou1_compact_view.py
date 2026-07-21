@@ -21,6 +21,8 @@ SOURCE_MANIFEST = ROOT / "sources" / "manifests" / "zmxiyou1_image_classificatio
 TEMP_ROOT = ROOT / "assets" / "extracted" / "classified" / "zmxiyou1_compact"
 FINAL_ROOT = ROOT / "assets" / "extracted" / "classified" / "zmxiyou1"
 MANIFEST_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_compact_classification.json"
+FORMAT_DUPLICATE_AUDIT_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_format_duplicates.json"
+ROLE_RENDERING_AUDIT_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_role_rendering.json"
 REPORT_PATH = ROOT / "sources" / "ZMXIYOU1_COMPACT_CLASSIFICATION.md"
 XML_FILES = {
     "Role_v7": ROOT / ".tools" / "zmxiyou1_xml" / "Role_v7.xml",
@@ -283,7 +285,30 @@ def main() -> None:
             [package_root / "scripts" / "base" / "BaseObject.as", package_root / "scripts" / "base" / "BaseMonster.as"]
         )
 
-    records = sorted(source_manifest["files"], key=lambda row: str(row["source"]))
+    format_duplicate_rows: list[dict[str, Any]] = []
+    redundant_sources: set[str] = set()
+    if FORMAT_DUPLICATE_AUDIT_PATH.exists():
+        format_audit = json.loads(FORMAT_DUPLICATE_AUDIT_PATH.read_text(encoding="utf-8"))
+        format_duplicate_rows = list(format_audit.get("duplicates", []))
+        redundant_sources = {
+            str(row["removed_source"])
+            for row in format_duplicate_rows
+        }
+    role_rendering_overrides: dict[str, dict[str, Any]] = {}
+    if ROLE_RENDERING_AUDIT_PATH.exists():
+        role_rendering_audit = json.loads(ROLE_RENDERING_AUDIT_PATH.read_text(encoding="utf-8"))
+        role_rendering_overrides = {
+            str(row["source"]): row
+            for row in role_rendering_audit.get("files", [])
+        }
+    records = sorted(
+        (
+            record
+            for record in source_manifest["files"]
+            if str(record["source"]) not in redundant_sources
+        ),
+        key=lambda row: str(row["source"]),
+    )
     counters: Counter[str] = Counter()
     compact_records: list[dict[str, Any]] = []
     category_counts: Counter[str] = Counter()
@@ -291,7 +316,14 @@ def main() -> None:
 
     for record in records:
         source = ROOT / str(record["source"])
-        rel_folder, prefix, kind = output_category(record, monsters_by_old_folder)
+        role_override = role_rendering_overrides.get(str(record["source"]))
+        if role_override is not None:
+            override_destination = ROOT / str(role_override["destination"])
+            rel_folder = override_destination.parent.relative_to(FINAL_ROOT)
+            prefix = override_destination.stem
+            kind = "role_equipment"
+        else:
+            rel_folder, prefix, kind = output_category(record, monsters_by_old_folder)
         package = str(record["package"])
         character_id = record.get("character_id")
         action_label = ""
@@ -329,6 +361,8 @@ def main() -> None:
                     }
             else:
                 file_name = "frame_001" + source.suffix.lower()
+        elif role_override is not None:
+            file_name = override_destination.name
         else:
             counter_key = rel_folder.as_posix()
             counters[counter_key] += 1
@@ -349,6 +383,16 @@ def main() -> None:
             "code_called": code_called,
             "evidence": record.get("evidence", ""),
         }
+        if role_override is not None:
+            compact_record.update(
+                {
+                    "role_rendering": True,
+                    "actor": role_override["actor"],
+                    "slot": role_override["slot"],
+                    "showid": role_override["showid"],
+                    "selector_symbol_id": role_override["symbol_id"],
+                }
+            )
         compact_records.append(compact_record)
         category_counts[rel_folder.as_posix()] += 1
 
@@ -361,6 +405,9 @@ def main() -> None:
         "storage": "NTFS hard links",
         "input_files": len(first_pass_manifest["files"]),
         "rejected_files": source_manifest["rejected_files"],
+        "format_duplicate_audit": relative(FORMAT_DUPLICATE_AUDIT_PATH) if redundant_sources else "",
+        "format_duplicate_files": format_duplicate_rows,
+        "role_rendering_audit": relative(ROLE_RENDERING_AUDIT_PATH) if role_rendering_overrides else "",
         "files": compact_records,
         "monster_action_audit": action_audit,
         "counts_by_category": dict(sorted(category_counts.items())),
@@ -403,6 +450,28 @@ def main() -> None:
             "",
         ]
     )
+    if role_rendering_overrides:
+        lines.extend(
+            [
+                "## 角色换装渲染",
+                "",
+                f"已按悟空/唐僧、武器/防具和 showid 整理 {len(role_rendering_overrides)} 张原 Flash 换装选择器图片。造梦1采用时间轴动作与多层装备零件组合，单张图片不是完整角色皮肤。",
+                "",
+                f"实现分析、装备名称映射和逐张证据见 `{relative(ROLE_RENDERING_AUDIT_PATH)}`。",
+                "",
+            ]
+        )
+    if redundant_sources:
+        lines.extend(
+            [
+                "## 多格式去重",
+                "",
+                f"保留 PNG 浏览/运行版本，删除 {len(redundant_sources):,} 个有 SWF 引用链与视觉证据的 SVG/JPG 等价副本。完整提取库未改动。",
+                "",
+                f"逐项证据见 `{relative(FORMAT_DUPLICATE_AUDIT_PATH)}`。",
+                "",
+            ]
+        )
     report = "\n".join(lines)
     REPORT_PATH.write_text(report, encoding="utf-8", newline="\n")
     (TEMP_ROOT / "README.md").write_text(report, encoding="utf-8", newline="\n")

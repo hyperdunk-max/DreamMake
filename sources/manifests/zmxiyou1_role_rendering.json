@@ -1,0 +1,1897 @@
+{
+  "generated_at": "2026-07-21T01:32:17+08:00",
+  "source_package": "Role_v7.swf",
+  "source_xml": ".tools/zmxiyou1_xml/Role_v7.xml",
+  "equipment_source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/my/AllEquipment.as",
+  "actor_roots": {
+    "悟空": 575,
+    "唐僧": 1045
+  },
+  "rendering_model": "Flash 时间轴动作 + showid 驱动的武器/防具子 MovieClip 分层组合",
+  "selectors": [
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "symbol_id": 177,
+      "symbol_name": "Role_fla.元件68_121",
+      "class_name": "元件68_121",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件68_121.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_01/part_177.png",
+          "equipment": []
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_02/part_177.png",
+          "equipment": [
+            {
+              "name": "粗糙的行者棍",
+              "code": "ccxzg"
+            },
+            {
+              "name": "普通的行者棍",
+              "code": "ptxzg"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_03/part_177.png",
+          "equipment": [
+            {
+              "name": "优秀的行者棍",
+              "code": "yxxzg"
+            },
+            {
+              "name": "精良的行者棍",
+              "code": "jlxzg"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_04/part_177.png",
+          "equipment": [
+            {
+              "name": "天煞月戟",
+              "code": "tsyj"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_05/part_177.png",
+          "equipment": [
+            {
+              "name": "如意金箍棒",
+              "code": "ryjgb"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_06/part_177.png",
+          "equipment": [
+            {
+              "name": "青龙刀",
+              "code": "qld"
+            }
+          ]
+        },
+        {
+          "frame": 7,
+          "showid": 7,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/7.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_07/part_177.png",
+          "equipment": [
+            {
+              "name": "家传宝剑",
+              "code": "jcbj"
+            }
+          ]
+        },
+        {
+          "frame": 8,
+          "showid": 8,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/8.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_08/part_177.png",
+          "equipment": [
+            {
+              "name": "童年的冰糖葫芦",
+              "code": "tndbthl"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "symbol_id": 143,
+      "symbol_name": "Role_fla.元件54_112",
+      "class_name": "元件54_112",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件54_112.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_143.png",
+          "equipment": [
+            {
+              "name": "大圣战铠",
+              "code": "dszk"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_143.png",
+          "equipment": [
+            {
+              "name": "粗糙的行者服",
+              "code": "ccxzf"
+            },
+            {
+              "name": "普通的行者服",
+              "code": "ptxzf"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_143.png",
+          "equipment": [
+            {
+              "name": "优秀的行者服",
+              "code": "yxxzf"
+            },
+            {
+              "name": "精良的行者服",
+              "code": "jlxzf"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_143.png",
+          "equipment": [
+            {
+              "name": "地煞猿甲",
+              "code": "dsyj"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_143.png",
+          "equipment": [
+            {
+              "name": "玄武甲",
+              "code": "xwj"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_143.png",
+          "equipment": [
+            {
+              "name": "血海魔甲",
+              "code": "xhmj"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "symbol_id": 152,
+      "symbol_name": "Role_fla.元件56_115",
+      "class_name": "元件56_115",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件56_115.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_152.png",
+          "equipment": [
+            {
+              "name": "大圣战铠",
+              "code": "dszk"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_152.png",
+          "equipment": [
+            {
+              "name": "粗糙的行者服",
+              "code": "ccxzf"
+            },
+            {
+              "name": "普通的行者服",
+              "code": "ptxzf"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_152.png",
+          "equipment": [
+            {
+              "name": "优秀的行者服",
+              "code": "yxxzf"
+            },
+            {
+              "name": "精良的行者服",
+              "code": "jlxzf"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_152.png",
+          "equipment": [
+            {
+              "name": "地煞猿甲",
+              "code": "dsyj"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_152.png",
+          "equipment": [
+            {
+              "name": "玄武甲",
+              "code": "xwj"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_152.png",
+          "equipment": [
+            {
+              "name": "血海魔甲",
+              "code": "xhmj"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "symbol_id": 160,
+      "symbol_name": "Role_fla.元件55_118",
+      "class_name": "元件55_118",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件55_118.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_160.png",
+          "equipment": [
+            {
+              "name": "大圣战铠",
+              "code": "dszk"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_160.png",
+          "equipment": [
+            {
+              "name": "粗糙的行者服",
+              "code": "ccxzf"
+            },
+            {
+              "name": "普通的行者服",
+              "code": "ptxzf"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_160.png",
+          "equipment": [
+            {
+              "name": "优秀的行者服",
+              "code": "yxxzf"
+            },
+            {
+              "name": "精良的行者服",
+              "code": "jlxzf"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_160.png",
+          "equipment": [
+            {
+              "name": "地煞猿甲",
+              "code": "dsyj"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_160.png",
+          "equipment": [
+            {
+              "name": "玄武甲",
+              "code": "xwj"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_160.png",
+          "equipment": [
+            {
+              "name": "血海魔甲",
+              "code": "xhmj"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "symbol_id": 186,
+      "symbol_name": "Role_fla.元件52_128",
+      "class_name": "元件52_128",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件52_128.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_186.png",
+          "equipment": [
+            {
+              "name": "大圣战铠",
+              "code": "dszk"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_186.png",
+          "equipment": [
+            {
+              "name": "粗糙的行者服",
+              "code": "ccxzf"
+            },
+            {
+              "name": "普通的行者服",
+              "code": "ptxzf"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_186.png",
+          "equipment": [
+            {
+              "name": "优秀的行者服",
+              "code": "yxxzf"
+            },
+            {
+              "name": "精良的行者服",
+              "code": "jlxzf"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_186.png",
+          "equipment": [
+            {
+              "name": "地煞猿甲",
+              "code": "dsyj"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_186.png",
+          "equipment": [
+            {
+              "name": "玄武甲",
+              "code": "xwj"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_186.png",
+          "equipment": [
+            {
+              "name": "血海魔甲",
+              "code": "xhmj"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "symbol_id": 723,
+      "symbol_name": "Role_fla.元件26_11",
+      "class_name": "元件26_11",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件26_11.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_01/part_723.png",
+          "equipment": []
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_02/part_723.png",
+          "equipment": [
+            {
+              "name": "粗糙的松木杖",
+              "code": "ccsmz"
+            },
+            {
+              "name": "普通的松木杖",
+              "code": "ptsmz"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_03/part_723.png",
+          "equipment": [
+            {
+              "name": "优秀的松木杖",
+              "code": "yxsmz"
+            },
+            {
+              "name": "精良的松木杖",
+              "code": "jlsmz"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_04/part_723.png",
+          "equipment": [
+            {
+              "name": "地煞权杖",
+              "code": "dsqz"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_05/part_723.png",
+          "equipment": [
+            {
+              "name": "白虎杖",
+              "code": "bhz"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_06/part_723.png",
+          "equipment": [
+            {
+              "name": "血海邪皇",
+              "code": "xhxh"
+            }
+          ]
+        },
+        {
+          "frame": 7,
+          "showid": 7,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/7.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_07/part_723.png",
+          "equipment": [
+            {
+              "name": "九环禅杖",
+              "code": "jhcz"
+            }
+          ]
+        },
+        {
+          "frame": 8,
+          "showid": 8,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/8.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_08/part_723.png",
+          "equipment": [
+            {
+              "name": "童年的拨浪鼓",
+              "code": "tndblg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 737,
+      "symbol_name": "Role_fla.元件3_23",
+      "class_name": "元件3_23",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件3_23.as",
+      "selection_rule": "showid-3",
+      "showid_offset": 3,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_737.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_737.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_737.png",
+          "equipment": [
+            {
+              "name": "天煞羽袍",
+              "code": "tsyp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 741,
+      "symbol_name": "Role_fla.元件4_24",
+      "class_name": "元件4_24",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件4_24.as",
+      "selection_rule": "showid-3",
+      "showid_offset": 3,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_741.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_741.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_741.png",
+          "equipment": [
+            {
+              "name": "天煞羽袍",
+              "code": "tsyp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 745,
+      "symbol_name": "Role_fla.元件2_25",
+      "class_name": "元件2_25",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件2_25.as",
+      "selection_rule": "showid-3",
+      "showid_offset": 3,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_745.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_745.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_745.png",
+          "equipment": [
+            {
+              "name": "天煞羽袍",
+              "code": "tsyp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 749,
+      "symbol_name": "Role_fla.元件1_26",
+      "class_name": "元件1_26",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件1_26.as",
+      "selection_rule": "showid-3",
+      "showid_offset": 3,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_749.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_749.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_749.png",
+          "equipment": [
+            {
+              "name": "天煞羽袍",
+              "code": "tsyp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 755,
+      "symbol_name": "Role_fla.元件13_27",
+      "class_name": "元件13_27",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件13_27.as",
+      "selection_rule": "showid",
+      "showid_offset": 0,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 1,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_01/part_755.png",
+          "equipment": [
+            {
+              "name": "锦襕袈裟",
+              "code": "zljs"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 2,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_02/part_755.png",
+          "equipment": [
+            {
+              "name": "粗糙的袈裟",
+              "code": "ccjs"
+            },
+            {
+              "name": "普通的袈裟",
+              "code": "ptjs"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_755.png",
+          "equipment": [
+            {
+              "name": "优秀的袈裟",
+              "code": "yxjs"
+            },
+            {
+              "name": "精良的袈裟",
+              "code": "jljs"
+            }
+          ]
+        },
+        {
+          "frame": 4,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/4.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_755.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 5,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/5.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_755.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        },
+        {
+          "frame": 6,
+          "showid": 6,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/6.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_755.png",
+          "equipment": [
+            {
+              "name": "天煞羽袍",
+              "code": "tsyp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 810,
+      "symbol_name": "Role_fla.元件5_31",
+      "class_name": "元件5_31",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件5_31.as",
+      "selection_rule": "showid-2",
+      "showid_offset": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_810.png",
+          "equipment": [
+            {
+              "name": "优秀的袈裟",
+              "code": "yxjs"
+            },
+            {
+              "name": "精良的袈裟",
+              "code": "jljs"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_810.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_810.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 856,
+      "symbol_name": "Role_fla.元件7_44",
+      "class_name": "元件7_44",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件7_44.as",
+      "selection_rule": "showid-2",
+      "showid_offset": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_856.png",
+          "equipment": [
+            {
+              "name": "优秀的袈裟",
+              "code": "yxjs"
+            },
+            {
+              "name": "精良的袈裟",
+              "code": "jljs"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_856.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_856.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 903,
+      "symbol_name": "Role_fla.元件8_53",
+      "class_name": "元件8_53",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件8_53.as",
+      "selection_rule": "showid-2",
+      "showid_offset": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_903.png",
+          "equipment": [
+            {
+              "name": "优秀的袈裟",
+              "code": "yxjs"
+            },
+            {
+              "name": "精良的袈裟",
+              "code": "jljs"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_903.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_903.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "symbol_id": 987,
+      "symbol_name": "Role_fla.元件10_74",
+      "class_name": "元件10_74",
+      "source_script": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/scripts/Role_fla/元件10_74.as",
+      "selection_rule": "showid-2",
+      "showid_offset": 2,
+      "frames": [
+        {
+          "frame": 1,
+          "showid": 3,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/1.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_987.png",
+          "equipment": [
+            {
+              "name": "优秀的袈裟",
+              "code": "yxjs"
+            },
+            {
+              "name": "精良的袈裟",
+              "code": "jljs"
+            }
+          ]
+        },
+        {
+          "frame": 2,
+          "showid": 4,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/2.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_987.png",
+          "equipment": [
+            {
+              "name": "家传衣裳",
+              "code": "jcys"
+            }
+          ]
+        },
+        {
+          "frame": 3,
+          "showid": 5,
+          "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/3.png",
+          "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_987.png",
+          "equipment": [
+            {
+              "name": "麒麟袍",
+              "code": "qlp"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "name": "粗糙的行者服",
+      "code": "ccxzf"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 2,
+      "name": "粗糙的行者棍",
+      "code": "ccxzg"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 2,
+      "name": "粗糙的袈裟",
+      "code": "ccjs"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 2,
+      "name": "粗糙的松木杖",
+      "code": "ccsmz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "name": "普通的行者服",
+      "code": "ptxzf"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 2,
+      "name": "普通的行者棍",
+      "code": "ptxzg"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 2,
+      "name": "普通的袈裟",
+      "code": "ptjs"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 2,
+      "name": "普通的松木杖",
+      "code": "ptsmz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "name": "优秀的行者服",
+      "code": "yxxzf"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 3,
+      "name": "优秀的行者棍",
+      "code": "yxxzg"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "name": "优秀的袈裟",
+      "code": "yxjs"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 3,
+      "name": "优秀的松木杖",
+      "code": "yxsmz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "name": "精良的行者服",
+      "code": "jlxzf"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 3,
+      "name": "精良的行者棍",
+      "code": "jlxzg"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "name": "精良的袈裟",
+      "code": "jljs"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 3,
+      "name": "精良的松木杖",
+      "code": "jlsmz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 4,
+      "name": "地煞猿甲",
+      "code": "dsyj"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 4,
+      "name": "地煞权杖",
+      "code": "dsqz"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "name": "天煞羽袍",
+      "code": "tsyp"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 4,
+      "name": "天煞月戟",
+      "code": "tsyj"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 6,
+      "name": "血海邪皇",
+      "code": "xhxh"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 6,
+      "name": "血海魔甲",
+      "code": "xhmj"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 1,
+      "name": "锦襕袈裟",
+      "code": "zljs"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 7,
+      "name": "九环禅杖",
+      "code": "jhcz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 1,
+      "name": "大圣战铠",
+      "code": "dszk"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 5,
+      "name": "如意金箍棒",
+      "code": "ryjgb"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 5,
+      "name": "白虎杖",
+      "code": "bhz"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 6,
+      "name": "青龙刀",
+      "code": "qld"
+    },
+    {
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 5,
+      "name": "玄武甲",
+      "code": "xwj"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "name": "麒麟袍",
+      "code": "qlp"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 7,
+      "name": "家传宝剑",
+      "code": "jcbj"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "name": "家传衣裳",
+      "code": "jcys"
+    },
+    {
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 8,
+      "name": "童年的拨浪鼓",
+      "code": "tndblg"
+    },
+    {
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 8,
+      "name": "童年的冰糖葫芦",
+      "code": "tndbthl"
+    }
+  ],
+  "files": [
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_01/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 1,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_02/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 2,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_03/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 3,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_04/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 4,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_05/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 5,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_06/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 6,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/7.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_07/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 7,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_177_Role_fla.元件68_121/8.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/武器/showid_08/part_177.png",
+      "actor": "悟空",
+      "slot": "武器",
+      "showid": 8,
+      "symbol_id": 177
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 1,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_143_Role_fla.元件54_112/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_143.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 143
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 1,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_152_Role_fla.元件56_115/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_152.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 152
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 1,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_160_Role_fla.元件55_118/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_160.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 160
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_01/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 1,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_02/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 2,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_03/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_04/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_05/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_186_Role_fla.元件52_128/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/悟空/换装渲染/防具/showid_06/part_186.png",
+      "actor": "悟空",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 186
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_01/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 1,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_02/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 2,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_03/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 3,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_04/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 4,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_05/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 5,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_06/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 6,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/7.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_07/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 7,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_723_Role_fla.元件26_11/8.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/武器/showid_08/part_723.png",
+      "actor": "唐僧",
+      "slot": "武器",
+      "showid": 8,
+      "symbol_id": 723
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_737.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 737
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_737.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 737
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_737_Role_fla.元件3_23/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_737.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 737
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_741.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 741
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_741.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 741
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_741_Role_fla.元件4_24/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_741.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 741
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_745.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 745
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_745.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 745
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_745_Role_fla.元件2_25/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_745.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 745
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_749.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 749
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_749.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 749
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_749_Role_fla.元件1_26/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_749.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 749
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_01/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 1,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_02/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 2,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/4.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/5.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_755_Role_fla.元件13_27/6.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_06/part_755.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 6,
+      "symbol_id": 755
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_810.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 810
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_810.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 810
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_810_Role_fla.元件5_31/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_810.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 810
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_856.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 856
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_856.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 856
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_856_Role_fla.元件7_44/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_856.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 856
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_903.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 903
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_903.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 903
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_903_Role_fla.元件8_53/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_903.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 903
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/1.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_03/part_987.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 3,
+      "symbol_id": 987
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/2.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_04/part_987.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 4,
+      "symbol_id": 987
+    },
+    {
+      "source": "assets/extracted/full/zmxiyou1/characters/mixed_packages/Role_v7/sprites/DefineSprite_987_Role_fla.元件10_74/3.png",
+      "destination": "assets/extracted/classified/zmxiyou1/人物/唐僧/换装渲染/防具/showid_05/part_987.png",
+      "actor": "唐僧",
+      "slot": "防具",
+      "showid": 5,
+      "symbol_id": 987
+    }
+  ]
+}
