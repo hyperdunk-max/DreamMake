@@ -1,0 +1,1674 @@
+{
+  "generated_at": "2026-07-22T11:31:18+08:00",
+  "game": "zmxiyou1",
+  "monster": "Monster9",
+  "display_name": "彭魔王",
+  "classified_source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王",
+  "selected_root": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king",
+  "policy": "The outermost complete dynamic provider is selected for each root action; nested providers are not duplicated in the Godot animation.",
+  "actions": {
+    "move": {
+      "source": "移动/完整时间轴/character_514",
+      "frame_count": 16
+    },
+    "fly": {
+      "source": "共享动作时间轴/character_519",
+      "frame_count": 9
+    },
+    "attack1": {
+      "source": "攻击1/完整时间轴/Timeline_92",
+      "frame_count": 24
+    },
+    "attack2": {
+      "source": "攻击2/完整时间轴/Timeline_97",
+      "frame_count": 41
+    },
+    "attack3": {
+      "source": "攻击3/完整时间轴/Timeline_99",
+      "frame_count": 25
+    },
+    "attack4": {
+      "source": "攻击4/完整时间轴/Timeline_108",
+      "frame_count": 15
+    },
+    "egg": {
+      "source": "变蛋/完整时间轴/Timeline_101",
+      "frame_count": 25
+    },
+    "reburn": {
+      "source": "重燃/完整时间轴/Timeline_104",
+      "frame_count": 30
+    },
+    "hurt": {
+      "source": "受伤/完整时间轴/Timeline_106",
+      "frame_count": 6
+    },
+    "idle": {
+      "source": "待机/完整时间轴/character_632",
+      "frame_count": 15
+    },
+    "death": {
+      "source": "死亡/完整时间轴/Timeline_111",
+      "frame_count": 25
+    }
+  },
+  "files": [
+    {
+      "action": "move",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_001.png",
+      "sha256": "ece45022e62fc830c4f1d49723860537c3f11d770b23d13a2d63539c9fada858"
+    },
+    {
+      "action": "move",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_002.png",
+      "sha256": "ece45022e62fc830c4f1d49723860537c3f11d770b23d13a2d63539c9fada858"
+    },
+    {
+      "action": "move",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_003.png",
+      "sha256": "ece45022e62fc830c4f1d49723860537c3f11d770b23d13a2d63539c9fada858"
+    },
+    {
+      "action": "move",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_004.png",
+      "sha256": "ece45022e62fc830c4f1d49723860537c3f11d770b23d13a2d63539c9fada858"
+    },
+    {
+      "action": "move",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_005.png",
+      "sha256": "4b43a7e5bc617afa19c7565074ba838d48f9c6c05de58ada122b90175686d2e6"
+    },
+    {
+      "action": "move",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_006.png",
+      "sha256": "4b43a7e5bc617afa19c7565074ba838d48f9c6c05de58ada122b90175686d2e6"
+    },
+    {
+      "action": "move",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_007.png",
+      "sha256": "4b43a7e5bc617afa19c7565074ba838d48f9c6c05de58ada122b90175686d2e6"
+    },
+    {
+      "action": "move",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_008.png",
+      "sha256": "4b43a7e5bc617afa19c7565074ba838d48f9c6c05de58ada122b90175686d2e6"
+    },
+    {
+      "action": "move",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_009.png",
+      "sha256": "8bc2b567b42ad32b4c17428e5ae88d33a95d90f086ca4b2e4235b34babcac8bc"
+    },
+    {
+      "action": "move",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_010.png",
+      "sha256": "8bc2b567b42ad32b4c17428e5ae88d33a95d90f086ca4b2e4235b34babcac8bc"
+    },
+    {
+      "action": "move",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_011.png",
+      "sha256": "8bc2b567b42ad32b4c17428e5ae88d33a95d90f086ca4b2e4235b34babcac8bc"
+    },
+    {
+      "action": "move",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_012.png",
+      "sha256": "8bc2b567b42ad32b4c17428e5ae88d33a95d90f086ca4b2e4235b34babcac8bc"
+    },
+    {
+      "action": "move",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_013.png",
+      "sha256": "2e67b1659b26a701e467d8b4593a01a4a35de1d00b52da6734155b18cd79fc7e"
+    },
+    {
+      "action": "move",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_014.png",
+      "sha256": "2e67b1659b26a701e467d8b4593a01a4a35de1d00b52da6734155b18cd79fc7e"
+    },
+    {
+      "action": "move",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_015.png",
+      "sha256": "2e67b1659b26a701e467d8b4593a01a4a35de1d00b52da6734155b18cd79fc7e"
+    },
+    {
+      "action": "move",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/移动/完整时间轴/character_514/move_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_016.png",
+      "sha256": "2e67b1659b26a701e467d8b4593a01a4a35de1d00b52da6734155b18cd79fc7e"
+    },
+    {
+      "action": "fly",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_001.png",
+      "sha256": "5a8910d2c6de30345c58f64f1d9ca38c6802f4d70dbec1eba39f34b894dfa8a8"
+    },
+    {
+      "action": "fly",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_002.png",
+      "sha256": "5a8910d2c6de30345c58f64f1d9ca38c6802f4d70dbec1eba39f34b894dfa8a8"
+    },
+    {
+      "action": "fly",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_003.png",
+      "sha256": "5a8910d2c6de30345c58f64f1d9ca38c6802f4d70dbec1eba39f34b894dfa8a8"
+    },
+    {
+      "action": "fly",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_004.png",
+      "sha256": "6a6b10fdeae06b891c90541f955d6f5760a511a3c013086161b2c20f7774a8ec"
+    },
+    {
+      "action": "fly",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_005.png",
+      "sha256": "6a6b10fdeae06b891c90541f955d6f5760a511a3c013086161b2c20f7774a8ec"
+    },
+    {
+      "action": "fly",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_006.png",
+      "sha256": "6a6b10fdeae06b891c90541f955d6f5760a511a3c013086161b2c20f7774a8ec"
+    },
+    {
+      "action": "fly",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_007.png",
+      "sha256": "1cc9aecfa0413c9e663f45ec1f3370e13c4f390679979db358dd065f6bb63d87"
+    },
+    {
+      "action": "fly",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_008.png",
+      "sha256": "1cc9aecfa0413c9e663f45ec1f3370e13c4f390679979db358dd065f6bb63d87"
+    },
+    {
+      "action": "fly",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/共享动作时间轴/character_519/frame_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_009.png",
+      "sha256": "1cc9aecfa0413c9e663f45ec1f3370e13c4f390679979db358dd065f6bb63d87"
+    },
+    {
+      "action": "attack1",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_001.png",
+      "sha256": "14885887bd790dd2c19a07b575763a8e49b214c07e177bdbfa9cf8da00ae0bdb"
+    },
+    {
+      "action": "attack1",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_002.png",
+      "sha256": "14885887bd790dd2c19a07b575763a8e49b214c07e177bdbfa9cf8da00ae0bdb"
+    },
+    {
+      "action": "attack1",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_003.png",
+      "sha256": "11fe52ad0da4af89dcd4ea077c1a74f61cb6dd7d203e587aa5870d3c48bbfec3"
+    },
+    {
+      "action": "attack1",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_004.png",
+      "sha256": "672966f50a8e5179d8634df255db881b40c040aebb44971b454b896e6ef08f1f"
+    },
+    {
+      "action": "attack1",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_005.png",
+      "sha256": "d520a15f68d8db85a8a8442364bf1bd1c3dde78786cab69cb4cf9b4a63313a61"
+    },
+    {
+      "action": "attack1",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_006.png",
+      "sha256": "d520a15f68d8db85a8a8442364bf1bd1c3dde78786cab69cb4cf9b4a63313a61"
+    },
+    {
+      "action": "attack1",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_007.png",
+      "sha256": "0be633a8bf7cfa991f6e6882d35e587aaa281cc773f1b37508a8d1b5411668e1"
+    },
+    {
+      "action": "attack1",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_008.png",
+      "sha256": "0be633a8bf7cfa991f6e6882d35e587aaa281cc773f1b37508a8d1b5411668e1"
+    },
+    {
+      "action": "attack1",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_009.png",
+      "sha256": "78cf582bc9e2f7a3e44255821fe657382e58b7f9a43b9d2ba014b8876e8e0ffb"
+    },
+    {
+      "action": "attack1",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_010.png",
+      "sha256": "f55ecdc43a3e2b1ba7c3d1af5f605dbe4433a49ef0c3f79a28c1cbd9a3514019"
+    },
+    {
+      "action": "attack1",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_011.png",
+      "sha256": "7633a3b5763fe5e20516c10757094bd1d20ab3b3a5dbdbb7d76eca2f54c506d9"
+    },
+    {
+      "action": "attack1",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_012.png",
+      "sha256": "7633a3b5763fe5e20516c10757094bd1d20ab3b3a5dbdbb7d76eca2f54c506d9"
+    },
+    {
+      "action": "attack1",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_013.png",
+      "sha256": "dab7c519819e36970eed7af1eb7b848fea1f2cad50cd0d538eba62f98f6b7213"
+    },
+    {
+      "action": "attack1",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_014.png",
+      "sha256": "dab7c519819e36970eed7af1eb7b848fea1f2cad50cd0d538eba62f98f6b7213"
+    },
+    {
+      "action": "attack1",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_015.png",
+      "sha256": "dab7c519819e36970eed7af1eb7b848fea1f2cad50cd0d538eba62f98f6b7213"
+    },
+    {
+      "action": "attack1",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_016.png",
+      "sha256": "84d5c6a9ba4d01d31b5e3bded843a790ca65506089832eff38def464519d8ec3"
+    },
+    {
+      "action": "attack1",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_017.png",
+      "sha256": "84d5c6a9ba4d01d31b5e3bded843a790ca65506089832eff38def464519d8ec3"
+    },
+    {
+      "action": "attack1",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_018.png",
+      "sha256": "84d5c6a9ba4d01d31b5e3bded843a790ca65506089832eff38def464519d8ec3"
+    },
+    {
+      "action": "attack1",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_019.png",
+      "sha256": "7633a3b5763fe5e20516c10757094bd1d20ab3b3a5dbdbb7d76eca2f54c506d9"
+    },
+    {
+      "action": "attack1",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_020.png",
+      "sha256": "7633a3b5763fe5e20516c10757094bd1d20ab3b3a5dbdbb7d76eca2f54c506d9"
+    },
+    {
+      "action": "attack1",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_021.png",
+      "sha256": "7633a3b5763fe5e20516c10757094bd1d20ab3b3a5dbdbb7d76eca2f54c506d9"
+    },
+    {
+      "action": "attack1",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_022.png",
+      "sha256": "dab7c519819e36970eed7af1eb7b848fea1f2cad50cd0d538eba62f98f6b7213"
+    },
+    {
+      "action": "attack1",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_023.png",
+      "sha256": "dab7c519819e36970eed7af1eb7b848fea1f2cad50cd0d538eba62f98f6b7213"
+    },
+    {
+      "action": "attack1",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击1/完整时间轴/Timeline_92/attack1_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_024.png",
+      "sha256": "6ea8539fe18e6342d5dd3f1cca337c0a361b57444b17f358f98f7de5f2ac713d"
+    },
+    {
+      "action": "attack2",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_001.png",
+      "sha256": "ea0707b347115e4631839b20311544ff4e5e6f3f10674caedc2ae716b8e2166a"
+    },
+    {
+      "action": "attack2",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_002.png",
+      "sha256": "9a9a60d060bbec5ec435e122086d2f7255c330d23ec5dcbfee10bf590d7c5ce2"
+    },
+    {
+      "action": "attack2",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_003.png",
+      "sha256": "9a9a60d060bbec5ec435e122086d2f7255c330d23ec5dcbfee10bf590d7c5ce2"
+    },
+    {
+      "action": "attack2",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_004.png",
+      "sha256": "8ac63bf5cad133b99ea49dd4fa63dbc04e5a8ba84ae5240ea3b5e007e19aa74a"
+    },
+    {
+      "action": "attack2",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_005.png",
+      "sha256": "91e1ca1405b6a37c13ac10afeb5e90a51291e3047924293ea004e3397e88a977"
+    },
+    {
+      "action": "attack2",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_006.png",
+      "sha256": "91e1ca1405b6a37c13ac10afeb5e90a51291e3047924293ea004e3397e88a977"
+    },
+    {
+      "action": "attack2",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_007.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_008.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_009.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_010.png",
+      "sha256": "87c92b574243b5bbacc4a97595d9c4020f810367f4ac62eaf012ee4defb4edd1"
+    },
+    {
+      "action": "attack2",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_011.png",
+      "sha256": "87c92b574243b5bbacc4a97595d9c4020f810367f4ac62eaf012ee4defb4edd1"
+    },
+    {
+      "action": "attack2",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_012.png",
+      "sha256": "4dbff0276b06aa372a312a26f39f96719eb880b68d7976c846b39eeadf0513d4"
+    },
+    {
+      "action": "attack2",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_013.png",
+      "sha256": "4dbff0276b06aa372a312a26f39f96719eb880b68d7976c846b39eeadf0513d4"
+    },
+    {
+      "action": "attack2",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_014.png",
+      "sha256": "7b2aac7a417baacdd9f3f6f5f29acf6616f89b52c4b16a013f3eb5af6f32a9f7"
+    },
+    {
+      "action": "attack2",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_015.png",
+      "sha256": "7b2aac7a417baacdd9f3f6f5f29acf6616f89b52c4b16a013f3eb5af6f32a9f7"
+    },
+    {
+      "action": "attack2",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_016.png",
+      "sha256": "7b2aac7a417baacdd9f3f6f5f29acf6616f89b52c4b16a013f3eb5af6f32a9f7"
+    },
+    {
+      "action": "attack2",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_017.png",
+      "sha256": "7b2aac7a417baacdd9f3f6f5f29acf6616f89b52c4b16a013f3eb5af6f32a9f7"
+    },
+    {
+      "action": "attack2",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_018.png",
+      "sha256": "bd1247e3fa334fe468cf789d1463103aa4c8d0ce746d4b889f7e09e488ef1a46"
+    },
+    {
+      "action": "attack2",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_019.png",
+      "sha256": "bd1247e3fa334fe468cf789d1463103aa4c8d0ce746d4b889f7e09e488ef1a46"
+    },
+    {
+      "action": "attack2",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_020.png",
+      "sha256": "bd1247e3fa334fe468cf789d1463103aa4c8d0ce746d4b889f7e09e488ef1a46"
+    },
+    {
+      "action": "attack2",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_021.png",
+      "sha256": "bd1247e3fa334fe468cf789d1463103aa4c8d0ce746d4b889f7e09e488ef1a46"
+    },
+    {
+      "action": "attack2",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_022.png",
+      "sha256": "fbe12e29d8b849c65e331b07a0a00a18033bf0b6650034463a5abb44314ef18d"
+    },
+    {
+      "action": "attack2",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_023.png",
+      "sha256": "fbe12e29d8b849c65e331b07a0a00a18033bf0b6650034463a5abb44314ef18d"
+    },
+    {
+      "action": "attack2",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_024.png",
+      "sha256": "fbe12e29d8b849c65e331b07a0a00a18033bf0b6650034463a5abb44314ef18d"
+    },
+    {
+      "action": "attack2",
+      "frame": 25,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_025.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_025.png",
+      "sha256": "3b3497713208110a91d9a4f47aac8e6c850484711c0657b82a537c501198d706"
+    },
+    {
+      "action": "attack2",
+      "frame": 26,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_026.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_026.png",
+      "sha256": "3b3497713208110a91d9a4f47aac8e6c850484711c0657b82a537c501198d706"
+    },
+    {
+      "action": "attack2",
+      "frame": 27,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_027.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_027.png",
+      "sha256": "a80b20b58ee30d83527d2a1ffc33f7d08b18cb37b2f68c3e854ffb8f1c81d986"
+    },
+    {
+      "action": "attack2",
+      "frame": 28,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_028.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_028.png",
+      "sha256": "a80b20b58ee30d83527d2a1ffc33f7d08b18cb37b2f68c3e854ffb8f1c81d986"
+    },
+    {
+      "action": "attack2",
+      "frame": 29,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_029.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_029.png",
+      "sha256": "183d1239f7c6a424a8d895c7d4c03dbafe14bf5c9392aaeddf6282ac1f4fc3ff"
+    },
+    {
+      "action": "attack2",
+      "frame": 30,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_030.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_030.png",
+      "sha256": "183d1239f7c6a424a8d895c7d4c03dbafe14bf5c9392aaeddf6282ac1f4fc3ff"
+    },
+    {
+      "action": "attack2",
+      "frame": 31,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_031.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_031.png",
+      "sha256": "ca3a62f0db07bafd4ff2f28dea282c83cd3b3b30238f419cddd6711107997ac2"
+    },
+    {
+      "action": "attack2",
+      "frame": 32,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_032.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_032.png",
+      "sha256": "a1ad32396bd927dc6552b34c35db199ee1821c4852ae0f638c6c9ca73679c016"
+    },
+    {
+      "action": "attack2",
+      "frame": 33,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_033.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_033.png",
+      "sha256": "a1ad32396bd927dc6552b34c35db199ee1821c4852ae0f638c6c9ca73679c016"
+    },
+    {
+      "action": "attack2",
+      "frame": 34,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_034.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_034.png",
+      "sha256": "91e1ca1405b6a37c13ac10afeb5e90a51291e3047924293ea004e3397e88a977"
+    },
+    {
+      "action": "attack2",
+      "frame": 35,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_035.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_035.png",
+      "sha256": "91e1ca1405b6a37c13ac10afeb5e90a51291e3047924293ea004e3397e88a977"
+    },
+    {
+      "action": "attack2",
+      "frame": 36,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_036.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_036.png",
+      "sha256": "91e1ca1405b6a37c13ac10afeb5e90a51291e3047924293ea004e3397e88a977"
+    },
+    {
+      "action": "attack2",
+      "frame": 37,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_037.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_037.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 38,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_038.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_038.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 39,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_039.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_039.png",
+      "sha256": "0e25ff9b43b66fe8ff9ca164a6ffa47a35178ae88c08403b321402d48c0eb884"
+    },
+    {
+      "action": "attack2",
+      "frame": 40,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_040.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_040.png",
+      "sha256": "87c92b574243b5bbacc4a97595d9c4020f810367f4ac62eaf012ee4defb4edd1"
+    },
+    {
+      "action": "attack2",
+      "frame": 41,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击2/完整时间轴/Timeline_97/attack2_041.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_041.png",
+      "sha256": "87c92b574243b5bbacc4a97595d9c4020f810367f4ac62eaf012ee4defb4edd1"
+    },
+    {
+      "action": "attack3",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_001.png",
+      "sha256": "1abb4b89d2bc4ca0aeac0fbec0c9b42699f639e88807052634061688d692bc22"
+    },
+    {
+      "action": "attack3",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_002.png",
+      "sha256": "1abb4b89d2bc4ca0aeac0fbec0c9b42699f639e88807052634061688d692bc22"
+    },
+    {
+      "action": "attack3",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_003.png",
+      "sha256": "6f453ea5d7570ff9f9983e4a06afeb4b166580084fd9fd331573d6082fce115e"
+    },
+    {
+      "action": "attack3",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_004.png",
+      "sha256": "6f453ea5d7570ff9f9983e4a06afeb4b166580084fd9fd331573d6082fce115e"
+    },
+    {
+      "action": "attack3",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_005.png",
+      "sha256": "53f15a9f432c3221d57c9c6bbe5aed6e59deee57201528f6e748bb0ea42d03e3"
+    },
+    {
+      "action": "attack3",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_006.png",
+      "sha256": "53f15a9f432c3221d57c9c6bbe5aed6e59deee57201528f6e748bb0ea42d03e3"
+    },
+    {
+      "action": "attack3",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_007.png",
+      "sha256": "a98eaf5634f57781cbb4eeb239e3c83d4090409d7b78cbe297186ab82df3ad01"
+    },
+    {
+      "action": "attack3",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_008.png",
+      "sha256": "a98eaf5634f57781cbb4eeb239e3c83d4090409d7b78cbe297186ab82df3ad01"
+    },
+    {
+      "action": "attack3",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_009.png",
+      "sha256": "90caabe1a51cd0f5c2b02a313ec2c3fddb6400c943468d0b643bb84a632b6ef2"
+    },
+    {
+      "action": "attack3",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_010.png",
+      "sha256": "90caabe1a51cd0f5c2b02a313ec2c3fddb6400c943468d0b643bb84a632b6ef2"
+    },
+    {
+      "action": "attack3",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_011.png",
+      "sha256": "926bb99ecce67218ae9c08fd965b56d311e48bff2459fa6633c547ebbc6c7226"
+    },
+    {
+      "action": "attack3",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_012.png",
+      "sha256": "926bb99ecce67218ae9c08fd965b56d311e48bff2459fa6633c547ebbc6c7226"
+    },
+    {
+      "action": "attack3",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_013.png",
+      "sha256": "926bb99ecce67218ae9c08fd965b56d311e48bff2459fa6633c547ebbc6c7226"
+    },
+    {
+      "action": "attack3",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_014.png",
+      "sha256": "926bb99ecce67218ae9c08fd965b56d311e48bff2459fa6633c547ebbc6c7226"
+    },
+    {
+      "action": "attack3",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_015.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_016.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_017.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_018.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_019.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_020.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_021.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_022.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_023.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_024.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack3",
+      "frame": 25,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击3/完整时间轴/Timeline_99/attack3_025.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_025.png",
+      "sha256": "7cd410e91740493fc35e0f2c3202437a8073d02b1aa9cbbce965524b13049d62"
+    },
+    {
+      "action": "attack4",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_001.png",
+      "sha256": "175467b8392fb9751313d2334ab0a80d659f9c965763ecb1e9083f0f6d2d44b3"
+    },
+    {
+      "action": "attack4",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_002.png",
+      "sha256": "175467b8392fb9751313d2334ab0a80d659f9c965763ecb1e9083f0f6d2d44b3"
+    },
+    {
+      "action": "attack4",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_003.png",
+      "sha256": "376756555b59f7b6025169bcbd57e200df4bd6b38723f2a4b1a4450d092e6333"
+    },
+    {
+      "action": "attack4",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_004.png",
+      "sha256": "376756555b59f7b6025169bcbd57e200df4bd6b38723f2a4b1a4450d092e6333"
+    },
+    {
+      "action": "attack4",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_005.png",
+      "sha256": "c56ef96a0e822341fc18d8c092bfe9747afa5bde66fbd616e5a72569f429fc52"
+    },
+    {
+      "action": "attack4",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_006.png",
+      "sha256": "c56ef96a0e822341fc18d8c092bfe9747afa5bde66fbd616e5a72569f429fc52"
+    },
+    {
+      "action": "attack4",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_007.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_008.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_009.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_010.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_011.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_012.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_013.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_014.png",
+      "sha256": "ca803c4ad63e38daa0cde6f93a7bfa171aea9770402cf2ab917c0f6574cafd2e"
+    },
+    {
+      "action": "attack4",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/攻击4/完整时间轴/Timeline_108/attack4_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_015.png",
+      "sha256": "bd2bf5811192f54468b69f34b279d4d1c81fe403b4aa42f3bb12f6ceb3ed03ee"
+    },
+    {
+      "action": "egg",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_001.png",
+      "sha256": "b4d1122dd87c234c260969b580ab361310de0c50af05af7c83b3e6b7f6491239"
+    },
+    {
+      "action": "egg",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_002.png",
+      "sha256": "999a58aec6d5c8ab6e57eeef88c5c2377df6a7664222ec789b61d3b14049b9fe"
+    },
+    {
+      "action": "egg",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_003.png",
+      "sha256": "7ea56de174ad6050571ccbe16f9dcb363e88d584043dae2e0c7846aedaa1b69e"
+    },
+    {
+      "action": "egg",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_004.png",
+      "sha256": "0e2120adf880cb2f23bbb0ea63389dc64d829cbaea6fe7736c28e6cce5288a0a"
+    },
+    {
+      "action": "egg",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_005.png",
+      "sha256": "23cee27bda5321df134b5543314d4d532799e06f7409021167d02f16225ea6e5"
+    },
+    {
+      "action": "egg",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_006.png",
+      "sha256": "09b0407804a76cda4421d5df8dada95466d36b3dfa200b194140690a7bdda22c"
+    },
+    {
+      "action": "egg",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_007.png",
+      "sha256": "cbf0678dabc78a19d952ec8c540fd4ec756286af60f7e3fb97c1e7bf2861238a"
+    },
+    {
+      "action": "egg",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_008.png",
+      "sha256": "5680e326c6c4e28063b9bc85154d18340e2a45d1f80f70b3f551c7c8e95e957f"
+    },
+    {
+      "action": "egg",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_009.png",
+      "sha256": "bde1253b39b8170d232b746d52b5d8724ba129fb960ec5d09454e1b746ce7853"
+    },
+    {
+      "action": "egg",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_010.png",
+      "sha256": "e187d2199190bc1357b1eee83e3ccf80993e0460ae0ff1490a8a74a6f87973b2"
+    },
+    {
+      "action": "egg",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_011.png",
+      "sha256": "e35a5be88ed4308b36aa6b2ad2eb58259370a2a0d5106183e908767db9834cdd"
+    },
+    {
+      "action": "egg",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_012.png",
+      "sha256": "a4899cece70a6c4272482b7b2b97e4d9c7123afdadee7b97cec2e03f5ca76fbe"
+    },
+    {
+      "action": "egg",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_013.png",
+      "sha256": "dc0d6270080943cf054bf77f84e00dab5adfae79b0ab7e321afb4de6da1e8e6e"
+    },
+    {
+      "action": "egg",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_014.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_015.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_016.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_017.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_018.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_019.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_020.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_021.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_022.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_023.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_024.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "egg",
+      "frame": 25,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/变蛋/完整时间轴/Timeline_101/egg_025.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_025.png",
+      "sha256": "4e67983e27f65b835583a10fea1ed2ee1a184338e31e4dbac686ffbe65d0605e"
+    },
+    {
+      "action": "reburn",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_001.png",
+      "sha256": "ae9ec5922a432e636893b13b87d9ae897c4e8db26f0cc1fdb058ec68e63a92e4"
+    },
+    {
+      "action": "reburn",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_002.png",
+      "sha256": "ae9ec5922a432e636893b13b87d9ae897c4e8db26f0cc1fdb058ec68e63a92e4"
+    },
+    {
+      "action": "reburn",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_003.png",
+      "sha256": "4d119b5ad4d67ccfeb74eb1f1ba63c590ae76cd506602a03d8919510d8fce4ea"
+    },
+    {
+      "action": "reburn",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_004.png",
+      "sha256": "4d119b5ad4d67ccfeb74eb1f1ba63c590ae76cd506602a03d8919510d8fce4ea"
+    },
+    {
+      "action": "reburn",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_005.png",
+      "sha256": "e0f96be4efc39b475f62921c4a8d5159e1454b52a0d3005ae79f821347ad752c"
+    },
+    {
+      "action": "reburn",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_006.png",
+      "sha256": "e0f96be4efc39b475f62921c4a8d5159e1454b52a0d3005ae79f821347ad752c"
+    },
+    {
+      "action": "reburn",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_007.png",
+      "sha256": "ca4d5a85eb02117363576c960ab2f18284519129135a557b1e477a98e2f3ea39"
+    },
+    {
+      "action": "reburn",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_008.png",
+      "sha256": "ca4d5a85eb02117363576c960ab2f18284519129135a557b1e477a98e2f3ea39"
+    },
+    {
+      "action": "reburn",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_009.png",
+      "sha256": "236ec54e0016f3aa0d81593f1ca8aa43eea1360fcb3856912b742ec7bf87b4da"
+    },
+    {
+      "action": "reburn",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_010.png",
+      "sha256": "236ec54e0016f3aa0d81593f1ca8aa43eea1360fcb3856912b742ec7bf87b4da"
+    },
+    {
+      "action": "reburn",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_011.png",
+      "sha256": "3fda362867e30f73c9c8574aaa215bd84922b5bc30795b1cac8484785074ac94"
+    },
+    {
+      "action": "reburn",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_012.png",
+      "sha256": "3fda362867e30f73c9c8574aaa215bd84922b5bc30795b1cac8484785074ac94"
+    },
+    {
+      "action": "reburn",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_013.png",
+      "sha256": "ba76d3cb54e973f6044b9b516a349aeda2f747507c4c489fb2f70365b52399b7"
+    },
+    {
+      "action": "reburn",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_014.png",
+      "sha256": "ba76d3cb54e973f6044b9b516a349aeda2f747507c4c489fb2f70365b52399b7"
+    },
+    {
+      "action": "reburn",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_015.png",
+      "sha256": "58bf062b1c89325edfd463b844eb4695a740b3f81f1866dae3508436c1d4c50a"
+    },
+    {
+      "action": "reburn",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_016.png",
+      "sha256": "58bf062b1c89325edfd463b844eb4695a740b3f81f1866dae3508436c1d4c50a"
+    },
+    {
+      "action": "reburn",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_017.png",
+      "sha256": "5748dffcb13319c548e84f1e5dcff3f83e40ddcc7ede4e7df7a379137ec94c0d"
+    },
+    {
+      "action": "reburn",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_018.png",
+      "sha256": "5748dffcb13319c548e84f1e5dcff3f83e40ddcc7ede4e7df7a379137ec94c0d"
+    },
+    {
+      "action": "reburn",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_019.png",
+      "sha256": "d8c72a9814dc8d85e15fdba3c674ac2174ef4a828185ebf5de42afc77841c0a4"
+    },
+    {
+      "action": "reburn",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_020.png",
+      "sha256": "d8c72a9814dc8d85e15fdba3c674ac2174ef4a828185ebf5de42afc77841c0a4"
+    },
+    {
+      "action": "reburn",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_021.png",
+      "sha256": "983ff2730650b792b1f3a2a82ce0f8c08c4dcdb8a10a33858d6c7d4bc5bc7d9f"
+    },
+    {
+      "action": "reburn",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_022.png",
+      "sha256": "983ff2730650b792b1f3a2a82ce0f8c08c4dcdb8a10a33858d6c7d4bc5bc7d9f"
+    },
+    {
+      "action": "reburn",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_023.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_024.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 25,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_025.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_025.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 26,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_026.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_026.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 27,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_027.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_027.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 28,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_028.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_028.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 29,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_029.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_029.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "reburn",
+      "frame": 30,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/重燃/完整时间轴/Timeline_104/burn_030.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_030.png",
+      "sha256": "dca6389e16e39e6b39d93079a74bdb57a477ce52364f0189adeb0c730ead3285"
+    },
+    {
+      "action": "hurt",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_001.png",
+      "sha256": "9495996b6d96f6cac72085af3eaf78dc4ee2a7e927a71023ebc85fde6304c71b"
+    },
+    {
+      "action": "hurt",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_002.png",
+      "sha256": "9495996b6d96f6cac72085af3eaf78dc4ee2a7e927a71023ebc85fde6304c71b"
+    },
+    {
+      "action": "hurt",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_003.png",
+      "sha256": "9495996b6d96f6cac72085af3eaf78dc4ee2a7e927a71023ebc85fde6304c71b"
+    },
+    {
+      "action": "hurt",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_004.png",
+      "sha256": "9495996b6d96f6cac72085af3eaf78dc4ee2a7e927a71023ebc85fde6304c71b"
+    },
+    {
+      "action": "hurt",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_005.png",
+      "sha256": "9495996b6d96f6cac72085af3eaf78dc4ee2a7e927a71023ebc85fde6304c71b"
+    },
+    {
+      "action": "hurt",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/受伤/完整时间轴/Timeline_106/hurt_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_006.png",
+      "sha256": "280566abfebfb68592d629704b7556c36f81f51fb611af25e2c7a38df36ea6bb"
+    },
+    {
+      "action": "idle",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_001.png",
+      "sha256": "8983a36f953b734a7adf379af30e9f5116cab4a00ac12554536b2481de2f11d9"
+    },
+    {
+      "action": "idle",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_002.png",
+      "sha256": "8983a36f953b734a7adf379af30e9f5116cab4a00ac12554536b2481de2f11d9"
+    },
+    {
+      "action": "idle",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_003.png",
+      "sha256": "118434df03f0e82b9f4bb2b5825253c864e37ce65408b3b10b1da08978cdfc81"
+    },
+    {
+      "action": "idle",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_004.png",
+      "sha256": "118434df03f0e82b9f4bb2b5825253c864e37ce65408b3b10b1da08978cdfc81"
+    },
+    {
+      "action": "idle",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_005.png",
+      "sha256": "a8802cdcf4484f143173d150668342bff27825876b7545223932d40015dc23b3"
+    },
+    {
+      "action": "idle",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_006.png",
+      "sha256": "a8802cdcf4484f143173d150668342bff27825876b7545223932d40015dc23b3"
+    },
+    {
+      "action": "idle",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_007.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_008.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_009.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_010.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_011.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_012.png",
+      "sha256": "9e41aa62c77a8987d085d2a545db94f94a486edd596a68b6746a570b894270ba"
+    },
+    {
+      "action": "idle",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_013.png",
+      "sha256": "118434df03f0e82b9f4bb2b5825253c864e37ce65408b3b10b1da08978cdfc81"
+    },
+    {
+      "action": "idle",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_014.png",
+      "sha256": "118434df03f0e82b9f4bb2b5825253c864e37ce65408b3b10b1da08978cdfc81"
+    },
+    {
+      "action": "idle",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/待机/完整时间轴/character_632/idle_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_015.png",
+      "sha256": "118434df03f0e82b9f4bb2b5825253c864e37ce65408b3b10b1da08978cdfc81"
+    },
+    {
+      "action": "death",
+      "frame": 1,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_001.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_001.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 2,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_002.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_002.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 3,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_003.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_003.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 4,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_004.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_004.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 5,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_005.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_005.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 6,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_006.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_006.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 7,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_007.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_007.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 8,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_008.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_008.png",
+      "sha256": "2be0a75f2ec86d0a0020987d7f41b1a98702076fa9ecdddcf50a2d0ad72eb2e2"
+    },
+    {
+      "action": "death",
+      "frame": 9,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_009.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_009.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 10,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_010.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_010.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 11,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_011.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_011.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 12,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_012.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_012.png",
+      "sha256": "2be0a75f2ec86d0a0020987d7f41b1a98702076fa9ecdddcf50a2d0ad72eb2e2"
+    },
+    {
+      "action": "death",
+      "frame": 13,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_013.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_013.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 14,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_014.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_014.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 15,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_015.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_015.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 16,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_016.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_016.png",
+      "sha256": "2be0a75f2ec86d0a0020987d7f41b1a98702076fa9ecdddcf50a2d0ad72eb2e2"
+    },
+    {
+      "action": "death",
+      "frame": 17,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_017.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_017.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 18,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_018.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_018.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 19,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_019.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_019.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 20,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_020.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_020.png",
+      "sha256": "2be0a75f2ec86d0a0020987d7f41b1a98702076fa9ecdddcf50a2d0ad72eb2e2"
+    },
+    {
+      "action": "death",
+      "frame": 21,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_021.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_021.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    },
+    {
+      "action": "death",
+      "frame": 22,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_022.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_022.png",
+      "sha256": "090a2ddbb41a3d234d80393b9ff1672ba7c02100f818d6fb0c40e93fdd636071"
+    },
+    {
+      "action": "death",
+      "frame": 23,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_023.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_023.png",
+      "sha256": "583d96269a1fc9c5953371f5eef364932aaa0834e1f3dfbdfed195b3d1ec33c7"
+    },
+    {
+      "action": "death",
+      "frame": 24,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_024.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_024.png",
+      "sha256": "2be0a75f2ec86d0a0020987d7f41b1a98702076fa9ecdddcf50a2d0ad72eb2e2"
+    },
+    {
+      "action": "death",
+      "frame": 25,
+      "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/死亡/完整时间轴/Timeline_111/death_025.png",
+      "destination": "assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_025.png",
+      "sha256": "aae512c64d7f04716155700b12f9a682b5f794b7838d1d7411f1f1a896c67935"
+    }
+  ]
+}

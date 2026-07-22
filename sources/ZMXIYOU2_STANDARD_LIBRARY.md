@@ -1,5 +1,7 @@
 # 《造梦西游2》标准素材库
 
+> **历史阶段记录：** 本文描述删除临时 `full` 之前的标准库构建结果，现已由 `sources/ZMXIYOU2_CANONICAL_LIBRARY.md` 和 `sources/manifests/zmxiyou2_canonical_migration.json` 取代。当前唯一规范库为 `assets/extracted/classified/zmxiyou2`。
+
 生成时间：2026-07-21T20:28:20+08:00
 
 完整溯源库 `assets/extracted/full/zmxiyou2` 保留 35,444 个文件且未做精简删除。

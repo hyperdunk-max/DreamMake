@@ -1,0 +1,99 @@
+{
+  "actions": [
+    {
+      "column": 0,
+      "frame_count": 100,
+      "loop": true,
+      "name": "idle",
+      "row": 0,
+      "source_symbol": 529
+    },
+    {
+      "column": 0,
+      "frame_count": 16,
+      "loop": true,
+      "name": "walk",
+      "row": 17,
+      "source_symbol": 440
+    },
+    {
+      "column": 0,
+      "frame_count": 8,
+      "loop": true,
+      "name": "run",
+      "row": 20,
+      "source_symbol": 452
+    },
+    {
+      "column": 0,
+      "frame_count": 8,
+      "loop": false,
+      "name": "hit1",
+      "row": 22,
+      "source_symbol": 211
+    },
+    {
+      "column": 0,
+      "frame_count": 1,
+      "loop": false,
+      "name": "jump_up",
+      "row": 24,
+      "source_symbol": 533
+    },
+    {
+      "column": 0,
+      "frame_count": 10,
+      "loop": false,
+      "name": "jump_double",
+      "row": 25,
+      "source_symbol": 539
+    },
+    {
+      "column": 0,
+      "frame_count": 1,
+      "loop": false,
+      "name": "jump_fall",
+      "row": 27,
+      "source_symbol": 543
+    },
+    {
+      "column": 0,
+      "frame_count": 15,
+      "loop": false,
+      "name": "hurt",
+      "row": 28,
+      "source_symbol": 553
+    }
+  ],
+  "atlas_columns": 6,
+  "atlas_size": [
+    1200,
+    6200
+  ],
+  "derived_export": ".tools/zmx1_runtime_probe/export_body_full_6",
+  "flash_global_bounds": [
+    -2,
+    -7,
+    305,
+    314
+  ],
+  "frame_size": [
+    200,
+    200
+  ],
+  "game": "zmxiyou1",
+  "kind": "body",
+  "role": "wukong",
+  "selectors": {
+    "armor_selectors": {
+      "143": "showid",
+      "152": "showid",
+      "160": "showid",
+      "186": "showid"
+    }
+  },
+  "shared_scale": 0.585987261146497,
+  "showid": 6,
+  "source_swf": "sources/decoded/zmxiyou1/Role_v7.swf",
+  "source_xml": ".tools/zmxiyou1_xml/Role_v7.xml"
+}

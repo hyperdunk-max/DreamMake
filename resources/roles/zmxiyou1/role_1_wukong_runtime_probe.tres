@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_profile")
 role_id = 1
-role_key = &"zmxiyou1_wukong_probe"
+role_key = &"zmxiyou1_wukong"
 display_name = "造1悟空（换装验证）"
 logical_fps = 24.0
 frame_size = Vector2i(200, 200)
@@ -15,17 +15,17 @@ weapon_z_index = -1
 default_action = &"idle"
 default_body_showid = 1
 default_weapon_showid = 1
-body_atlas_paths = {1: "res://assets/selected/zmxiyou1/wukong/runtime_probe/body_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou1/wukong/runtime_probe/body_candidates/showid_2/source_atlas.png"}
-body_names = {1: "默认防具"}
-weapon_atlas_paths = {1: "res://assets/selected/zmxiyou1/wukong/runtime_probe/weapon_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou1/wukong/runtime_probe/weapon_candidates/showid_2/source_atlas.png"}
-weapon_names = {1: "默认行者棍", 2: "普通行者棍"}
+body_atlas_paths = {1: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_2/source_atlas.png", 3: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_3/source_atlas.png", 4: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_4/source_atlas.png", 5: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_5/source_atlas.png", 6: "res://assets/selected/zmxiyou1/wukong/body_candidates/showid_6/source_atlas.png"}
+body_names = {1: "showid 1", 2: "showid 2", 3: "showid 3", 4: "showid 4", 5: "showid 5", 6: "showid 6"}
+weapon_atlas_paths = {1: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_2/source_atlas.png", 3: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_3/source_atlas.png", 4: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_4/source_atlas.png", 5: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_5/source_atlas.png", 6: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_6/source_atlas.png", 7: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_7/source_atlas.png", 8: "res://assets/selected/zmxiyou1/wukong/weapon_candidates/showid_8/source_atlas.png"}
+weapon_names = {1: "showid 1", 2: "showid 2", 3: "showid 3", 4: "showid 4", 5: "showid 5", 6: "showid 6", 7: "showid 7", 8: "showid 8"}
 actions = {
-&"hit1": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(10), "row": 3, "start_column": 0}]},
-&"hurt": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(8), "row": 7, "start_column": 0}]},
-&"idle": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(6), "row": 0, "start_column": 0}]},
-&"jump_double": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(6), "row": 5, "start_column": 0}]},
-&"jump_fall": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 6, "start_column": 0}]},
-&"jump_up": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 0}]},
-&"run": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(2), "row": 2, "start_column": 0}]},
-&"walk": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(4), "row": 1, "start_column": 0}]}
+&"hit1": {"frame_count": 8, "grid_columns": 6, "loop": false, "row": 22, "start_column": 0},
+&"hurt": {"frame_count": 15, "grid_columns": 6, "loop": false, "row": 28, "start_column": 0},
+&"idle": {"frame_count": 100, "grid_columns": 6, "loop": true, "row": 0, "start_column": 0},
+&"jump_double": {"frame_count": 10, "grid_columns": 6, "loop": false, "row": 25, "start_column": 0},
+&"jump_fall": {"frame_count": 1, "grid_columns": 6, "loop": false, "row": 27, "start_column": 0},
+&"jump_up": {"frame_count": 1, "grid_columns": 6, "loop": false, "row": 24, "start_column": 0},
+&"run": {"frame_count": 8, "grid_columns": 6, "loop": true, "row": 20, "start_column": 0},
+&"walk": {"frame_count": 16, "grid_columns": 6, "loop": true, "row": 17, "start_column": 0}
 }

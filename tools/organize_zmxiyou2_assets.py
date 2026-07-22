@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Historical ZMX2 organizer plus a recovery path for the provenance tree.
+"""Historical ZMX2 organizer retained only for audit reference.
 
 The original move mode predates ``sources/ASSET_ORGANIZATION_GUIDE.md`` and is
-now disabled because the guide requires ``assets/extracted/full`` to remain a
-complete provenance library.  ``--restore-full`` reverses that historical move
-from its recorded manifest.  New classifications must be built without
-modifying the full extraction.
+disabled. The former ``--restore-full`` path is also disabled because ZMX2 now
+uses ``classified`` as its canonical library and ``full`` as a disposable
+extraction area. Re-extract from the retained raw/decoded SWFs when needed.
 """
 
 from __future__ import annotations
@@ -496,12 +495,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--restore-full",
         action="store_true",
-        help="Restore the complete provenance tree from the historical move manifest",
+        help="Disabled legacy restore mode",
     )
     return parser.parse_args()
 
 
 def restore_full() -> dict[str, object]:
+    raise SystemExit(
+        "Legacy restore mode is disabled: classified/zmxiyou2 is the canonical library. "
+        "Re-extract a temporary full tree from sources/raw or sources/decoded when needed."
+    )
+
+    # Historical implementation retained below for audit reference.
     if not MANIFEST_PATH.exists():
         raise SystemExit(f"Missing move manifest: {MANIFEST_PATH}")
     if not FINAL_ROOT.exists():

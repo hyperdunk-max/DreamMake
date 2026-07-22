@@ -1,0 +1,52 @@
+{
+  "status": "selected_runtime_candidates",
+  "game": "zmxiyou1",
+  "role": "wukong",
+  "source": {
+    "swf": "sources/decoded/zmxiyou1/Role_v7.swf",
+    "ffdec_xml": ".tools/zmxiyou1_xml/Role_v7.xml",
+    "preservation": "The source SWF, decoded XML, and assets/extracted/full are unchanged."
+  },
+  "scope": {
+    "body_showids": [1, 2, 3, 4, 5, 6],
+    "weapon_showids": [1, 2, 3, 4, 5, 6, 7, 8],
+    "body_selectors": [143, 152, 160, 186],
+    "weapon_selector": 177
+  },
+  "actions": {
+    "idle": {"symbol": 529, "frames": 100, "loop": true},
+    "walk": {"symbol": 440, "frames": 16, "loop": true},
+    "run": {"symbol": 452, "frames": 8, "loop": true},
+    "hit1": {"symbol": 211, "frames": 8, "loop": false},
+    "jump_up": {"symbol": 533, "frames": 1, "loop": false},
+    "jump_double": {"symbol": 539, "frames": 10, "loop": false, "weapon_direct_child_symbol": 538},
+    "jump_fall": {"symbol": 543, "frames": 1, "loop": false},
+    "hurt": {"symbol": 553, "frames": 15, "loop": false}
+  },
+  "complete_frame_total_per_variant": 159,
+  "offline_derivation": {
+    "body": "Freeze selectors 143/152/160/186 to the matching showid, blank weapon selector 177, then export the eight action DefineSprites with FFDec sprite:png and sprite:svg.",
+    "weapon": "Freeze armor selectors to showid 1 and selector 177 to the matching showid; retain direct 177 placement through all action timelines, except jump_double 539 which retains direct child 538.",
+    "alignment": "The selected assets use the outer SVG Flash matrix as a shared registration point. A single scale and global Flash-coordinate bounds are applied to every body and weapon candidate."
+  },
+  "selected_output": {
+    "root": "assets/selected/zmxiyou1/wukong",
+    "body": "body_candidates/showid_N/source_atlas.png and frames/<action>/frame_00.png",
+    "weapon": "weapon_candidates/showid_N/source_atlas.png and frames/<action>/frame_00.png",
+    "atlas": {"frame_size": [200, 200], "columns": 6, "size": [1200, 6200], "action_start_rows": {"idle": 0, "walk": 17, "run": 20, "hit1": 22, "jump_up": 24, "jump_double": 25, "jump_fall": 27, "hurt": 28}}
+  },
+  "runtime": {
+    "profile": "resources/roles/zmxiyou1/role_1_wukong_runtime_probe.tres",
+    "body_switch": "LayeredSpriteAnimator.set_body(showid)",
+    "weapon_switch": "LayeredSpriteAnimator.set_weapon(showid)",
+    "layering": "weapon_z_index = -1, so the ZMX1 weapon renders behind the body.",
+    "synchronization": "Body and weapon share exactly the same compiled atlas cell per action frame."
+  },
+  "cleanup": {
+    "deleted": ["assets/selected/zmxiyou1/wukong/runtime_probe"],
+    "reason": "The earlier two-body/two-weapon probe was a derived selected-asset duplicate. It is replaced by the canonical all-showid candidate root; source and classified libraries are unchanged."
+  },
+  "open_questions": [
+    "Equipment display names are deliberately neutral showid labels until item semantics are verified from source code or a catalog."
+  ]
+}

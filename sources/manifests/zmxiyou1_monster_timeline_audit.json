@@ -1,0 +1,5285 @@
+{
+  "generated_at": "2026-07-22T10:47:39+08:00",
+  "purpose": "Source-of-truth audit of nested dynamic MovieClip timelines reachable from each exported ZMX1 monster action label.",
+  "rule": "A provider is retained as a complete action timeline when a root action label places it (directly or through a static wrapper) and its SWF DefineSprite frameCount is greater than one.",
+  "packages": [
+    "Monster_v1",
+    "Monster2_v4",
+    "Monster3_v3"
+  ],
+  "monsters": {
+    "M01": {
+      "package": "Monster_v1",
+      "root_symbol_id": 113,
+      "root_symbol": "export.monster.Monster1",
+      "source_folder": "Monster1",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 89,
+              "symbol_name": "character_89",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 8,
+          "root_frame_end": 14,
+          "providers": [
+            {
+              "symbol_id": 92,
+              "symbol_name": "Monster_fla.受伤_57",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 15,
+          "root_frame_end": 21,
+          "providers": [
+            {
+              "symbol_id": 101,
+              "symbol_name": "Monster_fla.元件3_58",
+              "frame_count": 24,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 22,
+          "root_frame_end": 26,
+          "providers": [
+            {
+              "symbol_id": 108,
+              "symbol_name": "Monster_fla.元件4_59",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 27,
+          "root_frame_end": 32,
+          "providers": []
+        },
+        {
+          "label": "afterHurt",
+          "folder": "afterHurt",
+          "root_frame_start": 33,
+          "root_frame_end": 40,
+          "providers": [
+            {
+              "symbol_id": 112,
+              "symbol_name": "Monster_fla.受伤之后_61",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M02": {
+      "package": "Monster_v1",
+      "root_symbol_id": 84,
+      "root_symbol": "export.monster.Monster2",
+      "source_folder": "Monster2",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": [
+            {
+              "symbol_id": 57,
+              "symbol_name": "character_57",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 7,
+          "root_frame_end": 13,
+          "providers": [
+            {
+              "symbol_id": 60,
+              "symbol_name": "Monster_fla.受伤_64",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 14,
+          "root_frame_end": 20,
+          "providers": [
+            {
+              "symbol_id": 67,
+              "symbol_name": "Monster_fla.元件9_65",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 21,
+          "root_frame_end": 28,
+          "providers": [
+            {
+              "symbol_id": 73,
+              "symbol_name": "Monster_fla.元件11_67",
+              "frame_count": 22,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 29,
+          "root_frame_end": 35,
+          "providers": [
+            {
+              "symbol_id": 80,
+              "symbol_name": "character_80",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "afterHurt",
+          "folder": "afterHurt",
+          "root_frame_start": 36,
+          "root_frame_end": 43,
+          "providers": [
+            {
+              "symbol_id": 83,
+              "symbol_name": "Monster_fla.受伤之后_69",
+              "frame_count": 10,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M03": {
+      "package": "Monster_v1",
+      "root_symbol_id": 139,
+      "root_symbol": "export.monster.Monster3",
+      "source_folder": "Monster3_大猩猩",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 5,
+          "providers": [
+            {
+              "symbol_id": 118,
+              "symbol_name": "character_118",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 6,
+          "root_frame_end": 11,
+          "providers": [
+            {
+              "symbol_id": 123,
+              "symbol_name": "Monster_fla.元件4_50",
+              "frame_count": 17,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 12,
+          "root_frame_end": 16,
+          "providers": [
+            {
+              "symbol_id": 125,
+              "symbol_name": "Monster_fla.受伤_51",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 17,
+          "root_frame_end": 22,
+          "providers": [
+            {
+              "symbol_id": 129,
+              "symbol_name": "Monster_fla.元件6_52",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "afterHurt",
+          "folder": "afterHurt",
+          "root_frame_start": 23,
+          "root_frame_end": 30,
+          "providers": [
+            {
+              "symbol_id": 132,
+              "symbol_name": "Monster_fla.受伤后_53",
+              "frame_count": 7,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 31,
+          "root_frame_end": 36,
+          "providers": [
+            {
+              "symbol_id": 138,
+              "symbol_name": "character_138",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M04": {
+      "package": "Monster_v1",
+      "root_symbol_id": 534,
+      "root_symbol": "export.monster.Monster4",
+      "source_folder": "Monster4_彌猴王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 9,
+          "providers": [
+            {
+              "symbol_id": 466,
+              "symbol_name": "character_466",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 10,
+          "root_frame_end": 18,
+          "providers": [
+            {
+              "symbol_id": 471,
+              "symbol_name": "Monster_fla.元件14ssssss_8",
+              "frame_count": 53,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 19,
+          "root_frame_end": 27,
+          "providers": [
+            {
+              "symbol_id": 485,
+              "symbol_name": "Monster_fla.元件45ssss_9",
+              "frame_count": 76,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 476,
+              "symbol_name": "character_476",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 481,
+              "symbol_name": "character_481",
+              "frame_count": 5,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 484,
+              "symbol_name": "character_484",
+              "frame_count": 5,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 28,
+          "root_frame_end": 42,
+          "providers": [
+            {
+              "symbol_id": 492,
+              "symbol_name": "character_492",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 43,
+          "root_frame_end": 50,
+          "providers": [
+            {
+              "symbol_id": 495,
+              "symbol_name": "Monster_fla.受伤_16",
+              "frame_count": 11,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 51,
+          "root_frame_end": 58,
+          "providers": [
+            {
+              "symbol_id": 507,
+              "symbol_name": "Monster_fla.元件3sssss_17",
+              "frame_count": 17,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 59,
+          "root_frame_end": 64,
+          "providers": [
+            {
+              "symbol_id": 533,
+              "symbol_name": "Monster_fla.死亡_20",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M06": {
+      "package": "Monster_v1",
+      "root_symbol_id": 461,
+      "root_symbol": "export.monster.Monster6",
+      "source_folder": "Monster6_禺狨王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 283,
+              "symbol_name": "character_283",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 9,
+          "root_frame_end": 15,
+          "providers": [
+            {
+              "symbol_id": 335,
+              "symbol_name": "Monster_fla.元件9_23",
+              "frame_count": 23,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 329,
+              "symbol_name": "Monster_fla.元件11_24",
+              "frame_count": 21,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 16,
+          "root_frame_end": 25,
+          "providers": [
+            {
+              "symbol_id": 425,
+              "symbol_name": "Monster_fla.元件12_26",
+              "frame_count": 83,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 353,
+              "symbol_name": "character_353",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 424,
+              "symbol_name": "Monster_fla.元件14_28",
+              "frame_count": 45,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 26,
+          "root_frame_end": 33,
+          "providers": [
+            {
+              "symbol_id": 428,
+              "symbol_name": "Monster_fla.受伤_29",
+              "frame_count": 14,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 34,
+          "root_frame_end": 40,
+          "providers": [
+            {
+              "symbol_id": 434,
+              "symbol_name": "character_434",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 41,
+          "root_frame_end": 46,
+          "providers": [
+            {
+              "symbol_id": 460,
+              "symbol_name": "Monster_fla.死亡_31",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M07": {
+      "package": "Monster_v1",
+      "root_symbol_id": 207,
+      "root_symbol": "export.monster.Monster7",
+      "source_folder": "Monster7",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 10,
+          "providers": [
+            {
+              "symbol_id": 148,
+              "symbol_name": "character_148",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 11,
+          "root_frame_end": 19,
+          "providers": [
+            {
+              "symbol_id": 175,
+              "symbol_name": "Monster_fla.元件29_44",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 20,
+          "root_frame_end": 28,
+          "providers": [
+            {
+              "symbol_id": 180,
+              "symbol_name": "Monster_fla.元件31_45",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 29,
+          "root_frame_end": 38,
+          "providers": [
+            {
+              "symbol_id": 191,
+              "symbol_name": "Monster_fla.元件32_46",
+              "frame_count": 22,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 39,
+          "root_frame_end": 47,
+          "providers": [
+            {
+              "symbol_id": 206,
+              "symbol_name": "character_206",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M08": {
+      "package": "Monster_v1",
+      "root_symbol_id": 278,
+      "root_symbol": "export.monster.Monster8",
+      "source_folder": "Monster8",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 214,
+              "symbol_name": "character_214",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 213,
+              "symbol_name": "character_213",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 9,
+          "root_frame_end": 16,
+          "providers": [
+            {
+              "symbol_id": 220,
+              "symbol_name": "Monster_fla.元件20_35",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 218,
+              "symbol_name": "character_218",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 17,
+          "root_frame_end": 25,
+          "providers": [
+            {
+              "symbol_id": 223,
+              "symbol_name": "Monster_fla.元件23_39",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 26,
+          "root_frame_end": 33,
+          "providers": [
+            {
+              "symbol_id": 276,
+              "symbol_name": "Monster_fla.蝙蝠死_40",
+              "frame_count": 26,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 34,
+          "root_frame_end": 39,
+          "providers": [
+            {
+              "symbol_id": 277,
+              "symbol_name": "character_277",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 213,
+              "symbol_name": "character_213",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M09": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 670,
+      "root_symbol": "export.monster.Monster9",
+      "source_folder": "Monster9_彭魔王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 514,
+              "symbol_name": "character_514",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "fly",
+          "folder": "fly",
+          "root_frame_start": 9,
+          "root_frame_end": 15,
+          "providers": [
+            {
+              "symbol_id": 519,
+              "symbol_name": "character_519",
+              "frame_count": 9,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 16,
+          "root_frame_end": 22,
+          "providers": [
+            {
+              "symbol_id": 543,
+              "symbol_name": "Monster2_fla.Timeline_92",
+              "frame_count": 24,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 519,
+              "symbol_name": "character_519",
+              "frame_count": 9,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 23,
+          "root_frame_end": 30,
+          "providers": [
+            {
+              "symbol_id": 568,
+              "symbol_name": "Monster2_fla.Timeline_97",
+              "frame_count": 41,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 519,
+              "symbol_name": "character_519",
+              "frame_count": 9,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 567,
+              "symbol_name": "character_567",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 31,
+          "root_frame_end": 37,
+          "providers": [
+            {
+              "symbol_id": 579,
+              "symbol_name": "Monster2_fla.Timeline_99",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "turnToEgg",
+          "folder": "turnToEgg",
+          "root_frame_start": 38,
+          "root_frame_end": 43,
+          "providers": [
+            {
+              "symbol_id": 599,
+              "symbol_name": "Monster2_fla.Timeline_101",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 598,
+              "symbol_name": "character_598",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "reBurn",
+          "folder": "reBurn",
+          "root_frame_start": 44,
+          "root_frame_end": 49,
+          "providers": [
+            {
+              "symbol_id": 623,
+              "symbol_name": "Monster2_fla.Timeline_104",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 622,
+              "symbol_name": "character_622",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 50,
+          "root_frame_end": 55,
+          "providers": [
+            {
+              "symbol_id": 626,
+              "symbol_name": "Monster2_fla.Timeline_106",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 56,
+          "root_frame_end": 61,
+          "providers": [
+            {
+              "symbol_id": 632,
+              "symbol_name": "character_632",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit4",
+          "folder": "攻击4",
+          "root_frame_start": 62,
+          "root_frame_end": 67,
+          "providers": [
+            {
+              "symbol_id": 643,
+              "symbol_name": "Monster2_fla.Timeline_108",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 68,
+          "root_frame_end": 72,
+          "providers": [
+            {
+              "symbol_id": 669,
+              "symbol_name": "Monster2_fla.Timeline_111",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M10": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 1144,
+      "root_symbol": "export.monster.Monster10",
+      "source_folder": "Monster10_鲛魔王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 1071,
+              "symbol_name": "character_1071",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 9,
+          "root_frame_end": 16,
+          "providers": [
+            {
+              "symbol_id": 1076,
+              "symbol_name": "Monster2_fla.Timeline_18",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 17,
+          "root_frame_end": 23,
+          "providers": [
+            {
+              "symbol_id": 1082,
+              "symbol_name": "character_1082",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 24,
+          "root_frame_end": 30,
+          "providers": [
+            {
+              "symbol_id": 1085,
+              "symbol_name": "Monster2_fla.Timeline_20",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 31,
+          "root_frame_end": 39,
+          "providers": [
+            {
+              "symbol_id": 1103,
+              "symbol_name": "Monster2_fla.Timeline_21",
+              "frame_count": 21,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 1100,
+              "symbol_name": "character_1100",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 40,
+          "root_frame_end": 47,
+          "providers": [
+            {
+              "symbol_id": 1117,
+              "symbol_name": "Monster2_fla.Timeline_23",
+              "frame_count": 45,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 1113,
+              "symbol_name": "Monster2_fla.Timeline_24",
+              "frame_count": 45,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 1112,
+              "symbol_name": "character_1112",
+              "frame_count": 45,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 48,
+          "root_frame_end": 53,
+          "providers": [
+            {
+              "symbol_id": 1143,
+              "symbol_name": "Monster2_fla.Timeline_27",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M11": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 202,
+      "root_symbol": "export.monster.Monster11",
+      "source_folder": "Monster11_狮驼王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 75,
+              "symbol_name": "character_75",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 9,
+          "root_frame_end": 14,
+          "providers": [
+            {
+              "symbol_id": 86,
+              "symbol_name": "Monster2_fla.Timeline_187",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 15,
+          "root_frame_end": 20,
+          "providers": [
+            {
+              "symbol_id": 153,
+              "symbol_name": "Monster2_fla.Timeline_190",
+              "frame_count": 47,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 106,
+              "symbol_name": "character_106",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 133,
+              "symbol_name": "character_133",
+              "frame_count": 18,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 151,
+              "symbol_name": "Monster2_fla.Timeline_194",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 21,
+          "root_frame_end": 26,
+          "providers": [
+            {
+              "symbol_id": 166,
+              "symbol_name": "Monster2_fla.Timeline_195",
+              "frame_count": 24,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 106,
+              "symbol_name": "character_106",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 160,
+              "symbol_name": "Monster2_fla.Timeline_196",
+              "frame_count": 40,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 159,
+              "symbol_name": "character_159",
+              "frame_count": 40,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 27,
+          "root_frame_end": 32,
+          "providers": [
+            {
+              "symbol_id": 169,
+              "symbol_name": "Monster2_fla.Timeline_199",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 33,
+          "root_frame_end": 37,
+          "providers": [
+            {
+              "symbol_id": 175,
+              "symbol_name": "character_175",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 38,
+          "root_frame_end": 43,
+          "providers": [
+            {
+              "symbol_id": 201,
+              "symbol_name": "Monster2_fla.Timeline_201",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M13": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 506,
+      "root_symbol": "export.monster.Monster13",
+      "source_folder": "Monster13",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": [
+            {
+              "symbol_id": 472,
+              "symbol_name": "character_472",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 7,
+          "root_frame_end": 12,
+          "providers": [
+            {
+              "symbol_id": 488,
+              "symbol_name": "Monster2_fla.Timeline_116",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 13,
+          "root_frame_end": 19,
+          "providers": [
+            {
+              "symbol_id": 493,
+              "symbol_name": "Monster2_fla.Timeline_121",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 20,
+          "root_frame_end": 25,
+          "providers": [
+            {
+              "symbol_id": 499,
+              "symbol_name": "Monster2_fla.Timeline_122",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 26,
+          "root_frame_end": 31,
+          "providers": [
+            {
+              "symbol_id": 502,
+              "symbol_name": "Monster2_fla.Timeline_123",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 32,
+          "root_frame_end": 37,
+          "providers": [
+            {
+              "symbol_id": 505,
+              "symbol_name": "character_505",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M14": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 70,
+      "root_symbol": "export.monster.Monster14",
+      "source_folder": "Monster14",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 44,
+              "symbol_name": "character_44",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 8,
+          "root_frame_end": 16,
+          "providers": [
+            {
+              "symbol_id": 48,
+              "symbol_name": "Monster2_fla.Timeline_204",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 17,
+          "root_frame_end": 23,
+          "providers": [
+            {
+              "symbol_id": 51,
+              "symbol_name": "Monster2_fla.Timeline_205",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 48,
+              "symbol_name": "Monster2_fla.Timeline_204",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 24,
+          "root_frame_end": 32,
+          "providers": [
+            {
+              "symbol_id": 63,
+              "symbol_name": "Monster2_fla.Timeline_206",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 33,
+          "root_frame_end": 38,
+          "providers": [
+            {
+              "symbol_id": 69,
+              "symbol_name": "character_69",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M15": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 468,
+      "root_symbol": "export.monster.Monster15",
+      "source_folder": "Monster15",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 449,
+              "symbol_name": "character_449",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 448,
+              "symbol_name": "character_448",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 8,
+          "root_frame_end": 15,
+          "providers": [
+            {
+              "symbol_id": 454,
+              "symbol_name": "Monster2_fla.Timeline_128",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 16,
+          "root_frame_end": 26,
+          "providers": [
+            {
+              "symbol_id": 458,
+              "symbol_name": "Monster2_fla.Timeline_131",
+              "frame_count": 11,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 27,
+          "root_frame_end": 37,
+          "providers": [
+            {
+              "symbol_id": 466,
+              "symbol_name": "Monster2_fla.Timeline_132",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 38,
+          "root_frame_end": 45,
+          "providers": [
+            {
+              "symbol_id": 467,
+              "symbol_name": "character_467",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 448,
+              "symbol_name": "character_448",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M16": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 720,
+      "root_symbol": "export.monster.Monster16",
+      "source_folder": "Monster16",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 680,
+              "symbol_name": "character_680",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 8,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 686,
+              "symbol_name": "character_686",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 18,
+          "root_frame_end": 27,
+          "providers": [
+            {
+              "symbol_id": 694,
+              "symbol_name": "Monster2_fla.Timeline_75",
+              "frame_count": 22,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 28,
+          "root_frame_end": 35,
+          "providers": [
+            {
+              "symbol_id": 704,
+              "symbol_name": "Monster2_fla.Timeline_76",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 702,
+              "symbol_name": "Monster2_fla.Timeline_77",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 36,
+          "root_frame_end": 45,
+          "providers": [
+            {
+              "symbol_id": 716,
+              "symbol_name": "Monster2_fla.Timeline_79",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 46,
+          "root_frame_end": 52,
+          "providers": [
+            {
+              "symbol_id": 719,
+              "symbol_name": "Monster2_fla._1_84",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M17": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 1228,
+      "root_symbol": "export.monster.Monster17",
+      "source_folder": "Monster17_龟丞相",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": [
+            {
+              "symbol_id": 1199,
+              "symbol_name": "character_1199",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 7,
+          "root_frame_end": 12,
+          "providers": [
+            {
+              "symbol_id": 1211,
+              "symbol_name": "Monster2_fla.Timeline_7",
+              "frame_count": 36,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 13,
+          "root_frame_end": 18,
+          "providers": [
+            {
+              "symbol_id": 1214,
+              "symbol_name": "Monster2_fla.Timeline_10",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 19,
+          "root_frame_end": 24,
+          "providers": [
+            {
+              "symbol_id": 1224,
+              "symbol_name": "Monster2_fla.Timeline_11",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 25,
+          "root_frame_end": 30,
+          "providers": [
+            {
+              "symbol_id": 1227,
+              "symbol_name": "character_1227",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M18": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 266,
+      "root_symbol": "export.monster.Monster18",
+      "source_folder": "Monster18",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 231,
+              "symbol_name": "character_231",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 230,
+              "symbol_name": "character_230",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 8,
+          "root_frame_end": 14,
+          "providers": [
+            {
+              "symbol_id": 233,
+              "symbol_name": "Monster2_fla.hit1_167",
+              "frame_count": 49,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 230,
+              "symbol_name": "character_230",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 15,
+          "root_frame_end": 20,
+          "providers": [
+            {
+              "symbol_id": 247,
+              "symbol_name": "Monster2_fla.Timeline_168",
+              "frame_count": 50,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 242,
+              "symbol_name": "character_242",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 237,
+              "symbol_name": "character_237",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 241,
+              "symbol_name": "character_241",
+              "frame_count": 50,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 240,
+              "symbol_name": "character_240",
+              "frame_count": 50,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 246,
+              "symbol_name": "Monster2_fla.Timeline_174",
+              "frame_count": 70,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 21,
+          "root_frame_end": 26,
+          "providers": [
+            {
+              "symbol_id": 248,
+              "symbol_name": "character_248",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 230,
+              "symbol_name": "character_230",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 27,
+          "root_frame_end": 32,
+          "providers": [
+            {
+              "symbol_id": 251,
+              "symbol_name": "Monster2_fla.Timeline_176",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 33,
+          "root_frame_end": 38,
+          "providers": [
+            {
+              "symbol_id": 265,
+              "symbol_name": "Monster2_fla.Timeline_178",
+              "frame_count": 40,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M19": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 431,
+      "root_symbol": "export.monster.Monster19",
+      "source_folder": "Monster19_鲨魔王",
+      "actions": [
+        {
+          "label": "walk1",
+          "folder": "walk1",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 306,
+              "symbol_name": "character_306",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 301,
+              "symbol_name": "character_301",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 230,
+              "symbol_name": "character_230",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait1",
+          "folder": "wait1",
+          "root_frame_start": 9,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 312,
+              "symbol_name": "character_312",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 301,
+              "symbol_name": "character_301",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 230,
+              "symbol_name": "character_230",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2-1",
+          "folder": "攻击2_阶段1",
+          "root_frame_start": 18,
+          "root_frame_end": 23,
+          "providers": [
+            {
+              "symbol_id": 347,
+              "symbol_name": "Monster2_fla.hit2_142",
+              "frame_count": 23,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 344,
+              "symbol_name": "character_344",
+              "frame_count": 14,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2-2",
+          "folder": "攻击2_阶段2",
+          "root_frame_start": 24,
+          "root_frame_end": 30,
+          "providers": [
+            {
+              "symbol_id": 353,
+              "symbol_name": "Monster2_fla.hit2_144",
+              "frame_count": 23,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 344,
+              "symbol_name": "character_344",
+              "frame_count": 14,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1-1",
+          "folder": "攻击1_阶段1",
+          "root_frame_start": 31,
+          "root_frame_end": 39,
+          "providers": [
+            {
+              "symbol_id": 369,
+              "symbol_name": "Monster2_fla.Timeline_145",
+              "frame_count": 12,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 362,
+              "symbol_name": "character_362",
+              "frame_count": 7,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 361,
+              "symbol_name": "character_361",
+              "frame_count": 11,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "walk2",
+          "folder": "walk2",
+          "root_frame_start": 40,
+          "root_frame_end": 45,
+          "providers": [
+            {
+              "symbol_id": 374,
+              "symbol_name": "character_374",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait2",
+          "folder": "wait2",
+          "root_frame_start": 46,
+          "root_frame_end": 51,
+          "providers": [
+            {
+              "symbol_id": 380,
+              "symbol_name": "character_380",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1-2",
+          "folder": "攻击1_阶段2",
+          "root_frame_start": 52,
+          "root_frame_end": 57,
+          "providers": [
+            {
+              "symbol_id": 389,
+              "symbol_name": "Monster2_fla.hit1_151",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 362,
+              "symbol_name": "character_362",
+              "frame_count": 7,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 361,
+              "symbol_name": "character_361",
+              "frame_count": 11,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3-1",
+          "folder": "攻击3_阶段1",
+          "root_frame_start": 58,
+          "root_frame_end": 64,
+          "providers": [
+            {
+              "symbol_id": 394,
+              "symbol_name": "Monster2_fla.hit3_153",
+              "frame_count": 18,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3-2",
+          "folder": "攻击3_阶段2",
+          "root_frame_start": 65,
+          "root_frame_end": 71,
+          "providers": [
+            {
+              "symbol_id": 399,
+              "symbol_name": "Monster2_fla.hit3_154",
+              "frame_count": 18,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 72,
+          "root_frame_end": 78,
+          "providers": [
+            {
+              "symbol_id": 404,
+              "symbol_name": "Monster2_fla.Timeline_155",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 79,
+          "root_frame_end": 84,
+          "providers": [
+            {
+              "symbol_id": 430,
+              "symbol_name": "Monster2_fla.Timeline_157",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M20": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 37,
+      "root_symbol": "export.monster.Monster20",
+      "source_folder": "Monster20",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 7,
+          "providers": [
+            {
+              "symbol_id": 5,
+              "symbol_name": "character_5",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 8,
+          "root_frame_end": 14,
+          "providers": [
+            {
+              "symbol_id": 13,
+              "symbol_name": "character_13",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 15,
+          "root_frame_end": 21,
+          "providers": [
+            {
+              "symbol_id": 25,
+              "symbol_name": "Monster2_fla.Timeline_212",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 19,
+              "symbol_name": "Monster2_fla.Timeline_213",
+              "frame_count": 14,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 22,
+          "root_frame_end": 28,
+          "providers": [
+            {
+              "symbol_id": 33,
+              "symbol_name": "Monster2_fla.Timeline_216",
+              "frame_count": 30,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 29,
+          "root_frame_end": 35,
+          "providers": [
+            {
+              "symbol_id": 36,
+              "symbol_name": "Monster2_fla.Timeline_217",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M21": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 1233,
+      "root_symbol": "export.monster.Monster21",
+      "source_folder": "Monster21_蝙蝠洞",
+      "actions": [
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": []
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 7,
+          "root_frame_end": 11,
+          "providers": []
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 12,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 1232,
+              "symbol_name": "Monster2_fla.Timeline_4",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M22": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 1066,
+      "root_symbol": "export.monster.Monster22",
+      "source_folder": "Monster22_牛魔王",
+      "actions": [
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": [
+            {
+              "symbol_id": 981,
+              "symbol_name": "character_981",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 7,
+          "root_frame_end": 12,
+          "providers": [
+            {
+              "symbol_id": 1007,
+              "symbol_name": "Monster2_fla.Timeline_30",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 13,
+          "root_frame_end": 18,
+          "providers": [
+            {
+              "symbol_id": 1065,
+              "symbol_name": "character_1065",
+              "frame_count": 110,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M23": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 978,
+      "root_symbol": "export.monster.Monster23",
+      "source_folder": "Monster23_牛魔王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 760,
+              "symbol_name": "character_760",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 9,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 774,
+              "symbol_name": "Monster2_fla.Timeline_35",
+              "frame_count": 60,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 770,
+              "symbol_name": "character_770",
+              "frame_count": 40,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 773,
+              "symbol_name": "character_773",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 18,
+          "root_frame_end": 31,
+          "providers": [
+            {
+              "symbol_id": 782,
+              "symbol_name": "character_782",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 32,
+          "root_frame_end": 44,
+          "providers": [
+            {
+              "symbol_id": 810,
+              "symbol_name": "Monster2_fla.Timeline_40",
+              "frame_count": 67,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 808,
+              "symbol_name": "Monster2_fla.Timeline_41",
+              "frame_count": 35,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit4",
+          "folder": "攻击4",
+          "root_frame_start": 45,
+          "root_frame_end": 51,
+          "providers": [
+            {
+              "symbol_id": 897,
+              "symbol_name": "Monster2_fla.Timeline_42",
+              "frame_count": 54,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 843,
+              "symbol_name": "character_843",
+              "frame_count": 15,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 896,
+              "symbol_name": "character_896",
+              "frame_count": 34,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 875,
+              "symbol_name": "Monster2_fla.Timeline_45",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 872,
+              "symbol_name": "character_872",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 869,
+              "symbol_name": "character_869",
+              "frame_count": 14,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 873,
+              "symbol_name": "character_873",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 874,
+              "symbol_name": "character_874",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit5",
+          "folder": "攻击5",
+          "root_frame_start": 52,
+          "root_frame_end": 57,
+          "providers": [
+            {
+              "symbol_id": 922,
+              "symbol_name": "Monster2_fla.Timeline_52",
+              "frame_count": 130,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 918,
+              "symbol_name": "Monster2_fla.Timeline_55",
+              "frame_count": 88,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 917,
+              "symbol_name": "Monster2_fla.Timeline_56",
+              "frame_count": 2,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 913,
+              "symbol_name": "character_913",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 916,
+              "symbol_name": "character_916",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 58,
+          "root_frame_end": 64,
+          "providers": [
+            {
+              "symbol_id": 925,
+              "symbol_name": "Monster2_fla.Timeline_59",
+              "frame_count": 6,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 65,
+          "root_frame_end": 70,
+          "providers": [
+            {
+              "symbol_id": 951,
+              "symbol_name": "Monster2_fla.Timeline_60",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 71,
+          "root_frame_end": 78,
+          "providers": [
+            {
+              "symbol_id": 977,
+              "symbol_name": "Monster2_fla.Timeline_61",
+              "frame_count": 60,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M24": {
+      "package": "Monster2_v4",
+      "root_symbol_id": 738,
+      "root_symbol": "export.monster.Monster24",
+      "source_folder": "Monster24_牛魔王",
+      "actions": [
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": [
+            {
+              "symbol_id": 732,
+              "symbol_name": "export.monster.Monster23Child.Heart",
+              "frame_count": 23,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 735,
+              "symbol_name": "character_735",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 7,
+          "root_frame_end": 11,
+          "providers": [
+            {
+              "symbol_id": 732,
+              "symbol_name": "export.monster.Monster23Child.Heart",
+              "frame_count": 23,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 735,
+              "symbol_name": "character_735",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M25": {
+      "package": "Monster_v1",
+      "root_symbol_id": 52,
+      "root_symbol": "export.monster.Monster25",
+      "source_folder": "Monster25",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 8,
+          "providers": [
+            {
+              "symbol_id": 20,
+              "symbol_name": "character_20",
+              "frame_count": 20,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 9,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 30,
+              "symbol_name": "Monster_fla.元件82_72",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 18,
+          "root_frame_end": 25,
+          "providers": [
+            {
+              "symbol_id": 34,
+              "symbol_name": "Monster_fla.元件83_73",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 26,
+          "root_frame_end": 34,
+          "providers": [
+            {
+              "symbol_id": 44,
+              "symbol_name": "Monster_fla.元件84_74",
+              "frame_count": 24,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 35,
+          "root_frame_end": 42,
+          "providers": [
+            {
+              "symbol_id": 51,
+              "symbol_name": "character_51",
+              "frame_count": 13,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M26": {
+      "package": "Monster3_v3",
+      "root_symbol_id": 106,
+      "root_symbol": "export.monster.Monster26",
+      "source_folder": "Monster26_龙王",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 9,
+          "providers": [
+            {
+              "symbol_id": 19,
+              "symbol_name": "character_19",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit2",
+          "folder": "攻击2",
+          "root_frame_start": 10,
+          "root_frame_end": 19,
+          "providers": [
+            {
+              "symbol_id": 50,
+              "symbol_name": "Monster3_fla.Timeline_14",
+              "frame_count": 90,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 27,
+              "symbol_name": "Monster3_fla.Timeline_15",
+              "frame_count": 40,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 38,
+              "symbol_name": "character_38",
+              "frame_count": 50,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 48,
+              "symbol_name": "Monster3_fla.Timeline_19",
+              "frame_count": 60,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 46,
+              "symbol_name": "character_46",
+              "frame_count": 70,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 44,
+              "symbol_name": "character_44",
+              "frame_count": 70,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 45,
+              "symbol_name": "character_45",
+              "frame_count": 70,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit1",
+          "folder": "攻击1",
+          "root_frame_start": 20,
+          "root_frame_end": 29,
+          "providers": [
+            {
+              "symbol_id": 56,
+              "symbol_name": "Monster3_fla.Timeline_25",
+              "frame_count": 21,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit3",
+          "folder": "攻击3",
+          "root_frame_start": 30,
+          "root_frame_end": 39,
+          "providers": [
+            {
+              "symbol_id": 64,
+              "symbol_name": "Monster3_fla.Timeline_26",
+              "frame_count": 101,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 59,
+              "symbol_name": "character_59",
+              "frame_count": 4,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            },
+            {
+              "symbol_id": 62,
+              "symbol_name": "character_62",
+              "frame_count": 8,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hit4",
+          "folder": "攻击4",
+          "root_frame_start": 40,
+          "root_frame_end": 48,
+          "providers": [
+            {
+              "symbol_id": 76,
+              "symbol_name": "Monster3_fla.Timeline_30",
+              "frame_count": 39,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 49,
+          "root_frame_end": 55,
+          "providers": [
+            {
+              "symbol_id": 79,
+              "symbol_name": "Monster3_fla.Timeline_31",
+              "frame_count": 7,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 56,
+          "root_frame_end": 62,
+          "providers": [
+            {
+              "symbol_id": 105,
+              "symbol_name": "Monster3_fla.Timeline_32",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 63,
+          "root_frame_end": 71,
+          "providers": [
+            {
+              "symbol_id": 19,
+              "symbol_name": "character_19",
+              "frame_count": 16,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        }
+      ]
+    },
+    "M27": {
+      "package": "Monster3_v3",
+      "root_symbol_id": 125,
+      "root_symbol": "export.monster.Monster27",
+      "source_folder": "Monster27_宝箱",
+      "actions": [
+        {
+          "label": "walk",
+          "folder": "移动",
+          "root_frame_start": 1,
+          "root_frame_end": 6,
+          "providers": []
+        },
+        {
+          "label": "hurt",
+          "folder": "受伤",
+          "root_frame_start": 7,
+          "root_frame_end": 11,
+          "providers": [
+            {
+              "symbol_id": 121,
+              "symbol_name": "Monster3_fla.Timeline_4",
+              "frame_count": 5,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "dead",
+          "folder": "死亡",
+          "root_frame_start": 12,
+          "root_frame_end": 17,
+          "providers": [
+            {
+              "symbol_id": 123,
+              "symbol_name": "Monster3_fla.Timeline_5",
+              "frame_count": 25,
+              "root_depth": 1,
+              "root_instance": "body",
+              "has_labels": false
+            }
+          ]
+        },
+        {
+          "label": "wait",
+          "folder": "待机",
+          "root_frame_start": 18,
+          "root_frame_end": 22,
+          "providers": []
+        }
+      ]
+    }
+  },
+  "provider_rows": [
+    {
+      "monster": "M25",
+      "action": "walk",
+      "symbol_id": 20,
+      "symbol_name": "character_20",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M25",
+      "action": "hit1",
+      "symbol_id": 30,
+      "symbol_name": "Monster_fla.元件82_72",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M25",
+      "action": "hurt",
+      "symbol_id": 34,
+      "symbol_name": "Monster_fla.元件83_73",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M25",
+      "action": "dead",
+      "symbol_id": 44,
+      "symbol_name": "Monster_fla.元件84_74",
+      "frame_count": 24,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M25",
+      "action": "wait",
+      "symbol_id": 51,
+      "symbol_name": "character_51",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "walk",
+      "symbol_id": 57,
+      "symbol_name": "character_57",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "hurt",
+      "symbol_id": 60,
+      "symbol_name": "Monster_fla.受伤_64",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "hit1",
+      "symbol_id": 67,
+      "symbol_name": "Monster_fla.元件9_65",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "dead",
+      "symbol_id": 73,
+      "symbol_name": "Monster_fla.元件11_67",
+      "frame_count": 22,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "wait",
+      "symbol_id": 80,
+      "symbol_name": "character_80",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M02",
+      "action": "afterHurt",
+      "symbol_id": 83,
+      "symbol_name": "Monster_fla.受伤之后_69",
+      "frame_count": 10,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M01",
+      "action": "walk",
+      "symbol_id": 89,
+      "symbol_name": "character_89",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M01",
+      "action": "hurt",
+      "symbol_id": 92,
+      "symbol_name": "Monster_fla.受伤_57",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M01",
+      "action": "hit1",
+      "symbol_id": 101,
+      "symbol_name": "Monster_fla.元件3_58",
+      "frame_count": 24,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M01",
+      "action": "dead",
+      "symbol_id": 108,
+      "symbol_name": "Monster_fla.元件4_59",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M01",
+      "action": "afterHurt",
+      "symbol_id": 112,
+      "symbol_name": "Monster_fla.受伤之后_61",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "walk",
+      "symbol_id": 118,
+      "symbol_name": "character_118",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "hit1",
+      "symbol_id": 123,
+      "symbol_name": "Monster_fla.元件4_50",
+      "frame_count": 17,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "hurt",
+      "symbol_id": 125,
+      "symbol_name": "Monster_fla.受伤_51",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "dead",
+      "symbol_id": 129,
+      "symbol_name": "Monster_fla.元件6_52",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "afterHurt",
+      "symbol_id": 132,
+      "symbol_name": "Monster_fla.受伤后_53",
+      "frame_count": 7,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M03",
+      "action": "wait",
+      "symbol_id": 138,
+      "symbol_name": "character_138",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M07",
+      "action": "walk",
+      "symbol_id": 148,
+      "symbol_name": "character_148",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M07",
+      "action": "hit1",
+      "symbol_id": 175,
+      "symbol_name": "Monster_fla.元件29_44",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M07",
+      "action": "hurt",
+      "symbol_id": 180,
+      "symbol_name": "Monster_fla.元件31_45",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M07",
+      "action": "dead",
+      "symbol_id": 191,
+      "symbol_name": "Monster_fla.元件32_46",
+      "frame_count": 22,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M07",
+      "action": "wait",
+      "symbol_id": 206,
+      "symbol_name": "character_206",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "walk",
+      "symbol_id": 214,
+      "symbol_name": "character_214",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "walk",
+      "symbol_id": 213,
+      "symbol_name": "character_213",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "hit1",
+      "symbol_id": 220,
+      "symbol_name": "Monster_fla.元件20_35",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "hit1",
+      "symbol_id": 218,
+      "symbol_name": "character_218",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "hurt",
+      "symbol_id": 223,
+      "symbol_name": "Monster_fla.元件23_39",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "dead",
+      "symbol_id": 276,
+      "symbol_name": "Monster_fla.蝙蝠死_40",
+      "frame_count": 26,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "wait",
+      "symbol_id": 277,
+      "symbol_name": "character_277",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M08",
+      "action": "wait",
+      "symbol_id": 213,
+      "symbol_name": "character_213",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "walk",
+      "symbol_id": 283,
+      "symbol_name": "character_283",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hit1",
+      "symbol_id": 335,
+      "symbol_name": "Monster_fla.元件9_23",
+      "frame_count": 23,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hit1",
+      "symbol_id": 329,
+      "symbol_name": "Monster_fla.元件11_24",
+      "frame_count": 21,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hit2",
+      "symbol_id": 425,
+      "symbol_name": "Monster_fla.元件12_26",
+      "frame_count": 83,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hit2",
+      "symbol_id": 353,
+      "symbol_name": "character_353",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hit2",
+      "symbol_id": 424,
+      "symbol_name": "Monster_fla.元件14_28",
+      "frame_count": 45,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "hurt",
+      "symbol_id": 428,
+      "symbol_name": "Monster_fla.受伤_29",
+      "frame_count": 14,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "wait",
+      "symbol_id": 434,
+      "symbol_name": "character_434",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M06",
+      "action": "dead",
+      "symbol_id": 460,
+      "symbol_name": "Monster_fla.死亡_31",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "walk",
+      "symbol_id": 466,
+      "symbol_name": "character_466",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit3",
+      "symbol_id": 471,
+      "symbol_name": "Monster_fla.元件14ssssss_8",
+      "frame_count": 53,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit2",
+      "symbol_id": 485,
+      "symbol_name": "Monster_fla.元件45ssss_9",
+      "frame_count": 76,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit2",
+      "symbol_id": 476,
+      "symbol_name": "character_476",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit2",
+      "symbol_id": 481,
+      "symbol_name": "character_481",
+      "frame_count": 5,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit2",
+      "symbol_id": 484,
+      "symbol_name": "character_484",
+      "frame_count": 5,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "wait",
+      "symbol_id": 492,
+      "symbol_name": "character_492",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hurt",
+      "symbol_id": 495,
+      "symbol_name": "Monster_fla.受伤_16",
+      "frame_count": 11,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "hit1",
+      "symbol_id": 507,
+      "symbol_name": "Monster_fla.元件3sssss_17",
+      "frame_count": 17,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M04",
+      "action": "dead",
+      "symbol_id": 533,
+      "symbol_name": "Monster_fla.死亡_20",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "walk",
+      "symbol_id": 5,
+      "symbol_name": "character_5",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "wait",
+      "symbol_id": 13,
+      "symbol_name": "character_13",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "hit1",
+      "symbol_id": 25,
+      "symbol_name": "Monster2_fla.Timeline_212",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "hit1",
+      "symbol_id": 19,
+      "symbol_name": "Monster2_fla.Timeline_213",
+      "frame_count": 14,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "dead",
+      "symbol_id": 33,
+      "symbol_name": "Monster2_fla.Timeline_216",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M20",
+      "action": "hurt",
+      "symbol_id": 36,
+      "symbol_name": "Monster2_fla.Timeline_217",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "walk",
+      "symbol_id": 44,
+      "symbol_name": "character_44",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "hit1",
+      "symbol_id": 48,
+      "symbol_name": "Monster2_fla.Timeline_204",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "hurt",
+      "symbol_id": 51,
+      "symbol_name": "Monster2_fla.Timeline_205",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "hurt",
+      "symbol_id": 48,
+      "symbol_name": "Monster2_fla.Timeline_204",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "dead",
+      "symbol_id": 63,
+      "symbol_name": "Monster2_fla.Timeline_206",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M14",
+      "action": "wait",
+      "symbol_id": 69,
+      "symbol_name": "character_69",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "walk",
+      "symbol_id": 75,
+      "symbol_name": "character_75",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit1",
+      "symbol_id": 86,
+      "symbol_name": "Monster2_fla.Timeline_187",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit2",
+      "symbol_id": 153,
+      "symbol_name": "Monster2_fla.Timeline_190",
+      "frame_count": 47,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit2",
+      "symbol_id": 106,
+      "symbol_name": "character_106",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit2",
+      "symbol_id": 133,
+      "symbol_name": "character_133",
+      "frame_count": 18,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit2",
+      "symbol_id": 151,
+      "symbol_name": "Monster2_fla.Timeline_194",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit3",
+      "symbol_id": 166,
+      "symbol_name": "Monster2_fla.Timeline_195",
+      "frame_count": 24,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit3",
+      "symbol_id": 106,
+      "symbol_name": "character_106",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit3",
+      "symbol_id": 160,
+      "symbol_name": "Monster2_fla.Timeline_196",
+      "frame_count": 40,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hit3",
+      "symbol_id": 159,
+      "symbol_name": "character_159",
+      "frame_count": 40,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "hurt",
+      "symbol_id": 169,
+      "symbol_name": "Monster2_fla.Timeline_199",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "wait",
+      "symbol_id": 175,
+      "symbol_name": "character_175",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M11",
+      "action": "dead",
+      "symbol_id": 201,
+      "symbol_name": "Monster2_fla.Timeline_201",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "walk",
+      "symbol_id": 231,
+      "symbol_name": "character_231",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "walk",
+      "symbol_id": 230,
+      "symbol_name": "character_230",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit1",
+      "symbol_id": 233,
+      "symbol_name": "Monster2_fla.hit1_167",
+      "frame_count": 49,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit1",
+      "symbol_id": 230,
+      "symbol_name": "character_230",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 247,
+      "symbol_name": "Monster2_fla.Timeline_168",
+      "frame_count": 50,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 242,
+      "symbol_name": "character_242",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 237,
+      "symbol_name": "character_237",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 241,
+      "symbol_name": "character_241",
+      "frame_count": 50,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 240,
+      "symbol_name": "character_240",
+      "frame_count": 50,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hit2",
+      "symbol_id": 246,
+      "symbol_name": "Monster2_fla.Timeline_174",
+      "frame_count": 70,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "wait",
+      "symbol_id": 248,
+      "symbol_name": "character_248",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "wait",
+      "symbol_id": 230,
+      "symbol_name": "character_230",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "hurt",
+      "symbol_id": 251,
+      "symbol_name": "Monster2_fla.Timeline_176",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M18",
+      "action": "dead",
+      "symbol_id": 265,
+      "symbol_name": "Monster2_fla.Timeline_178",
+      "frame_count": 40,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "walk1",
+      "symbol_id": 306,
+      "symbol_name": "character_306",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "walk1",
+      "symbol_id": 301,
+      "symbol_name": "character_301",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "walk1",
+      "symbol_id": 230,
+      "symbol_name": "character_230",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "wait1",
+      "symbol_id": 312,
+      "symbol_name": "character_312",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "wait1",
+      "symbol_id": 301,
+      "symbol_name": "character_301",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "wait1",
+      "symbol_id": 230,
+      "symbol_name": "character_230",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit2-1",
+      "symbol_id": 347,
+      "symbol_name": "Monster2_fla.hit2_142",
+      "frame_count": 23,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit2-1",
+      "symbol_id": 344,
+      "symbol_name": "character_344",
+      "frame_count": 14,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit2-2",
+      "symbol_id": 353,
+      "symbol_name": "Monster2_fla.hit2_144",
+      "frame_count": 23,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit2-2",
+      "symbol_id": 344,
+      "symbol_name": "character_344",
+      "frame_count": 14,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-1",
+      "symbol_id": 369,
+      "symbol_name": "Monster2_fla.Timeline_145",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-1",
+      "symbol_id": 362,
+      "symbol_name": "character_362",
+      "frame_count": 7,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-1",
+      "symbol_id": 361,
+      "symbol_name": "character_361",
+      "frame_count": 11,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "walk2",
+      "symbol_id": 374,
+      "symbol_name": "character_374",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "wait2",
+      "symbol_id": 380,
+      "symbol_name": "character_380",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-2",
+      "symbol_id": 389,
+      "symbol_name": "Monster2_fla.hit1_151",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-2",
+      "symbol_id": 362,
+      "symbol_name": "character_362",
+      "frame_count": 7,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit1-2",
+      "symbol_id": 361,
+      "symbol_name": "character_361",
+      "frame_count": 11,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit3-1",
+      "symbol_id": 394,
+      "symbol_name": "Monster2_fla.hit3_153",
+      "frame_count": 18,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hit3-2",
+      "symbol_id": 399,
+      "symbol_name": "Monster2_fla.hit3_154",
+      "frame_count": 18,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "hurt",
+      "symbol_id": 404,
+      "symbol_name": "Monster2_fla.Timeline_155",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M19",
+      "action": "dead",
+      "symbol_id": 430,
+      "symbol_name": "Monster2_fla.Timeline_157",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "walk",
+      "symbol_id": 449,
+      "symbol_name": "character_449",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "walk",
+      "symbol_id": 448,
+      "symbol_name": "character_448",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "hit1",
+      "symbol_id": 454,
+      "symbol_name": "Monster2_fla.Timeline_128",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "hurt",
+      "symbol_id": 458,
+      "symbol_name": "Monster2_fla.Timeline_131",
+      "frame_count": 11,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "dead",
+      "symbol_id": 466,
+      "symbol_name": "Monster2_fla.Timeline_132",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "wait",
+      "symbol_id": 467,
+      "symbol_name": "character_467",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M15",
+      "action": "wait",
+      "symbol_id": 448,
+      "symbol_name": "character_448",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "walk",
+      "symbol_id": 472,
+      "symbol_name": "character_472",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "hit1",
+      "symbol_id": 488,
+      "symbol_name": "Monster2_fla.Timeline_116",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "hit2",
+      "symbol_id": 493,
+      "symbol_name": "Monster2_fla.Timeline_121",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "dead",
+      "symbol_id": 499,
+      "symbol_name": "Monster2_fla.Timeline_122",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "hurt",
+      "symbol_id": 502,
+      "symbol_name": "Monster2_fla.Timeline_123",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M13",
+      "action": "wait",
+      "symbol_id": 505,
+      "symbol_name": "character_505",
+      "frame_count": 13,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "walk",
+      "symbol_id": 514,
+      "symbol_name": "character_514",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "fly",
+      "symbol_id": 519,
+      "symbol_name": "character_519",
+      "frame_count": 9,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit1",
+      "symbol_id": 543,
+      "symbol_name": "Monster2_fla.Timeline_92",
+      "frame_count": 24,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit1",
+      "symbol_id": 519,
+      "symbol_name": "character_519",
+      "frame_count": 9,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit2",
+      "symbol_id": 568,
+      "symbol_name": "Monster2_fla.Timeline_97",
+      "frame_count": 41,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit2",
+      "symbol_id": 519,
+      "symbol_name": "character_519",
+      "frame_count": 9,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit2",
+      "symbol_id": 567,
+      "symbol_name": "character_567",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit3",
+      "symbol_id": 579,
+      "symbol_name": "Monster2_fla.Timeline_99",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "turnToEgg",
+      "symbol_id": 599,
+      "symbol_name": "Monster2_fla.Timeline_101",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "turnToEgg",
+      "symbol_id": 598,
+      "symbol_name": "character_598",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "reBurn",
+      "symbol_id": 623,
+      "symbol_name": "Monster2_fla.Timeline_104",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "reBurn",
+      "symbol_id": 622,
+      "symbol_name": "character_622",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hurt",
+      "symbol_id": 626,
+      "symbol_name": "Monster2_fla.Timeline_106",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "wait",
+      "symbol_id": 632,
+      "symbol_name": "character_632",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "hit4",
+      "symbol_id": 643,
+      "symbol_name": "Monster2_fla.Timeline_108",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M09",
+      "action": "dead",
+      "symbol_id": 669,
+      "symbol_name": "Monster2_fla.Timeline_111",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "walk",
+      "symbol_id": 680,
+      "symbol_name": "character_680",
+      "frame_count": 12,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "wait",
+      "symbol_id": 686,
+      "symbol_name": "character_686",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "dead",
+      "symbol_id": 694,
+      "symbol_name": "Monster2_fla.Timeline_75",
+      "frame_count": 22,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "hit2",
+      "symbol_id": 704,
+      "symbol_name": "Monster2_fla.Timeline_76",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "hit2",
+      "symbol_id": 702,
+      "symbol_name": "Monster2_fla.Timeline_77",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "hit1",
+      "symbol_id": 716,
+      "symbol_name": "Monster2_fla.Timeline_79",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M16",
+      "action": "hurt",
+      "symbol_id": 719,
+      "symbol_name": "Monster2_fla._1_84",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M24",
+      "action": "wait",
+      "symbol_id": 732,
+      "symbol_name": "export.monster.Monster23Child.Heart",
+      "frame_count": 23,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M24",
+      "action": "wait",
+      "symbol_id": 735,
+      "symbol_name": "character_735",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M24",
+      "action": "dead",
+      "symbol_id": 732,
+      "symbol_name": "export.monster.Monster23Child.Heart",
+      "frame_count": 23,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M24",
+      "action": "dead",
+      "symbol_id": 735,
+      "symbol_name": "character_735",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "walk",
+      "symbol_id": 760,
+      "symbol_name": "character_760",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit2",
+      "symbol_id": 774,
+      "symbol_name": "Monster2_fla.Timeline_35",
+      "frame_count": 60,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit2",
+      "symbol_id": 770,
+      "symbol_name": "character_770",
+      "frame_count": 40,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit2",
+      "symbol_id": 773,
+      "symbol_name": "character_773",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "wait",
+      "symbol_id": 782,
+      "symbol_name": "character_782",
+      "frame_count": 20,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit3",
+      "symbol_id": 810,
+      "symbol_name": "Monster2_fla.Timeline_40",
+      "frame_count": 67,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit3",
+      "symbol_id": 808,
+      "symbol_name": "Monster2_fla.Timeline_41",
+      "frame_count": 35,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 897,
+      "symbol_name": "Monster2_fla.Timeline_42",
+      "frame_count": 54,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 843,
+      "symbol_name": "character_843",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 896,
+      "symbol_name": "character_896",
+      "frame_count": 34,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 875,
+      "symbol_name": "Monster2_fla.Timeline_45",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 872,
+      "symbol_name": "character_872",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 869,
+      "symbol_name": "character_869",
+      "frame_count": 14,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 873,
+      "symbol_name": "character_873",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit4",
+      "symbol_id": 874,
+      "symbol_name": "character_874",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit5",
+      "symbol_id": 922,
+      "symbol_name": "Monster2_fla.Timeline_52",
+      "frame_count": 130,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit5",
+      "symbol_id": 918,
+      "symbol_name": "Monster2_fla.Timeline_55",
+      "frame_count": 88,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit5",
+      "symbol_id": 917,
+      "symbol_name": "Monster2_fla.Timeline_56",
+      "frame_count": 2,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit5",
+      "symbol_id": 913,
+      "symbol_name": "character_913",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit5",
+      "symbol_id": 916,
+      "symbol_name": "character_916",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hurt",
+      "symbol_id": 925,
+      "symbol_name": "Monster2_fla.Timeline_59",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "dead",
+      "symbol_id": 951,
+      "symbol_name": "Monster2_fla.Timeline_60",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M23",
+      "action": "hit1",
+      "symbol_id": 977,
+      "symbol_name": "Monster2_fla.Timeline_61",
+      "frame_count": 60,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M22",
+      "action": "wait",
+      "symbol_id": 981,
+      "symbol_name": "character_981",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M22",
+      "action": "dead",
+      "symbol_id": 1007,
+      "symbol_name": "Monster2_fla.Timeline_30",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M22",
+      "action": "walk",
+      "symbol_id": 1065,
+      "symbol_name": "character_1065",
+      "frame_count": 110,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "walk",
+      "symbol_id": 1071,
+      "symbol_name": "character_1071",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit2",
+      "symbol_id": 1076,
+      "symbol_name": "Monster2_fla.Timeline_18",
+      "frame_count": 30,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "wait",
+      "symbol_id": 1082,
+      "symbol_name": "character_1082",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hurt",
+      "symbol_id": 1085,
+      "symbol_name": "Monster2_fla.Timeline_20",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit1",
+      "symbol_id": 1103,
+      "symbol_name": "Monster2_fla.Timeline_21",
+      "frame_count": 21,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit1",
+      "symbol_id": 1100,
+      "symbol_name": "character_1100",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit3",
+      "symbol_id": 1117,
+      "symbol_name": "Monster2_fla.Timeline_23",
+      "frame_count": 45,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit3",
+      "symbol_id": 1113,
+      "symbol_name": "Monster2_fla.Timeline_24",
+      "frame_count": 45,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "hit3",
+      "symbol_id": 1112,
+      "symbol_name": "character_1112",
+      "frame_count": 45,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M10",
+      "action": "dead",
+      "symbol_id": 1143,
+      "symbol_name": "Monster2_fla.Timeline_27",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M17",
+      "action": "walk",
+      "symbol_id": 1199,
+      "symbol_name": "character_1199",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M17",
+      "action": "hit1",
+      "symbol_id": 1211,
+      "symbol_name": "Monster2_fla.Timeline_7",
+      "frame_count": 36,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M17",
+      "action": "hurt",
+      "symbol_id": 1214,
+      "symbol_name": "Monster2_fla.Timeline_10",
+      "frame_count": 6,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M17",
+      "action": "dead",
+      "symbol_id": 1224,
+      "symbol_name": "Monster2_fla.Timeline_11",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M17",
+      "action": "wait",
+      "symbol_id": 1227,
+      "symbol_name": "character_1227",
+      "frame_count": 15,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M21",
+      "action": "dead",
+      "symbol_id": 1232,
+      "symbol_name": "Monster2_fla.Timeline_4",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "walk",
+      "symbol_id": 19,
+      "symbol_name": "character_19",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 50,
+      "symbol_name": "Monster3_fla.Timeline_14",
+      "frame_count": 90,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 27,
+      "symbol_name": "Monster3_fla.Timeline_15",
+      "frame_count": 40,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 38,
+      "symbol_name": "character_38",
+      "frame_count": 50,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 48,
+      "symbol_name": "Monster3_fla.Timeline_19",
+      "frame_count": 60,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 46,
+      "symbol_name": "character_46",
+      "frame_count": 70,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 44,
+      "symbol_name": "character_44",
+      "frame_count": 70,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit2",
+      "symbol_id": 45,
+      "symbol_name": "character_45",
+      "frame_count": 70,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit1",
+      "symbol_id": 56,
+      "symbol_name": "Monster3_fla.Timeline_25",
+      "frame_count": 21,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit3",
+      "symbol_id": 64,
+      "symbol_name": "Monster3_fla.Timeline_26",
+      "frame_count": 101,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit3",
+      "symbol_id": 59,
+      "symbol_name": "character_59",
+      "frame_count": 4,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit3",
+      "symbol_id": 62,
+      "symbol_name": "character_62",
+      "frame_count": 8,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hit4",
+      "symbol_id": 76,
+      "symbol_name": "Monster3_fla.Timeline_30",
+      "frame_count": 39,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "hurt",
+      "symbol_id": 79,
+      "symbol_name": "Monster3_fla.Timeline_31",
+      "frame_count": 7,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "dead",
+      "symbol_id": 105,
+      "symbol_name": "Monster3_fla.Timeline_32",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M26",
+      "action": "wait",
+      "symbol_id": 19,
+      "symbol_name": "character_19",
+      "frame_count": 16,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M27",
+      "action": "hurt",
+      "symbol_id": 121,
+      "symbol_name": "Monster3_fla.Timeline_4",
+      "frame_count": 5,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    },
+    {
+      "monster": "M27",
+      "action": "dead",
+      "symbol_id": 123,
+      "symbol_name": "Monster3_fla.Timeline_5",
+      "frame_count": 25,
+      "root_depth": 1,
+      "root_instance": "body",
+      "has_labels": false
+    }
+  ],
+  "counts": {
+    "monsters": 25,
+    "actions": 150,
+    "provider_assignments": 215,
+    "unique_provider_symbols": 199
+  }
+}

@@ -60,6 +60,23 @@ func compile_animations(weapon_showid := -1) -> Dictionary:
 		var action_id := StringName(raw_action_id)
 		var config: Dictionary = selected_actions[raw_action_id]
 		var frames: Array[Vector3i] = []
+		if config.has("frame_count"):
+			var frame_count := maxi(1, int(config.get("frame_count", 1)))
+			var row := int(config.get("row", 0))
+			var start_column := int(config.get("start_column", 0))
+			var grid_columns := int(config.get("grid_columns", 0))
+			for column_offset in range(frame_count):
+				var atlas_column := start_column + column_offset
+				var frame_row := row
+				if grid_columns > 0:
+					frame_row += atlas_column / grid_columns
+					atlas_column = posmod(atlas_column, grid_columns)
+				frames.append(Vector3i(atlas_column, frame_row, 1))
+			compiled[StringName(raw_action_id)] = {
+				"frames": frames,
+				"loop": bool(config.get("loop", false)),
+			}
+			continue
 		for raw_segment: Variant in config.get("segments", []):
 			var segment: Dictionary = raw_segment
 			var row := int(segment.get("row", 0))

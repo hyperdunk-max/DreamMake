@@ -1,0 +1,54 @@
+{
+  "status": "superseded_by_all_showid_candidates",
+  "superseded_by": "sources/manifests/zmxiyou1_wukong_all_showid_candidates.json",
+  "game": "zmxiyou1",
+  "role": "wukong",
+  "source_swf": "sources/decoded/zmxiyou1/Role_v7.swf",
+  "source_xml": ".tools/zmxiyou1_xml/Role_v7.xml",
+  "selected_symbols": {
+    "idle": 529,
+    "walk": 440,
+    "run": 452,
+    "hit1": 211,
+    "jump_up": 533,
+    "jump_double": 539,
+    "jump_fall": 543,
+    "hurt": 553
+  },
+  "frame_counts": {
+    "idle": 100,
+    "walk": 16,
+    "run": 8,
+    "hit1": 8,
+    "jump_up": 1,
+    "jump_double": 10,
+    "jump_fall": 1,
+    "hurt": 15,
+    "total": 159
+  },
+  "equipment_selection": {
+    "armor_selectors": [143, 152, 160, 186],
+    "body_showids": [1, 2],
+    "weapon_selector": 177,
+    "weapon_showids": [1, 2]
+  },
+  "superseded_outputs_removed": {
+    "body_showid_1": "assets/selected/zmxiyou1/wukong/runtime_probe/body_candidates/showid_1/source_atlas.png",
+    "body_showid_2": "assets/selected/zmxiyou1/wukong/runtime_probe/body_candidates/showid_2/source_atlas.png",
+    "weapon_showid_1": "assets/selected/zmxiyou1/wukong/runtime_probe/weapon_candidates/showid_1/source_atlas.png",
+    "weapon_showid_2": "assets/selected/zmxiyou1/wukong/runtime_probe/weapon_candidates/showid_2/source_atlas.png"
+  },
+  "normalization": {
+    "frame_size": [200, 200],
+    "shared_scale": "computed across both bodies and both weapons",
+    "alignment": "Flash SVG registration-point alignment followed by shared cell normalization",
+    "atlas_rows": "actions concatenated in manifest order; 159 rows total"
+  },
+  "runtime_replacement": {
+    "body": "LayeredSpriteAnimator.set_body(showid)",
+    "weapon": "LayeredSpriteAnimator.set_weapon(showid)",
+    "frame_sync": "body and weapon use identical action row and frame column"
+  },
+  "source_preservation": "Original SWF/XML and full extraction are unchanged; only selected runtime candidates are generated.",
+  "limitation": "The candidate set covers the selected Wukong action symbols. Nested effects outside the retained body/weapon placement paths are not included."
+}

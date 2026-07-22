@@ -8,6 +8,7 @@ extends Resource
 @export var source_game: int = 1
 @export var property_template: ActorProperty
 @export var texture: Texture2D
+@export var animation_profile: EnemyAnimationProfile
 @export var visual_scale: Vector2 = Vector2.ONE
 @export var visual_offset: Vector2 = Vector2.ZERO
 @export var collision_size: Vector2 = Vector2(42.0, 58.0)
@@ -26,8 +27,10 @@ func validate() -> PackedStringArray:
 		errors.append("Enemy '%s' has no property template." % enemy_id)
 	else:
 		errors.append_array(property_template.validate())
-	if texture == null:
-		errors.append("Enemy '%s' has no source texture." % enemy_id)
+	if texture == null and animation_profile == null:
+		errors.append("Enemy '%s' has neither a source texture nor an animation profile." % enemy_id)
+	if animation_profile != null:
+		errors.append_array(animation_profile.validate())
 	if collision_size.x <= 0.0 or collision_size.y <= 0.0:
 		errors.append("Enemy '%s' collision size must be positive." % enemy_id)
 	return errors

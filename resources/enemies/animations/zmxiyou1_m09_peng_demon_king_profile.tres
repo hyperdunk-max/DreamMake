@@ -1,0 +1,413 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+source_monster_id = &"M09"
+source_package = &"Monster2_v4"
+source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
+actions = {
+&"attack1": {
+"display_name": "攻击1·空中火焰",
+"event_frames": PackedInt32Array(8),
+"event_note": "源码第9帧调用 fireHit()",
+"fps": 24.0,
+"frame_count": 24,
+"hitbox_frame_range": Vector2i(6, 7),
+"hitbox_note": "源码 stick 实例在第7-8帧存在",
+"loop": false,
+"next_animation": &"fly",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack1/frame_%03d.png",
+"source_action_label": "hit1",
+"source_canvas": Vector2(280, 186),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "hit1",
+"source_symbol_id": 543
+},
+"source_events": Array[Dictionary]([{
+"frame": 8,
+"id": &"fire_hit",
+"method": "frame9",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_92.as",
+"source_frame": 9,
+"source_line": 34,
+"types": PackedStringArray("combat")
+}, {
+"frame": 23,
+"id": &"action_transition",
+"method": "frame24",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_92.as",
+"source_frame": 24,
+"source_line": 39,
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 543,
+"sprite_offset": Vector2(0, -93)
+},
+&"attack2": {
+"display_name": "攻击2·俯冲",
+"event_frames": PackedInt32Array(0, 16),
+"event_note": "第1帧进入无敌；第17帧开始高速位移并刷新攻击ID",
+"fps": 24.0,
+"frame_count": 41,
+"hitbox_frame_range": Vector2i(0, 40),
+"hitbox_note": "源码 stick 为30帧动态武器，贯穿根攻击时间轴",
+"loop": false,
+"next_animation": &"fly",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack2/frame_%03d.png",
+"source_action_label": "hit2",
+"source_canvas": Vector2(194, 245),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "hit2",
+"source_symbol_id": 568
+},
+"source_events": Array[Dictionary]([{
+"frame": 0,
+"id": &"set_invulnerable",
+"method": "frame1",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_97.as",
+"source_frame": 1,
+"source_line": 32,
+"types": PackedStringArray("custom_script")
+}, {
+"frame": 16,
+"id": &"refresh_attack_id",
+"method": "frame17",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_97.as",
+"source_frame": 17,
+"source_line": 37,
+"types": PackedStringArray("motion")
+}, {
+"frame": 40,
+"id": &"action_transition",
+"method": "frame41",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_97.as",
+"source_frame": 41,
+"source_line": 52,
+"types": PackedStringArray("action_transition", "motion", "timeline_control")
+}]),
+"source_symbol_id": 568,
+"sprite_offset": Vector2(0, -122.5)
+},
+&"attack3": {
+"display_name": "攻击3·地面火焰",
+"event_frames": PackedInt32Array(14),
+"event_note": "源码第15帧调用 fireHit()",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack3/frame_%03d.png",
+"source_action_label": "hit3",
+"source_canvas": Vector2(288, 205),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "hit3",
+"source_symbol_id": 579
+},
+"source_events": Array[Dictionary]([{
+"frame": 14,
+"id": &"fire_hit",
+"method": "frame15",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_99.as",
+"source_frame": 15,
+"source_line": 32,
+"types": PackedStringArray("combat")
+}, {
+"frame": 24,
+"id": &"action_transition",
+"method": "frame25",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_99.as",
+"source_frame": 25,
+"source_line": 37,
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 579,
+"sprite_offset": Vector2(0, -102.5)
+},
+&"attack4": {
+"display_name": "攻击4·近身攻击",
+"fps": 24.0,
+"frame_count": 15,
+"hitbox_frame_range": Vector2i(2, 13),
+"hitbox_note": "源码两段 stick 实例连续覆盖第3-14帧",
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/attack4/frame_%03d.png",
+"source_action_label": "hit4",
+"source_canvas": Vector2(197, 256),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "hit4",
+"source_symbol_id": 643
+},
+"source_events": Array[Dictionary]([{
+"frame": 14,
+"id": &"action_transition",
+"method": "frame15",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_108.as",
+"source_frame": 15,
+"source_line": 31,
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 643,
+"sprite_offset": Vector2(-56, -91)
+},
+&"death": {
+"display_name": "死亡",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"death",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/death/frame_%03d.png",
+"source_action_label": "dead",
+"source_canvas": Vector2(109, 117),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "dead",
+"source_symbol_id": 669
+},
+"source_events": Array[Dictionary]([{
+"frame": 0,
+"id": &"visibility",
+"method": "frame1",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 1,
+"source_line": 31,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 2,
+"id": &"visibility",
+"method": "frame3",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 3,
+"source_line": 36,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 4,
+"id": &"visibility",
+"method": "frame5",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 5,
+"source_line": 41,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 6,
+"id": &"visibility",
+"method": "frame7",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 7,
+"source_line": 46,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 8,
+"id": &"visibility",
+"method": "frame9",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 9,
+"source_line": 51,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 10,
+"id": &"visibility",
+"method": "frame11",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 11,
+"source_line": 56,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 12,
+"id": &"visibility",
+"method": "frame13",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 13,
+"source_line": 61,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 14,
+"id": &"visibility",
+"method": "frame15",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 15,
+"source_line": 66,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 16,
+"id": &"visibility",
+"method": "frame17",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 17,
+"source_line": 71,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 18,
+"id": &"visibility",
+"method": "frame19",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 19,
+"source_line": 76,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 20,
+"id": &"visibility",
+"method": "frame21",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 21,
+"source_line": 81,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 22,
+"id": &"visibility",
+"method": "frame23",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 23,
+"source_line": 86,
+"types": PackedStringArray("visibility")
+}, {
+"frame": 24,
+"id": &"spawn_object",
+"method": "frame25",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_111.as",
+"source_frame": 25,
+"source_line": 91,
+"types": PackedStringArray("object_spawn", "visibility", "timeline_control")
+}]),
+"source_symbol_id": 669,
+"sprite_offset": Vector2(0, -59)
+},
+&"egg": {
+"display_name": "变蛋",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"reburn",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/egg/frame_%03d.png",
+"source_action_label": "turnToEgg",
+"source_canvas": Vector2(89, 145),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "turnToEgg",
+"source_symbol_id": 599
+},
+"source_events": Array[Dictionary]([{
+"frame": 24,
+"id": &"timeline_control",
+"method": "frame25",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_101.as",
+"source_frame": 25,
+"source_line": 28,
+"types": PackedStringArray("timeline_control")
+}]),
+"source_symbol_id": 599,
+"sprite_offset": Vector2(1, -55)
+},
+&"fly": {
+"display_name": "飞行",
+"fps": 24.0,
+"frame_count": 9,
+"loop": true,
+"next_animation": &"fly",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/fly/frame_%03d.png",
+"source_action_label": "fly",
+"source_canvas": Vector2(154, 113),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "fly",
+"source_symbol_id": 519
+},
+"source_events": Array[Dictionary]([]),
+"source_symbol_id": 519,
+"sprite_offset": Vector2(0, -57)
+},
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/hurt/frame_%03d.png",
+"source_action_label": "hurt",
+"source_canvas": Vector2(109, 117),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "hurt",
+"source_symbol_id": 626
+},
+"source_events": Array[Dictionary]([{
+"frame": 5,
+"id": &"action_transition",
+"method": "frame6",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_106.as",
+"source_frame": 6,
+"source_line": 29,
+"types": PackedStringArray("action_transition", "motion", "timeline_control")
+}]),
+"source_symbol_id": 626,
+"sprite_offset": Vector2(8, -57)
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/idle/frame_%03d.png",
+"source_action_label": "wait",
+"source_canvas": Vector2(132, 118),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "wait",
+"source_symbol_id": 632
+},
+"source_events": Array[Dictionary]([]),
+"source_symbol_id": 632,
+"sprite_offset": Vector2(-5, -57)
+},
+&"move": {
+"display_name": "移动",
+"fps": 24.0,
+"frame_count": 16,
+"loop": true,
+"next_animation": &"move",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/move/frame_%03d.png",
+"source_action_label": "walk",
+"source_canvas": Vector2(150, 121),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "walk",
+"source_symbol_id": 514
+},
+"source_events": Array[Dictionary]([]),
+"source_symbol_id": 514,
+"sprite_offset": Vector2(-13, -60)
+},
+&"reburn": {
+"display_name": "重燃复活",
+"fps": 24.0,
+"frame_count": 30,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m09_peng_demon_king/reburn/frame_%03d.png",
+"source_action_label": "reBurn",
+"source_canvas": Vector2(187, 168),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"source_action_label": "reBurn",
+"source_symbol_id": 623
+},
+"source_events": Array[Dictionary]([{
+"frame": 29,
+"id": &"action_transition",
+"method": "frame30",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_104.as",
+"source_frame": 30,
+"source_line": 29,
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 623,
+"sprite_offset": Vector2(0, -65)
+}
+}

@@ -81,8 +81,10 @@ def _freeze_sprite(block: str, frame: int | None) -> str:
     return "\n".join("    " + line for line in lines) + "\n"
 
 
-def _keep_characters(block: str, character_ids: set[int]) -> str:
+def _keep_characters(block: str, character_ids: set[int], preserve_timeline: bool = False) -> str:
     outer = ET.fromstring(block.strip())
+    if preserve_timeline:
+        return _keep_characters_timeline(outer, character_ids)
     outer.set("frameCount", "1")
     sub_tags = outer.find("subTags")
     if sub_tags is None:
@@ -102,26 +104,69 @@ def _keep_characters(block: str, character_ids: set[int]) -> str:
     return "\n".join("    " + line for line in rendered.splitlines()) + "\n"
 
 
+def _keep_characters_timeline(outer: ET.Element, character_ids: set[int]) -> str:
+    """Keep selected direct placements while preserving every ShowFrameTag.
+
+    A PlaceObject update without a characterId continues the placement at the
+    same depth, so it must be retained while that depth is occupied by a kept
+    character.  This is the difference between a one-pose probe and a full
+    action timeline.
+    """
+    sub_tags = outer.find("subTags")
+    if sub_tags is None:
+        raise ValueError("DefineSpriteTag is missing subTags")
+    active_depths: set[int] = set()
+    kept: list[ET.Element] = []
+    for tag in list(sub_tags):
+        tag_type = tag.get("type", "")
+        if tag_type.startswith("PlaceObject"):
+            depth = int(tag.get("depth", "0"))
+            raw_character = tag.get("characterId")
+            if raw_character is not None:
+                if int(raw_character) in character_ids:
+                    kept.append(copy.deepcopy(tag))
+                    active_depths.add(depth)
+                else:
+                    active_depths.discard(depth)
+            elif depth in active_depths:
+                kept.append(copy.deepcopy(tag))
+        elif tag_type.startswith("RemoveObject"):
+            depth = int(tag.get("depth", "0"))
+            if depth in active_depths:
+                kept.append(copy.deepcopy(tag))
+                active_depths.discard(depth)
+        elif tag_type == "ShowFrameTag":
+            kept.append(copy.deepcopy(tag))
+    sub_tags.clear()
+    for tag in kept:
+        sub_tags.append(tag)
+    rendered = ET.tostring(outer, encoding="unicode", short_empty_elements=True)
+    return "\n".join("    " + line for line in rendered.splitlines()) + "\n"
+
+
 def patch_xml(
     source: Path,
     destination: Path,
     operations: dict[int, int | None],
     filters: dict[int, set[int]],
+    timeline_filters: dict[int, set[int]] | None = None,
 ) -> None:
     text = source.read_text(encoding="utf-8")
     found: set[int] = set()
 
     def replace(match: re.Match[str]) -> str:
         sprite_id = int(match.group("id"))
-        if sprite_id not in operations and sprite_id not in filters:
+        if sprite_id not in operations and sprite_id not in filters and sprite_id not in (timeline_filters or {}):
             return match.group(0)
         found.add(sprite_id)
+        if timeline_filters is not None and sprite_id in timeline_filters:
+            return _keep_characters(match.group(0), timeline_filters[sprite_id], True)
         if sprite_id in filters:
             return _keep_characters(match.group(0), filters[sprite_id])
         return _freeze_sprite(match.group(0), operations[sprite_id])
 
     patched = SPRITE_BLOCK.sub(replace, text)
-    missing = sorted((set(operations) | set(filters)) - found)
+    missing = sorted((set(operations) | set(filters) | set(timeline_filters or {})) - found)
     if missing:
         raise ValueError(f"Selector sprites not found: {missing}")
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -154,6 +199,13 @@ def main() -> None:
         metavar="SPRITE_ID:CHARACTER_ID[,CHARACTER_ID...]",
         help="Keep only direct placements of the listed characters in a sprite.",
     )
+    parser.add_argument(
+        "--keep-character-all",
+        action="append",
+        default=[],
+        metavar="SPRITE_ID:CHARACTER_ID[,CHARACTER_ID...]",
+        help="Keep selected direct placements while preserving the full timeline.",
+    )
     args = parser.parse_args()
 
     operations: dict[int, int | None] = {sprite_id: None for sprite_id in args.blank}
@@ -164,10 +216,14 @@ def main() -> None:
     for spec in args.keep_character:
         sprite_text, characters_text = spec.split(":", 1)
         filters[int(sprite_text)] = {int(value) for value in characters_text.split(",")}
-    if not operations and not filters:
+    timeline_filters: dict[int, set[int]] = {}
+    for spec in args.keep_character_all:
+        sprite_text, characters_text = spec.split(":", 1)
+        timeline_filters[int(sprite_text)] = {int(value) for value in characters_text.split(",")}
+    if not operations and not filters and not timeline_filters:
         raise SystemExit("At least one patch operation is required")
-    patch_xml(args.input, args.output, operations, filters)
-    print(f"patched {len(operations) + len(filters)} timelines -> {args.output}")
+    patch_xml(args.input, args.output, operations, filters, timeline_filters)
+    print(f"patched {len(operations) + len(filters) + len(timeline_filters)} timelines -> {args.output}")
 
 
 if __name__ == "__main__":

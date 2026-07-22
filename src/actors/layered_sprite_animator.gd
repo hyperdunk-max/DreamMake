@@ -95,6 +95,16 @@ func get_current_action() -> StringName:
 	return _current_action
 
 
+func get_current_frame_index() -> int:
+	return _frame_index
+
+
+func get_current_frame_count() -> int:
+	if not _animations.has(_current_action):
+		return 0
+	return (_animations[_current_action]["frames"] as Array).size()
+
+
 func play_action(action: StringName, restart := false) -> bool:
 	if _profile == null:
 		return false

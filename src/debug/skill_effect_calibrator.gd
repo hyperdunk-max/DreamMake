@@ -136,8 +136,9 @@ var _paused := false
 
 
 func _ready() -> void:
-	get_window().content_scale_size = CALIBRATOR_WINDOW_SIZE
-	get_window().size = CALIBRATOR_WINDOW_SIZE
+	if get_viewport() is Window:
+		get_window().content_scale_size = CALIBRATOR_WINDOW_SIZE
+		get_window().size = CALIBRATOR_WINDOW_SIZE
 	get_viewport().size_changed.connect(_update_preview_layout)
 	role_option.item_selected.connect(_on_role_selected)
 	skill_option.item_selected.connect(_on_skill_selected)

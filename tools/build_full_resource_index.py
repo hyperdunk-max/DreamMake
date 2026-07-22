@@ -17,7 +17,7 @@ SOURCES = ROOT / "sources"
 INDEX_PATH = SOURCES / "manifests" / "full_extraction_index.json"
 UNAVAILABLE_PATH = SOURCES / "manifests" / "unavailable_resources.json"
 REPORT_PATH = SOURCES / "FULL_EXTRACTION_REPORT.md"
-ZMXIYOU2_ORGANIZATION_PATH = SOURCES / "manifests" / "zmxiyou2_standard_cleanup.json"
+ZMXIYOU2_ORGANIZATION_PATH = SOURCES / "manifests" / "zmxiyou2_canonical_migration.json"
 
 FFDEC_TYPES = {
     "binaryData",

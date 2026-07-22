@@ -23,6 +23,7 @@ FINAL_ROOT = ROOT / "assets" / "extracted" / "classified" / "zmxiyou1"
 MANIFEST_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_compact_classification.json"
 FORMAT_DUPLICATE_AUDIT_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_format_duplicates.json"
 ROLE_RENDERING_AUDIT_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_role_rendering.json"
+MONSTER_TIMELINE_AUDIT_PATH = ROOT / "sources" / "manifests" / "zmxiyou1_monster_timeline_audit.json"
 REPORT_PATH = ROOT / "sources" / "ZMXIYOU1_COMPACT_CLASSIFICATION.md"
 XML_FILES = {
     "Role_v7": ROOT / ".tools" / "zmxiyou1_xml" / "Role_v7.xml",
@@ -181,6 +182,40 @@ def called_actions(script_paths: list[Path]) -> set[str]:
     return result
 
 
+def nested_monster_timeline_routes(
+    audit: dict[str, Any],
+    monsters_by_old_folder: dict[str, dict[str, Any]],
+) -> dict[tuple[str, int], list[dict[str, Any]]]:
+    """Map a dynamic child sprite to the root monster actions that use it.
+
+    A stopped root MovieClip does not stop its child MovieClips.  These routes
+    therefore describe the actual full animation providers, rather than the
+    short root-timeline export snapshots.
+    """
+    routes: dict[tuple[str, int], list[dict[str, Any]]] = defaultdict(list)
+    for monster_key, monster in audit.get("monsters", {}).items():
+        package = str(monster["package"])
+        source_folder = str(monster["source_folder"])
+        if source_folder not in monsters_by_old_folder:
+            raise KeyError(f"Timeline audit refers to unknown monster folder: {source_folder}")
+        for action in monster.get("actions", []):
+            action_label = str(action["label"])
+            action_folder, action_prefix = action_meta(action_label)
+            for provider in action.get("providers", []):
+                symbol_id = int(provider["symbol_id"])
+                route = {
+                    "monster": monster_key,
+                    "source_folder": source_folder,
+                    "action_label": action_label,
+                    "action_folder": action_folder,
+                    "action_prefix": action_prefix,
+                    "symbol_name": str(provider["symbol_name"]),
+                    "frame_count": int(provider["frame_count"]),
+                }
+                routes[(package, symbol_id)].append(route)
+    return routes
+
+
 def output_category(record: dict[str, Any], monsters_by_old_folder: dict[str, dict[str, Any]]) -> tuple[Path, str, str]:
     category = str(record["category"])
     symbol_name = str(record.get("symbol_name", ""))
@@ -278,6 +313,14 @@ def main() -> None:
         old_folder = str(info["folder"])
         monsters_by_old_folder[old_folder] = info
 
+    if not MONSTER_TIMELINE_AUDIT_PATH.exists():
+        raise FileNotFoundError(
+            "Missing nested monster timeline audit. Run "
+            "tools/audit_zmxiyou1_monster_timelines.py before building the compact view."
+        )
+    nested_timeline_audit = json.loads(MONSTER_TIMELINE_AUDIT_PATH.read_text(encoding="utf-8"))
+    timeline_routes = nested_monster_timeline_routes(nested_timeline_audit, monsters_by_old_folder)
+
     base_actions: dict[str, set[str]] = {}
     for package in ("Monster_v1", "Monster2_v4", "Monster3_v3"):
         package_root = ROOT / "assets" / "extracted" / "full" / "zmxiyou1" / "monsters" / package
@@ -317,15 +360,56 @@ def main() -> None:
     for record in records:
         source = ROOT / str(record["source"])
         role_override = role_rendering_overrides.get(str(record["source"]))
-        if role_override is not None:
+        package = str(record["package"])
+        character_id = record.get("character_id")
+        provider_routes = (
+            timeline_routes.get((package, int(character_id)), [])
+            if str(record["asset_type"]) == "sprites" and character_id is not None
+            else []
+        )
+        timeline_route: dict[str, Any] | None = None
+        if provider_routes:
+            # A dynamic provider can be reused by two root actions.  Keep one
+            # canonical copy in a shared folder and record every use in the
+            # manifest instead of silently copying or assigning it arbitrarily.
+            if len(provider_routes) == 1:
+                timeline_route = provider_routes[0]
+                info = monsters_by_old_folder[timeline_route["source_folder"]]
+                rel_folder = (
+                    Path("怪物")
+                    / monster_folder(info)
+                    / str(timeline_route["action_folder"])
+                    / "完整时间轴"
+                    / safe_name(str(timeline_route["symbol_name"]))
+                )
+                prefix = str(timeline_route["action_prefix"])
+                kind = "monster_action_timeline"
+            else:
+                first_route = provider_routes[0]
+                owner_folders = {str(route["source_folder"]) for route in provider_routes}
+                if len(owner_folders) == 1:
+                    info = monsters_by_old_folder[first_route["source_folder"]]
+                    rel_folder = (
+                        Path("怪物")
+                        / monster_folder(info)
+                        / "共享动作时间轴"
+                        / safe_name(str(first_route["symbol_name"]))
+                    )
+                else:
+                    # The same MovieClip is used by different monsters; it is
+                    # a verified common monster animation component, not an
+                    # asset belonging to whichever monster happens to sort
+                    # first in the audit.
+                    rel_folder = Path("怪物") / "公共动画时间轴" / safe_name(str(first_route["symbol_name"]))
+                prefix = "frame"
+                kind = "monster_shared_action_timeline"
+        elif role_override is not None:
             override_destination = ROOT / str(role_override["destination"])
             rel_folder = override_destination.parent.relative_to(FINAL_ROOT)
             prefix = override_destination.stem
             kind = "role_equipment"
         else:
             rel_folder, prefix, kind = output_category(record, monsters_by_old_folder)
-        package = str(record["package"])
-        character_id = record.get("character_id")
         action_label = ""
         code_called: bool | None = None
 
@@ -338,6 +422,12 @@ def main() -> None:
                 action_label = label.name
                 action_folder, prefix = action_meta(label.name)
                 rel_folder = rel_folder / action_folder
+                if kind == "monster_body":
+                    # Root-frame exports are useful for provenance and anchor
+                    # inspection, but they are not a complete Flash action
+                    # when the placed child MovieClip continues to play.
+                    rel_folder = rel_folder / "根时间轴定位帧"
+                    prefix = f"root_{prefix}"
                 local_index = frame_number - label.start + 1
                 file_name = f"{prefix}_{local_index:03d}{source.suffix.lower()}"
                 if kind == "monster_body":
@@ -361,6 +451,11 @@ def main() -> None:
                     }
             else:
                 file_name = "frame_001" + source.suffix.lower()
+        elif kind in {"monster_action_timeline", "monster_shared_action_timeline"}:
+            frame_match = re.fullmatch(r"(\d+)\.png", source.name, flags=re.IGNORECASE)
+            if frame_match is None:
+                raise ValueError(f"Timeline provider has a non-frame source: {source}")
+            file_name = f"{prefix}_{int(frame_match.group(1)):03d}{source.suffix.lower()}"
         elif role_override is not None:
             file_name = override_destination.name
         else:
@@ -383,6 +478,9 @@ def main() -> None:
             "code_called": code_called,
             "evidence": record.get("evidence", ""),
         }
+        if provider_routes:
+            compact_record["timeline_role"] = "complete_action" if len(provider_routes) == 1 else "shared_action"
+            compact_record["timeline_actions"] = provider_routes
         if role_override is not None:
             compact_record.update(
                 {
@@ -408,6 +506,11 @@ def main() -> None:
         "format_duplicate_audit": relative(FORMAT_DUPLICATE_AUDIT_PATH) if redundant_sources else "",
         "format_duplicate_files": format_duplicate_rows,
         "role_rendering_audit": relative(ROLE_RENDERING_AUDIT_PATH) if role_rendering_overrides else "",
+        "monster_nested_timeline_audit": relative(MONSTER_TIMELINE_AUDIT_PATH),
+        "monster_nested_timeline_policy": (
+            "Dynamic child MovieClips reachable from a monster root action label are classified as "
+            "complete action timelines. Root timeline PNG exports are retained only as root-frame references."
+        ),
         "files": compact_records,
         "monster_action_audit": action_audit,
         "counts_by_category": dict(sorted(category_counts.items())),

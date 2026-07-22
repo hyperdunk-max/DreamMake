@@ -1,0 +1,27 @@
+{
+  "counts": {
+    "actions": 11,
+    "events": 24,
+    "profiles": 1
+  },
+  "generated_at": "2026-07-22 07:30:24",
+  "policy": "Only exact complete-provider frame scripts are synchronized. Existing profile fields are preserved; raw ActionScript is never executed automatically.",
+  "profiles": [
+    {
+      "actions": 11,
+      "events": 24,
+      "manual_fields_preserved": true,
+      "monster": "M09",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m09_peng_demon_king_profile.tres",
+      "skipped_no_op": 0
+    }
+  ],
+  "source_event_audit": "sources/manifests/zmxiyou1_monster_events.json",
+  "source_event_audit_sha256": "a40e094ffdb72598d5bc79b056dadc9315aa040c346aac105ed0843a456ad82b",
+  "validation": {
+    "errors": [],
+    "manual_fields_preserved": true,
+    "status": "pass"
+  }
+}

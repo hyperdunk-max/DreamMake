@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="RoleAnimationProfile" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="RoleAnimationProfile" format=3]
 
 [ext_resource type="Script" path="res://src/animation/role_animation_profile.gd" id="1_profile"]
 [ext_resource type="Texture2D" path="res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_1/source_atlas.png" id="2_body"]
@@ -10,37 +10,218 @@ script = ExtResource("1_profile")
 role_id = 2
 role_key = &"tangseng"
 display_name = "唐僧"
-logical_fps = 24.0
-frame_size = Vector2i(200, 200)
-source_facing = -1
 visual_offset = Vector2(0, -56)
-visual_nudge = Vector2(0, 5)
-default_action = &"idle"
+visual_nudge = Vector2(16, 1)
 default_body_showid = 1
-default_weapon_showid = 0
-body_atlases = {1: ExtResource("2_body")}
-body_atlas_paths = {0: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_0/source_atlas.png", 1: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_2/source_atlas.png", 3: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_3/source_atlas.png", 4: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_4/source_atlas.png", 5: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_5/source_atlas.png", 9: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_9/source_atlas.png"}
-body_names = {0: "默认袈裟", 1: "普通袈裟", 2: "衣服 2", 3: "衣服 3", 4: "衣服 4", 5: "衣服 5", 9: "衣服 9"}
-weapon_atlases = {0: ExtResource("3_weapon_0"), 1: ExtResource("4_weapon_1")}
-weapon_atlas_paths = {0: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_0/source_atlas.png", 1: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_1/source_atlas.png", 2: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_2/source_atlas.png", 3: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_3/source_atlas.png", 5: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_5/source_atlas.png", 7: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_7/source_atlas.png", 8: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_8/source_atlas.png"}
-weapon_names = {0: "默认武器", 1: "普通禅杖", 2: "武器 2", 3: "武器 3", 5: "武器 5", 7: "武器 7", 8: "武器 8"}
+body_atlases = {
+1: ExtResource("2_body")
+}
+body_atlas_paths = {
+0: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_0/source_atlas.png",
+1: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_1/source_atlas.png",
+2: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_2/source_atlas.png",
+3: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_3/source_atlas.png",
+4: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_4/source_atlas.png",
+5: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_5/source_atlas.png",
+9: "res://assets/selected/zmxiyou3/tangseng/body_candidates/showid_9/source_atlas.png"
+}
+body_names = {
+0: "默认袈裟",
+1: "普通袈裟",
+2: "衣服 2",
+3: "衣服 3",
+4: "衣服 4",
+5: "衣服 5",
+9: "衣服 9"
+}
+weapon_atlases = {
+0: ExtResource("3_weapon_0"),
+1: ExtResource("4_weapon_1")
+}
+weapon_atlas_paths = {
+0: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_0/source_atlas.png",
+1: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_1/source_atlas.png",
+2: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_2/source_atlas.png",
+3: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_3/source_atlas.png",
+5: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_5/source_atlas.png",
+7: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_7/source_atlas.png",
+8: "res://assets/selected/zmxiyou3/tangseng/weapon_candidates/showid_8/source_atlas.png"
+}
+weapon_names = {
+0: "默认武器",
+1: "普通禅杖",
+2: "武器 2",
+3: "武器 3",
+5: "武器 5",
+7: "武器 7",
+8: "武器 8"
+}
 actions = {
-&"hit1": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 4, 12), "row": 6, "start_column": 0}]},
-&"hurt": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(8), "row": 4, "start_column": 4}]},
-&"idle": {"loop": true, "segments": [{"cycles": 6, "holds": PackedInt32Array(2, 2, 2, 3, 2, 4), "row": 0, "start_column": 0}, {"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 14), "row": 1, "start_column": 0}]},
-&"jump_double": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2, 2), "row": 5, "start_column": 0}]},
-&"jump_fall": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 1}]},
-&"jump_up": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(1), "row": 4, "start_column": 0}]},
-&"run": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 2, 2), "row": 3, "start_column": 0}]},
-&"skill_binglong_charge": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 999), "row": 6, "start_column": 0}]},
-&"skill_binglong_release": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(12), "row": 6, "start_column": 2}]},
-&"skill_jiuhuan_shengjing": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(55), "row": 4, "start_column": 3}]},
-&"skill_jingu_zhou": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 10), "row": 12, "start_column": 0}]},
-&"skill_muyu_huichun": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 20), "row": 11, "start_column": 0}]},
-&"skill_shengguang_qiu": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(48, 2, 15), "row": 10, "start_column": 0}]},
-&"skill_shuimo_bao_blast": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2, 6), "row": 9, "start_column": 0}]},
-&"skill_shuimo_bao_marker": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 2), "row": 8, "start_column": 0}]},
-&"skill_tianjiang_ganlu": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(30), "row": 4, "start_column": 2}]},
-&"skill_xuanbing_zhen": {"loop": false, "segments": [{"cycles": 1, "holds": PackedInt32Array(2, 10, 2, 40), "row": 7, "start_column": 0}]},
-&"walk": {"loop": true, "segments": [{"cycles": 1, "holds": PackedInt32Array(4, 4, 4, 4), "row": 2, "start_column": 0}]}
+&"hit1": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 4, 12),
+"row": 6,
+"start_column": 0
+}]
+},
+&"hurt": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(8),
+"row": 4,
+"start_column": 4
+}]
+},
+&"idle": {
+"loop": true,
+"segments": [{
+"cycles": 6,
+"holds": PackedInt32Array(2, 2, 2, 3, 2, 4),
+"row": 0,
+"start_column": 0
+}, {
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 2, 14),
+"row": 1,
+"start_column": 0
+}]
+},
+&"jump_double": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 2, 2, 2),
+"row": 5,
+"start_column": 0
+}]
+},
+&"jump_fall": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(1),
+"row": 4,
+"start_column": 1
+}]
+},
+&"jump_up": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(1),
+"row": 4,
+"start_column": 0
+}]
+},
+&"run": {
+"loop": true,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 2, 2),
+"row": 3,
+"start_column": 0
+}]
+},
+&"skill_binglong_charge": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 999),
+"row": 6,
+"start_column": 0
+}]
+},
+&"skill_binglong_release": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(12),
+"row": 6,
+"start_column": 2
+}]
+},
+&"skill_jingu_zhou": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 10),
+"row": 12,
+"start_column": 0
+}]
+},
+&"skill_jiuhuan_shengjing": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(55),
+"row": 4,
+"start_column": 3
+}]
+},
+&"skill_muyu_huichun": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 20),
+"row": 11,
+"start_column": 0
+}]
+},
+&"skill_shengguang_qiu": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(48, 2, 15),
+"row": 10,
+"start_column": 0
+}]
+},
+&"skill_shuimo_bao_blast": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2, 6),
+"row": 9,
+"start_column": 0
+}]
+},
+&"skill_shuimo_bao_marker": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 2),
+"row": 8,
+"start_column": 0
+}]
+},
+&"skill_tianjiang_ganlu": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(30),
+"row": 4,
+"start_column": 2
+}]
+},
+&"skill_xuanbing_zhen": {
+"loop": false,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(2, 10, 2, 40),
+"row": 7,
+"start_column": 0
+}]
+},
+&"walk": {
+"loop": true,
+"segments": [{
+"cycles": 1,
+"holds": PackedInt32Array(4, 4, 4, 4),
+"row": 2,
+"start_column": 0
+}]
+}
 }

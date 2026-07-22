@@ -1,6 +1,6 @@
 # 《造梦西游2》素材初步整理
 
-> **已撤销并纠正：** 本文记录的是规范生效前的一次历史迁移。`assets/extracted/full/zmxiyou2` 已完整恢复；当前标准库及删除依据请参阅 `sources/ZMXIYOU2_STANDARD_LIBRARY.md` 和 `sources/manifests/zmxiyou2_standard_cleanup.json`。下文只作为历史记录，不代表当前目录状态。
+> **历史记录：** 本文记录的是规范生效前的一次迁移，之后曾撤销并恢复 `full`。当前已按移动式更新完成最终整理；请参阅 `sources/ZMXIYOU2_CANONICAL_LIBRARY.md` 和 `sources/manifests/zmxiyou2_canonical_migration.json`。下文不代表当前目录状态。
 
 生成时间：2026-07-21T17:32:45+08:00
 

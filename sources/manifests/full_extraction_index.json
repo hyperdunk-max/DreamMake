@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T17:37:42+08:00",
+  "generated_at": "2026-07-22T16:39:40+08:00",
   "candidate_urls": 461,
   "reachable_dynamic_packages": 237,
   "unavailable_http_404": 224,
@@ -38,8 +38,8 @@
       "bytes": 724718887
     },
     "zmxiyou2": {
-      "files": 35444,
-      "bytes": 1206197076
+      "files": 26558,
+      "bytes": 1112063273
     },
     "zmxiyou3": {
       "files": 64166,
@@ -48,65 +48,65 @@
   },
   "files_by_type": {
     "binaryData": {
-      "files": 11,
-      "bytes": 8591245
+      "files": 8,
+      "bytes": 6297372
     },
     "buttons": {
-      "files": 2240,
-      "bytes": 24284347
+      "files": 2115,
+      "bytes": 23519524
     },
     "fonts": {
       "files": 54,
       "bytes": 13941200
     },
     "frames": {
-      "files": 246,
-      "bytes": 1569500
+      "files": 232,
+      "bytes": 1542333
     },
     "images": {
-      "files": 9263,
-      "bytes": 635228328
+      "files": 8946,
+      "bytes": 622171775
     },
     "morphshapes": {
-      "files": 16,
-      "bytes": 28508
+      "files": 8,
+      "bytes": 13929
     },
     "scripts": {
-      "files": 16797,
-      "bytes": 98960230
+      "files": 12762,
+      "bytes": 79272461
     },
     "shapes": {
-      "files": 16442,
-      "bytes": 1342331161
+      "files": 16094,
+      "bytes": 1340266162
     },
     "sounds": {
       "files": 185,
       "bytes": 8238025
     },
     "sprites": {
-      "files": 73118,
-      "bytes": 2609714329
+      "files": 69175,
+      "bytes": 2553514903
     },
     "symbolClass": {
-      "files": 243,
-      "bytes": 122522
+      "files": 224,
+      "bytes": 98114
     },
     "texts": {
-      "files": 588,
-      "bytes": 4715
+      "files": 514,
+      "bytes": 4509
     }
   },
   "files_by_extension": {
-    ".png": 84386,
-    ".as": 16797,
-    ".svg": 16458,
-    ".txt": 588,
-    ".jpg": 481,
-    ".csv": 243,
+    ".png": 79993,
+    ".svg": 16102,
+    ".as": 12762,
+    ".txt": 514,
+    ".jpg": 475,
+    ".csv": 224,
     ".mp3": 168,
     ".ttf": 54,
     ".wav": 17,
-    ".bin": 11
+    ".bin": 8
   },
   "character_variants": [
     {
@@ -464,13 +464,11 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "4dd4617d519924e9155fa13291d0aec6b0a12e44a52dc7e0421452fb2545a12f",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package audio__Music)",
-      "files": 97,
-      "bytes": 1083026,
+      "files": 49,
+      "bytes": 1070817,
       "types": {
         "frames": 1,
-        "scripts": 47,
-        "sounds": 48,
-        "symbolClass": 1
+        "sounds": 48
       }
     },
     {
@@ -480,15 +478,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "4b65ea793425ce865d297d3affc5e8c1ebbd172609cc2e6858e037aab0480a01",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package characters__mixed_packages__Role_v6)",
-      "files": 4404,
-      "bytes": 70428025,
+      "files": 3495,
+      "bytes": 61924103,
       "types": {
-        "frames": 1,
-        "images": 179,
-        "scripts": 258,
-        "shapes": 865,
-        "sprites": 3100,
-        "symbolClass": 1
+        "images": 145,
+        "shapes": 733,
+        "sprites": 2617
       }
     },
     {
@@ -498,19 +493,14 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "c656124db207635a4a83400830958c08400496d82f5ed4624e39f40a35c176ac",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__Common_v7)",
-      "files": 3749,
-      "bytes": 176807126,
+      "files": 3027,
+      "bytes": 173100355,
       "types": {
-        "buttons": 32,
+        "buttons": 12,
         "fonts": 1,
-        "frames": 1,
-        "images": 296,
-        "morphshapes": 2,
-        "scripts": 379,
-        "shapes": 288,
-        "sprites": 2734,
-        "symbolClass": 1,
-        "texts": 15
+        "images": 256,
+        "shapes": 281,
+        "sprites": 2477
       }
     },
     {
@@ -520,18 +510,15 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "bfd34377e0a1e02eea835af2f05d5d177775739bbe6c4f7f7f3e40b37ec4bb8b",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__OtherMat_v10)",
-      "files": 3593,
-      "bytes": 81131840,
+      "files": 2612,
+      "bytes": 76443910,
       "types": {
-        "buttons": 212,
+        "buttons": 150,
         "fonts": 1,
         "frames": 1,
-        "images": 284,
-        "scripts": 339,
+        "images": 273,
         "shapes": 279,
-        "sprites": 2454,
-        "symbolClass": 1,
-        "texts": 22
+        "sprites": 1908
       }
     },
     {
@@ -541,16 +528,13 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "6b8abe41ac82a2181de7af337e9910e14e60bf0a40d6f53d5ef9e4f795d56a91",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__Pig9)",
-      "files": 1973,
-      "bytes": 28473740,
+      "files": 1470,
+      "bytes": 26011269,
       "types": {
-        "frames": 1,
-        "images": 28,
+        "images": 10,
         "morphshapes": 2,
-        "scripts": 212,
-        "shapes": 261,
-        "sprites": 1468,
-        "symbolClass": 1
+        "shapes": 240,
+        "sprites": 1218
       }
     },
     {
@@ -560,19 +544,16 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "ec41f6ba3918fb10467fd79cebe11ed063441c591760bab7935937d66613eebc",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__backpack_v5)",
-      "files": 2308,
-      "bytes": 23630231,
+      "files": 1550,
+      "bytes": 21575387,
       "types": {
-        "buttons": 92,
+        "buttons": 49,
         "fonts": 1,
         "frames": 1,
-        "images": 142,
+        "images": 131,
         "morphshapes": 2,
-        "scripts": 247,
-        "shapes": 537,
-        "sprites": 1253,
-        "symbolClass": 1,
-        "texts": 32
+        "shapes": 472,
+        "sprites": 894
       }
     },
     {
@@ -582,17 +563,14 @@
       "origin": "embedded main SWF",
       "source_sha256": "e148a14c167bb972f52b68d26dc04cc4489c6b2f522fcf6eee2978239e7bbf8f",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__main__main_game)",
-      "files": 1272,
-      "bytes": 125196232,
+      "files": 1001,
+      "bytes": 123274987,
       "types": {
         "fonts": 4,
         "frames": 1,
-        "images": 77,
-        "scripts": 237,
+        "images": 72,
         "shapes": 212,
-        "sprites": 735,
-        "symbolClass": 1,
-        "texts": 5
+        "sprites": 712
       }
     },
     {
@@ -602,13 +580,10 @@
       "origin": "embedded main SWF",
       "source_sha256": "c5e3243d96a6b2602d1757570e6b3faffb5b4a4d1306f381d5e81eff74d7a256",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package shared__portal_loader__portal_loader)",
-      "files": 46,
-      "bytes": 2476027,
+      "files": 1,
+      "bytes": 3330,
       "types": {
-        "binaryData": 3,
-        "frames": 2,
-        "scripts": 40,
-        "symbolClass": 1
+        "frames": 1
       }
     },
     {
@@ -618,15 +593,13 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "53cd4a9006c8b5ce92eb1c051034b8ca4a75152ff24ee8d4662ecd3e11e7915c",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__10)",
-      "files": 3789,
-      "bytes": 157754654,
+      "files": 2898,
+      "bytes": 136913024,
       "types": {
         "frames": 1,
-        "images": 131,
-        "scripts": 261,
-        "shapes": 389,
-        "sprites": 3006,
-        "symbolClass": 1
+        "images": 80,
+        "shapes": 378,
+        "sprites": 2439
       }
     },
     {
@@ -636,15 +609,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "c90b4a368a64d8c26c0f030ec91ec1578803fd8c9d26af806ab10ba254a5bc5a",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__11)",
-      "files": 409,
-      "bytes": 6902878,
+      "files": 152,
+      "bytes": 5253951,
       "types": {
-        "frames": 1,
-        "images": 4,
-        "scripts": 198,
-        "shapes": 14,
-        "sprites": 191,
-        "symbolClass": 1
+        "images": 3,
+        "shapes": 13,
+        "sprites": 136
       }
     },
     {
@@ -654,15 +624,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "bad334cd3c3c70574d827d446a3d60f661b56f7e2d13d52141e2023961e57b38",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__1_v6)",
-      "files": 1335,
-      "bytes": 88273605,
+      "files": 1015,
+      "bytes": 81046466,
       "types": {
-        "frames": 1,
-        "images": 86,
-        "scripts": 210,
-        "shapes": 164,
-        "sprites": 873,
-        "symbolClass": 1
+        "images": 53,
+        "shapes": 161,
+        "sprites": 801
       }
     },
     {
@@ -672,16 +639,13 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "75b5fa727eb4b9a7801e65e3be73f844cd1db8cad3dd41c3172ea1242d42fc8f",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__2)",
-      "files": 2435,
-      "bytes": 114066596,
+      "files": 2017,
+      "bytes": 102770997,
       "types": {
-        "frames": 1,
-        "images": 213,
-        "morphshapes": 8,
-        "scripts": 218,
-        "shapes": 315,
-        "sprites": 1679,
-        "symbolClass": 1
+        "images": 201,
+        "morphshapes": 2,
+        "shapes": 313,
+        "sprites": 1501
       }
     },
     {
@@ -691,15 +655,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "57f8934dfa33189e77a96eceba4938445e3589f70ee14b629a18e0afd91b6812",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__3)",
-      "files": 3578,
-      "bytes": 95659377,
+      "files": 2667,
+      "bytes": 87228223,
       "types": {
-        "frames": 1,
-        "images": 247,
-        "scripts": 226,
-        "shapes": 680,
-        "sprites": 2423,
-        "symbolClass": 1
+        "images": 167,
+        "shapes": 592,
+        "sprites": 1908
       }
     },
     {
@@ -709,15 +670,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "1feca1f4c363f915eac6d0dc2178651e45ad52eaecddc0d984af8671d22343f6",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__4)",
-      "files": 1624,
-      "bytes": 89611083,
+      "files": 1155,
+      "bytes": 84311429,
       "types": {
-        "frames": 1,
-        "images": 101,
-        "scripts": 216,
+        "images": 99,
         "shapes": 151,
-        "sprites": 1154,
-        "symbolClass": 1
+        "sprites": 905
       }
     },
     {
@@ -727,15 +685,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "9ff36ab92555e15ba8850fc4f7c2ad5d52fbecedfb7d378f913a03033976d8c0",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__5_v7)",
-      "files": 948,
-      "bytes": 15452558,
+      "files": 691,
+      "bytes": 14228249,
       "types": {
-        "frames": 1,
-        "images": 32,
-        "scripts": 194,
-        "shapes": 86,
-        "sprites": 634,
-        "symbolClass": 1
+        "images": 31,
+        "shapes": 85,
+        "sprites": 575
       }
     },
     {
@@ -745,15 +700,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "3501b471c25bbc4ab3a784c7549a802239a645884f69052a5b74582393dde5be",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__6)",
-      "files": 718,
-      "bytes": 16489096,
+      "files": 499,
+      "bytes": 14820129,
       "types": {
-        "frames": 1,
-        "images": 41,
-        "scripts": 168,
-        "shapes": 114,
-        "sprites": 393,
-        "symbolClass": 1
+        "images": 32,
+        "shapes": 110,
+        "sprites": 357
       }
     },
     {
@@ -763,15 +715,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "ed6794aa5d602aeca1d496669112f9445213c7474f4737f9cc593e2c231fb8e0",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__7)",
-      "files": 1341,
-      "bytes": 64984234,
+      "files": 966,
+      "bytes": 58597521,
       "types": {
-        "frames": 1,
-        "images": 17,
-        "scripts": 209,
-        "shapes": 191,
-        "sprites": 922,
-        "symbolClass": 1
+        "images": 13,
+        "shapes": 182,
+        "sprites": 771
       }
     },
     {
@@ -781,15 +730,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "ac3934359264544b3239890875c03784e5f8975645681f85ab57c03f801a7587",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__8)",
-      "files": 970,
-      "bytes": 22121020,
+      "files": 673,
+      "bytes": 19362428,
       "types": {
-        "frames": 1,
-        "images": 11,
-        "scripts": 192,
-        "shapes": 114,
-        "sprites": 651,
-        "symbolClass": 1
+        "images": 8,
+        "shapes": 112,
+        "sprites": 553
       }
     },
     {
@@ -799,15 +745,12 @@
       "origin": "Aloader/MainGame",
       "source_sha256": "4236358292a3978063a4d02cca03b5a8c49023e7dacdc8fbfcc77c2a0b6ae454",
       "output": "assets/extracted/classified/zmxiyou2 (manifest package stages__9)",
-      "files": 855,
-      "bytes": 25655728,
+      "files": 620,
+      "bytes": 24126698,
       "types": {
-        "frames": 1,
-        "images": 8,
-        "scripts": 184,
-        "shapes": 82,
-        "sprites": 579,
-        "symbolClass": 1
+        "images": 6,
+        "shapes": 80,
+        "sprites": 534
       }
     },
     {
