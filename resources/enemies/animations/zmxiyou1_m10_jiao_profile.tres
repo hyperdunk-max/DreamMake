@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"idle"
+source_monster_id = &"M10"
+source_package = &"Monster_v1"
+source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
+actions = {
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/hurt/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/hurt/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -109)
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/idle/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},
+&"attack1": {
+"display_name": "攻击1",
+"fps": 24.0,
+"frame_count": 21,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack1/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack1/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(-46, -100)
+},
+&"attack2": {
+"display_name": "攻击2",
+"fps": 24.0,
+"frame_count": 30,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack2/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack2/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(-1, -112)
+},
+&"attack3": {
+"display_name": "攻击3",
+"fps": 24.0,
+"frame_count": 45,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack3/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/attack3/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -82)
+},
+&"death": {
+"display_name": "死亡",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/death/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/death/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -111)
+},
+&"move": {
+"display_name": "移动",
+"fps": 24.0,
+"frame_count": 16,
+"loop": true,
+"next_animation": &"move",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m10_jiao/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m10_jiao/move/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(-11, -104)
+}
+}

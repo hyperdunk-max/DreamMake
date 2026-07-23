@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"154_Monster51Bullet1"
+source_monster_id = &"Z2_M51"
+source_package = &"ZMX2"
+actions = {
+&"154_monster51bullet1": {
+"display_name": "154_Monster51Bullet1",
+"fps": 24.0,
+"frame_count": 30,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/154_Monster51Bullet1/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"attack2a": {
+"display_name": "attack2a",
+"fps": 24.0,
+"frame_count": 9,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/attack2a/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"attack2b": {
+"display_name": "attack2b",
+"fps": 24.0,
+"frame_count": 5,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/attack2b/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"attack3": {
+"display_name": "attack3",
+"fps": 24.0,
+"frame_count": 9,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/attack3/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"death": {
+"display_name": "death",
+"fps": 24.0,
+"frame_count": 9,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/death/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"hurt": {
+"display_name": "hurt",
+"fps": 24.0,
+"frame_count": 10,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/hurt/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"idle": {
+"display_name": "idle",
+"fps": 24.0,
+"frame_count": 8,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/idle/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"walk": {
+"display_name": "walk",
+"fps": 24.0,
+"frame_count": 10,
+"loop": false,
+"next_animation": &"154_Monster51Bullet1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m51_转轮王/walk/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+}
+}

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="StageDefinition" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/stages/stage_definition.gd" id="1_stage"]
+[ext_resource type="Script" path="res://src/stages/enemy_spawn_definition.gd" id="2_spawn"]
+[ext_resource type="Script" path="res://src/stages/boss_defeated_condition.gd" id="3_condition"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m04_monkey_king.tres" id="4_m01"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/stage_1/mountain_background.jpg" id="5_bg"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/stage_1/grass_ground.jpg" id="6_ground"]
+
+[sub_resource type="Resource" id="EnemySpawn_m01"]
+script = ExtResource("2_spawn")
+spawn_id = &"m04"
+enemy = ExtResource("4_m01")
+position = Vector2(700, 515)
+count = 1
+spacing = Vector2(0, 0)
+initial_delay_seconds = 0.5
+
+[sub_resource type="Resource" id="BossDefeated_m01"]
+script = ExtResource("3_condition")
+boss_spawn_id = &"m04"
+
+[resource]
+script = ExtResource("1_stage")
+stage_id = &"zmxiyou1_combat_test"
+display_name = "造梦西游1 · 彌猴王弹道测试"
+source_game = 1
+background_texture = ExtResource("5_bg")
+ground_texture = ExtResource("6_ground")
+viewport_size = Vector2(940, 590)
+floor_y = 515.0
+player_spawn_position = Vector2(200, 515)
+enemy_spawns = Array[ExtResource("2_spawn")]([SubResource("EnemySpawn_m01")])
+end_condition = SubResource("BossDefeated_m01")

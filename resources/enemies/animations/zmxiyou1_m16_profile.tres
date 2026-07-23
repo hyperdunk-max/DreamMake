@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"idle"
+source_monster_id = &"M16"
+source_package = &"Monster_v1"
+source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
+actions = {
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/hurt/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/hurt/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -47)
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/idle/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},
+&"attack1": {
+"display_name": "攻击1",
+"fps": 24.0,
+"frame_count": 15,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/attack1/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/attack1/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(32, -104)
+},
+&"attack2": {
+"display_name": "攻击2",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/attack2/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/attack2/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(51, -48)
+},
+&"death": {
+"display_name": "死亡",
+"fps": 24.0,
+"frame_count": 22,
+"loop": false,
+"next_animation": &"idle",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/death/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/death/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(4, -71)
+},
+&"move": {
+"display_name": "移动",
+"fps": 24.0,
+"frame_count": 12,
+"loop": true,
+"next_animation": &"move",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m16_common/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m16_common/move/sprite.json",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(-6, -52)
+}
+}

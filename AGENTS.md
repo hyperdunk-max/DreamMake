@@ -114,6 +114,31 @@ assets/extracted/classified/zmxiyou1/怪物/<MXX_名称>/
 - **弹道**: 默认 AnimatedBullet（动画弹道），仅 M14 用 MovingBullet（代码移动）
 - **状态机**: idle→walk→attack→hurt→dead 五态，转换规则来自 AS 帧事件
 
+### 动画偏移调整
+
+**所有怪物 sprite_offset 的调整必须在动画浏览器中进行**，禁止在战斗场景或其他地方调整。
+
+启动动画浏览器（敌人模式）：
+```bash
+godot --animation-mode=enemies scenes/debug/animation_browser.tscn
+```
+
+工作流：
+1. 左上角怪物下拉选择目标怪物
+2. 动作下拉切换动作
+3. 方向键微调位置（Shift+方向键 = 10px 步长），或拖拽鼠标
+4. 点击"保存坐标"写入对应 profile 的 `sprite_offset`
+5. 调整后的 offset 会自动反映到战斗场景中（战斗场景通过 `EnemyAnimationProfile` 读取同一份 offset）
+
+### 实战测试
+
+战斗测试场景：
+```bash
+godot scenes/stages/zmxiyou1_combat_test.tscn
+```
+
+用于验证动画、AI 和碰撞效果，**不在战斗场景中调整动画位置**。
+
 ### 相关脚本
 
 | 脚本 | 用途 |

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"attack1"
+source_monster_id = &"Z2_M31"
+source_package = &"ZMX2"
+actions = {
+&"attack1": {
+"display_name": "attack1",
+"fps": 24.0,
+"frame_count": 9,
+"loop": true,
+"next_animation": &"attack1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m31/attack1/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"death": {
+"display_name": "death",
+"fps": 24.0,
+"frame_count": 8,
+"loop": false,
+"next_animation": &"attack1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m31/death/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"hurt": {
+"display_name": "hurt",
+"fps": 24.0,
+"frame_count": 8,
+"loop": false,
+"next_animation": &"attack1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m31/hurt/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"idle": {
+"display_name": "idle",
+"fps": 24.0,
+"frame_count": 7,
+"loop": false,
+"next_animation": &"attack1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m31/idle/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"walk": {
+"display_name": "walk",
+"fps": 24.0,
+"frame_count": 10,
+"loop": false,
+"next_animation": &"attack1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m31/walk/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+}
+}

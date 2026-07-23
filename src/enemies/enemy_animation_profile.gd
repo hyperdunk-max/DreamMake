@@ -16,8 +16,6 @@ func validate() -> PackedStringArray:
 	if actions.is_empty():
 		errors.append("Enemy animation profile has no actions.")
 		return errors
-	if not actions.has(default_animation):
-		errors.append("Default enemy animation '%s' is missing." % default_animation)
 	for raw_name: Variant in actions:
 		var action := StringName(raw_name)
 		var spec: Dictionary = actions[raw_name]
@@ -72,10 +70,13 @@ func _build_from_sprite_sheet(result: SpriteFrames, action: StringName, spec: Di
 	if sheet_path.is_empty() or json_path.is_empty():
 		push_error("Sprite sheet spec for '%s' missing sprite_sheet or sprite_sheet_json" % action)
 		return
-	var texture := load(sheet_path) as Texture2D
-	if texture == null:
-		push_error("Missing sprite sheet texture: %s" % sheet_path)
+	# Use Image.load to bypass Godot .import system for paths with CJK characters
+	var image := Image.new()
+	var img_error := image.load(sheet_path)
+	if img_error != OK:
+		push_error("Cannot load sprite sheet image: %s (error %d)" % [sheet_path, img_error])
 		return
+	var texture := ImageTexture.create_from_image(image)
 	var file := FileAccess.open(json_path, FileAccess.READ)
 	if file == null:
 		push_error("Cannot open sprite sheet JSON: %s" % json_path)
@@ -86,19 +87,47 @@ func _build_from_sprite_sheet(result: SpriteFrames, action: StringName, spec: Di
 		push_error("Failed to parse sprite sheet JSON: %s" % json_path)
 		return
 	var frames_data: Dictionary = data.get("frames", {})
+	var meta: Dictionary = data.get("meta", {})
+	var expected_frame_count := int(spec.get("frame_count", 0))
+	if expected_frame_count > 0 and frames_data.size() != expected_frame_count:
+		push_error(
+			"Sprite sheet frame count mismatch for '%s': profile=%d json=%d"
+			% [action, expected_frame_count, frames_data.size()]
+		)
 	var sorted_names := PackedStringArray(frames_data.keys())
 	sorted_names.sort()
 	for frame_name: String in sorted_names:
 		var frame_info: Dictionary = frames_data[frame_name]
-		var region := Rect2(
-			float(frame_info.get("x", 0)),
-			float(frame_info.get("y", 0)),
-			float(frame_info.get("w", 64)),
-			float(frame_info.get("h", 64))
-		)
 		var atlas := AtlasTexture.new()
 		atlas.atlas = texture
-		atlas.region = region
+		if bool(meta.get("trimmed", false)) and frame_info.has("ox"):
+			# trim_sprites.py stores content at (1, 1) inside every atlas slot.
+			# AtlasTexture.margin restores the original frame canvas so existing
+			# per-action offsets and frame-to-frame registration remain stable.
+			var original_size: Dictionary = meta.get("originalFrameSize", {})
+			var content_width := float(frame_info.get("cw", frame_info.get("w", 64)))
+			var content_height := float(frame_info.get("ch", frame_info.get("h", 64)))
+			var original_width := float(original_size.get("w", content_width))
+			var original_height := float(original_size.get("h", content_height))
+			atlas.region = Rect2(
+				float(frame_info.get("x", 0)) + 1.0,
+				float(frame_info.get("y", 0)) + 1.0,
+				content_width,
+				content_height
+			)
+			atlas.margin = Rect2(
+				-float(frame_info.get("ox", 0)),
+				-float(frame_info.get("oy", 0)),
+				original_width - content_width,
+				original_height - content_height
+			)
+		else:
+			atlas.region = Rect2(
+				float(frame_info.get("x", 0)),
+				float(frame_info.get("y", 0)),
+				float(frame_info.get("w", 64)),
+				float(frame_info.get("h", 64))
+			)
 		result.add_frame(action, atlas)
 
 
@@ -106,10 +135,14 @@ func _build_from_frames(result: SpriteFrames, action: StringName, spec: Dictiona
 	var pattern := str(spec.get("path_pattern", ""))
 	var frame_count := int(spec.get("frame_count", 0))
 	for frame_number in range(1, frame_count + 1):
-		var texture := load(pattern % frame_number) as Texture2D
-		if texture == null:
-			push_error("Missing enemy animation frame: %s" % (pattern % frame_number))
+		var file_path := pattern % frame_number
+		var abs_path := ProjectSettings.globalize_path(file_path)
+		var image := Image.new()
+		var err := image.load(abs_path)
+		if err != OK:
+			push_error("Missing enemy animation frame: %s (error %d)" % [abs_path, err])
 			continue
+		var texture := ImageTexture.create_from_image(image)
 		result.add_frame(action, texture)
 
 

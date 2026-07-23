@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/enemies/animated_enemy.gd" id="1_enemy"]
+
+[sub_resource type="RectangleShape2D" id="EnemyShape"]
+size = Vector2(42, 58)
+
+[sub_resource type="CircleShape2D" id="AttackShape"]
+radius = 55.0
+
+[node name="AnimatedEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29)
+shape = SubResource("EnemyShape")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, -30)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("AttackShape")

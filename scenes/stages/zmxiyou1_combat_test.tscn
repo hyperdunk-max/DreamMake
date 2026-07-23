@@ -1,0 +1,86 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://src/stages/stage_playtest.gd" id="1_playtest"]
+[ext_resource type="Script" path="res://src/stages/stage_controller.gd" id="2_controller"]
+[ext_resource type="Resource" path="res://resources/stages/zmxiyou1_combat_test.tres" id="3_stage"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/animated_enemy.tscn" id="14_enemy_scene"]
+[ext_resource type="Script" path="res://src/actors/player.gd" id="4_player"]
+[ext_resource type="Script" path="res://src/ui/hud.gd" id="5_hud"]
+[ext_resource type="Script" path="res://src/actors/layered_sprite_animator.gd" id="6_animator"]
+[ext_resource type="Script" path="res://src/states/character_state_machine.gd" id="7_sm"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong.tres" id="8_profile"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong_combo.tres" id="9_combo"]
+[ext_resource type="Resource" path="res://resources/roles/role_1_wukong_definition.tres" id="10_role"]
+[ext_resource type="Texture2D" path="res://assets/selected/zmxiyou1/stage_1/tree.png" id="11_tree"]
+
+[sub_resource type="RectangleShape2D" id="FloorShape"]
+size = Vector2(940, 70)
+
+[sub_resource type="CapsuleShape2D" id="PlayerShape"]
+radius = 18.0
+height = 58.0
+
+[node name="CombatTest" type="Node2D"]
+script = ExtResource("1_playtest")
+
+[node name="StageController" type="Node2D" parent="."]
+script = ExtResource("2_controller")
+definition = ExtResource("3_stage")
+auto_start = false
+enemy_scene = ExtResource("14_enemy_scene")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.12, 0.18, 0.28, 1)
+
+[node name="TreeLeft" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(200, 400)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_tree")
+
+[node name="TreeRight" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(750, 410)
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("11_tree")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(470, 550)
+collision_layer = 1
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["players"]]
+position = Vector2(150, 515)
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("4_player")
+role_definition = ExtResource("10_role")
+role_id = 1
+animation_profile = ExtResource("8_profile")
+combo_attack_profile = ExtResource("9_combo")
+body_showid = 1
+weapon_showid = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -29)
+shape = SubResource("PlayerShape")
+
+[node name="LayeredSpriteAnimator" type="Node2D" parent="Player"]
+script = ExtResource("6_animator")
+
+[node name="Body" type="Sprite2D" parent="Player/LayeredSpriteAnimator"]
+
+[node name="Weapon" type="Sprite2D" parent="Player/LayeredSpriteAnimator"]
+
+[node name="ActionStateMachine" type="Node" parent="Player"]
+script = ExtResource("7_sm")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_hud")

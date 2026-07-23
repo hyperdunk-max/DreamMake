@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"ait1"
+source_monster_id = &"Z2_M52"
+source_package = &"ZMX2"
+actions = {
+&"ait1": {
+"display_name": "ait1",
+"fps": 24.0,
+"frame_count": 5,
+"loop": true,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/ait1/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"ait2": {
+"display_name": "ait2",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/ait2/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"ait3": {
+"display_name": "ait3",
+"fps": 24.0,
+"frame_count": 5,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/ait3/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"ait4": {
+"display_name": "ait4",
+"fps": 24.0,
+"frame_count": 5,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/ait4/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"ait5": {
+"display_name": "ait5",
+"fps": 24.0,
+"frame_count": 5,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/ait5/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"death": {
+"display_name": "death",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/death/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"hurt": {
+"display_name": "hurt",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/hurt/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"idle": {
+"display_name": "idle",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/idle/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+},&"walk": {
+"display_name": "walk",
+"fps": 24.0,
+"frame_count": 5,
+"loop": false,
+"next_animation": &"ait1",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m52_秦广王傀儡/walk/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+}
+}

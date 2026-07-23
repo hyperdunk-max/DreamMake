@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://src/effects/enemy_bullet.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bullet"]
+size = Vector2(80, 80)
+
+[node name="EnemyBullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bullet")

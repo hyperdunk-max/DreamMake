@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"idle"
+source_monster_id = &"Z2_M57"
+source_package = &"ZMX2"
+actions = {
+&"idle": {
+"display_name": "idle",
+"fps": 24.0,
+"frame_count": 5,
+"loop": true,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou2/monsters/m57/idle/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, 0)
+}
+}

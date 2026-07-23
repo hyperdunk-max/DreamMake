@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+default_animation = &"idle"
+source_monster_id = &"M04"
+source_package = &"Monster_v1"
+source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
+actions = {
+&"attack1": {
+"display_name": "攻击1",
+"fps": 24.0,
+"frame_count": 17,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/attack1/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -100)
+},
+&"attack2": {
+"display_name": "攻击2",
+"fps": 24.0,
+"frame_count": 76,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/attack2/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -150)
+},
+&"attack3": {
+"display_name": "攻击3·弹道",
+"fps": 24.0,
+"frame_count": 53,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/attack3/frame_%03d.png",
+"bullet_sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/effects/Boss2Bullet1/sprite.png",
+"bullet_sprite_json": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/effects/Boss2Bullet1/sprite.json",
+"bullet_damage": 20,
+"bullet_knockback": Vector2(15, 0),
+"bullet_hit_max_count": 40,
+"bullet_collision_size": Vector2(733, 169),
+"source_events": Array[Dictionary]([{"frame": 3, "id": &"doHit3", "types": PackedStringArray("bullet_spawn")}]),
+"sprite_offset": Vector2(0, -100)
+},
+&"death": {
+"display_name": "死亡",
+"fps": 24.0,
+"frame_count": 25,
+"loop": false,
+"next_animation": &"death",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/death/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -80)
+},
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 11,
+"loop": false,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/hurt/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -60)
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/idle/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -65)
+},
+&"move": {
+"display_name": "移动",
+"fps": 24.0,
+"frame_count": 12,
+"loop": true,
+"next_animation": &"move",
+"path_pattern": "res://assets/selected/zmxiyou1/monsters/m04_monkey_king/move/frame_%03d.png",
+"source_events": Array[Dictionary]([]),
+"sprite_offset": Vector2(0, -55)
+}
+}

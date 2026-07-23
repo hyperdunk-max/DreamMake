@@ -15,54 +15,10 @@ actions = {
 "frame_count": 60,
 "loop": false,
 "next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击1/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击1/sprite.json",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/attack1/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/attack1/sprite.json",
 "source_events": Array[Dictionary]([]),
 "sprite_offset": Vector2(0, -85)
-},
-&"attack2": {
-"display_name": "攻击2·魔法[Timeline_35]",
-"fps": 24.0,
-"frame_count": 60,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击2/Timeline_35/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击2/Timeline_35/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -100)
-},
-&"attack3": {
-"display_name": "攻击3·魔法[Timeline_40]",
-"fps": 24.0,
-"frame_count": 67,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击3/Timeline_40/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击3/Timeline_40/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -120)
-},
-&"attack4": {
-"display_name": "攻击4·魔法[Timeline_42]",
-"fps": 24.0,
-"frame_count": 54,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击4/Timeline_42/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击4/Timeline_42/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -120)
-},
-&"attack5": {
-"display_name": "攻击5·魔法[Timeline_52]",
-"fps": 24.0,
-"frame_count": 130,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击5/Timeline_52/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/攻击5/Timeline_52/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -120)
 },
 &"death": {
 "display_name": "死亡",
@@ -70,10 +26,10 @@ actions = {
 "frame_count": 25,
 "loop": false,
 "next_animation": &"death",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/死亡/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/死亡/sprite.json",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/death/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/death/sprite.json",
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -70)
+"sprite_offset": Vector2(0, -65)
 },
 &"hurt": {
 "display_name": "受伤",
@@ -81,10 +37,10 @@ actions = {
 "frame_count": 6,
 "loop": false,
 "next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/受伤/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/受伤/sprite.json",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/hurt/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/hurt/sprite.json",
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -70)
+"sprite_offset": Vector2(0, -65)
 },
 &"idle": {
 "display_name": "待机",
@@ -92,10 +48,10 @@ actions = {
 "frame_count": 20,
 "loop": true,
 "next_animation": &"idle",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/待机/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/待机/sprite.json",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.json",
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -71)
+"sprite_offset": Vector2(0, -65)
 },
 &"move": {
 "display_name": "移动",
@@ -103,9 +59,9 @@ actions = {
 "frame_count": 16,
 "loop": true,
 "next_animation": &"move",
-"sprite_sheet": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/移动/sprite.png",
-"sprite_sheet_json": "res://assets/extracted/classified/zmxiyou1/怪物/M23_牛魔王/移动/sprite.json",
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.json",
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -64)
+"sprite_offset": Vector2(0, -60)
 }
 }

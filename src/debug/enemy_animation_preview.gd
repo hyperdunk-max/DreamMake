@@ -8,10 +8,13 @@ const ACTION_ORDER := [
 	&"attack4", &"egg", &"reburn", &"hurt", &"death",
 ]
 
-@export var definition: EnemyDefinition
+## Master list of all available enemy definitions
+@export var monster_definitions: Array[EnemyDefinition] = []
 
 @onready var preview_world: Node2D = $PreviewWorld
 @onready var sprite: AnimatedSprite2D = $PreviewWorld/AnimatedSprite2D
+@onready var effects_layer: Node2D = $PreviewWorld/EffectsLayer
+@onready var monster_option: OptionButton = $UI/Panel/Margin/VBox/MonsterRow/MonsterOption
 @onready var action_option: OptionButton = $UI/Panel/Margin/VBox/ActionOption
 @onready var replay_button: Button = $UI/Panel/Margin/VBox/Buttons/ReplayButton
 @onready var pause_button: Button = $UI/Panel/Margin/VBox/Buttons/PauseButton
@@ -33,6 +36,7 @@ var _saved_offset := Vector2.ZERO
 var _preview_offset := Vector2.ZERO
 var _dragging := false
 var _updating_controls := false
+var _active_definition_index := 0
 
 
 func _ready() -> void:
@@ -40,6 +44,7 @@ func _ready() -> void:
 		get_window().content_scale_size = PREVIEW_WINDOW_SIZE
 		get_window().size = PREVIEW_WINDOW_SIZE
 	get_viewport().size_changed.connect(_update_layout)
+	monster_option.item_selected.connect(_on_monster_selected)
 	action_option.item_selected.connect(_on_action_selected)
 	replay_button.pressed.connect(_replay)
 	pause_button.pressed.connect(_toggle_pause)
@@ -50,15 +55,43 @@ func _ready() -> void:
 	$UI/Panel/Margin/VBox/EditButtons/ResetButton.pressed.connect(_reset_offset)
 	$UI/Panel/Margin/VBox/EditButtons/SaveButton.pressed.connect(_save_offset)
 	sprite.animation_finished.connect(_on_animation_finished)
-	if definition == null or definition.animation_profile == null:
-		status_label.text = "缺少敌人动画配置"
+
+	# Populate monster dropdown
+	if monster_definitions.is_empty():
+		status_label.text = "没有可用的怪物定义"
 		return
-	_profile = definition.animation_profile
-	var errors := definition.validate()
+	for defn: EnemyDefinition in monster_definitions:
+		monster_option.add_item(defn.display_name)
+	monster_option.select(0)
+	_load_monster(0)
+
+
+func _load_monster(index: int) -> void:
+	if index < 0 or index >= monster_definitions.size():
+		return
+	_active_definition_index = index
+	var defn := monster_definitions[index]
+	if defn == null or defn.animation_profile == null:
+		status_label.text = "怪物 '%s' 缺少动画配置" % defn.display_name
+		return
+	_profile = defn.animation_profile
+	var errors := defn.validate()
 	if not errors.is_empty():
 		status_label.text = "配置错误：\n" + "\n".join(errors)
 		return
+
+	# Find default action
+	_current_action = _profile.default_animation
+	if not _profile.actions.has(_current_action):
+		for key in _profile.actions:
+			_current_action = StringName(key)
+			break
+
+	# Build sprite frames
 	sprite.sprite_frames = _profile.build_sprite_frames()
+
+	# Rebuild action dropdown
+	action_option.clear()
 	for action: StringName in ACTION_ORDER:
 		if not _profile.actions.has(action):
 			continue
@@ -66,12 +99,15 @@ func _ready() -> void:
 		action_option.set_item_metadata(action_option.item_count - 1, action)
 		if action == _current_action:
 			action_option.select(action_option.item_count - 1)
+
 	_update_layout()
 	_on_zoom_changed(zoom_spin.value)
 	play_action(_current_action)
-	status_label.text = "已加载 %d 个动作；当前默认播放攻击1" % action_option.item_count
-	if "--capture-preview" in OS.get_cmdline_user_args():
-		_capture_preview.call_deferred()
+	status_label.text = "%s · %d 个动作" % [defn.display_name, action_option.item_count]
+
+
+func _on_monster_selected(index: int) -> void:
+	_load_monster(index)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -103,26 +139,6 @@ func _process(_delta: float) -> void:
 		return
 	var spec := _profile.get_spec(_current_action)
 	frame_label.text = "当前帧：%d / %d" % [sprite.frame + 1, int(spec.get("frame_count", 0))]
-	var manual_events := _profile.get_event_frames(_current_action)
-	var source_events := _profile.get_source_events_at_frame(_current_action, sprite.frame)
-	var is_manual_event_frame := sprite.frame in manual_events
-	var is_source_event_frame := not source_events.is_empty()
-	var is_hitbox_active := _profile.is_source_hitbox_active(_current_action, sprite.frame)
-	var source_event_names := PackedStringArray()
-	for source_event: Dictionary in source_events:
-		source_event_names.append(str(source_event.get("id", "unknown")))
-	event_label.text = "源码事件：%s" % (", ".join(source_event_names) if is_source_event_frame else "无")
-	event_label.text += "\n人工事件：%s　%s" % [
-		"是" if is_manual_event_frame else "否", str(spec.get("event_note", "")),
-	]
-	event_label.text += "\n源码 stick：%s　%s" % [
-		"生效" if is_hitbox_active else "关闭", str(spec.get("hitbox_note", ""))
-	]
-	event_label.modulate = (
-		Color("ffbd4a")
-		if is_source_event_frame or is_manual_event_frame or is_hitbox_active
-		else Color("aab4c8")
-	)
 	queue_redraw()
 
 
@@ -134,12 +150,59 @@ func play_action(action: StringName) -> void:
 	_saved_offset = _profile.get_offset(action)
 	set_preview_offset(_saved_offset, false)
 	sprite.play(action)
-	sprite.pause() if _paused else sprite.play()
+	if _paused:
+		sprite.pause()
 	offset_label.text = "当前坐标：%s" % sprite.position
-	source_label.text = "SWF symbol %d　画布 %s\n保存字段：sprite_offset" % [
-		int(spec.get("source_symbol_id", 0)), Vector2(spec.get("source_canvas", Vector2.ZERO))
+	var defn := monster_definitions[_active_definition_index]
+	source_label.text = "%s · 动作 %d/%d" % [
+		defn.display_name,
+		action_option.selected + 1,
+		action_option.item_count,
+	]
+	_load_effects(action)
+	event_label.text = "帧数：%d　循环：%s" % [
+		int(spec.get("frame_count", 0)),
+		"是" if bool(spec.get("loop", false)) else "否",
 	]
 
+
+func _load_effects(action: StringName) -> void:
+	for child in effects_layer.get_children():
+		child.queue_free()
+	var spec := _profile.get_spec(action)
+	var bullet_sheet := str(spec.get("bullet_sprite_sheet", ""))
+	var bullet_json := str(spec.get("bullet_sprite_json", ""))
+	if bullet_sheet.is_empty():
+		return
+	var image := Image.new()
+	if image.load(ProjectSettings.globalize_path(bullet_sheet)) != OK:
+		return
+	var texture := ImageTexture.create_from_image(image)
+	var file := FileAccess.open(bullet_json, FileAccess.READ)
+	if file == null:
+		return
+	var data: Variant = JSON.parse_string(file.get_as_text())
+	if data == null:
+		return
+	var frames_data: Dictionary = data.get("frames", {})
+	var sorted_names := PackedStringArray(frames_data.keys())
+	sorted_names.sort()
+	var effect_sprite := AnimatedSprite2D.new()
+	effect_sprite.name = "EffectBullet"
+	var sf := SpriteFrames.new()
+	sf.add_animation("bullet")
+	for fname: String in sorted_names:
+		var fi: Dictionary = frames_data[fname]
+		var atlas := AtlasTexture.new()
+		atlas.atlas = texture
+		atlas.region = Rect2(fi.get("x", 0), fi.get("y", 0), fi.get("w", 64), fi.get("h", 64))
+		sf.add_frame("bullet", atlas)
+	effect_sprite.sprite_frames = sf
+	effect_sprite.scale = sprite.scale
+	effect_sprite.position = sprite.position
+	effects_layer.add_child(effect_sprite)
+	effect_sprite.play("bullet")
+	event_label.text += "\n弹道特效"
 
 func _on_action_selected(index: int) -> void:
 	play_action(StringName(action_option.get_item_metadata(index)))
@@ -237,16 +300,6 @@ func _update_layout() -> void:
 	queue_redraw()
 
 
-func _capture_preview() -> void:
-	await get_tree().create_timer(0.36).timeout
-	await RenderingServer.frame_post_draw
-	var image := get_viewport().get_texture().get_image()
-	var error := image.save_png("res://.tools/peng_demon_king_preview.png")
-	if error != OK:
-		push_error("Failed to save Peng Demon King preview: %s" % error_string(error))
-	get_tree().quit(error)
-
-
 func _draw() -> void:
 	var size := get_viewport_rect().size
 	for x in range(int(PANEL_WIDTH), int(size.x), 50):
@@ -261,17 +314,10 @@ func _draw() -> void:
 		var visual_origin := preview_world.to_global(sprite.position)
 		draw_line(origin, visual_origin, Color(0.3, 0.85, 1.0, 0.8), 2.0)
 		draw_circle(visual_origin, 5.0, Color(0.3, 0.85, 1.0))
-	if definition != null:
+	if _active_definition_index >= 0 and _active_definition_index < monster_definitions.size():
+		var defn := monster_definitions[_active_definition_index]
 		var collision_rect := Rect2(
-			origin + Vector2(-definition.collision_size.x * 0.5, -definition.collision_size.y),
-			definition.collision_size
+			origin + Vector2(-defn.collision_size.x * 0.5, -defn.collision_size.y),
+			defn.collision_size
 		)
 		draw_rect(collision_rect, Color(0.35, 0.9, 0.45, 0.45), false, 2.0)
-	if _profile != null and (
-		not _profile.get_source_events_at_frame(_current_action, sprite.frame).is_empty()
-		or sprite.frame in _profile.get_event_frames(_current_action)
-	):
-		draw_circle(origin + Vector2(0, -145), 9.0, Color("ff9d32"))
-		draw_string(ThemeDB.fallback_font, origin + Vector2(16, -140), "SOURCE EVENT", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color("ffbd4a"))
-	if _profile != null and _profile.is_source_hitbox_active(_current_action, sprite.frame):
-		draw_string(ThemeDB.fallback_font, origin + Vector2(16, -116), "STICK ACTIVE", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color("ff6f59"))

@@ -1,7 +1,81 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=78 format=3]
 
 [ext_resource type="Script" path="res://src/debug/enemy_animation_preview.gd" id="1_preview"]
-[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_peng_demon_king.tres" id="2_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m01.tres" id="2_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m02.tres" id="3_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m03_gorilla.tres" id="4_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m04_monkey_king.tres" id="5_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m06_yu_rong.tres" id="6_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m07.tres" id="7_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m08.tres" id="8_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m09_peng.tres" id="9_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m10_jiao.tres" id="10_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m11_lion.tres" id="11_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m13.tres" id="12_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m14.tres" id="13_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m15.tres" id="14_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m16.tres" id="15_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m17_turtle.tres" id="16_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m18.tres" id="17_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m19_shark.tres" id="18_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m20.tres" id="19_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m21_bat.tres" id="20_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m22_bull.tres" id="21_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m23_bull.tres" id="22_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m25.tres" id="23_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m26_dragon.tres" id="24_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_m27_chest.tres" id="25_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou1_peng_demon_king.tres" id="26_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m30.tres" id="27_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m31.tres" id="28_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m32_守夜人.tres" id="29_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m33_黑无常.tres" id="30_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m34_白无常.tres" id="31_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m35.tres" id="32_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m36.tres" id="33_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m37.tres" id="34_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m38_秦广王.tres" id="35_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m39_判官.tres" id="36_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m40_阎罗王.tres" id="37_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m41.tres" id="38_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m42.tres" id="39_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m43.tres" id="40_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m44.tres" id="41_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m45_白骨精.tres" id="42_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m46_红孩儿.tres" id="43_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m47_孟婆.tres" id="44_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m48_悟空怪.tres" id="45_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m49_唐僧怪.tres" id="46_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m50.tres" id="47_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m51_转轮王.tres" id="48_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m52_秦广王傀儡.tres" id="49_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m53.tres" id="50_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m54.tres" id="51_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m55.tres" id="52_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m56_夜叉.tres" id="53_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m57.tres" id="54_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m58_刑天.tres" id="55_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m59_转轮王.tres" id="56_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m60_转轮王.tres" id="57_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m61_楚江王.tres" id="58_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m62.tres" id="59_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m63.tres" id="60_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m64_宋帝王.tres" id="61_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m65.tres" id="62_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m66.tres" id="63_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m67_五官王.tres" id="64_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m68.tres" id="65_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m69_卞城王.tres" id="66_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m72_都市王.tres" id="67_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m73_泰山王.tres" id="68_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m74_泰山王.tres" id="69_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m75_泰山王.tres" id="70_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m76_泰山王.tres" id="71_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m77_平等王.tres" id="72_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m78.tres" id="73_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m79_劈天斧.tres" id="74_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m80_风神盾.tres" id="75_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/zmxiyou2_m81_战神刑天.tres" id="76_enemy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
 bg_color = Color(0.055, 0.071, 0.105, 0.97)
@@ -14,12 +88,14 @@ border_color = Color(0.22, 0.29, 0.41, 1)
 
 [node name="EnemyAnimationPreview" type="Node2D"]
 script = ExtResource("1_preview")
-definition = ExtResource("2_enemy")
+monster_definitions = Array[ExtResource("2_enemy")]([ExtResource("2_enemy"), ExtResource("3_enemy"), ExtResource("4_enemy"), ExtResource("5_enemy"), ExtResource("6_enemy"), ExtResource("7_enemy"), ExtResource("8_enemy"), ExtResource("9_enemy"), ExtResource("10_enemy"), ExtResource("11_enemy"), ExtResource("12_enemy"), ExtResource("13_enemy"), ExtResource("14_enemy"), ExtResource("15_enemy"), ExtResource("16_enemy"), ExtResource("17_enemy"), ExtResource("18_enemy"), ExtResource("19_enemy"), ExtResource("20_enemy"), ExtResource("21_enemy"), ExtResource("22_enemy"), ExtResource("23_enemy"), ExtResource("24_enemy"), ExtResource("25_enemy"), ExtResource("26_enemy"), ExtResource("27_enemy"), ExtResource("28_enemy"), ExtResource("29_enemy"), ExtResource("30_enemy"), ExtResource("31_enemy"), ExtResource("32_enemy"), ExtResource("33_enemy"), ExtResource("34_enemy"), ExtResource("35_enemy"), ExtResource("36_enemy"), ExtResource("37_enemy"), ExtResource("38_enemy"), ExtResource("39_enemy"), ExtResource("40_enemy"), ExtResource("41_enemy"), ExtResource("42_enemy"), ExtResource("43_enemy"), ExtResource("44_enemy"), ExtResource("45_enemy"), ExtResource("46_enemy"), ExtResource("47_enemy"), ExtResource("48_enemy"), ExtResource("49_enemy"), ExtResource("50_enemy"), ExtResource("51_enemy"), ExtResource("52_enemy"), ExtResource("53_enemy"), ExtResource("54_enemy"), ExtResource("55_enemy"), ExtResource("56_enemy"), ExtResource("57_enemy"), ExtResource("58_enemy"), ExtResource("59_enemy"), ExtResource("60_enemy"), ExtResource("61_enemy"), ExtResource("62_enemy"), ExtResource("63_enemy"), ExtResource("64_enemy"), ExtResource("65_enemy"), ExtResource("66_enemy"), ExtResource("67_enemy"), ExtResource("68_enemy"), ExtResource("69_enemy"), ExtResource("70_enemy"), ExtResource("71_enemy"), ExtResource("72_enemy"), ExtResource("73_enemy"), ExtResource("74_enemy"), ExtResource("75_enemy"), ExtResource("76_enemy")])
 
 [node name="PreviewWorld" type="Node2D" parent="."]
 position = Vector2(660, 575)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PreviewWorld"]
+
+[node name="EffectsLayer" type="Node2D" parent="PreviewWorld"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -41,12 +117,24 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "彭魔王动画预览"
+text = "敌人动画预览"
 
 [node name="Subtitle" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 modulate = Color(0.65, 0.72, 0.84, 1)
-text = "造梦西游1 · Monster9"
+text = "造1+造2 · 75怪物"
+
+[node name="MonsterRow" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MonsterLabel" type="Label" parent="UI/Panel/Margin/VBox/MonsterRow"]
+layout_mode = 2
+text = "怪物"
+
+[node name="MonsterOption" type="OptionButton" parent="UI/Panel/Margin/VBox/MonsterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Separator" type="HSeparator" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
@@ -79,7 +167,7 @@ text = "朝向：右"
 [node name="AutoNextCheck" type="CheckBox" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 button_pressed = true
-text = "动作结束后回到待机/飞行"
+text = "动作结束后循环"
 
 [node name="ZoomRow" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
@@ -94,6 +182,22 @@ custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 min_value = 0.5
 max_value = 3.0
+step = 0.1
+value = 1.5
+
+[node name="SizeRow" type="HBoxContainer" parent="UI/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="SizeLabel" type="Label" parent="UI/Panel/Margin/VBox/SizeRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "角色缩放"
+
+[node name="SizeSpin" type="SpinBox" parent="UI/Panel/Margin/VBox/SizeRow"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+min_value = 0.3
+max_value = 5.0
 step = 0.1
 value = 1.5
 
@@ -146,23 +250,23 @@ text = "当前帧：-"
 
 [node name="OffsetLabel" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
-text = "脚底原点偏移：-"
+text = "原点偏移：-"
 
 [node name="SourceLabel" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 autowrap_mode = 2
-text = "SWF 来源：-"
+text = "-"
 
 [node name="EventLabel" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 autowrap_mode = 2
-text = "事件帧：-"
+text = "-"
 
 [node name="Legend" type="Label" parent="UI/Panel/Margin/VBox"]
 layout_mode = 2
 modulate = Color(0.66, 0.72, 0.82, 1)
 autowrap_mode = 2
-text = "拖动画布敌人或用方向键微调；Shift = 10 像素\n白十字：脚底原点　蓝点：动画显示原点\n绿色框：碰撞体　橙点：Flash 事件帧"
+text = "拖动或方向键微调；Shift = 10px\n白十字：原点  蓝点：offset  绿框：碰撞体"
 
 [node name="Spacer" type="Control" parent="UI/Panel/Margin/VBox"]
 custom_minimum_size = Vector2(0, 10)
