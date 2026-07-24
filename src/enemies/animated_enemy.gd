@@ -27,6 +27,7 @@ static var _boss_dead_frames: SpriteFrames
 static var _m10_back_hit_frames: SpriteFrames
 static var _source_visible_bounds_cache: Dictionary = {}
 
+# Current action playback and hit bookkeeping.
 var _state := State.IDLE
 var _current_animation: StringName = &""
 var _current_attack_spec: Dictionary = {}
@@ -40,6 +41,9 @@ var _player_ref: CharacterBody2D
 var _facing := -1
 var _invulnerable := false
 var _contact_action: StringName = &""
+
+# Fixed-rate ActionScript simulation state. Values ending in `_ticks` are
+# source ticks (24 Hz), not rendered frames or seconds.
 var _source_tick_accumulator := 0.0
 var _source_tick := 0
 var _combat_phase := 1
@@ -60,6 +64,9 @@ var _boss_dead_spawned := false
 var _source_loot_dropped := false
 var _ai_rng := RandomNumberGenerator.new()
 var _loot_rng := RandomNumberGenerator.new()
+
+# Monster-specific mechanics that still share this host's health, physics,
+# animation profile and damage pipeline.
 var _summoned_source_child: AnimatedEnemy
 var _grabbed_target: Node2D
 var _peng_flying := false
@@ -70,6 +77,7 @@ var _peng_reburning := false
 var _peng_egg_ticks := 0
 var _peng_egg_hits_remaining := 0
 
+# Runtime caches are built from the formal sprite packs during `_ready()`.
 var _bullet_cache: Dictionary = {}
 var _warning_cache: Dictionary = {}
 var _event_dispatcher: EnemyAnimationEventDispatcher
@@ -79,6 +87,8 @@ var _source_controller: Node
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = get_node_or_null("AttackArea") as Area2D
 
+
+# Lifecycle and fixed-rate source clock
 
 func _ready() -> void:
 	super._ready()
@@ -103,12 +113,7 @@ func _ready() -> void:
 	_event_dispatcher.bind(animated_sprite, definition.animation_profile)
 	animated_sprite.frame_changed.connect(_on_animation_frame_changed)
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-	var source_controls_ai := (
-		_source_controller != null
-		and _source_controller.has_method(&"blocks_host_ai")
-		and bool(_source_controller.call(&"blocks_host_ai"))
-	)
-	if not source_controls_ai:
+	if not _source_controller_blocks_host_ai():
 		_switch_state(State.IDLE)
 		_update_ai()
 
@@ -123,6 +128,19 @@ func _load_animations() -> void:
 func _physics_process(delta: float) -> void:
 	if definition == null or animated_sprite == null:
 		return
+	_update_motion(delta)
+	_update_combat_timers(delta)
+	if health <= 0 and _state != State.DEATH and not _peng_egg_active:
+		_switch_state(State.DEATH)
+	_advance_source_clock(delta)
+	if stun_seconds > 0.0:
+		velocity.x = 0.0
+	move_and_slide()
+	_process_contact_attack()
+	_process_contact_projectile()
+
+
+func _update_motion(delta: float) -> void:
 	if not _uses_flight_physics() and not is_on_floor():
 		velocity.y += GRAVITY * delta
 	if _state == State.WALK and stun_seconds <= 0.0:
@@ -131,23 +149,23 @@ func _physics_process(delta: float) -> void:
 		velocity.x = _source_motion_velocity.x
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, 700.0 * delta)
+
+
+func _update_combat_timers(delta: float) -> void:
 	_hurt_timer = maxf(0.0, _hurt_timer - delta)
 	hit_flash_seconds = maxf(0.0, hit_flash_seconds - delta)
 	stun_seconds = maxf(0.0, stun_seconds - delta)
 	if _hit_flash_material != null:
 		_hit_flash_material.set_shader_parameter("flash_amount", 1.0 if hit_flash_seconds > 0.0 else 0.0)
 
-	if health <= 0 and _state != State.DEATH and not _peng_egg_active:
-		_switch_state(State.DEATH)
+
+func _advance_source_clock(delta: float) -> void:
+	# Godot physics may run at any fixed rate. Accumulating elapsed time keeps
+	# source decisions deterministic at the original game's 24 Hz.
 	_source_tick_accumulator += delta
 	while _source_tick_accumulator >= 1.0 / ZMX1_STRATEGY.SOURCE_TICK_RATE:
 		_source_tick_accumulator -= 1.0 / ZMX1_STRATEGY.SOURCE_TICK_RATE
 		_advance_source_tick()
-	if stun_seconds > 0.0:
-		velocity.x = 0.0
-	move_and_slide()
-	_process_contact_attack()
-	_process_contact_projectile()
 
 
 func _advance_source_tick() -> void:
@@ -160,17 +178,15 @@ func _advance_source_tick() -> void:
 	if _source_controller != null and _source_controller.has_method(&"source_tick"):
 		_source_controller.call(&"source_tick", _source_tick)
 	var lifecycle_blocks_ai := _update_peng_lifecycle()
-	if (
-		_source_controller != null
-		and _source_controller.has_method(&"blocks_host_ai")
-		and bool(_source_controller.call(&"blocks_host_ai"))
-	):
+	if _source_controller_blocks_host_ai():
 		lifecycle_blocks_ai = true
 	_update_source_phase()
 	if stun_seconds <= 0.0 and not lifecycle_blocks_ai:
 		_update_ai()
 	_source_tick += 1
 
+
+# AI decisions and action state machine
 
 func _update_ai() -> void:
 	if _state in [State.DEATH, State.HURT, State.ATTACK]:
@@ -407,6 +423,8 @@ func _on_animation_finished() -> void:
 			_switch_state(State.IDLE)
 
 
+# Source-reviewed melee collision
+
 func _perform_melee_hits(frame: int) -> void:
 	var hitboxes := _melee_hitboxes_for_frame(frame)
 	var targets: Dictionary = {}
@@ -547,6 +565,8 @@ func _update_source_patrol() -> void:
 	velocity.x = _runtime_move_speed() * _facing
 
 
+# ActionScript timeline event bridge
+
 func _on_source_event(action: StringName, event: Dictionary) -> void:
 	if action != _current_animation:
 		return
@@ -598,6 +618,9 @@ func _on_source_event(action: StringName, event: Dictionary) -> void:
 
 
 func _emit_source_screen_shakes(source_code: String) -> void:
+	# Screen shake is a direct custom-script call and therefore has no separate
+	# normalized event id. Parse only this narrow audited call signature; all
+	# other ActionScript remains data and is never evaluated by Godot.
 	const MARKER := "vControllor.shake("
 	var cursor := 0
 	while cursor < source_code.length():
@@ -622,6 +645,8 @@ func _complete_source_action(action: StringName) -> void:
 		return
 	_switch_state(State.IDLE)
 
+
+# Projectile atlas loading and spawning
 
 func _preload_projectiles() -> void:
 	for raw_action: Variant in definition.animation_profile.actions:
@@ -806,6 +831,8 @@ func _process_contact_projectile() -> void:
 		return
 
 
+# Profile and action lookup helpers
+
 func _merged_attack_spec(action: StringName) -> Dictionary:
 	var source_spec := EnemyCombatCatalog.resolve_attack(
 		definition.animation_profile, action, _source_attack_variant
@@ -876,6 +903,8 @@ func _uses_flight_physics() -> bool:
 		return _peng_flying
 	return ZMX1_STRATEGY.is_flying(definition.animation_profile)
 
+
+# Source-specific monster mechanics
 
 func _configure_source_runtime_variant() -> void:
 	var context_stats := ZMX1_STRATEGY.get_source_context_stats(
@@ -1168,9 +1197,19 @@ func _attach_source_controller() -> void:
 		controller.call(&"setup", self)
 
 
+func _source_controller_blocks_host_ai() -> bool:
+	return (
+		_source_controller != null
+		and _source_controller.has_method(&"blocks_host_ai")
+		and bool(_source_controller.call(&"blocks_host_ai"))
+	)
+
+
 func _on_source_controller_screen_shake_requested(strength: float) -> void:
 	source_screen_shake_requested.emit(strength)
 
+
+# Damage handling
 
 func take_hit(damage: int, impulse: Vector2) -> void:
 	take_hit_from(damage, impulse, &"physical", null)
@@ -1275,6 +1314,8 @@ func _take_peng_hit(damage: int, impulse: Vector2) -> void:
 		_switch_state(State.HURT)
 
 
+# Public control and inspection API
+
 func force_attack(action: StringName) -> bool:
 	return _start_attack(action)
 
@@ -1344,6 +1385,8 @@ func source_set_idle() -> void:
 func source_refresh_attack_id() -> void:
 	_attack_hits.clear()
 
+
+# Death, loot and stage side effects
 
 func _complete_source_controlled_death() -> void:
 	if _state != State.DEATH or not is_inside_tree():

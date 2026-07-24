@@ -22,6 +22,8 @@ var _wait_elapsed := 0
 var _wait_target := FIRST_WAIT_TICKS
 
 
+# AnimatedEnemy source-controller contract
+
 func setup(host: AnimatedEnemy) -> void:
 	_host = host
 	_host.source_refresh_attack_id()
@@ -34,9 +36,7 @@ func source_tick(_source_tick: int) -> void:
 	if _running:
 		_host.source_set_move_direction(_direction)
 		var screen_x := _host.global_position.x - _viewport_center_x()
-		if (_direction < 0 and screen_x < LEFT_SCREEN_BOUND) or (
-			_direction > 0 and screen_x > RIGHT_SCREEN_BOUND
-		):
+		if _has_crossed_screen_boundary(screen_x):
 			_last_direction = _direction
 			_running = false
 			_wait_elapsed = 0
@@ -74,6 +74,8 @@ func before_despawn() -> void:
 		fade.tween_property(_host, ^"modulate:a", 0.0, 1.0)
 
 
+# Test/debug inspection API
+
 func is_running() -> bool:
 	return _running
 
@@ -86,7 +88,16 @@ func get_wait_elapsed() -> int:
 	return _wait_elapsed
 
 
+func _has_crossed_screen_boundary(screen_x: float) -> bool:
+	return (
+		(_direction < 0 and screen_x < LEFT_SCREEN_BOUND)
+		or (_direction > 0 and screen_x > RIGHT_SCREEN_BOUND)
+	)
+
+
 func _viewport_center_x() -> float:
+	# Flash boundaries are screen-relative, so a scrolling Godot camera must be
+	# removed from the world-space host position before applying them.
 	if _host == null or not is_instance_valid(_host):
 		return 0.0
 	var camera := _host.get_viewport().get_camera_2d()

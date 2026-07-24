@@ -10,6 +10,7 @@ signal target_hit(target: Node2D, damage: int, frame: int)
 
 const SOURCE_TICK_RATE := 24.0
 
+# Damage and source attack-id state.
 var _source_actor: Node2D
 var _damage := 0
 var _damage_kind: StringName = &"physical"
@@ -18,6 +19,8 @@ var _max_hits := 1
 var _rehit_interval_frames := 999
 var _hits := 0
 var _target_last_hit_generation: Dictionary = {}
+
+# Visual registration and code-driven movement state.
 var _frame_bounds: Array[Rect2] = []
 var _fallback_collision_size := Vector2(48.0, 48.0)
 var _facing := -1
@@ -27,6 +30,9 @@ var _speed := 0.0
 var _acceleration := 0.0
 var _max_speed := 0.0
 var _remaining_distance := 0.0
+
+# Playback lifecycle. The attack interval is intentionally counted in source
+# ticks so physics FPS does not alter repeat-hit timing.
 var _configured := false
 var _status_effects: Array = []
 var _activation_delay_total := 0.0
@@ -38,6 +44,8 @@ var _attack_generation := 0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+
+# Configuration
 
 func configure(
 	sprite_frames: SpriteFrames,
@@ -103,13 +111,7 @@ func configure(
 func _physics_process(delta: float) -> void:
 	if not _configured:
 		return
-	if _activation_delay_remaining > 0.0:
-		_activation_delay_remaining = maxf(0.0, _activation_delay_remaining - delta)
-		anim.modulate.a = 1.0 - _activation_delay_remaining / _activation_delay_total
-		if _activation_delay_remaining <= 0.0:
-			anim.modulate.a = 1.0
-			anim.play()
-			_refresh_collision()
+	if _advance_activation_delay(delta):
 		return
 	_source_tick_accumulator += maxf(0.0, delta) * SOURCE_TICK_RATE
 	var pending_ticks := int(_source_tick_accumulator)
@@ -119,6 +121,22 @@ func _physics_process(delta: float) -> void:
 		if is_queued_for_deletion():
 			return
 
+
+func _advance_activation_delay(delta: float) -> bool:
+	if _activation_delay_remaining <= 0.0:
+		return false
+	# Persistent source flames fade in before they can attack. Pausing both the
+	# animation and collision keeps the visual and damage windows synchronized.
+	_activation_delay_remaining = maxf(0.0, _activation_delay_remaining - delta)
+	anim.modulate.a = 1.0 - _activation_delay_remaining / _activation_delay_total
+	if _activation_delay_remaining <= 0.0:
+		anim.modulate.a = 1.0
+		anim.play()
+		_refresh_collision()
+	return true
+
+
+# Fixed-rate source simulation
 
 func _advance_source_tick() -> void:
 	# BaseBullet.checkAttack() refreshes its attack id before checking targets,
@@ -151,6 +169,8 @@ func _update_code_movement_tick() -> void:
 	if _remaining_distance <= 0.0:
 		queue_free()
 
+
+# Collision and animation lifecycle
 
 func _check_overlapping_targets() -> void:
 	if collision_shape.disabled or _damage <= 0:
@@ -207,6 +227,8 @@ func _on_animation_finished() -> void:
 func _exit_tree() -> void:
 	bullet_destroyed.emit()
 
+
+# Test/debug inspection API. Runtime gameplay does not depend on these values.
 
 func get_source_speed_px_per_tick() -> float:
 	return _speed / SOURCE_TICK_RATE

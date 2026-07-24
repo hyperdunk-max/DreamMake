@@ -8,6 +8,9 @@ extends RefCounted
 
 const SOURCE_TICK_RATE := 24.0
 
+# Configuration values preserve source timing: periods, cooldowns and
+# invulnerability durations are 24 Hz ticks. Movement and acceleration values
+# are converted once to Godot's px/s units at the data boundary.
 const SOURCE_CONFIG := {
 	&"M01": {
 		"kind": &"generic_ground",
@@ -206,6 +209,8 @@ const SOURCE_CONFIG := {
 }
 
 
+# Profile and timing queries
+
 static func has_reviewed_strategy(profile: EnemyAnimationProfile) -> bool:
 	return profile != null and SOURCE_CONFIG.has(profile.source_monster_id)
 
@@ -270,6 +275,8 @@ static func get_cooldown_ticks(
 static func get_cooldown_key(profile: EnemyAnimationProfile, action: StringName) -> StringName:
 	return _cooldown_key(profile, action)
 
+
+# Decision dispatch
 
 static func decide(
 	profile: EnemyAnimationProfile,
@@ -338,6 +345,8 @@ static func decide(
 			return _decide_m26(distance, source_tick, cooldowns, high_level_variant, rng)
 	return {}
 
+
+# Shared and monster-specific source strategies
 
 static func _decide_generic_ground(
 	profile: EnemyAnimationProfile,
@@ -565,6 +574,8 @@ static func _decide_m26(
 			return {"reviewed": true, "action": &"attack1", "move": false}
 	return {"reviewed": true, "move": true}
 
+
+# Decision and action-name helpers
 
 static func _attack_or_move(action: StringName, cooldowns: Dictionary) -> Dictionary:
 	if _is_ready(cooldowns, action):

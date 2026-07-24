@@ -52,6 +52,7 @@ class FireRuntime:
 	var frame := 0
 
 
+# Host resources and composite visuals.
 var _host: AnimatedEnemy
 var _profile: EnemyAnimationProfile
 var _frames: SpriteFrames
@@ -62,10 +63,14 @@ var _left_eye: AnimatedSprite2D
 var _right_eye: AnimatedSprite2D
 var _hands: Array = []
 var _fires: Array = []
+
+# Atlas-derived collision bounds and normalized source attacks.
 var _hand_bounds: Array[Rect2] = []
 var _fire_bounds: Array[Rect2] = []
 var _hand_attack: Dictionary = {}
 var _fire_attack: Dictionary = {}
+
+# Independent Flash clip clocks and repeat-hit generation.
 var _heart_phase := HeartPhase.HIDDEN
 var _heart_timer := 0
 var _heart_fade_tick := 0
@@ -78,6 +83,8 @@ var _attack_generation := 0
 var _target_attack_generation: Dictionary = {}
 var _death_tick := -1
 
+
+# AnimatedEnemy source-controller contract
 
 func setup(host: AnimatedEnemy) -> void:
 	_host = host
@@ -128,6 +135,8 @@ func begin_death() -> bool:
 	return true
 
 
+# Test/debug inspection API
+
 func get_heart_phase() -> StringName:
 	return StringName(HeartPhase.keys()[_heart_phase].to_lower())
 
@@ -165,6 +174,8 @@ func get_fire_spawn_history() -> PackedInt32Array:
 func get_attack_generation() -> int:
 	return _attack_generation
 
+
+# Composite visual and hurtbox setup
 
 func _configure_source_hurtbox() -> void:
 	var shape := RectangleShape2D.new()
@@ -228,6 +239,8 @@ func _step_background_intro() -> void:
 	if _background_tick == FADE_TICKS:
 		_initialize_hands()
 
+
+# Hand timeline
 
 func _initialize_hands() -> void:
 	if _hands_initialized:
@@ -298,6 +311,8 @@ func _sync_hand_sprite(hand: HandRuntime) -> void:
 	hand.sprite.position = Vector2(hand.x, HAND_PARENT_Y + hand.y)
 
 
+# Fire timeline
+
 func _step_fire_timer() -> void:
 	if _fire_timer <= 0:
 		return
@@ -337,6 +352,8 @@ func _step_fires() -> void:
 		else:
 			fire.frame += 1
 
+
+# Godot collision replacement for Flash complexHitTestObject
 
 func _damage_overlaps(
 	sprite: AnimatedSprite2D,
@@ -383,6 +400,8 @@ func _refresh_attack_id() -> void:
 	_attack_generation += 1
 	_target_attack_generation.clear()
 
+
+# Heart vulnerability and source-controlled death
 
 func _step_heart() -> void:
 	match _heart_phase:

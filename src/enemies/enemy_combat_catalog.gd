@@ -15,6 +15,12 @@ static var _audit_cache: Dictionary = {}
 static var _melee_hitbox_audit_cache: Dictionary = {}
 
 
+# Public attack queries
+
+# The returned dictionary is the runtime contract shared by melee attacks and
+# bullets: normalized damage, hit cadence, px/s knockback, active frames,
+# optional status effects, and source traceability. Atlas paths stay in the
+# animation profile and are never duplicated here.
 static func resolve_attack(
 	profile: EnemyAnimationProfile, action: StringName, variant_override: int = -1
 ) -> Dictionary:
@@ -109,6 +115,8 @@ static func clear_cache() -> void:
 	_melee_hitbox_audit_cache.clear()
 
 
+# Reviewed melee geometry
+
 static func _resolve_melee_geometry(
 	monster_id: StringName, action: StringName, source_action: StringName
 ) -> Dictionary:
@@ -146,6 +154,8 @@ static func _resolve_melee_geometry(
 	}
 
 
+# JSON audit caches
+
 static func _load_audit(path: String) -> Dictionary:
 	if _audit_cache.has(path):
 		return _audit_cache[path]
@@ -177,6 +187,8 @@ static func _load_melee_hitbox_audit(path: String) -> Dictionary:
 	_melee_hitbox_audit_cache[path] = parsed
 	return parsed
 
+
+# Source value parsing
 
 static func _parse_vector2(value: Variant) -> Vector2:
 	if value is Vector2:

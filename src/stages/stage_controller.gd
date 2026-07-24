@@ -36,17 +36,26 @@ var is_completed: bool = false
 var source_ending_active := false
 var source_activity_total_stage := 0
 
+# Runtime scene references.
 var _background: TextureRect
 var _ground: TextureRect
 var _enemies_root: Node2D
+
+# A defeated source monster may schedule another monster or an ending overlay.
+# Keep both the pending request and the spawned chain alive in the completion
+# gate so the stage cannot finish in the frame between those two operations.
 var _pending_source_spawn_ids: Dictionary = {}
 var _active_source_chain_ids: Dictionary = {}
+
+# Source-compatible ending and camera-shake state.
 var _source_ending_overlay: CanvasLayer
 var _source_screen_shake_value := 0.0
 var _source_screen_shake_offset_x := 0.0
 var _source_screen_shake_tick_accumulator := 0.0
 var _source_screen_shake_target: Node2D
 
+
+# Stage lifecycle and public queries
 
 func _ready() -> void:
 	_build_runtime_nodes()
@@ -110,6 +119,8 @@ func get_active_enemy_count() -> int:
 	return active_enemies.size()
 
 
+# Runtime scene construction
+
 func _build_runtime_nodes() -> void:
 	_background = TextureRect.new()
 	_background.name = "Background"
@@ -139,6 +150,8 @@ func _apply_art() -> void:
 	_ground.position = Vector2(0.0, definition.floor_y)
 	_ground.size = Vector2(definition.viewport_size.x, definition.viewport_size.y - definition.floor_y)
 
+
+# Enemy spawning and completion
 
 func _spawn_all() -> void:
 	for spawn: EnemySpawnDefinition in definition.enemy_spawns:
@@ -216,6 +229,8 @@ func _evaluate_end_condition() -> void:
 		stage_completed.emit(definition)
 
 
+# ActionScript stage-effect bridge
+
 func _on_source_stage_effect_requested(effect: Dictionary, source_enemy: AnimatedEnemy) -> void:
 	match StringName(effect.get("type", &"")):
 		&"reveal_transfer_doors":
@@ -231,6 +246,8 @@ func _on_source_stage_effect_requested(effect: Dictionary, source_enemy: Animate
 		&"show_ending_stop_controls":
 			_show_source_ending(source_enemy)
 
+
+# Source-compatible world shake
 
 func _on_source_screen_shake_requested(strength: float, source_enemy: AnimatedEnemy) -> void:
 	# ViewControllor.shake() only accepts a request while shakeVal is zero.
@@ -278,6 +295,8 @@ func _cancel_source_screen_shake() -> void:
 func _exit_tree() -> void:
 	_cancel_source_screen_shake()
 
+
+# Stage transitions, rewards and ending
 
 func _reveal_transfer_doors(source_enemy: SandbagEnemy) -> void:
 	for door: Node in get_tree().get_nodes_in_group(&"transfer_doors"):
