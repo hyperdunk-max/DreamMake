@@ -123,8 +123,16 @@
     "visual_preview_checked": true,
     "deleted_files": []
   },
-  "unresolved": [
-    "Confirm the active hitbox frames from the original stick timeline before wiring AttackArea2D.",
-    "Validate the same virtual pivot against idle, move, hurt and death when the complete M17 runtime animation set is selected."
+  "current_runtime_selection": {
+    "profile": "resources/enemies/animations/zmxiyou1_m17_turtle_profile.tres",
+    "attack_sheet": "assets/selected/zmxiyou1/monsters/m17_turtle/attack1/sprite.png",
+    "attack_json": "assets/selected/zmxiyou1/monsters/m17_turtle/attack1/sprite.json",
+    "logical_frames": 36,
+    "source_symbol_id": 1211,
+    "all_actions_share_formal_sprite_offset_configuration": true
+  },
+  "resolved_followups": [
+    "Source stick geometry for symbol 1211 is active on zero-based frames 2 through 35 with 34 reviewed boxes; runtime queries RectangleShape2D contacts from sources/manifests/zmxiyou1_enemy_melee_hitboxes.json.",
+    "Idle, move, attack1, hurt and death now use the complete M17 profile and selected sprite packs; atlas integrity and combat-profile regressions pass."
   ]
 }

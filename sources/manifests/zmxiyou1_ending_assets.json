@@ -1,0 +1,58 @@
+{
+  "game": "zmxiyou1",
+  "date": "2026-07-24",
+  "status": "completed_and_verified",
+  "purpose": "Original M24 ending presentation without baking 1205 redundant full-screen frames.",
+  "source_evidence": [
+    "sources/decoded/zmxiyou1/OtherMat_v9.swf",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/ui_0001.png",
+    ".tools/ending_audit/OtherMat_v9.xml",
+    ".tools/ending_audit/svg/DefineSprite_702_export.scene.Ending/1.svg",
+    ".tools/ending_audit/timeline_scripts/scripts/OtherMat_fla/元件2_9.as"
+  ],
+  "review": {
+    "root_symbol": 702,
+    "timeline_symbol": 701,
+    "source_fps": 24,
+    "source_frame_count": 1205,
+    "destroy_frame": 1204,
+    "duration_seconds": 50.125,
+    "visual_strategy": "Keep the 940x590 background and three vector-derived credit layers as one-frame sprite packs; replay exact per-frame SWF Y positions inside the original mask.",
+    "why_not_full_frame_bake": "A 1205-frame 940x590 bake would duplicate the same background and text pixels while discarding the source timeline structure.",
+    "source_composite_retained": true,
+    "classified_additions": [
+      "背景",
+      "标题",
+      "剧情文字",
+      "制作名单"
+    ],
+    "selected_modules": [
+      "background",
+      "title",
+      "story",
+      "credits"
+    ]
+  },
+  "runtime_timeline": "assets/selected/zmxiyou1/ui/ending/timeline.json",
+  "files": {
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/timeline.json": "ba7c49edcbf747606e8ab34abc07fd3d97a38c85794f1a37ca4f42202b14e3f4",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/制作名单/sprite.json": "bfd4bdf4918732e4d1f4d8c79e48a5031ab5f072837a5ccbbb8126af6ad3f87f",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/制作名单/sprite.png": "803264445affc09d99dadc5a37f83ef2f23ade66ad4f55a43a2cd084bb656c42",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/剧情文字/sprite.json": "a8dc599cee22086fdf2bff501863216d71dd7663e4f21d6c55c81d5602958ef2",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/剧情文字/sprite.png": "3c43ae87f5de079e5a723706a47f0d6375aba812f10d3e0e08a9aa391a395fce",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/标题/sprite.json": "ef1822403652eccece851200f1f49bd7fb978449412a398f430631c5d8c1976b",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/标题/sprite.png": "ac64f5d648132396011f369c072ffae0c18bdee8ac105f17243f72fd201ee4fd",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/背景/sprite.json": "71996c17f25d6d86b9e639987e7daa3227426a4f407ab3bb1c48ed921526cc51",
+    "assets/extracted/classified/zmxiyou1/UI/公共素材/过场动画/片尾/Ending/背景/sprite.png": "7c6486f79e065d8a85e3318b4d0c5ede333f395fce4303c4575eea08ee4388b9",
+    "assets/selected/zmxiyou1/ui/ending/background/sprite.json": "71996c17f25d6d86b9e639987e7daa3227426a4f407ab3bb1c48ed921526cc51",
+    "assets/selected/zmxiyou1/ui/ending/background/sprite.png": "7c6486f79e065d8a85e3318b4d0c5ede333f395fce4303c4575eea08ee4388b9",
+    "assets/selected/zmxiyou1/ui/ending/credits/sprite.json": "bfd4bdf4918732e4d1f4d8c79e48a5031ab5f072837a5ccbbb8126af6ad3f87f",
+    "assets/selected/zmxiyou1/ui/ending/credits/sprite.png": "803264445affc09d99dadc5a37f83ef2f23ade66ad4f55a43a2cd084bb656c42",
+    "assets/selected/zmxiyou1/ui/ending/story/sprite.json": "a8dc599cee22086fdf2bff501863216d71dd7663e4f21d6c55c81d5602958ef2",
+    "assets/selected/zmxiyou1/ui/ending/story/sprite.png": "3c43ae87f5de079e5a723706a47f0d6375aba812f10d3e0e08a9aa391a395fce",
+    "assets/selected/zmxiyou1/ui/ending/timeline.json": "159187d241ab47f1fa013f2ae700eb084c3f5624df29bdd39e97101edf1c0bd2",
+    "assets/selected/zmxiyou1/ui/ending/title/sprite.json": "ef1822403652eccece851200f1f49bd7fb978449412a398f430631c5d8c1976b",
+    "assets/selected/zmxiyou1/ui/ending/title/sprite.png": "ac64f5d648132396011f369c072ffae0c18bdee8ac105f17243f72fd201ee4fd"
+  },
+  "selected_aggregate_sha256": "10e487d5d0b5bdeccada91eb6942190ce269f04251fac4491a12c0101aeb4de5"
+}

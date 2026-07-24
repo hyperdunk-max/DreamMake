@@ -1,12 +1,75 @@
 {
   "counts": {
-    "actions": 11,
-    "events": 24,
-    "profiles": 1
+    "actions": 165,
+    "events": 346,
+    "profiles": 27
   },
-  "generated_at": "2026-07-22 07:30:24",
-  "policy": "Only exact complete-provider frame scripts are synchronized. Existing profile fields are preserved; raw ActionScript is never executed automatically.",
+  "generated_at": "2026-07-24 05:00:57",
+  "policy": "Selected-atlas symbols provide visual provenance; all audited provider frame scripts for the same source action are synchronized as inert typed events. Existing gameplay/visual fields are preserved and raw ActionScript is never executed automatically.",
   "profiles": [
+    {
+      "actions": 6,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M01",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m01_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M02",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m02_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M03",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m03_gorilla_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 7,
+      "events": 34,
+      "manual_fields_preserved": true,
+      "monster": "M04",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m04_monkey_king_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 23,
+      "manual_fields_preserved": true,
+      "monster": "M06",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m06_yu_rong_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 3,
+      "manual_fields_preserved": true,
+      "monster": "M07",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m07_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 3,
+      "manual_fields_preserved": true,
+      "monster": "M08",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m08_profile.tres",
+      "skipped_no_op": 0
+    },
     {
       "actions": 11,
       "events": 24,
@@ -15,8 +78,181 @@
       "package": "Monster2_v4",
       "profile": "resources/enemies/animations/zmxiyou1_m09_peng_demon_king_profile.tres",
       "skipped_no_op": 0
+    },
+    {
+      "actions": 10,
+      "events": 24,
+      "manual_fields_preserved": true,
+      "monster": "M09",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m09_peng_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 7,
+      "events": 21,
+      "manual_fields_preserved": true,
+      "monster": "M10",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m10_jiao_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 7,
+      "events": 19,
+      "manual_fields_preserved": true,
+      "monster": "M11",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m11_lion_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 5,
+      "manual_fields_preserved": true,
+      "monster": "M13",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m13_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M14",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m14_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M15",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m15_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 5,
+      "manual_fields_preserved": true,
+      "monster": "M16",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m16_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 3,
+      "manual_fields_preserved": true,
+      "monster": "M17",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m17_turtle_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 12,
+      "manual_fields_preserved": true,
+      "monster": "M18",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m18_profile.tres",
+      "skipped_no_op": 1
+    },
+    {
+      "actions": 12,
+      "events": 24,
+      "manual_fields_preserved": true,
+      "monster": "M19",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m19_shark_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 4,
+      "manual_fields_preserved": true,
+      "monster": "M20",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m20_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 1,
+      "events": 13,
+      "manual_fields_preserved": true,
+      "monster": "M21",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m21_bat_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 3,
+      "events": 12,
+      "manual_fields_preserved": true,
+      "monster": "M22",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m22_bull_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 16,
+      "manual_fields_preserved": true,
+      "monster": "M23",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m23_bull_demon_king_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 9,
+      "events": 37,
+      "manual_fields_preserved": true,
+      "monster": "M23",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m23_bull_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 6,
+      "events": 0,
+      "manual_fields_preserved": true,
+      "monster": "M24",
+      "package": "Monster2_v4",
+      "profile": "resources/enemies/animations/zmxiyou1_m24_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 5,
+      "events": 3,
+      "manual_fields_preserved": true,
+      "monster": "M25",
+      "package": "Monster_v1",
+      "profile": "resources/enemies/animations/zmxiyou1_m25_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 8,
+      "events": 27,
+      "manual_fields_preserved": true,
+      "monster": "M26",
+      "package": "Monster3_v3",
+      "profile": "resources/enemies/animations/zmxiyou1_m26_dragon_profile.tres",
+      "skipped_no_op": 0
+    },
+    {
+      "actions": 2,
+      "events": 14,
+      "manual_fields_preserved": true,
+      "monster": "M27",
+      "package": "Monster3_v3",
+      "profile": "resources/enemies/animations/zmxiyou1_m27_chest_profile.tres",
+      "skipped_no_op": 0
     }
   ],
+  "selection_audit": "sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+  "selection_audit_sha256": "5b838c832a1136084bf38224dcfaa7760e6df85c7185849b2bc89ed334626f4c",
   "source_event_audit": "sources/manifests/zmxiyou1_monster_events.json",
   "source_event_audit_sha256": "a40e094ffdb72598d5bc79b056dadc9315aa040c346aac105ed0843a456ad82b",
   "validation": {

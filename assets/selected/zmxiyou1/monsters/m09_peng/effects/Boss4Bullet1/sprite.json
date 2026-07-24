@@ -1,0 +1,24 @@
+{
+  "frames": {
+    "fx_0001": {
+      "x": 0,
+      "y": 0,
+      "w": 860,
+      "h": 851
+    }
+  },
+  "meta": {
+    "image": "sprite.png",
+    "size": {
+      "w": 860,
+      "h": 851
+    },
+    "frameSize": {
+      "w": 860,
+      "h": 851
+    },
+    "columns": 1,
+    "rows": 1,
+    "frameCount": 1
+  }
+}

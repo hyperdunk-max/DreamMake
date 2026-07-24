@@ -1,0 +1,124 @@
+[gd_resource type="Resource" script_class="EnemyAnimationProfile" format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_animation_profile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+source_monster_id = &"M24"
+source_package = &"Monster2_v4"
+source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
+actions = {
+&"attack1": {
+"display_name": "双手下砸",
+"fps": 24.0,
+"frame_count": 1,
+"loop": true,
+"next_animation": &"idle",
+"runtime_component": true,
+"source_action_label": "hit1",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_enemy_combat_runtime_assets.json",
+"mode": "runtime_component",
+"source_symbol_id": 723
+},
+"source_events": [],
+"source_symbol_id": 723,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Hands/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Hands/sprite.json"
+},
+&"attack2": {
+"display_name": "地火",
+"fps": 24.0,
+"frame_count": 40,
+"hitbox_frame_range": Vector2i(24, 35),
+"loop": false,
+"next_animation": &"idle",
+"runtime_component": true,
+"source_action_label": "hit2",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_enemy_combat_runtime_assets.json",
+"mode": "runtime_component",
+"source_symbol_id": 755
+},
+"source_events": [],
+"source_symbol_id": 755,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Fire/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Fire/sprite.json"
+},
+&"background": {
+"display_name": "背景本体",
+"fps": 24.0,
+"frame_count": 1,
+"loop": true,
+"next_animation": &"background",
+"runtime_component": true,
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_enemy_combat_runtime_assets.json",
+"mode": "runtime_component",
+"source_symbol_id": 726
+},
+"source_events": [],
+"source_symbol_id": 726,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/BG/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/BG/sprite.json"
+},
+&"death": {
+"display_name": "死亡淡出",
+"fps": 24.0,
+"frame_count": 23,
+"loop": true,
+"next_animation": &"idle",
+"source_action_label": "dead",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "dead",
+"source_symbol_id": 732
+},
+"source_events": Array[Dictionary]([]),
+"source_symbol_id": 732,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Heart/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Heart/sprite.json"
+},
+&"eyes": {
+"display_name": "双眼",
+"fps": 24.0,
+"frame_count": 25,
+"loop": true,
+"next_animation": &"eyes",
+"runtime_component": true,
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_enemy_combat_runtime_assets.json",
+"mode": "runtime_component",
+"source_symbol_id": 735
+},
+"source_events": [],
+"source_symbol_id": 735,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Eyes/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Eyes/sprite.json"
+},
+&"idle": {
+"display_name": "心脏",
+"fps": 24.0,
+"frame_count": 23,
+"loop": true,
+"next_animation": &"idle",
+"source_action_label": "wait",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "wait",
+"source_symbol_id": 732
+},
+"source_events": Array[Dictionary]([]),
+"source_symbol_id": 732,
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Heart/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Heart/sprite.json"
+}
+}

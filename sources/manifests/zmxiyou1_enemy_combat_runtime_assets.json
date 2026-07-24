@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-07-24T00:00:00+08:00",
+  "game": "zmxiyou1",
+  "purpose": "Select reviewed monster projectile and shared effect atlases for the Godot combat runtime without changing the classified provenance library.",
+  "policy": {
+    "source_library": "assets/extracted/classified/zmxiyou1/怪物",
+    "runtime_library": "assets/selected/zmxiyou1/monsters",
+    "source_mutation": "none",
+    "runtime_format": "sprite.png + sprite.json",
+    "collision": "Godot per-frame rectangles derived from visible atlas bounds; the packed pixels and coordinates are not rewritten",
+    "static_source_rule": "A one-frame classified PNG is packed as a one-frame runtime atlas; the classified PNG is retained",
+    "rgba_packing": "Direct RGBA paste preserves source alpha bytes; using each frame as its own PIL mask is forbidden because it squares antialiased alpha."
+  },
+  "selections": [
+    {"monster": "shared", "effect": "BossDead", "frames": 12, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/BossDead", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/BossDead", "operation": "copy_atlas", "use": "boss death burst"},
+    {"monster": "shared", "effect": "auraRed", "frames": 19, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraRed", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraRed", "operation": "copy_atlas", "use": "source soul/score homing drop", "sha256": {"sprite.png": "11aacbba8a036b2227c6fa2c71e35bf6b0a43412521b0c9205afabaa5d0ce707"}},
+    {"monster": "shared", "effect": "auraGreen", "frames": 19, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraGreen", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraGreen", "operation": "copy_atlas", "use": "source HP homing drop", "sha256": {"sprite.png": "aa5b8036b19dc41af9a7d174b7a8e54b00291f61a54f169ac854e449de99c1dd"}},
+    {"monster": "shared", "effect": "auraBlue", "frames": 19, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraBlue", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraBlue", "operation": "copy_atlas", "use": "source MP homing drop", "sha256": {"sprite.png": "6aad8d1deda05c59c072d96930a93cc11f89a4fa9712e7c1d5b7b6dc6310298a"}},
+    {"monster": "shared", "effect": "auraWhile", "frames": 19, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraWhile", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraWhile", "operation": "copy_atlas", "use": "source warrior-energy homing drop; original class typo retained", "sha256": {"sprite.png": "513c7cccd0f7fdb145ec350d003f676a1fc10dc5bb2814c0286adc692d6d1402"}},
+    {"monster": "shared", "effect": "poisonHead", "frames": 1, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/poisonHead", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/poisonHead", "operation": "pack_static", "use": "poison status marker"},
+    {"monster": "shared", "effect": "poisonUp", "frames": 41, "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/poisonUp", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/poisonUp", "operation": "copy_atlas", "use": "poison rising effect"},
+    {"monster": "M04", "effect": "Boss2Bullet1", "frames": 50, "source": "assets/extracted/classified/zmxiyou1/怪物/M04_彌猴王/特效/Boss2Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m04_monkey_king/effects/Boss2Bullet1", "operation": "preexisting_repack", "actions": ["hit3"], "reason": "This runtime atlas was already repacked before this manifest; frame count and visuals are retained, so byte identity with classified is not expected."},
+    {"monster": "M09", "effect": "Boss4Bullet1", "frames": 1, "source": "assets/extracted/classified/zmxiyou1/怪物/M09_彭魔王/特效/Boss4Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m09_peng/effects/Boss4Bullet1", "operation": "pack_static", "actions": ["hit1", "hit3"]},
+    {"monster": "M10", "effect": "BeAttack", "frames": 10, "source": "assets/extracted/classified/zmxiyou1/怪物/M10_鲛魔王/特效/BeAttack", "destination": "assets/selected/zmxiyou1/monsters/m10_jiao/effects/BeAttack", "operation": "copy_atlas", "use": "source-specific hurt overlay"},
+    {"monster": "M10", "effect": "Boss5Bullet1", "frames": 25, "source": "assets/extracted/classified/zmxiyou1/怪物/M10_鲛魔王/特效/Boss5Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m10_jiao/effects/Boss5Bullet1", "operation": "copy_atlas", "actions": ["hit3"]},
+    {"monster": "M11", "effect": "Boss6Bullet1", "frames": 241, "source": "assets/extracted/classified/zmxiyou1/怪物/M11_狮驼王/特效/Boss6Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m11_lion/effects/Boss6Bullet1", "operation": "copy_atlas", "actions": ["hit3"]},
+    {"monster": "M13", "effect": "Monster13Bullet1", "frames": 27, "source": "sources/raw/zmxiyou1/Monster2_v4.swf#DefineSprite_509_Monster13Bullet1", "classified_destination": "assets/extracted/classified/zmxiyou1/怪物/公共特效/Monster13Bullet1", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/Monster13Bullet1", "operation": "direct_swf_export_then_pack", "actions": ["M13:hit2"], "status": "complete", "frame_size": {"w": 333, "h": 19}, "sheet_size": {"w": 1998, "h": 95}, "sha256": {"sprite.png": "cdfb6b7be9ff6ee698750720816fbebd7f94bc5929387d9a2e3882d89a53b70b", "sprite.json": "73ab4eb8997f9a26068842b50dd9225fbf1d8f5fa7a90091cd1f9f18d94fc34b"}, "rgba_roundtrip": "27/27 source frames exact", "reason": "The original compact-classification manifest proves that symbol 509 was exported to the former detailed pending tree but was not migrated into the current canonical classified tree. Monster13 hit2 frame 3 calls throwKnife(), and Monster13Bullet1 frame 27 destroys the SpecialEffectBullet. The same method exists in Monster16 but no audited M16 action timeline calls it, so runtime binding is limited to the proven M13 event."},
+    {"monster": "M14", "effect": "attack1_body", "frames": 15, "source": "assets/extracted/classified/zmxiyou1/怪物/M14/共享动作时间轴", "destination": "assets/selected/zmxiyou1/monsters/m14_skeleton_ranged/attack1", "operation": "copy_atlas", "actions": ["hit1"], "reason": "The audited hit1 provider is the shared 15-frame body timeline; it was omitted from the previous selected atlas migration."},
+    {"monster": "M14", "effect": "Bullet1", "frames": 1, "source": "assets/extracted/classified/zmxiyou1/怪物/M14/特效/Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m14_skeleton_ranged/effects/Bullet1", "operation": "pack_static", "actions": ["hit1"], "motion": "EnemyMoveBullet"},
+    {"monster": "M18", "effect": "Bullet1", "frames": 44, "source": "assets/extracted/classified/zmxiyou1/怪物/M18/特效/Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m18_boss/effects/Bullet1", "operation": "copy_atlas", "actions": ["hit1"]},
+    {"monster": "M18", "effect": "Bullet2", "frames": 18, "source": "assets/extracted/classified/zmxiyou1/怪物/M18/特效/Bullet2", "destination": "assets/selected/zmxiyou1/monsters/m18_boss/effects/Bullet2", "operation": "copy_atlas", "actions": ["hit2"]},
+    {"monster": "M18", "effect": "Bullet2Pre", "frames": 25, "source": "assets/extracted/classified/zmxiyou1/怪物/M18/特效/Bullet2Pre", "destination": "assets/selected/zmxiyou1/monsters/m18_boss/effects/Bullet2Pre", "operation": "copy_atlas", "use": "hit2 warning"},
+    {"monster": "M19", "effect": "attack3_phase2", "frames": 18, "source": "assets/extracted/classified/zmxiyou1/怪物/M19_鲨魔王/攻击3_阶段2", "destination": "assets/selected/zmxiyou1/monsters/m19_shark/attack3_2", "operation": "copy_atlas", "actions": ["hit3-2"], "sha256": {"sprite.png": "8f2817e8c78975ac8157b20b72414e46e74f86be86295a5098b9b959b6bf321e", "sprite.json": "06225837034c82e4f98dfe1ae9494a00bf539f43beb8691a41de72e0125f90b0"}, "coordinate_status": "Runtime profile entry added with zero sprite_offset; any visual calibration must be saved from scenes/debug/animation_browser.tscn."},
+    {"monster": "M19", "effect": "Bullet1", "frames": 51, "source": "assets/extracted/classified/zmxiyou1/怪物/M19_鲨魔王/特效/Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m19_shark/effects/Bullet1", "operation": "copy_atlas", "actions": ["hit2-1", "hit2-2"]},
+    {"monster": "M19", "effect": "Bullet2", "frames": 30, "source": "assets/extracted/classified/zmxiyou1/怪物/M19_鲨魔王/特效/Bullet2", "destination": "assets/selected/zmxiyou1/monsters/m19_shark/effects/Bullet2", "operation": "copy_atlas", "actions": ["hit3-1", "hit3-2"]},
+    {"monster": "M19", "effect": "Bullet2Pre", "frames": 24, "source": "assets/extracted/classified/zmxiyou1/怪物/M19_鲨魔王/特效/Bullet2Pre", "destination": "assets/selected/zmxiyou1/monsters/m19_shark/effects/Bullet2Pre", "operation": "copy_atlas", "use": "hit3 warning"},
+    {"monster": "M24", "effect": "BG", "frames": 1, "source": "assets/extracted/classified/zmxiyou1/怪物/M24_牛魔王/特效/BG/fx_0001.png", "destination": "assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/BG", "operation": "pack_static", "source_symbol_id": 726, "sha256": {"sprite.png": "ceac6cfcc9974a267eca2b739629fbd2a5f592c0549208012bf69c72d3897da0", "sprite.json": "cc570f4e43ce2c5e5169583b1be24b99fa9f95b5e7ebe695a35c90002e20e5a5"}, "reason": "The classified PNG is byte-identical to the direct SWF symbol export; packing preserves its RGBA pixels."},
+    {"monster": "M24", "effect": "Hands", "frames": 1, "source": "assets/extracted/classified/zmxiyou1/怪物/M24_牛魔王/特效/Hands/fx_0001.png", "destination": "assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Hands", "operation": "pack_static", "source_symbol_id": 723, "actions": ["hit1"], "sha256": {"sprite.png": "4f5e357411601bf09316458673aa1681863dcec071d2aa44f38eff09b8d10baf", "sprite.json": "7db793e0fbb041b1b2e57c414eb13a8059be087f3b553ef051d13a2534706919"}, "reason": "The classified PNG is byte-identical to the direct SWF symbol export; packing preserves its RGBA pixels."},
+    {"monster": "M24", "effect": "Heart", "frames": 23, "source": "assets/extracted/classified/zmxiyou1/怪物/M24_牛魔王/共享动作时间轴/Heart", "destination": "assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Heart", "operation": "copy_atlas", "source_symbol_id": 732, "sha256": {"sprite.png": "e0d67295c9d9d72982ad5d1ac2206f3fa3489635cd48310d639262a27d7b868f", "sprite.json": "ef79152d65780c9e93f76a85296f8b7bc1610cbc2581b24d78cabf0f4e46d922"}, "use": "source-controlled vulnerable window"},
+    {"monster": "M24", "effect": "Eyes", "frames": 25, "source": "assets/extracted/classified/zmxiyou1/怪物/M24_牛魔王/共享动作时间轴/character_735", "destination": "assets/selected/zmxiyou1/monsters/m24_bull_demon_king/shared/Eyes", "operation": "copy_atlas", "source_symbol_id": 735, "use": "two independently mirrored eye instances", "sha256": {"sprite.png": "fa8999e4069034f8995b70f141e0fcf82ecb207e7aa4a1f22be4447aa048b6a0", "sprite.json": "4d23636715113c3f934db3b4263414682ef9dc53a734db22765c6b640c1b0621"}},
+    {"monster": "M24", "effect": "Fire", "frames": 40, "source": "sources/raw/zmxiyou1/Monster2_v4.swf#DefineSprite_755_export.monster.Monster23Child.Fire", "classified_destination": "assets/extracted/classified/zmxiyou1/怪物/M24_牛魔王/特效/Fire", "destination": "assets/selected/zmxiyou1/monsters/m24_bull_demon_king/effects/Fire", "operation": "direct_swf_export_then_pack", "source_symbol_id": 755, "actions": ["hit2"], "frame_size": {"w": 143, "h": 297}, "sheet_size": {"w": 1001, "h": 1782}, "active_source_frames": [25, 36], "sha256": {"sprite.png": "2547266cb09cec04f2213a160645e7ad90bc391af9e789b2ca2a2f2f58bdd39b", "sprite.json": "8990dd852144d95137a6c8234bff442af3947f924b1e6d274b648f4f6a117cec"}, "rgba_roundtrip": "40/40 source frames exact", "reason": "The existing 组成元件/Fire files are component exports rather than the complete rendered timeline. Runtime uses the full symbol755 frames and destroys instances at source currentFrame 36."},
+    {"monster": "M26", "effect": "shared_locomotion", "frames": 16, "source": "assets/extracted/classified/zmxiyou1/怪物/M26_龙王/共享动作时间轴", "destination": "assets/selected/zmxiyou1/monsters/m26_dragon/shared/locomotion", "operation": "copy_atlas", "actions": ["walk", "wait"], "reason": "The same audited timeline supplies both labels; one selected atlas path is shared instead of duplicating bytes."},
+    {"monster": "M26", "effect": "Bullet1", "frames": 41, "source": "assets/extracted/classified/zmxiyou1/怪物/M26_龙王/特效/Bullet1", "destination": "assets/selected/zmxiyou1/monsters/m26_dragon/effects/Bullet1", "operation": "copy_atlas", "actions": ["hit1"]},
+    {"monster": "M26", "effect": "Bullet2", "frames": 68, "source": "assets/extracted/classified/zmxiyou1/怪物/M26_龙王/特效/Bullet2", "destination": "assets/selected/zmxiyou1/monsters/m26_dragon/effects/Bullet2", "operation": "copy_atlas", "actions": ["hit4"]},
+    {"monster": "M26", "effect": "ice", "frames": 35, "source": "assets/extracted/classified/zmxiyou1/怪物/M26_龙王/特效/ice", "destination": "assets/selected/zmxiyou1/monsters/m26_dragon/effects/ice", "operation": "copy_atlas", "use": "ice status overlay"}
+  ],
+  "runtime_compositions": [
+    {"monster": "M24", "effect": "BG/Hands/Heart/Eyes/Fire", "status": "complete", "source_symbols": {"Hands": 723, "BG": 726, "Heart": 732, "Eyes": 735, "BodyContainer": 736, "MonsterRoot": 738, "Fire": 755}, "composition": {"root_body_x_px": -7.05, "heart_position_px": [17.5, 116.1], "right_eye_position_px": [38.2, -77.6], "left_eye_position_px": [-15.65, -77.6], "left_eye_mirrored": true, "hands_parent_y_px": 18, "left_hand_x_px": -300, "right_hand_x_px": 300, "right_hand_mirrored": true, "hurtbox_size_px": [83.226013, 159.952698], "hurtbox_position_px": [18.15, 141.0]}, "timelines": {"Heart": 23, "Eyes": 25, "Fire": 40}, "source_tick_rate": 24, "collision_review": "Hands and Fire use Godot visible-pixel frame rectangles in place of Flash complexHitTestObject. The boss hurtbox uses the dominant source colipse rectangle and is enabled only while Heart alpha is exactly 1.", "runtime": "res://src/enemies/zmxiyou1_m24_controller.gd", "test": "res://tests/zmxiyou1_m24_boss_test.gd", "reason": "Monster24 is a program-controlled composite boss. Separate sprite-pack nodes preserve its independent clocks, source matrices, two-hand movement, 2/4/6 Fire batches, and Heart damage window without flattening runtime behavior into root snapshots."}
+  ],
+  "projectile_runtime_contract": {
+    "status": "source_reviewed_2026-07-24",
+    "binding_count": 15,
+    "bindings": ["M04:hit3", "M09:hit1", "M09:hit3", "M10:hit2", "M11:hit3", "M13:hit2", "M14:hit1", "M18:hit1", "M18:hit2", "M19:hit2-1", "M19:hit2-2", "M19:hit3-1", "M19:hit3-2", "M26:hit1", "M26:hit4"],
+    "atlas_rule": "Every binding is loaded through SpriteSheetAtlas from its existing sprite.png + sprite.json; runtime collision derives one visible-pixel RectangleShape2D per atlas frame and mirrors its center around the sprite registration.",
+    "lifetime_rule": "A fired bullet is owned by the stage Enemies node and is not destroyed when its source monster exits. BaseMonster.destroy() only clears magicBulletArray; stage teardown still removes all remaining bullets.",
+    "repeat_hit_rule": "BaseBullet attackIntervalCount is reproduced as a global attack-id generation: refresh before overlap testing when the source count equals attackInterval, then enforce hitMaxCount across generations.",
+    "m14_enemy_move_bullet": {
+      "initial_speed_px_per_tick": 4,
+      "acceleration_px_per_tick_squared": 0.4,
+      "distance_px": 1000,
+      "tick_order": ["attack_check", "move_with_old_speed", "apply_signed_acceleration_when_speed_less_than_7", "subtract_updated_absolute_speed_from_distance"],
+      "right_speed_quirk_px_per_tick": 7.2,
+      "left_speed_quirk": "The literal signed speed < 7 comparison remains true for negative speed, so a left-facing bullet continues below -7 instead of using a symmetric cap."
+    },
+    "source_evidence": [
+      ".tools/monster_combat_source_20260724/scripts/base/BaseBullet.as",
+      ".tools/monster_combat_source_20260724/scripts/base/BaseMonster.as",
+      ".tools/monster_combat_source_20260724/scripts/export/bullet/EnemyMoveBullet.as",
+      ".tools/monster_combat_source_20260724/scripts/export/monster/Monster14.as"
+    ],
+    "runtime": "res://src/effects/enemy_bullet.gd",
+    "test": "res://tests/zmxiyou1_enemy_projectile_profiles_test.gd"
+  },
+  "unresolved": [],
+  "validation": {
+    "status": "pass",
+    "selected_entries": 28,
+    "byte_identical_copied_atlases": 20,
+    "one_frame_atlases_packed": 5,
+    "direct_swf_atlases_packed": 2,
+    "preexisting_repacked_atlases": 1,
+    "godot_profiles": 27,
+    "godot_actions": 165,
+    "checks": ["destination frame counts", "source/destination SHA-256 for copied atlases", "direct-export RGBA roundtrip", "Godot atlas construction", "all 15 projectile bindings", "runtime projectile per-frame collision", "stage-owned projectile lifetime", "source attack-id refresh", "M14 signed 24 Hz movement", "M24 24 Hz composite lifecycle"]
+  }
+}

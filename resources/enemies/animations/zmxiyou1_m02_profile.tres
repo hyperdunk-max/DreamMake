@@ -4,54 +4,40 @@
 
 [resource]
 script = ExtResource("1_profile")
-default_animation = &"idle"
 source_monster_id = &"M02"
 source_package = &"Monster_v1"
 source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
 actions = {
-&"hurt": {
-"display_name": "受伤",
-"fps": 24.0,
-"frame_count": 13,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/hurt/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/hurt/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -87)
-},
-&"recover": {
-"display_name": "受伤恢复",
-"fps": 24.0,
-"frame_count": 10,
-"loop": false,
-"next_animation": &"move",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/recover/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/recover/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -79)
-},
-&"idle": {
-"display_name": "待机",
-"fps": 24.0,
-"frame_count": 15,
-"loop": true,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/idle/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/idle/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, 0)
-},
 &"attack1": {
 "display_name": "攻击1",
 "fps": 24.0,
 "frame_count": 12,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "hit1",
+"source_event_symbol_ids": PackedInt32Array(67),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hit1",
+"source_symbol_id": 67
+},
+"source_events": Array[Dictionary]([{
+"frame": 11,
+"id": &"action_transition",
+"method": "frame12",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster_v1/scripts/Monster_fla/元件9_65.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";",
+"source_frame": 12,
+"source_line": 18,
+"source_symbol_id": 67,
+"source_types": PackedStringArray("action_transition"),
+"types": PackedStringArray("action_transition")
+}]),
+"source_symbol_id": 67,
+"sprite_offset": Vector2(17, -105),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/attack1/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/attack1/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(17, -105)
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/attack1/sprite.json"
 },
 &"death": {
 "display_name": "死亡",
@@ -59,10 +45,93 @@ actions = {
 "frame_count": 22,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "dead",
+"source_event_symbol_ids": PackedInt32Array(73),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "dead",
+"source_symbol_id": 73
+},
+"source_events": Array[Dictionary]([{
+"frame": 21,
+"id": &"timeline_branch",
+"method": "frame22",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster_v1/scripts/Monster_fla/元件11_67.as",
+"source_code": "trace(BaseMonster(this.parent).standInObj);
+         if(BaseMonster(this.parent).standInObj)
+         {
+            BaseMonster(this.parent).dropAura();
+            BaseMonster(this.parent).destroy();
+            stop();
+         }
+         else
+         {
+            this.gotoAndPlay(9);
+         }",
+"source_frame": 22,
+"source_line": 16,
+"source_symbol_id": 73,
+"source_types": PackedStringArray("action_transition", "cleanup", "timeline_control"),
+"types": PackedStringArray("action_transition", "cleanup", "timeline_control")
+}]),
+"source_symbol_id": 73,
+"sprite_offset": Vector2(4, -82),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/death/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/death/sprite.json",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/death/sprite.json"
+},
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 13,
+"loop": false,
+"next_animation": &"idle",
+"source_action_label": "hurt",
+"source_event_symbol_ids": PackedInt32Array(60),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hurt",
+"source_symbol_id": 60
+},
+"source_events": Array[Dictionary]([{
+"frame": 12,
+"id": &"action_transition",
+"method": "frame13",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster_v1/scripts/Monster_fla/受伤_64.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";
+         BaseMonster(this.parent).gotoAndStop(\"wait\");
+         stop();",
+"source_frame": 13,
+"source_line": 16,
+"source_symbol_id": 60,
+"source_types": PackedStringArray("action_transition", "timeline_control"),
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 60,
+"sprite_offset": Vector2(0, -87),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/hurt/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/hurt/sprite.json"
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"source_action_label": "wait",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "wait",
+"source_symbol_id": 80
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(4, -82)
+"source_symbol_id": 80,
+"sprite_offset": Vector2(0, 0),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/idle/sprite.json"
 },
 &"move": {
 "display_name": "移动",
@@ -70,9 +139,50 @@ actions = {
 "frame_count": 16,
 "loop": true,
 "next_animation": &"move",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/move/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/move/sprite.json",
+"source_action_label": "walk",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "walk",
+"source_symbol_id": 57
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, 0)
+"source_symbol_id": 57,
+"sprite_offset": Vector2(0, 0),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/move/sprite.json"
+},
+&"recover": {
+"display_name": "受伤恢复",
+"fps": 24.0,
+"frame_count": 10,
+"loop": false,
+"next_animation": &"move",
+"source_action_label": "afterHurt",
+"source_event_symbol_ids": PackedInt32Array(83),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "afterHurt",
+"source_symbol_id": 83
+},
+"source_events": Array[Dictionary]([{
+"frame": 9,
+"id": &"action_transition",
+"method": "frame10",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster_v1/scripts/Monster_fla/受伤之后_69.as",
+"source_code": "BaseMonster(this.parent).curAction = \"walk\";
+         stop();",
+"source_frame": 10,
+"source_line": 16,
+"source_symbol_id": 83,
+"source_types": PackedStringArray("action_transition", "timeline_control"),
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 83,
+"sprite_offset": Vector2(0, -79),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m02_common/recover/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m02_common/recover/sprite.json"
 }
 }

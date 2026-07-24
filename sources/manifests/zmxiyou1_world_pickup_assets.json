@@ -1,0 +1,534 @@
+{
+  "generated_at": "2026-07-24T00:00:00+08:00",
+  "game": "zmxiyou1",
+  "purpose": "Completed migration and verification record for source-accurate medicine and equipment pickup visuals.",
+  "policy": {
+    "provenance_library_deletion": "none",
+    "classified_library": "Restore only the three missing cure symbols to their historical compact-classification destinations; retain all 41 existing equipment classifications.",
+    "selected_library": "Generate one-frame sprite.png + sprite.json atlases under assets/selected/zmxiyou1/monsters/shared/pickups.",
+    "runtime_collision": "Use Godot Area2D pickup shapes and world collision queries instead of Flash complexHitTestObject pixel tests.",
+    "source_tick_rate": 24
+  },
+  "medicine": {
+    "source_recovery_root": ".tools/pull_recovery_575b2b0/zmxiyou1_partial/UI/公共",
+    "classified_root": "assets/extracted/classified/zmxiyou1/UI/公共",
+    "runtime_root": "assets/selected/zmxiyou1/monsters/shared/pickups/medicine",
+    "symbols": [
+      "BigHP",
+      "SmallHP",
+      "SmallMP"
+    ],
+    "decision": "Recovery copies match the historical zmxiyou1_compact_classification.json destinations and are restored without deleting their recovery or trace copies."
+  },
+  "equipment": {
+    "classified_root": "assets/extracted/classified/zmxiyou1/UI/公共素材/装备/通用图标",
+    "runtime_root": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment",
+    "source_names": [
+      "bhz",
+      "ccjs",
+      "ccsmz",
+      "ccxzf",
+      "ccxzg",
+      "dhqf",
+      "dslj",
+      "dsqz",
+      "dsyj",
+      "jcbj",
+      "jcsz",
+      "jcys",
+      "jgz",
+      "jhcz",
+      "jljs",
+      "jlsmz",
+      "jlxzf",
+      "jlxzg",
+      "ptjs",
+      "ptsmz",
+      "ptxzf",
+      "ptxzg",
+      "qld",
+      "qlp",
+      "qxsh",
+      "ryjgb",
+      "tndblg",
+      "tndbthl",
+      "tsgl",
+      "tsyj",
+      "tsyp",
+      "xhmj",
+      "xhxh",
+      "xhyk",
+      "xwj",
+      "yxjs",
+      "yxsmz",
+      "yxxzf",
+      "yxxzg",
+      "zcld",
+      "zqj"
+    ],
+    "recovery_comparison": {
+      "byte_identical_count": 39,
+      "different_existing_classifications": [
+        "qlp",
+        "xwj"
+      ],
+      "decision": "Preserve the existing classified qlp and xwj files as user-curated provenance; do not overwrite them from .tools recovery copies."
+    }
+  },
+  "migration_status": "completed_and_verified",
+  "generated_assets": [
+    {
+      "kind": "medicine",
+      "source_name": "big_hp",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/medicine/big_hp",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "c421df1ae2199f8efdfa950279f1f5b3833833dae43a59feb9c5141e16844763",
+        "sprite.json": "683d4f42bedfc617ba79d096bafb0a3ab711d4332b03fa418a050a7c6670b1ed"
+      }
+    },
+    {
+      "kind": "medicine",
+      "source_name": "small_hp",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/medicine/small_hp",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "7185fd5d792680703ac52774bb0b9c40da02b049e84ca484772733a7b51f9e84",
+        "sprite.json": "938cd4547a45e3da763cfa7a3a3525786b2a7ff924cc4e3ccf77edd8e9d215a4"
+      }
+    },
+    {
+      "kind": "medicine",
+      "source_name": "small_mp",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/medicine/small_mp",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "ba049e7f340e6344017ca0dceda204e294965007008e94fcb4684e9964c4f435",
+        "sprite.json": "683d4f42bedfc617ba79d096bafb0a3ab711d4332b03fa418a050a7c6670b1ed"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "bhz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/bhz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "91943593e268e6e7cb115f9c8c81ceb17185aa0c9c328e34785ce8bee9c4d7a3",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ccjs",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ccjs",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "93ae3bf1534c93d2a1e14f0aeb820123197f6ce956e771d396f5310de9e6f3b3",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ccsmz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ccsmz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "4206de1d675b91671f326394bf486bd0f2e2b4d4ec5c982c000cd77afcfacb99",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ccxzf",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ccxzf",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "0bb7f4e175b27aeb971e7ea50a66ffb01c358eb460d4d089a79a78848597a5a1",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ccxzg",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ccxzg",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "3be298d8c52a1a64d55bd5a47c4aff0d05989b3a7588d7272831897205df92f1",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "dhqf",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/dhqf",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "81d752fa0860aaa312bfb0a30d0573f4d50481de85920265212125a0e3f496a7",
+        "sprite.json": "0528f215e7603e153524d4c8e0fdceb5a6f93e6fcaaccf80aa0de05ea62fc685"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "dslj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/dslj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "9a8a4880d43be239ecfb19e6622ab6062b048bc6acb2bd53bfc2d3f1bc76d914",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "dsqz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/dsqz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "2a3876b90fbaf11ea2ba96afd7ce8bd8cd1477430821a3bd60ffe4df4ad661bf",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "dsyj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/dsyj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "e47fe1922712ee9f9f16618de6ea19642b5893cdda616667e3ba2121e7e3d9eb",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jcbj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jcbj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "28b744c1a4e808f15535db0ccd32604bbcb092b86ffd3b2077e15b2eed50246e",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jcsz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jcsz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "f9527da9e67e7c07a37c864bf2437e5adcd102e728fc7705da6a3991f1ded54f",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jcys",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jcys",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "96c85e04df957ed64554cfca589753d6927b8af2bded51056aac46f07a1c35c1",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jgz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jgz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "28c7fd1cf28b429ef43f689a42afe2efa2af5e65d760efc5a8265c130fee0cc0",
+        "sprite.json": "0528f215e7603e153524d4c8e0fdceb5a6f93e6fcaaccf80aa0de05ea62fc685"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jhcz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jhcz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "400968137cca9228c3c7b3e167373eb9e7d68b93046706073cdc1c7fff045f44",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jljs",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jljs",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "68849c974afe0c47fda7f559cdae0f0bfac19055a55b215c67fe26c1918aaa52",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jlsmz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jlsmz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "d720dbda64771c937d7489a09c0cf5534537187ec48d9e0de4d7de1ccc8e1e0c",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jlxzf",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jlxzf",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "f832eda7a3caf574a6e88502b72b6aaea170db4e3e9a8f2cc8377e80a576e311",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "jlxzg",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/jlxzg",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "b3f6f0d35e52e4e2f1e8bb59cd64ce603fb39e6f82e7a2e00f5dc347e1f95772",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ptjs",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ptjs",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "93ae3bf1534c93d2a1e14f0aeb820123197f6ce956e771d396f5310de9e6f3b3",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ptsmz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ptsmz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "4206de1d675b91671f326394bf486bd0f2e2b4d4ec5c982c000cd77afcfacb99",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ptxzf",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ptxzf",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "0bb7f4e175b27aeb971e7ea50a66ffb01c358eb460d4d089a79a78848597a5a1",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ptxzg",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ptxzg",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "3be298d8c52a1a64d55bd5a47c4aff0d05989b3a7588d7272831897205df92f1",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "qld",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/qld",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "fd28b49fdfb8cd310753cffd5c11741df4fc99e9b46639d79847a01d9b123d9f",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "qlp",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/qlp",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "1a00087a0c09132c1ed0c28fc8d5016853fa1b35b92e64143e3cfc7acebbe8bc",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "qxsh",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/qxsh",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "ae00b0a218185f9c0e1f593105aafc602864e4dee467f224dc6ef704868ba5f9",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "ryjgb",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/ryjgb",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "05cf69c7604c9ed3bfb838e3ed69e395d5bbb6c0528aa176e92fb0162de41318",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "tndblg",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/tndblg",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "2bb0d65c5c6208bd3b5890638d1c0f078f712b3bdf41f4f0b35a6d4948a537b7",
+        "sprite.json": "0528f215e7603e153524d4c8e0fdceb5a6f93e6fcaaccf80aa0de05ea62fc685"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "tndbthl",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/tndbthl",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "0d153e0cb5590560a6b476aaf7058960f2ad8e1f230d5161ec8b09897b83f5a3",
+        "sprite.json": "0528f215e7603e153524d4c8e0fdceb5a6f93e6fcaaccf80aa0de05ea62fc685"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "tsgl",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/tsgl",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "26a18931a11c5ce6e7a9276be14811ce86a563c8c15f4d7f71da6a00a75b8268",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "tsyj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/tsyj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "b0f1bdf5cf0d96b06f8bcd24b915e909591966ce350aa9cdc9c405f583d9c3cf",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "tsyp",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/tsyp",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "6ecfb899283046cdff1ed5aa59d0e9202b2d43c428ae51ac7f2a2871ed58cdd6",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "xhmj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/xhmj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "52c01866cd23bf8e5454b11d02c4e75ee766f6650092a58cc4ea3965cb40500c",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "xhxh",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/xhxh",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "4f029bf68dbc55ee0be62956b50d7e66b0ea0ddce28777da1484d7389d8e7131",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "xhyk",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/xhyk",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "56982b4f4b734ffc93158338703a06aff5b674080576dd1343d6c397c2be9b5e",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "xwj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/xwj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "3eb92703f1a37d1f2c247352ce46824e95463420680909720113fdc7d091da54",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "yxjs",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/yxjs",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "68849c974afe0c47fda7f559cdae0f0bfac19055a55b215c67fe26c1918aaa52",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "yxsmz",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/yxsmz",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "d720dbda64771c937d7489a09c0cf5534537187ec48d9e0de4d7de1ccc8e1e0c",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "yxxzf",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/yxxzf",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "f832eda7a3caf574a6e88502b72b6aaea170db4e3e9a8f2cc8377e80a576e311",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "yxxzg",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/yxxzg",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "b3f6f0d35e52e4e2f1e8bb59cd64ce603fb39e6f82e7a2e00f5dc347e1f95772",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "zcld",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/zcld",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "04c7275b6e2c67bff0837051aa860345c1f3ba7c704e03807aed14ad6e830f90",
+        "sprite.json": "0528f215e7603e153524d4c8e0fdceb5a6f93e6fcaaccf80aa0de05ea62fc685"
+      }
+    },
+    {
+      "kind": "equipment",
+      "source_name": "zqj",
+      "path": "assets/selected/zmxiyou1/monsters/shared/pickups/equipment/zqj",
+      "frame_count": 1,
+      "sha256": {
+        "sprite.png": "fc9b8294a69c95a004f71b4ce07dda14a03d18af3df8cdfb70bf73f0b7926831",
+        "sprite.json": "56a4195359a7ba88d04a32a7e5e0ff14207715dd8d11a3487910c0cf0da2b2f3"
+      }
+    }
+  ],
+  "validation": {
+    "status": "passed_2026-07-24",
+    "atlas_count": 44,
+    "medicine_count": 3,
+    "equipment_count": 41,
+    "frame_count_per_atlas": 1,
+    "aggregate_sha256": "c51fa8e75365e4dd1169ebf0f26f5643de6ee800b41877223111ce6585015ddd",
+    "checks": [
+      "Every runtime directory contains sprite.png and sprite.json.",
+      "Every JSON contains exactly one named frame and meta.frameCount=1.",
+      "All expected source names are present and no unexpected runtime directories exist."
+    ]
+  }
+}

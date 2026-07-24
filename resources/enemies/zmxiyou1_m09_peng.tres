@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://src/enemies/enemy_definition.gd" id="1_enemy"]
 [ext_resource type="Script" path="res://src/attributes/actor_property.gd" id="2_property"]
-[ext_resource type="Resource" path="res://resources/enemies/animations/zmxiyou1_m09_peng_profile.tres" id="3_animation"]
+[ext_resource type="Resource" path="res://resources/enemies/animations/zmxiyou1_m09_peng_demon_king_profile.tres" id="3_animation"]
 
 [sub_resource type="Resource" id="ActorProperty_m09_peng"]
 script = ExtResource("2_property")
-max_health = 100
+max_health = 10000
 max_mana = 0
-attack = 10
-defense = 10
+attack = 100
+defense = 20
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -20,7 +20,7 @@ display_name = "彭魔王"
 source_game = 1
 property_template = SubResource("ActorProperty_m09_peng")
 animation_profile = ExtResource("3_animation")
-visual_scale = Vector2(1.5, 1.5)
+visual_scale = Vector2(1, 1)
 visual_offset = Vector2(0, 0)
-collision_size = Vector2(60, 90)
+collision_size = Vector2(82, 112)
 is_boss = true

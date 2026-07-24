@@ -6,6 +6,10 @@ signal weapon_changed(showid: int, weapon_name: String)
 signal body_changed(showid: int, body_name: String)
 signal role_changed(role_id: int, display_name: String)
 signal equipment_changed(slot: String, equip_id: String)
+signal source_soul_changed(value: int)
+signal source_score_changed(value: int)
+signal source_warrior_energy_changed(value: int)
+signal source_equipment_collected(source_name: StringName)
 
 const WALK_SPEED := 144.0
 const RUN_SPEED := 240.0
@@ -16,10 +20,12 @@ const HURT_TIME := 8.0 / 24.0
 const DOUBLE_JUMP_ANIMATION_TIME := 10.0 / 24.0
 const FLASH_ACTOR_ORIGIN_Y := -50.0
 const PROJECTILE_EFFECT_SCRIPT := preload("res://src/effects/projectile_sprite_effect.gd")
+const COMBAT_STATUS_CONTROLLER := preload("res://src/combat/combat_status_controller.gd")
 const SKILL_INPUTS: Array[StringName] = [&"skill", &"skill_2", &"skill_3", &"skill_4"]
 
 @export var max_health := 100
 @export var max_mana := 200
+@export var level := 1
 @export var role_definition: RoleDefinition
 @export var role_id := 1
 @export var animation_profile: RoleAnimationProfile
@@ -28,6 +34,11 @@ const SKILL_INPUTS: Array[StringName] = [&"skill", &"skill_2", &"skill_3", &"ski
 @export var weapon_showid := -1
 var health := max_health
 var mana := max_mana
+var source_soul := 0
+var source_score := 0
+var source_warrior_energy := 0
+var source_equipment_inventory: Array[StringName] = []
+var source_activity_equipment_stage := 0
 
 # -- Attribute / Equipment / Inventory systems ------------------------------------
 var stats: CharacterStats
@@ -57,6 +68,10 @@ var air_attack_state: AirAttackState
 var role_skill_state: RoleSkillState
 var _effect_texture_cache: Dictionary = {}
 var _lifesteal_accumulator := 0.0
+var _external_control_locks: Dictionary = {}
+var _external_visual_hides: Dictionary = {}
+var _role_skill_visual_hidden := false
+var _combat_status_controller: Node
 
 
 func _ready() -> void:
@@ -74,6 +89,9 @@ func _ready() -> void:
 	if role_definition != null:
 		_apply_role_definition(role_definition)
 	bind_actor_property(stats)
+	_combat_status_controller = COMBAT_STATUS_CONTROLLER.new()
+	add_child(_combat_status_controller)
+	_combat_status_controller.call(&"setup", self)
 	_configure_runtime_role()
 	queue_redraw()
 
@@ -170,6 +188,14 @@ func _physics_process(delta: float) -> void:
 	double_jump_animation_time = maxf(0.0, double_jump_animation_time - delta)
 	if role_skill_state != null:
 		role_skill_state.process_persistent(delta)
+	if is_external_control_locked():
+		action_state_machine.clear_state()
+		_reset_locomotion_input()
+		velocity = Vector2.ZERO
+		move_and_slide()
+		_update_pose()
+		queue_redraw()
+		return
 	if Input.is_action_just_released("attack") and combo_attack_state != null:
 		combo_attack_state.release_attack()
 		if role_skill_state != null:
@@ -265,13 +291,116 @@ func restore_mana(amount: int) -> void:
 		mana_changed.emit(mana, stats.get_effective_max_mana())
 
 
+func add_source_soul(amount: int) -> void:
+	if amount <= 0:
+		return
+	source_soul += amount
+	source_score += amount
+	source_soul_changed.emit(source_soul)
+	source_score_changed.emit(source_score)
+
+
+func add_source_warrior_energy(amount: int) -> bool:
+	if amount <= 0 or source_warrior_energy + amount > 100:
+		return false
+	source_warrior_energy += amount
+	source_warrior_energy_changed.emit(source_warrior_energy)
+	return true
+
+
+func has_source_equipment(source_name: StringName) -> bool:
+	return source_name in source_equipment_inventory
+
+
+func try_collect_source_equipment(source_name: StringName) -> bool:
+	# FallEquipObj leaves the pickup in the world when the 25-slot source bag is full.
+	if source_name == &"" or source_equipment_inventory.size() >= 25:
+		return false
+	source_equipment_inventory.append(source_name)
+	source_equipment_collected.emit(source_name)
+	return true
+
+
+func initialize_source_activity_equipment(total_stage: int) -> void:
+	# Replaces AllEquipment.initHouDong(totalStage). The current inventory keeps
+	# source ids; future stat rolls can use the same recorded total-stage value.
+	source_activity_equipment_stage = maxi(1, total_stage)
+
+
 func on_role_skill_started(_skill: Dictionary) -> void:
 	combo_attack_state.reset_progress()
 	_reset_locomotion_input()
 
 
 func set_role_skill_visual_hidden(hidden: bool) -> void:
-	layered_animator.visible = not hidden
+	_role_skill_visual_hidden = hidden
+	_refresh_actor_visual_visibility()
+
+
+func set_external_control_locked(source: Object, locked: bool) -> void:
+	if source == null:
+		return
+	if locked:
+		_external_control_locks[source] = true
+	else:
+		_external_control_locks.erase(source)
+	if not _external_control_locks.is_empty():
+		action_state_machine.clear_state()
+		_reset_locomotion_input()
+		velocity = Vector2.ZERO
+
+
+func is_external_control_locked() -> bool:
+	_prune_invalid_external_sources(_external_control_locks)
+	return not _external_control_locks.is_empty()
+
+
+func set_external_visual_hidden(source: Object, hidden: bool) -> void:
+	if source == null:
+		return
+	if hidden:
+		_external_visual_hides[source] = true
+	else:
+		_external_visual_hides.erase(source)
+	_refresh_actor_visual_visibility()
+
+
+func apply_combat_status(spec: Dictionary, source: Object = null) -> bool:
+	return (
+		_combat_status_controller != null
+		and bool(_combat_status_controller.call(&"apply_status", spec, source))
+	)
+
+
+func has_combat_status(status_id: StringName) -> bool:
+	return (
+		_combat_status_controller != null
+		and bool(_combat_status_controller.call(&"has_status", status_id))
+	)
+
+
+func get_combat_status_ticks(status_id: StringName) -> int:
+	if _combat_status_controller == null:
+		return 0
+	return int(_combat_status_controller.call(&"get_remaining_ticks", status_id))
+
+
+func apply_status_damage(amount: int, _status_id: StringName, _source: Object = null) -> void:
+	if amount <= 0 or health <= 0:
+		return
+	health = maxi(0, health - amount)
+	health_changed.emit(health, stats.get_effective_max_health())
+
+
+func _refresh_actor_visual_visibility() -> void:
+	_prune_invalid_external_sources(_external_visual_hides)
+	layered_animator.visible = not _role_skill_visual_hidden and _external_visual_hides.is_empty()
+
+
+func _prune_invalid_external_sources(sources: Dictionary) -> void:
+	for source: Variant in sources.keys():
+		if source is Object and not is_instance_valid(source):
+			sources.erase(source)
 
 
 func register_direction_press(direction: int, pressed_at_seconds := -1.0) -> bool:
@@ -498,7 +627,10 @@ func apply_role_skill_hit(target: Object, damage: int, knockback: Vector2) -> vo
 	var health_before := int(target.get("health"))
 	var directed_knockback := knockback
 	directed_knockback.x *= facing
-	target.take_hit(resolved_damage, directed_knockback)
+	if target.has_method(&"take_hit_from"):
+		target.call(&"take_hit_from", resolved_damage, directed_knockback, &"physical", self)
+	else:
+		target.take_hit(resolved_damage, directed_knockback)
 	var actual_damage := maxi(0, health_before - int(target.get("health")))
 	_apply_lifesteal(actual_damage)
 
@@ -743,6 +875,10 @@ func take_hit(
 	health_changed.emit(health, stats.get_effective_max_health())
 	if role_skill_state != null:
 		role_skill_state.on_damage_received(resolved_damage)
+
+
+func get_combat_facing() -> int:
+	return -1 if facing < 0.0 else 1
 
 
 func get_weapon_name() -> String:

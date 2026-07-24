@@ -7,6 +7,10 @@ extends Resource
 @export var stage_id: StringName = &""
 @export var display_name: String = ""
 @export var source_game: int = 1
+@export_group("Source Context")
+@export_range(1, 99, 1) var source_stage: int = 1
+@export_range(1, 99, 1) var source_level: int = 1
+@export_group("Presentation and Layout")
 @export var background_texture: Texture2D
 @export var ground_texture: Texture2D
 @export var viewport_size: Vector2 = Vector2(940.0, 590.0)
@@ -24,6 +28,8 @@ func validate() -> PackedStringArray:
 		errors.append("Stage '%s' needs a display name." % stage_id)
 	if source_game <= 0:
 		errors.append("Stage '%s' source_game must be positive." % stage_id)
+	if source_stage <= 0 or source_level <= 0:
+		errors.append("Stage '%s' source stage and level must be positive." % stage_id)
 	if background_texture == null:
 		errors.append("Stage '%s' needs a background texture." % stage_id)
 	if ground_texture == null:

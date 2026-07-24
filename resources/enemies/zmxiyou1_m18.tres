@@ -9,7 +9,7 @@ script = ExtResource("2_property")
 max_health = 999999
 max_mana = 0
 attack = 200
-defense = 10
+defense = 25
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -23,4 +23,4 @@ animation_profile = ExtResource("3_animation")
 visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
-is_boss = true
+is_boss = false

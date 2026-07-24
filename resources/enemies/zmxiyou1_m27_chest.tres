@@ -6,10 +6,10 @@
 
 [sub_resource type="Resource" id="ActorProperty_m27_chest"]
 script = ExtResource("2_property")
-max_health = 20
+max_health = 22100
 max_mana = 0
-attack = 10
-defense = 10
+attack = 0
+defense = 25
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -20,7 +20,15 @@ display_name = "宝箱"
 source_game = 1
 property_template = SubResource("ActorProperty_m27_chest")
 animation_profile = ExtResource("3_animation")
+source_default_stage = 4
+source_default_level = 1
 visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = false
+move_speed = 0.0
+detection_range = 300.0
+default_attack_range = 150.0
+source_despawn_effects = Array[Dictionary]([{
+"type": &"refresh_activity_equipment"
+}])

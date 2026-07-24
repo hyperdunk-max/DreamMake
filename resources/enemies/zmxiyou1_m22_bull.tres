@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://src/enemies/enemy_definition.gd" id="1_enemy"]
 [ext_resource type="Script" path="res://src/attributes/actor_property.gd" id="2_property"]
 [ext_resource type="Resource" path="res://resources/enemies/animations/zmxiyou1_m22_bull_profile.tres" id="3_animation"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/zmxiyou1_m22_controller.tscn" id="4_controller"]
 
 [sub_resource type="Resource" id="ActorProperty_m22_bull"]
 script = ExtResource("2_property")
 max_health = 40000
 max_mana = 0
-attack = 200
-defense = 10
+attack = 300
+defense = 100
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -20,7 +21,18 @@ display_name = "牛魔王"
 source_game = 1
 property_template = SubResource("ActorProperty_m22_bull")
 animation_profile = ExtResource("3_animation")
+source_controller_scene = ExtResource("4_controller")
 visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = true
+move_speed = 312.0
+detection_range = 300.0
+default_attack_range = 450.0
+death_despawn_delay = 1.0
+source_despawn_effects = Array[Dictionary]([{
+"definition_path": "res://resources/enemies/zmxiyou1_m23_bull.tres",
+"position": Vector2(1500, 450),
+"spawn_id_suffix": "phase2",
+"type": &"spawn_monster"
+}])

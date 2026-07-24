@@ -8,8 +8,8 @@
 script = ExtResource("2_property")
 max_health = 4800
 max_mana = 0
-attack = 200
-defense = 10
+attack = 110
+defense = 70
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -20,7 +20,16 @@ display_name = "龟丞相"
 source_game = 1
 property_template = SubResource("ActorProperty_m17_turtle")
 animation_profile = ExtResource("3_animation")
+source_default_stage = 3
+source_default_level = 1
 visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = true
+move_speed = 72.0
+detection_range = 300.0
+default_attack_range = 400.0
+source_despawn_effects = Array[Dictionary]([{
+"boss_only": true,
+"type": &"reveal_transfer_doors"
+}])

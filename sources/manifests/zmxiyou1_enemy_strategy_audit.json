@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-07-24T00:00:00+08:00",
+  "game": "zmxiyou1",
+  "purpose": "Record source-reviewed 24 Hz monster decisions, movement, invulnerability windows, stationary lifecycles, and the Monster22 phase transition used by the Godot combat runtime.",
+  "source_packages": {
+    "Monster_v1": {
+      "root": ".tools/monster_combat_source_20260724_m1/scripts",
+      "base": "base/BaseMonster.as",
+      "monsters": ["Monster1.as", "Monster2.as", "Monster3.as", "Monster4.as", "Monster6.as", "Monster7.as", "Monster8.as", "Monster25.as"]
+    },
+    "Monster2_v4": {
+      "root": ".tools/monster_combat_source_20260724/scripts",
+      "base": "base/BaseMonster.as",
+      "monsters": ["Monster9.as", "Monster10.as", "Monster11.as", "Monster13.as", "Monster14.as", "Monster15.as", "Monster16.as", "Monster17.as", "Monster18.as", "Monster19.as", "Monster20.as", "Monster21.as", "Monster22.as", "Monster23.as", "Monster24.as"]
+    },
+    "Monster3_v3": {
+      "root": ".tools/monster_combat_source_20260724_m3/scripts",
+      "base": "base/BaseMonster.as",
+      "monsters": ["Monster26.as", "Monster27.as"]
+    }
+  },
+  "base_monster_contract": {
+    "target_acquisition": "Acquire a living hero only when horizontal distance is below mysee and vertical distance is at most attackRange; retain the selected target afterward.",
+    "generic_attack": "When within attackRange, evaluate every 36 source ticks and attack hit1 when randomNum(isattback) succeeds; otherwise stop.",
+    "generic_follow": "Move toward the selected target while horizontal distance exceeds attackRange; when vertical separation exceeds attackRange * 2, fall back to source patrol.",
+    "patrol": "At source count 12 select left/right, select stopNum 72 or 96, optionally stop at stopNum, and reset after the source random tail.",
+    "speed_conversion": "ActionScript px/tick values are multiplied by 24 to produce Godot px/s. Cooldowns and decision periods remain integer source ticks."
+  },
+  "strategies": [
+    {"monster": "M01", "kind": "generic_ground_passive", "move_px_per_tick": 3, "mysee": 300, "attack_range": 80, "vertical_combat_range": 160, "period_ticks": 36, "attack_chance_percent": 50, "special": "Monster1 does not select a target until beAttack marks it provoked."},
+    {"monster": "M02", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 300, "attack_range": 110, "vertical_combat_range": 220, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M03", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 300, "attack_range": 150, "vertical_combat_range": 300, "period_ticks": 36, "attack_chance_percent": 50, "context_variants": {"stage_1_level_1": "boss, HP 900, DEF 5", "other": "non-boss, HP 300, DEF 5"}},
+    {"monster": "M04", "kind": "periodic_boss", "move_px_per_tick": 3, "attack_range": 150, "period_ticks": 24, "cooldowns": {"hit2": 260, "hit3": 180}},
+    {"monster": "M06", "kind": "periodic_ground_boss", "move_px_per_tick": 4, "mysee": 300, "follow_range": 250, "vertical_combat_range": 900, "period_ticks": 24, "cooldowns": {"hit2": 240}},
+    {"monster": "M07", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 300, "attack_range": 110, "vertical_combat_range": 220, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M08", "kind": "flying_melee", "move_px_per_tick": 3, "mysee": 300, "follow_range": 140, "vertical_tolerance": 90, "target_y_offset": -90, "vertical_acceleration_px_per_tick": 0.5, "vertical_max_px_per_tick": 4, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M09", "kind": "peng_lifecycle", "move_px_per_tick": 3, "attack_range": 400, "cooldowns": {"fire": 48, "hit2": 130}},
+    {"monster": "M10", "kind": "periodic_boss", "move_px_per_tick": 3, "attack_range": 250, "period_ticks": 24, "cooldowns": {"hit2": 144, "hit3": 240}},
+    {"monster": "M11", "kind": "periodic_boss", "move_px_per_tick": 4, "attack_range": 150, "period_ticks": 24, "cooldowns": {"hit2": 100, "hit3": 264}},
+    {"monster": "M13", "kind": "periodic_ground", "move_px_per_tick": 3, "attack_range": 150, "vertical_combat_range": 300, "period_ticks": 24, "cooldowns": {"hit2": 96}},
+    {"monster": "M14", "kind": "ranged_keeper", "move_px_per_tick": 5, "mysee": 300, "retreat_at_or_below": 200, "follow_at_or_above": 350, "period_ticks": 24, "attack_chance_percent": 40, "projectile_motion": "EnemyMoveBullet acceleration"},
+    {"monster": "M15", "kind": "flying_melee", "move_px_per_tick": 3, "mysee": 300, "follow_range": 150, "vertical_tolerance": 100, "target_y_offset": -60, "vertical_acceleration_px_per_tick": 0.5, "vertical_max_px_per_tick": 4, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M16", "kind": "periodic_ground", "move_px_per_tick": 3, "attack_range": 150, "vertical_combat_range": 300, "period_ticks": 24, "cooldowns": {"hit2": 240}},
+    {"monster": "M17", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 300, "attack_range": 400, "vertical_combat_range": 800, "period_ticks": 36, "attack_chance_percent": 60, "context_variants": {"stage_3_level_1": "boss, HP 4800, DEF 70", "other": "non-boss, HP 1600, DEF 70"}},
+    {"monster": "M18", "kind": "flying_summon", "move_px_per_tick": 6, "follow_range": 250, "vertical_tolerance": 50, "target_y_offset": -60, "vertical_acceleration_px_per_tick": 0.5, "vertical_max_px_per_tick": 4, "period_ticks": 24, "attack_chance_percent": 50, "cooldowns": {"hit2": 96}},
+    {"monster": "M19", "kind": "two_phase_boss", "move_px_per_tick": 3, "attack_range": 150, "period_ticks": 24, "cooldowns": {"hit2": 480, "hit3": 360}},
+    {"monster": "M20", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 400, "attack_range": 200, "vertical_combat_range": 400, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M21", "kind": "stationary_destructible", "move_px_per_tick": 0, "attacks": [], "special": "Bat cave overrides attackTarget, normalWalk, and move with no-ops."},
+    {"monster": "M22", "kind": "running_phase_controller", "move_px_per_tick": 13, "left_screen_bound": -360, "right_screen_bound": 400, "first_stop_calls": 25, "later_stop_calls": 73, "running_invulnerable": true, "contact_action": "walk", "death_spawn": {"monster": "M23", "position": [1500, 450]}},
+    {"monster": "M23", "kind": "multi_skill_boss", "move_px_per_tick": 5, "cooldowns": {"hit2": 360, "hit3": 360, "hit4": 360, "hit5": 360}},
+    {"monster": "M24", "kind": "composite_source_controller", "move_px_per_tick": 0},
+    {"monster": "M25", "kind": "generic_ground", "move_px_per_tick": 3, "mysee": 300, "attack_range": 110, "vertical_combat_range": 220, "period_ticks": 36, "attack_chance_percent": 50},
+    {"monster": "M26", "kind": "level_variant_boss", "move_px_per_tick": 4, "cooldowns_low": {"hit2": 700, "hit3": 500, "hit4": 400}, "cooldowns_high": {"hit2": 550, "hit3": 400, "hit4": 300}},
+    {"monster": "M27", "kind": "stationary_treasure", "move_px_per_tick": 0, "attacks": [], "health_formula": "20*n^3 + 20*n^2 + 100; n=(stage-1)*3+level for stage<4, otherwise 10", "runtime_context": "StageDefinition source_stage/source_level is injected before _ready; the definition default is stage 4+, totalStage 10, HP 22100."}
+  ],
+  "invulnerability_ticks": {
+    "M04:hit2": 76,
+    "M06:hit2": 48,
+    "M10:hit3": 45,
+    "M11:hit2": 47,
+    "M18:hit2": 30,
+    "M19:hit2": 20,
+    "M19:hit3": 18,
+    "M23:hit2": 60,
+    "M23:hit3": 67,
+    "M23:hit4": 54,
+    "M26:hit2": 90,
+    "M26:hit3": 85,
+    "M26:hit4": 24,
+    "evidence": "Direct setYourFather(N) calls in the reviewed monster constructors and skill methods."
+  },
+  "runtime": {
+    "strategy": "res://src/enemies/zmxiyou1_enemy_strategy.gd",
+    "host": "res://src/enemies/animated_enemy.gd",
+    "m22_controller": "res://src/enemies/zmxiyou1_m22_controller.gd",
+    "m22_scene": "res://scenes/enemies/zmxiyou1_m22_controller.tscn",
+    "stage_controller": "res://src/stages/stage_controller.gd",
+    "melee_geometry": "res://sources/manifests/zmxiyou1_enemy_melee_hitboxes.json",
+    "test": "res://tests/zmxiyou1_enemy_strategy_coverage_test.gd",
+    "melee_test": "res://tests/zmxiyou1_enemy_melee_hitboxes_test.gd",
+    "stage_effects_test": "res://tests/zmxiyou1_enemy_stage_effects_test.gd",
+    "collision": "M22 walk damage uses the shared Godot rectangle query and source attack profile instead of Flash complexHitTestObject.",
+    "death_events": "Visibility events run in death state; BossDead is created only by reviewed spawn_object source events instead of by a generic is_boss rule."
+  },
+  "validation": {
+    "status": "passed_2026-07-24_godot_4.6.2",
+    "reviewed_source_ids": 25,
+    "reviewed_runtime_profiles": 27,
+    "strategy_test": "pass",
+    "existing_combat_regression": "pass",
+    "source_melee_geometry": "pass",
+    "stage_side_effects": "pass"
+  },
+  "resolved_followups": [
+    "M03/M06/M17/M21 transfer-door reveals, M21/M27 loot and activity side effects, M22 -> M23 -> M24 phase spawning, and the M24 Ending are owned by StageController and source loot runtime.",
+    "All source-backed attacks are now covered by reviewed stick geometry, an atlas projectile, typed event-driven damage, or the dedicated M24 controller; reviewed empty melee frames do not fall back to a generic rectangle."
+  ]
+}

@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/enemies/enemy_definition.gd" id="1_enemy"]
+[ext_resource type="Script" path="res://src/attributes/actor_property.gd" id="2_property"]
+[ext_resource type="Resource" path="res://resources/enemies/animations/zmxiyou1_m24_profile.tres" id="3_animation"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/zmxiyou1_m24_controller.tscn" id="4_controller"]
+
+[sub_resource type="Resource" id="ActorProperty_m24_bull_demon_king"]
+script = ExtResource("2_property")
+max_health = 200000
+max_mana = 0
+attack = 400
+defense = 0
+crit_rate = 0.0
+dodge_rate = 0.0
+
+[resource]
+script = ExtResource("1_enemy")
+enemy_id = &"zmxiyou1_m24_bull_demon_king"
+display_name = "牛魔王(三)"
+source_game = 1
+property_template = SubResource("ActorProperty_m24_bull_demon_king")
+animation_profile = ExtResource("3_animation")
+source_controller_scene = ExtResource("4_controller")
+visual_scale = Vector2(1, 1)
+visual_offset = Vector2(0, 0)
+collision_size = Vector2(83.226, 159.9527)
+is_boss = true
+move_speed = 0.0
+detection_range = 1800.0
+default_attack_range = 400.0
+default_attack_cooldown = 0.0
+melee_hitbox_size = Vector2(83.226, 159.9527)
+melee_hitbox_offset = Vector2(18.15, 141)
+death_despawn_delay = 0.0
+source_death_start_effects = Array[Dictionary]([{
+"source_name": &"jgz",
+"type": &"grant_unique_equipment"
+}, {
+"amount": 50,
+"daily_limit": 1,
+"type": &"grant_daily_merit"
+}])
+source_despawn_effects = Array[Dictionary]([{
+"type": &"show_ending_stop_controls"
+}])

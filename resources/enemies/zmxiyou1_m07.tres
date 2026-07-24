@@ -8,8 +8,8 @@
 script = ExtResource("2_property")
 max_health = 600
 max_mana = 0
-attack = 60
-defense = 10
+attack = 35
+defense = 8
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -24,3 +24,6 @@ visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = false
+move_speed = 72.0
+detection_range = 300.0
+default_attack_range = 110.0

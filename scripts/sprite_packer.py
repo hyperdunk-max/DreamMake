@@ -52,7 +52,10 @@ def pack_sprites(input_dir: str, output_path: str = None, columns: int = None):
         col = i % columns
         x, y = col * fw, row * fh
         img = Image.open(fpath)
-        sheet.paste(img, (x, y), img if mode == "RGBA" else None)
+        # The destination is already transparent. Passing the RGBA image as
+        # its own mask multiplies alpha a second time and darkens every
+        # antialiased edge. A direct paste preserves the source RGBA bytes.
+        sheet.paste(img, (x, y))
         img.close()
 
         name = fpath.stem

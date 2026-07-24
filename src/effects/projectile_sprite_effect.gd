@@ -96,7 +96,10 @@ func _apply_hit(target: Object) -> void:
 	var source_facing := int(_step.get("effect_source_facing", -1))
 	knockback.x *= source_facing
 	var health_before := int(target.get("health"))
-	target.take_hit(raw_damage, knockback)
+	if target.has_method(&"take_hit_from"):
+		target.call(&"take_hit_from", raw_damage, knockback, &"physical", _source_actor)
+	else:
+		target.take_hit(raw_damage, knockback)
 	# Apply lifesteal through the source actor.
 	if _source_actor != null and is_instance_valid(_source_actor) and _source_actor.has_method("_apply_lifesteal"):
 		var actual_damage := maxi(0, health_before - int(target.get("health")))

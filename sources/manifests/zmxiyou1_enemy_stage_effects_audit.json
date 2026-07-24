@@ -1,0 +1,123 @@
+{
+  "game": "zmxiyou1",
+  "date": "2026-07-24",
+  "purpose": "Source-reviewed monster stage side effects, including death progression and world shake, owned by StageController rather than animation or loot code.",
+  "architecture": {
+    "enemy_role": "AnimatedEnemy emits data-only source_stage_effect_requested signals at death-start or despawn.",
+    "stage_role": "StageController applies door, spawn-chain, unique reward, merit, activity and the source Ending presentation.",
+    "reason": "These effects mutate stage progression or player persistence and must not be hidden in an animation callback.",
+    "runtime_files": [
+      "src/enemies/enemy_definition.gd",
+      "src/enemies/animated_enemy.gd",
+      "src/stages/stage_controller.gd",
+      "src/stages/zmxiyou1_source_progress.gd",
+      "src/stages/zmxiyou1_ending_overlay.gd"
+    ]
+  },
+  "effects": [
+    {
+      "source_monsters": ["M03", "M06", "M17", "M21"],
+      "timing": "despawn",
+      "type": "reveal_transfer_doors",
+      "condition": "boss_only",
+      "behavior": "Only the boss stage variant reveals transfer doors; normal variants do not."
+    },
+    {
+      "source_monster": "M22",
+      "timing": "despawn",
+      "type": "spawn_monster",
+      "next_monster": "M23",
+      "position": [1500, 450],
+      "source_evidence": ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster22.as destroy()"
+    },
+    {
+      "source_monster": "M23",
+      "timing": "despawn",
+      "type": "spawn_monster",
+      "next_monster": "M24",
+      "position": [1350, 300],
+      "source_evidence": ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster23.as destroy()"
+    },
+    {
+      "source_monster": "M24",
+      "timing": "death_start",
+      "type": "grant_unique_equipment",
+      "source_name": "jgz",
+      "behavior": "Grant directly to player 1 only when no player owns jgz and player 1 has inventory capacity; never create a world pickup."
+    },
+    {
+      "source_monster": "M24",
+      "timing": "death_start",
+      "type": "grant_daily_merit",
+      "amount": 50,
+      "behavior": "At most once per source day in Zmxiyou1SourceProgress."
+    },
+    {
+      "source_monster": "M24",
+      "timing": "despawn_after_48_ticks",
+      "type": "show_ending_stop_controls",
+      "behavior": "Lock player external controls, show the original 940x590 Ending, replay symbol 701 at 24 Hz, destroy it on source frame 1204, then release the scoped lock and allow stage completion."
+    },
+    {
+      "source_monster": "M27",
+      "timing": "despawn",
+      "type": "refresh_activity_equipment",
+      "behavior": "Call the player activity-equipment initializer and emit the stage request once.",
+      "total_stage_formula": "(stage - 1) * 3 + level when stage < 4; otherwise 10"
+    }
+  ],
+  "world_effects": [
+    {
+      "source_monster": "M04",
+      "action": "hit2",
+      "type": "screen_shake",
+      "source_frames": [5, 8, 11, 13, 16, 20, 22, 25, 30, 32, 35, 41, 46, 52, 58, 65],
+      "strengths": [5, 5, 5, 5, 10, 10, 10, 10, 10, 10, 15, 15, 15, 15, 15, 15]
+    },
+    {
+      "source_monster": "M24",
+      "action": "Hands.downAttack",
+      "type": "screen_shake",
+      "condition": "hand y >= 126",
+      "strength": 10
+    }
+  ],
+  "screen_shake_contract": {
+    "source_tick_rate": 24,
+    "acceptance": "ViewControllor.shake(value) accepts a new request only while shakeVal is zero; overlapping requests are ignored.",
+    "motion": "On the first source tick gameSence.x += strength; on the next source tick gameSence.x -= strength and shakeVal returns to zero.",
+    "godot_target": "StageController offsets the configured Node2D world root, which includes gameplay actors and stage art while CanvasLayer HUD remains stable.",
+    "cleanup": "Any outstanding additive offset is restored if the stage is cleared or removed.",
+    "source_evidence": ".tools/monster_combat_source_20260724_m1/scripts/my/ViewControllor.as",
+    "runtime": ["src/enemies/animated_enemy.gd", "src/enemies/zmxiyou1_m24_controller.gd", "src/stages/stage_controller.gd"]
+  },
+  "chain_completion_guard": {
+    "behavior": "Pending or active M22 -> M23 -> M24 chain IDs prevent stage completion between boss phases; M24 completion remains deferred while the source Ending is active.",
+    "owner": "src/stages/stage_controller.gd"
+  },
+  "source_evidence": [
+    "sources/decoded/zmxiyou1/Monster_v1.swf",
+    "sources/raw/zmxiyou1/Monster2_v4.swf",
+    ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster22.as",
+    ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster23.as",
+    ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster24.as",
+    ".tools/core_scripts/zmxiyou1/scripts/export/monster/Monster27.as",
+    ".tools/monster_combat_source_20260724_m1/scripts/my/ViewControllor.as",
+    ".tools/ending_audit/scripts/scripts/export/scene/Ending.as",
+    ".tools/ending_audit/timeline_scripts/scripts/OtherMat_fla/元件2_9.as",
+    "sources/manifests/zmxiyou1_ending_assets.json"
+  ],
+  "ending_visual": {
+    "status": "restored_and_source_reviewed",
+    "asset_manifest": "sources/manifests/zmxiyou1_ending_assets.json",
+    "runtime_timeline": "assets/selected/zmxiyou1/ui/ending/timeline.json",
+    "resource_contract": "Four one-frame sprite.png + sprite.json packs plus exact per-frame transform data; no duplicate full-frame bake.",
+    "source_duration_seconds": 50.125,
+    "source_destroy_frame": 1204
+  },
+  "validation": {
+    "status": "passed_2026-07-24_godot_4.6.2",
+    "test": "tests/zmxiyou1_enemy_stage_effects_test.gd",
+    "coverage": "M04 exact 16-frame shake dispatch, two-tick world restoration, overlap rejection, cleanup restoration, M24 shared shake path, M24 reward idempotency, control lock, source mask, exact title/story registration, frame-1204 teardown and deferred completion."
+  }
+}

@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_profile")
-default_animation = &"idle"
 source_monster_id = &"M23"
 source_package = &"Monster2_v4"
 source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
@@ -15,10 +14,43 @@ actions = {
 "frame_count": 60,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "hit1",
+"source_event_symbol_ids": PackedInt32Array(977),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hit1",
+"source_symbol_id": 977
+},
+"source_events": Array[Dictionary]([{
+"frame": 32,
+"id": &"refresh_attack_id",
+"method": "frame33",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_61.as",
+"source_code": "BaseMonster(this.parent).newAttackId();",
+"source_frame": 33,
+"source_line": 31,
+"source_symbol_id": 977,
+"source_types": PackedStringArray("custom_script"),
+"types": PackedStringArray("custom_script", "attack_refresh")
+}, {
+"frame": 59,
+"id": &"action_transition",
+"method": "frame60",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_61.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";
+         BaseMonster(this.parent).gotoAndStop(\"wait\");
+         stop();",
+"source_frame": 60,
+"source_line": 36,
+"source_symbol_id": 977,
+"source_types": PackedStringArray("action_transition", "timeline_control"),
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 977,
+"sprite_offset": Vector2(0, -85),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/attack1/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/attack1/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -85)
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/attack1/sprite.json"
 },
 &"death": {
 "display_name": "死亡",
@@ -26,10 +58,164 @@ actions = {
 "frame_count": 25,
 "loop": false,
 "next_animation": &"death",
+"source_action_label": "dead",
+"source_event_symbol_ids": PackedInt32Array(951),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "dead",
+"source_symbol_id": 951
+},
+"source_events": Array[Dictionary]([{
+"frame": 0,
+"id": &"visibility",
+"method": "frame1",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 1,
+"source_line": 31,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 2,
+"id": &"visibility",
+"method": "frame3",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 3,
+"source_line": 36,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 4,
+"id": &"visibility",
+"method": "frame5",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 5,
+"source_line": 41,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 6,
+"id": &"visibility",
+"method": "frame7",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 7,
+"source_line": 46,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 8,
+"id": &"visibility",
+"method": "frame9",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 9,
+"source_line": 51,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 10,
+"id": &"visibility",
+"method": "frame11",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 11,
+"source_line": 56,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 12,
+"id": &"visibility",
+"method": "frame13",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 13,
+"source_line": 61,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 14,
+"id": &"visibility",
+"method": "frame15",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 15,
+"source_line": 66,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 16,
+"id": &"visibility",
+"method": "frame17",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 17,
+"source_line": 71,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 18,
+"id": &"visibility",
+"method": "frame19",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 19,
+"source_line": 76,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 20,
+"id": &"visibility",
+"method": "frame21",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = false;",
+"source_frame": 21,
+"source_line": 81,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 22,
+"id": &"visibility",
+"method": "frame23",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "BaseMonster(this.parent).visible = true;",
+"source_frame": 23,
+"source_line": 86,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("visibility"),
+"types": PackedStringArray("visibility")
+}, {
+"frame": 24,
+"id": &"spawn_object",
+"method": "frame25",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_60.as",
+"source_code": "this.mc = AUtils.getNewObj(\"BossDead\");
+         BaseMonster(this.parent).addChild(this.mc);
+         stop();",
+"source_frame": 25,
+"source_line": 91,
+"source_symbol_id": 951,
+"source_types": PackedStringArray("object_spawn", "timeline_control"),
+"types": PackedStringArray("object_spawn", "timeline_control")
+}]),
+"source_symbol_id": 951,
+"sprite_offset": Vector2(0, -65),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/death/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/death/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -65)
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/death/sprite.json"
 },
 &"hurt": {
 "display_name": "受伤",
@@ -37,10 +223,32 @@ actions = {
 "frame_count": 6,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "hurt",
+"source_event_symbol_ids": PackedInt32Array(925),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hurt",
+"source_symbol_id": 925
+},
+"source_events": Array[Dictionary]([{
+"frame": 5,
+"id": &"action_transition",
+"method": "frame6",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_59.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";
+         BaseMonster(this.parent).gotoAndStop(\"wait\");
+         stop();",
+"source_frame": 6,
+"source_line": 29,
+"source_symbol_id": 925,
+"source_types": PackedStringArray("action_transition", "timeline_control"),
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 925,
+"sprite_offset": Vector2(0, -65),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/hurt/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/hurt/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -65)
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/hurt/sprite.json"
 },
 &"idle": {
 "display_name": "待机",
@@ -48,10 +256,19 @@ actions = {
 "frame_count": 20,
 "loop": true,
 "next_animation": &"idle",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.json",
+"source_action_label": "wait",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "wait",
+"source_symbol_id": 782
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -65)
+"source_symbol_id": 782,
+"sprite_offset": Vector2(0, -65),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/idle/sprite.json"
 },
 &"move": {
 "display_name": "移动",
@@ -59,9 +276,18 @@ actions = {
 "frame_count": 16,
 "loop": true,
 "next_animation": &"move",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.json",
+"source_action_label": "walk",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "walk",
+"source_symbol_id": 760
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -60)
+"source_symbol_id": 760,
+"sprite_offset": Vector2(0, -60),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m23_bull/move/sprite.json"
 }
 }

@@ -6,10 +6,10 @@
 
 [sub_resource type="Resource" id="ActorProperty_m26_dragon"]
 script = ExtResource("2_property")
-max_health = 40000
+max_health = 12000
 max_mana = 0
 attack = 200
-defense = 10
+defense = 50
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -24,3 +24,15 @@ visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = true
+source_level_threshold = 20
+source_default_player_level = 1
+source_low_level_stats = {
+"defense": 50,
+"max_health": 12000,
+"source_attack_variant": 1
+}
+source_high_level_stats = {
+"defense": 150,
+"max_health": 40000,
+"source_attack_variant": 0
+}

@@ -9,7 +9,7 @@ script = ExtResource("2_property")
 max_health = 700
 max_mana = 0
 attack = 70
-defense = 10
+defense = 9
 crit_rate = 0.0
 dodge_rate = 0.0
 

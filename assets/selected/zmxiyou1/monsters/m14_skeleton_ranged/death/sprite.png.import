@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd7gt0pt45it"
-path="res://.godot/imported/sprite.png-96e360aa8eb5936f969878d831b3a974.ctex"
+path="res://.godot/imported/sprite.png-6ce5c83ea777aa5e8ca0936158d636fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/selected/zmxiyou1/monsters/m14/death/sprite.png"
-dest_files=["res://.godot/imported/sprite.png-96e360aa8eb5936f969878d831b3a974.ctex"]
+source_file="res://assets/selected/zmxiyou1/monsters/m14_skeleton_ranged/death/sprite.png"
+dest_files=["res://.godot/imported/sprite.png-6ce5c83ea777aa5e8ca0936158d636fa.ctex"]
 
 [params]
 

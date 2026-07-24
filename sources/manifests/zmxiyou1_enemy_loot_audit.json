@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-07-24T00:00:00+08:00",
+  "game": "zmxiyou1",
+  "purpose": "Record source-reviewed monster death loot and exact sprite-pack selections.",
+  "policy": {
+    "provenance_library_mutation": "none",
+    "runtime_format": "sprite.png + sprite.json",
+    "source_tick_rate": 24,
+    "randomness": "Independent ActionScript probabilities are preserved; a dedicated per-spawn RNG makes tests reproducible.",
+    "collision": "Aura homing keeps the source 10 px rule. Medicine and equipment replace Flash pixel hit tests with Godot pickup shapes.",
+    "naming": "auraWhile is the original typo for the white warrior-energy aura and remains in provenance paths."
+  },
+  "base_drop_aura": {
+    "call_order": ["addMedicine", "fallEquip", "auraRed", "auraGreen", "auraBlue", "auraWhile"],
+    "red": {"count": [2, 4], "spread_px": 10, "power": "monster.gxp", "effect": "soul_and_score"},
+    "green": {"counts_at_roll_thresholds": [[0.04, 3], [0.08, 2], [0.12, 1]], "spread_px": 20, "power": "max(10, int(hero.max_hp / 20))", "effect": "heal"},
+    "blue": {"counts_at_roll_thresholds": [[0.04, 3], [0.08, 2], [0.12, 1]], "spread_px": 30, "power": "max(10, int(hero.max_mp / 20))", "effect": "restore_mana"},
+    "white": {"source_class": "auraWhile", "counts_at_roll_thresholds": [[0.04, 3], [0.08, 2], [0.12, 1]], "spread_px": 40, "power": 5, "effect": "warrior_energy"},
+    "motion": {"wait_ticks": 20, "rise_start_tick": 21, "rise_duration_ticks": 24, "rise_px": [30, 50], "rise_ease": "TweenMax default Quad.easeOut", "homing_speed_px_per_tick": [4, 6], "homing_acceleration_px_per_tick": 2, "homing_speed_cap_px_per_tick": 20, "collect_distance_px": 10, "lifetime_counter_limit": 2400},
+    "medicine": {"small_hp_probability": 0.0375, "big_hp_probability": 0.0125, "small_mp_probability": 0.05, "none_probability": 0.9, "small_hp_power": 100, "big_hp_power": 200, "small_mp_power": 100, "lifetime_ticks": 240},
+    "equipment": {"default_probability": 0.15, "selection": "Math.round(random * (fallList.length - 1))", "lifetime_ticks": 240, "persistent_source_names": ["dslj", "dsyj", "dsqz", "tsgl", "tsyp", "tsyj", "xhyk", "xhxh", "xhmj", "qxsh", "jhcz", "ryjgb", "zljs", "dszk", "bhz", "qld", "xwj", "qlp", "zqj", "jcsz", "jcbj", "jcys"]}
+  },
+  "visual_assets": {
+    "auras": [
+      {"name": "auraRed", "frames": 19, "frame_size": [17, 18], "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraRed", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraRed", "sprite_sha256": "11aacbba8a036b2227c6fa2c71e35bf6b0a43412521b0c9205afabaa5d0ce707", "decision": "retain_original_color_atlas"},
+      {"name": "auraGreen", "frames": 19, "frame_size": [17, 18], "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraGreen", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraGreen", "sprite_sha256": "aa5b8036b19dc41af9a7d174b7a8e54b00291f61a54f169ac854e449de99c1dd", "decision": "retain_original_color_atlas"},
+      {"name": "auraBlue", "frames": 19, "frame_size": [17, 18], "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraBlue", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraBlue", "sprite_sha256": "6aad8d1deda05c59c072d96930a93cc11f89a4fa9712e7c1d5b7b6dc6310298a", "decision": "retain_original_color_atlas"},
+      {"name": "auraWhile", "frames": 19, "frame_size": [17, 18], "source": "assets/extracted/classified/zmxiyou1/怪物/公共特效/auraWhile", "destination": "assets/selected/zmxiyou1/monsters/shared/effects/auraWhile", "sprite_sha256": "513c7cccd0f7fdb145ec350d003f676a1fc10dc5bb2814c0286adc692d6d1402", "decision": "retain_original_color_atlas"}
+    ],
+    "medicine_source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/sprites/DefineSprite_{277,279,281}_export.cure.*",
+    "medicine_recovery_copy": ".tools/pull_recovery_575b2b0/zmxiyou1_partial/UI/公共/{BigHP,SmallHP,SmallMP}/ui_0001.png",
+    "equipment_source": "assets/extracted/full/zmxiyou1/shared/OtherMat_v9/images/*_fall_<source_name>.png",
+    "equipment_recovery_copy": ".tools/pull_recovery_575b2b0/zmxiyou1_partial/UI/公共/fall_<source_name>/ui_0001.png",
+    "restoration_rule": "Recovered copies must match the historical zmxiyou1 compact/image classification manifest before selection; no trace file is deleted.",
+    "world_pickup_manifest": "res://sources/manifests/zmxiyou1_world_pickup_assets.json"
+  },
+  "profiles": {
+    "M01": {"exp": 5, "gxp": 1, "equipment_probability": 0.15, "fall_list": ["ccxzf", "ccxzg", "ccjs", "ccsmz"]},
+    "M02": {"exp": 6, "gxp": 2, "equipment_probability": 0.15, "fall_list": ["ccxzf", "ccxzg", "ccjs", "ccsmz"]},
+    "M03": {"variants": {"stage_1_level_1": {"exp": 25, "gxp": 3, "equipment_probability": 0.15, "fall_list": []}, "other": {"exp": 7, "gxp": 3, "equipment_probability": 0.15, "fall_list": ["ccxzf", "ccxzg", "ccjs", "ccsmz"]}}},
+    "M04": {"exp": 25, "gxp": 20, "equipment_probability": 0.4, "fall_list": ["dslj"]},
+    "M06": {"exp": 35, "gxp": 20, "equipment_probability": 0.35, "fall_list": ["dsyj", "dsqz"]},
+    "M07": {"exp": 22, "gxp": 10, "equipment_probability": 0.15, "fall_list": ["ptxzf", "ptxzg", "ptjs", "ptsmz"]},
+    "M08": {"exp": 18, "gxp": 8, "equipment_probability": 0.15, "fall_list": ["ptxzf", "ptxzg", "ptjs", "ptsmz"]},
+    "M09": {"exp": 130, "gxp": 20, "equipment_probability": 0.25, "fall_list": ["tsyp", "tsyj"]},
+    "M10": {"exp": 225, "gxp": 70, "equipment_probability": 0.2, "fall_list": ["xhyk"]},
+    "M11": {"exp": 100, "gxp": 20, "equipment_probability": 0.3, "fall_list": ["tsgl"]},
+    "M13": {"exp": 26, "gxp": 12, "equipment_probability": 0.15, "fall_list": ["ptxzf", "ptxzg", "ptjs", "ptsmz"]},
+    "M14": {"exp": 48, "gxp": 24, "equipment_probability": 0.15, "fall_list": ["yxxzf", "yxxzg", "yxjs", "yxsmz"]},
+    "M15": {"exp": 30, "gxp": 14, "equipment_probability": 0.15, "fall_list": ["ptxzf", "ptxzg", "ptjs", "ptsmz"]},
+    "M16": {"exp": 57, "gxp": 27, "equipment_probability": 0.15, "fall_list": ["yxxzf", "yxxzg", "yxjs", "yxsmz"]},
+    "M17": {"variants": {"stage_3_level_1": {"exp": 200, "gxp": 60, "equipment_probability": 0.15, "fall_list": []}, "other": {"exp": 75, "gxp": 30, "equipment_probability": 0.15, "fall_list": ["yxxzf", "yxxzg", "yxjs", "yxsmz"]}}},
+    "M18": {"exp": 500, "gxp": 500, "equipment_probability": 0.15, "fall_list": []},
+    "M19": {"exp": 300, "gxp": 100, "equipment_probability": 0.15, "fall_list": ["xhxh", "xhmj"]},
+    "M20": {"exp": 65, "gxp": 30, "equipment_probability": 0.15, "fall_list": ["yxxzf", "yxxzg", "yxjs", "yxsmz"]},
+    "M21": {"exp": 0, "gxp": 0, "equipment_probability": 0.25, "fall_list": ["jcsz", "jcbj", "jcys"]},
+    "M22": {"exp": 48, "gxp": 24, "drop_aura": false, "death_effect": "spawn M23 at (1500,450)"},
+    "M23": {"exp": 100, "gxp": 40, "equipment_probability": 0.15, "fall_list": [], "death_effect": "spawn M24 at (1350,300)"},
+    "M24": {"exp": 100, "gxp": 20, "drop_aura": false, "death_reward": {"unique_equipment": "jgz", "merit_daily_reward": true, "ending": true}},
+    "M25": {"exp": 45, "gxp": 30, "equipment_probability": 0.15, "fall_list": ["jlxzf", "jlxzg", "jljs", "jlsmz"]},
+    "M26": {"variants": {"missing_dhqf": {"equipment_probability": 1.0, "fall_list": ["dhqf"]}, "owns_dhqf_level_above_20": {"exp": 300, "gxp": 100, "equipment_probability": 0.1, "fall_list": ["qxsh", "jhcz", "ryjgb"]}, "owns_dhqf_level_at_most_20": {"exp": 150, "gxp": 70, "equipment_probability": 0.2, "fall_list": ["zqj", "qld", "bhz", "xwj", "qlp"]}}},
+    "M27": {"exp": 0, "gxp": 0, "equipment_probability": 0.3, "fall_list": ["tndblg", "tndbthl", "zcld"], "drop_trigger": "Monster27.destroy override", "activity_callback": "initHouDong(totalStage)"}
+  },
+  "source_evidence": [
+    ".tools/monster_combat_source_20260724*/scripts/base/BaseMonster.as:dropAura/addMedicine/fallEquip",
+    ".tools/monster_combat_source_20260724*/scripts/base/BaseAura.as",
+    ".tools/monster_combat_source_20260724*/scripts/export/aura/*.as",
+    ".tools/monster_combat_source_20260724*/scripts/export/cure/*.as",
+    ".tools/monster_combat_source_20260724*/scripts/my/FallEquipObj.as",
+    ".tools/monster_combat_source_20260724*/scripts/export/monster/Monster*.as"
+  ],
+  "runtime": {
+    "catalog": "res://src/enemies/zmxiyou1_enemy_loot_catalog.gd",
+    "aura": "res://src/effects/zmxiyou1_aura_pickup.gd",
+    "world_pickup": "res://src/effects/zmxiyou1_world_pickup.gd",
+    "host": "res://src/enemies/animated_enemy.gd",
+    "test": "res://tests/zmxiyou1_enemy_loot_test.gd"
+  },
+  "validation": {
+    "status": "passed_2026-07-24_godot_4.6.2",
+    "test": "tests/zmxiyou1_enemy_loot_test.gd",
+    "world_pickup_assets": {
+      "manifest": "sources/manifests/zmxiyou1_world_pickup_assets.json",
+      "atlas_count": 44,
+      "aggregate_sha256": "c51fa8e75365e4dd1169ebf0f26f5643de6ee800b41877223111ce6585015ddd"
+    }
+  }
+}

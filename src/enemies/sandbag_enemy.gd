@@ -16,6 +16,9 @@ var health: int = 1
 var defeated_once: bool = false
 var hit_flash_seconds: float = 0.0
 var stun_seconds: float = 0.0
+var source_stage: int = 0
+var source_level: int = 0
+var runtime_is_boss: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -38,6 +41,11 @@ func configure(value: EnemyDefinition) -> void:
 			push_error(error)
 		return
 	bind_actor_property(definition.property_template, true)
+	if source_stage <= 0:
+		source_stage = definition.source_default_stage
+	if source_level <= 0:
+		source_level = definition.source_default_level
+	runtime_is_boss = definition.is_boss
 	health = actor_property.get_effective_max_health()
 	sprite.texture = definition.texture
 	sprite.scale = definition.visual_scale
@@ -47,7 +55,7 @@ func configure(value: EnemyDefinition) -> void:
 	collision_shape.shape = shape
 	collision_shape.position.y = -definition.collision_size.y * 0.5
 	add_to_group(&"enemies")
-	if definition.is_boss:
+	if runtime_is_boss:
 		add_to_group(&"bosses")
 	health_changed.emit(health, actor_property.get_effective_max_health())
 	queue_redraw()
@@ -89,7 +97,12 @@ func apply_stun(seconds: float) -> void:
 
 
 func is_boss() -> bool:
-	return definition != null and definition.is_boss
+	return definition != null and runtime_is_boss
+
+
+func set_source_stage_context(stage: int, level: int) -> void:
+	source_stage = maxi(1, stage)
+	source_level = maxi(1, level)
 
 
 func get_display_name() -> String:
@@ -99,7 +112,7 @@ func get_display_name() -> String:
 func _draw() -> void:
 	if definition == null or actor_property == null:
 		return
-	var bar_width: float = 82.0 if definition.is_boss else 54.0
+	var bar_width: float = 82.0 if runtime_is_boss else 54.0
 	var y: float = -definition.collision_size.y - 18.0
 	draw_rect(Rect2(-bar_width * 0.5, y, bar_width, 7.0), Color(0.12, 0.08, 0.06, 0.9), true)
 	var ratio: float = float(health) / float(actor_property.get_effective_max_health())

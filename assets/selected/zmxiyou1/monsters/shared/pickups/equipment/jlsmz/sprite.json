@@ -1,0 +1,24 @@
+{
+  "frames": {
+    "ui_0001": {
+      "x": 0,
+      "y": 0,
+      "w": 52,
+      "h": 54
+    }
+  },
+  "meta": {
+    "image": "sprite.png",
+    "size": {
+      "w": 52,
+      "h": 54
+    },
+    "frameSize": {
+      "w": 52,
+      "h": 54
+    },
+    "columns": 1,
+    "rows": 1,
+    "frameCount": 1
+  }
+}

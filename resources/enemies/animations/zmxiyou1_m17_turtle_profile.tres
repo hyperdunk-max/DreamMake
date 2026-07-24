@@ -4,43 +4,40 @@
 
 [resource]
 script = ExtResource("1_profile")
-default_animation = &"idle"
 source_monster_id = &"M17"
-source_package = &"Monster_v1"
+source_package = &"Monster2_v4"
 source_event_audit = "res://sources/manifests/zmxiyou1_monster_events.json"
 actions = {
-&"hurt": {
-"display_name": "受伤",
-"fps": 24.0,
-"frame_count": 6,
-"loop": false,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/hurt/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/hurt/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -78)
-},
-&"idle": {
-"display_name": "待机",
-"fps": 24.0,
-"frame_count": 15,
-"loop": true,
-"next_animation": &"idle",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/idle/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/idle/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, 0)
-},
 &"attack1": {
 "display_name": "攻击1",
 "fps": 24.0,
 "frame_count": 36,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "hit1",
+"source_event_symbol_ids": PackedInt32Array(1211),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hit1",
+"source_symbol_id": 1211
+},
+"source_events": Array[Dictionary]([{
+"frame": 35,
+"id": &"action_transition",
+"method": "frame36",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_7.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";",
+"source_frame": 36,
+"source_line": 31,
+"source_symbol_id": 1211,
+"source_types": PackedStringArray("action_transition"),
+"types": PackedStringArray("action_transition")
+}]),
+"source_symbol_id": 1211,
+"sprite_offset": Vector2(-238, -78),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/attack1/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/attack1/sprite.json",
-"source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(-238, -78)
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/attack1/sprite.json"
 },
 &"death": {
 "display_name": "死亡",
@@ -48,10 +45,85 @@ actions = {
 "frame_count": 25,
 "loop": false,
 "next_animation": &"idle",
+"source_action_label": "dead",
+"source_event_symbol_ids": PackedInt32Array(1224),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "dead",
+"source_symbol_id": 1224
+},
+"source_events": Array[Dictionary]([{
+"frame": 24,
+"id": &"timeline_control",
+"method": "frame25",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_11.as",
+"source_code": "BaseMonster(this.parent).dropAura();
+         BaseMonster(this.parent).destroy();
+         stop();",
+"source_frame": 25,
+"source_line": 29,
+"source_symbol_id": 1224,
+"source_types": PackedStringArray("cleanup", "timeline_control"),
+"types": PackedStringArray("cleanup", "timeline_control")
+}]),
+"source_symbol_id": 1224,
+"sprite_offset": Vector2(0, -66),
 "sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/death/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/death/sprite.json",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/death/sprite.json"
+},
+&"hurt": {
+"display_name": "受伤",
+"fps": 24.0,
+"frame_count": 6,
+"loop": false,
+"next_animation": &"idle",
+"source_action_label": "hurt",
+"source_event_symbol_ids": PackedInt32Array(1214),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "hurt",
+"source_symbol_id": 1214
+},
+"source_events": Array[Dictionary]([{
+"frame": 5,
+"id": &"action_transition",
+"method": "frame6",
+"source": "assets/extracted/full/zmxiyou1/monsters/Monster2_v4/scripts/Monster2_fla/Timeline_10.as",
+"source_code": "BaseMonster(this.parent).curAction = \"wait\";
+         BaseMonster(this.parent).gotoAndStop(\"wait\");
+         stop();",
+"source_frame": 6,
+"source_line": 29,
+"source_symbol_id": 1214,
+"source_types": PackedStringArray("action_transition", "timeline_control"),
+"types": PackedStringArray("action_transition", "timeline_control")
+}]),
+"source_symbol_id": 1214,
+"sprite_offset": Vector2(0, -78),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/hurt/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/hurt/sprite.json"
+},
+&"idle": {
+"display_name": "待机",
+"fps": 24.0,
+"frame_count": 15,
+"loop": true,
+"next_animation": &"idle",
+"source_action_label": "wait",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "wait",
+"source_symbol_id": 1227
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -66)
+"source_symbol_id": 1227,
+"sprite_offset": Vector2(0, 0),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/idle/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/idle/sprite.json"
 },
 &"move": {
 "display_name": "移动",
@@ -59,9 +131,18 @@ actions = {
 "frame_count": 16,
 "loop": true,
 "next_animation": &"move",
-"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/move/sprite.png",
-"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/move/sprite.json",
+"source_action_label": "walk",
+"source_event_symbol_ids": PackedInt32Array(),
+"source_event_sync": {
+"audit": "res://sources/manifests/zmxiyou1_monster_events.json",
+"selection_audit": "res://sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+"source_action_label": "walk",
+"source_symbol_id": 1199
+},
 "source_events": Array[Dictionary]([]),
-"sprite_offset": Vector2(0, -77)
+"source_symbol_id": 1199,
+"sprite_offset": Vector2(0, -77),
+"sprite_sheet": "res://assets/selected/zmxiyou1/monsters/m17_turtle/move/sprite.png",
+"sprite_sheet_json": "res://assets/selected/zmxiyou1/monsters/m17_turtle/move/sprite.json"
 }
 }

@@ -1,0 +1,24 @@
+{
+  "frames": {
+    "frame_001": {
+      "x": 0,
+      "y": 0,
+      "w": 304,
+      "h": 1253
+    }
+  },
+  "meta": {
+    "image": "sprite.png",
+    "size": {
+      "w": 304,
+      "h": 1253
+    },
+    "frameSize": {
+      "w": 304,
+      "h": 1253
+    },
+    "columns": 1,
+    "rows": 1,
+    "frameCount": 1
+  }
+}

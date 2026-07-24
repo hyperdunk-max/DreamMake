@@ -8,8 +8,8 @@
 script = ExtResource("2_property")
 max_health = 3000
 max_mana = 0
-attack = 200
-defense = 10
+attack = 40
+defense = 6
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -24,3 +24,10 @@ visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = true
+move_speed = 96.0
+detection_range = 300.0
+default_attack_range = 450.0
+source_despawn_effects = Array[Dictionary]([{
+"boss_only": true,
+"type": &"reveal_transfer_doors"
+}])

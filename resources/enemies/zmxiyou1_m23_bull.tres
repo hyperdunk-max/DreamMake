@@ -9,7 +9,7 @@ script = ExtResource("2_property")
 max_health = 20000
 max_mana = 0
 attack = 200
-defense = 10
+defense = 100
 crit_rate = 0.0
 dodge_rate = 0.0
 
@@ -24,3 +24,9 @@ visual_scale = Vector2(1.5, 1.5)
 visual_offset = Vector2(0, 0)
 collision_size = Vector2(60, 90)
 is_boss = true
+source_despawn_effects = Array[Dictionary]([{
+"definition_path": "res://resources/enemies/zmxiyou1_m24_bull_demon_king.tres",
+"position": Vector2(1350, 300),
+"spawn_id_suffix": "phase3",
+"type": &"spawn_monster"
+}])

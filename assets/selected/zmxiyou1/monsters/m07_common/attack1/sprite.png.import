@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cglm0n3oktuam"
-path="res://.godot/imported/sprite.png-81f12824aa203eeb1b5e94cc02941a91.ctex"
+path="res://.godot/imported/sprite.png-ef572319f2d3123cb873ab863f2b185c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/selected/zmxiyou1/monsters/m07/attack1/sprite.png"
-dest_files=["res://.godot/imported/sprite.png-81f12824aa203eeb1b5e94cc02941a91.ctex"]
+source_file="res://assets/selected/zmxiyou1/monsters/m07_common/attack1/sprite.png"
+dest_files=["res://.godot/imported/sprite.png-ef572319f2d3123cb873ab863f2b185c.ctex"]
 
 [params]
 

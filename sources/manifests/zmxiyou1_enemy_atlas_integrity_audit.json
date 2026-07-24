@@ -1,0 +1,58 @@
+{
+  "game": "zmxiyou1",
+  "date": "2026-07-24",
+  "guide": "sources/ASSET_ORGANIZATION_GUIDE.md",
+  "scope": {
+    "profile_count": 27,
+    "runtime_action_count": 165,
+    "contract": "Every runtime action keeps sprite.png + sprite.json and its profile frame_count equals both meta.frameCount and the frames map size."
+  },
+  "repairs": [
+    {
+      "monster": "M01",
+      "action": "attack1",
+      "source_package": "Monster_v1",
+      "root_symbol_id": 113,
+      "source_symbol_id": 101,
+      "source_frame_count": 24,
+      "evidence": [
+        "sources/manifests/zmxiyou1_all_monster_animations_selected.json",
+        "sources/decoded/zmxiyou1/Monster_v1.swf DefineSprite 101 frameCount=24",
+        "source frame script frame24 performs the action transition and stop()"
+      ],
+      "classified_atlas": "assets/extracted/classified/zmxiyou1/怪物/M01/攻击1",
+      "selected_atlas": "assets/selected/zmxiyou1/monsters/m01_common/attack1",
+      "decision": "Remove the generated key named sprite. It was the packer's previous sprite.png output accidentally ingested as a 25th input, not a source animation frame.",
+      "retained": "attack1_001 through attack1_024, byte-for-byte cropped from the existing atlas and repacked without alpha multiplication",
+      "removed": [
+        "frames.sprite metadata entry",
+        "the corresponding generated atlas cell"
+      ],
+      "pre_repair_sha256": {
+        "sprite.png": "300e32ca6483006cdc773375e4658faa0e66c374aa3ef11d190394792f605234",
+        "sprite.json": "b2a783dc88fb654faf5656274df20101799260e1f3332ac7bf31cbd2da7bbd24"
+      },
+      "post_repair_sha256": {
+        "sprite.png": "8eaa22d2006bacda10528568e659052888e2065117132fb93b77302729f03f08",
+        "sprite.json": "8ab1ca0465b922edfe9e388cb37befa0755fbda064181b4d243ce0242d9b8d27"
+      },
+      "classified_selected_match": true,
+      "profile_frame_count_after": 24,
+      "raw_or_decoded_source_changed": false
+    }
+  ],
+  "prevention": {
+    "packer": "scripts/sprite_packer.py excludes an existing sprite.png before packing.",
+    "repair_tool": "scripts/repair_zmxiyou1_self_packed_atlas.py rejects any condition other than one explicit self-packed sprite frame and equal-sized retained frames.",
+    "regression": "tests/zmxiyou1_enemy_atlas_integrity_test.gd"
+  },
+  "validation": {
+    "status": "passed_2026-07-24_godot_4.6.2",
+    "checks": [
+      "27 animation profiles load",
+      "165 actions reference existing sprite-pack PNG and JSON files",
+      "profile frame_count equals meta.frameCount and frames-map size",
+      "no frames map contains a self-packed sprite key"
+    ]
+  }
+}
